@@ -1,0 +1,50 @@
+venv/
+.venv/
+__pycache__/
+*.pyc
+.env
+teste.py
+
+
+# Bancos vetoriais locais gerados pelo GurAI
+/data/chroma_db/
+/data/chroma_test/
+
+#precauções:
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+node_modules/
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+
+/data/chroma_test/
+
+# Logs
+*.log
+
+# Build
+dist/
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+
+# credenciais privadas
+*.pem
+*.key
+*service-account.json
+**/firebase-admin.json
+
+
