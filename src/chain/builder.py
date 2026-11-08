@@ -1,104 +1,81 @@
-import os
 
-from dotenv import load_dotenv
-from langchain_core.prompts import ChatPromptTemplate
+from typing import Any
+
 from langchain_core.output_parsers import StrOutputParser
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables.history import RunnableWithMessageHistory
-from src.chain.memoria import get_session_history
-from langchain_ollama import ChatOllama
+
+from src.ai.llm_factory import create_chat_model
+from src.chain.memory import get_session_history
+from src.core.config import Settings, get_settings
 
 
-load_dotenv()
+def load_system_prompt(
+    settings: Settings | None = None,
+) -> str:
+    """
+    Carrega o prompt principal utilizando o caminho
+    definido nas configurações centralizadas.
+
+    Args:
+        settings: configurações opcionais da aplicação.
+
+    Returns:
+        Conteúdo textual do prompt.
+    """
+
+    if settings is None:
+        settings = get_settings()
+
+    prompt_path = settings.system_prompt_path
+
+    if not prompt_path.is_file():
+        raise FileNotFoundError(
+            f"Arquivo de prompt não encontrado: {prompt_path}"
+        )
+
+    with prompt_path.open(
+        "r",
+        encoding="utf-8",
+    ) as file:
+        system_prompt = file.read().strip()
+
+    if not system_prompt:
+        raise ValueError(
+            f"O arquivo de prompt está vazio: {prompt_path}"
+        )
+
+    return system_prompt
 
 
-def load_system_prompt():
-    nome_arquivo = os.getenv(
-        "GURAI_SYSTEM_PROMPT",
-        "system_prompt_v3.md",
-    )
+def build_chain(
+    settings: Settings | None = None,
+):
+    """
+    Constrói as chains conversacionais com histórico.
 
-    caminho = os.path.join(
-        os.path.dirname(__file__),
-        "..",
-        "..",
-        "prompts",
-        nome_arquivo,
-    )
+    Returns:
+        Tuple contendo:
+        - Chain com saída textual.
+        - Chain com resposta original do modelo (AIMessage).
+    """
 
-    with open(caminho, "r", encoding="utf-8") as arquivo:
-        return arquivo.read()
+    if settings is None:
+        settings = get_settings()
 
+    # Carrega o prompt principal.
+    system_prompt = load_system_prompt(settings)
 
-
-def build_chain():
-
-    system_prompt = load_system_prompt()
-
+    # Monta o template de mensagens.
     prompt = ChatPromptTemplate.from_messages([
         (
             "system",
-            system_prompt
+            system_prompt,
         ),
         (
             "placeholder",
-            "{history}"
+            "{history}",
         ),
-        (
-            "human",
-            """
-            Contexto dos dados:
-            {context}
-
-            Pergunta do usuario:
-            {question}
-            """
-        )
-    ])
-
-    llm = ChatOllama(
-        model="gemma4:31b",
-        base_url="https://ollama.com",
-        client_kwargs={
-            "headers": {
-                "Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"
-            }
-        },
-        temperature=0.3,
-        num_predict=1200,
-        top_p=0.9
-    )
-
-    parser = StrOutputParser()
-
-    chain_completa = prompt | llm
-
-    chain = prompt | llm | parser
-
-    chain_com_memoria = RunnableWithMessageHistory(
-        chain,
-        get_session_history,
-        input_messages_key="question",
-        history_messages_key="history"
-    )
-
-    chain_completa_com_memoria = RunnableWithMessageHistory(
-            chain_completa,
-            get_session_history,
-            input_messages_key="question",
-            history_messages_key="history"
-        )
-
-    return chain_com_memoria, chain_completa_com_memoria
-
-
-def build_structured_chain(schema, instrucoes):
-
-
-    prompt = ChatPromptTemplate.from_messages([
-        ("system", f"""
-       ...........
-        {instrucoes}
-        """),
         (
             "human",
             """
@@ -107,23 +84,96 @@ def build_structured_chain(schema, instrucoes):
 
             Pergunta do usuário:
             {question}
-            """
-        )
+            """,
+        ),
     ])
 
-    llm = ChatOllama(
-        model="gemma4:31b",
-        base_url="https://ollama.com",
-        client_kwargs={
-            "headers": {
-                "Authorization": f"Bearer {os.getenv('OLLAMA_API_KEY')}"
-            }
-        },
-        temperature=0.3,
-        num_predict=1200,
-        top_p=0.9
+    # Instancia o modelo através da factory.
+    llm = create_chat_model(settings=settings)
+
+    # Chain original: retorna AIMessage.
+    chain_completa = prompt | llm
+
+    # Chain textual: retorna apenas o conteúdo da resposta.
+    parser = StrOutputParser()
+
+    chain = chain_completa | parser
+
+    # Adiciona histórico à chain textual.
+    chain_com_memoria = RunnableWithMessageHistory(
+        chain,
+        get_session_history,
+        input_messages_key="question",
+        history_messages_key="history",
     )
 
+    # Adiciona histórico à chain original.
+    chain_completa_com_memoria = RunnableWithMessageHistory(
+        chain_completa,
+        get_session_history,
+        input_messages_key="question",
+        history_messages_key="history",
+    )
+
+    return (
+        chain_com_memoria,
+        chain_completa_com_memoria,
+    )
+
+
+def build_structured_chain(
+    schema: Any,
+    instrucoes: str,
+    settings: Settings | None = None,
+):
+    """
+    Constrói uma chain com saída estruturada.
+
+    Args:
+        schema: schema utilizado para validar a saída.
+        instrucoes: instruções específicas da tarefa.
+        settings: configurações opcionais da aplicação.
+
+    Returns:
+        Chain com saída estruturada.
+    """
+
+    if settings is None:
+        settings = get_settings()
+
+    if not instrucoes or not instrucoes.strip():
+        raise ValueError(
+            "As instruções da chain estruturada não podem estar vazias."
+        )
+
+    # Monta o prompt específico da tarefa.
+    prompt = ChatPromptTemplate.from_messages([
+        (
+            "system",
+            f"""
+            Siga rigorosamente as instruções abaixo
+            ao analisar o contexto e responder.
+
+            Instruções da tarefa:
+            {instrucoes}
+            """,
+        ),
+        (
+            "human",
+            """
+            Contexto dos dados:
+            {context}
+
+            Pergunta do usuário:
+            {question}
+            """,
+        ),
+    ])
+
+    # Reutiliza a mesma factory de modelos.
+    llm = create_chat_model(settings=settings)
+
+    # Solicita saída estruturada ao modelo.
     structured_llm = llm.with_structured_output(schema)
 
     chain = prompt | structured_llm

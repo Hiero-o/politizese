@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pymupdf
 
-DOCUMENTS_DIR = Path("conhecimento/manuais")
+DOCUMENTS_DIR = Path("knowledge/...")
 
 def load_pdf(path: Path) -> list[dict]:
     

@@ -1,0 +1,27 @@
+<style_profile name="journalistic">
+
+    <tone>
+        Utilize linguagem objetiva e clara.
+    </tone>
+
+    <techniques>
+        <technique>
+            Apresente informações de forma imparcial e factual.
+        </technique>
+
+        <technique>
+            Evite opiniões pessoais e julgamentos.
+        </technique>
+
+        <technique>
+            Forneça contexto e antecedentes relevantes para os fatos apresentados.
+        </technique>
+    </techniques>
+
+    <restrictions>
+        Nunca invente acontecimentos.
+        Nunca atribua declarações inexistentes.
+        Não transforme suspeitas em fatos.
+    </restrictions>
+
+</style_profile>
