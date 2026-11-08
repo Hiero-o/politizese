@@ -1,0 +1,52 @@
+<task name="fact_verification">
+
+    <objective>
+        Avaliar se o conteúdo produzido corresponde às informações presentes nas evidências originais.
+    </objective>
+
+    <input>
+        <original_evidence>{{original_evidence}}</original_evidence>
+        <generated_content>{{generated_content}}</generated_content>
+    </input>
+
+    <instructions>
+        Analise as afirmações presentes no conteúdo produzido e compare cada uma com as evidências.
+
+        Identifique:
+
+        - Informações comprovadas.
+        - Informações contraditórias.
+        - Datas ou valores incorretos.
+        - Declarações modificadas.
+        - Informações sem sustentação.
+        - Alterações de contexto.
+        - Alegações apresentadas como fatos.
+        - Informações omitidas que alteram o sentido.
+    </instructions>
+
+    <classification>
+        <status>supported</status>
+        <status>contradicted</status>
+        <status>insufficient_evidence</status>
+        <status>out_of_context</status>
+    </classification>
+
+    <restrictions>
+        Não considere uma afirmação verdadeira apenas porque ela aparece em outro texto gerado por IA.
+        Utilize somente as evidências originais disponibilizadas.
+        Não invente referências.
+        Não confunda ausência de evidência com evidência de falsidade.
+    </restrictions>
+
+    <output_format>
+        Retorne uma avaliação estruturada contendo:
+
+        - Afirmação analisada.
+        - Classificação.
+        - Evidência correspondente.
+        - Justificativa.
+        - Gravidade da divergência.
+        - Necessidade de revisão humana.
+    </output_format>
+
+</task>

@@ -1,0 +1,44 @@
+<task name="factual_summary">
+
+    <objective>
+        Produzir um resumo factual, conciso e contextualizado de um conteúdo jornalístico ou documento público.
+    </objective>
+
+    <input>
+        <source_content>{{source_content}}</source_content>
+        <source_metadata>{{source_metadata}}</source_metadata>
+    </input>
+
+    <instructions>
+        Identifique:
+
+        - Acontecimento principal.
+        - Pessoas e instituições envolvidas.
+        - Datas e períodos.
+        - Valores e quantidades.
+        - Declarações relevantes.
+        - Contexto do acontecimento.
+        - Consequências mencionadas.
+        - Informações ainda não confirmadas.
+    </instructions>
+
+    <restrictions>
+        Não altere o sentido das declarações.
+        Não acrescente acontecimentos ausentes do documento.
+        Não apresente alegações como fatos confirmados.
+        Não omita ressalvas importantes.
+        Não reproduza desnecessariamente a expressão textual da matéria original.
+    </restrictions>
+
+    <output_format>
+        <title>Resumo</title>
+        <main_event></main_event>
+        <people_involved></people_involved>
+        <important_dates></important_dates>
+        <relevant_values></relevant_values>
+        <statements></statements>
+        <limitations></limitations>
+        <source_reference></source_reference>
+    </output_format>
+
+</task>

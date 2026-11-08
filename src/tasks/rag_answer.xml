@@ -1,0 +1,44 @@
+<task name="rag_answer">
+
+    <objective>
+        Responder à pergunta do usuário utilizando exclusivamente as evidências recuperadas e disponibilizadas pelo sistema.
+    </objective>
+
+    <input>
+        <question>{{question}}</question>
+        <context>{{context}}</context>
+    </input>
+
+    <instructions>
+        1. Analise a pergunta do usuário.
+
+        2. Identifique quais documentos apresentam
+        informações relevantes.
+
+        3. Relacione as evidências necessárias para
+        construir uma resposta.
+
+        4. Preserve datas, valores, nomes e contextos.
+
+        5. Identifique informações contraditórias
+        ou insuficientes.
+
+        6. Responda utilizando linguagem clara e objetiva.
+    </instructions>
+
+    <citation_rules>
+        Toda afirmação factual deverá possuir uma referência ao documento correspondente.
+        Utilize os identificadores dos documentos disponibilizados pelo sistema.
+        Não invente identificadores ou fontes.
+    </citation_rules>
+
+    <uncertainty>
+        Caso não existam evidências suficientes, informe explicitamente que não foi possível encontrar uma resposta confiável.
+        Nunca complete informações ausentes utilizando suposições.
+    </uncertainty>
+
+    <output_format>
+        Resposta textual acompanhada das referências utilizadas e das limitações identificadas.
+    </output_format>
+
+</task>

@@ -1,0 +1,38 @@
+<task name="information_extraction">
+
+    <objective>
+        Identificar e estruturar informações relevantes presentes em documentos políticos e jornalísticos.
+    </objective>
+
+    <input>
+        <document>{{document}}</document>
+        <document_metadata>{{document_metadata}}</document_metadata>
+    </input>
+
+    <instructions>
+        Identifique:
+
+        1. Pessoas mencionadas.
+        2. Instituições envolvidas.
+        3. Partidos políticos.
+        4. Cargos públicos.
+        5. Datas e períodos.
+        6. Valores financeiros.
+        7. Projetos e iniciativas.
+        8. Declarações.
+        9. Acontecimentos.
+        10. Afirmações que possam ser verificadas.
+    </instructions>
+
+    <restrictions>
+        Extraia somente informações presentes no documento.
+        Não complete dados ausentes.
+        Diferencie pessoas mencionadas de pessoas efetivamente envolvidas nos acontecimentos.
+        Preserve o contexto das declarações.
+    </restrictions>
+
+    <output_format>
+        Estrutura de saída validável por um schema Pydantic, contendo os campos extraídos e suas referências aos trechos originais.
+    </output_format>
+
+</task>

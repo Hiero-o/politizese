@@ -1,0 +1,48 @@
+<task name="satirical_rewrite">
+
+    <objective>
+        Reescrever um resumo factual utilizando o estilo de comunicação selecionado pelo usuário.
+    </objective>
+
+    <input>
+        <factual_summary>{{factual_summary}}</factual_summary>
+        <style_profile>{{style_profile}}</style_profile>
+    </input>
+
+    <instructions>
+        Produza um conteúdo que utilize as técnicas de humor definidas no perfil de estilo recebido.
+
+        O texto deve apresentar:
+
+        - Linguagem natural.
+        - Contextualização adequada.
+        - Humor relacionado aos acontecimentos.
+        - Boa fluidez textual.
+        - Clareza sobre os fatos apresentados.
+    </instructions>
+
+    <creative_rules>
+        Utilize criatividade na construção das frases,
+        comparações e recursos humorísticos.
+
+        Explore contradições documentadas e situações
+        relevantes presentes no resumo factual.
+    </creative_rules>
+
+    <restrictions>
+        Não invente acontecimentos.
+        Não invente declarações.
+        Não altere datas, valores ou informações.
+        Não transforme investigações em condenações.
+        Não apresente interpretações como fatos.
+        Não atribua comportamentos ou intenções sem evidências.
+    </restrictions>
+
+    <output_format>
+        <headline></headline>
+        <satirical_content></satirical_content>
+        <source_reference></source_reference>
+        <ai_generated>true</ai_generated>
+    </output_format>
+
+</task>
