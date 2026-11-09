@@ -1,61 +1,38 @@
 
 from typing import Any
 
+from langchain_core.messages import SystemMessage
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables.history import RunnableWithMessageHistory
 
 from src.ai.llm_factory import create_chat_model
+from src.ai.prompt_loader import load_prompt
 from src.chain.memory import get_session_history
 from src.core.config import Settings, get_settings
 
 
-def load_system_prompt(
+def build_chain(
     settings: Settings | None = None,
-) -> str:
+    *,
+    task: str = "rag_answer",
+    style: str | None = None,
+):
     """
-    Carrega o prompt principal utilizando o caminho
-    definido nas configurações centralizadas.
+    Constrói uma chain conversacional utilizando os prompts
+    modulares do Politize-se.
+
+    A composição do prompt é feita pelo Prompt Loader:
+
+        Core + Task + Style (opcional)
 
     Args:
         settings: configurações opcionais da aplicação.
+        task: nome do arquivo XML da tarefa.
+        style: nome do arquivo XML do estilo.
 
     Returns:
-        Conteúdo textual do prompt.
-    """
-
-    if settings is None:
-        settings = get_settings()
-
-    prompt_path = settings.system_prompt_path
-
-    if not prompt_path.is_file():
-        raise FileNotFoundError(
-            f"Arquivo de prompt não encontrado: {prompt_path}"
-        )
-
-    with prompt_path.open(
-        "r",
-        encoding="utf-8",
-    ) as file:
-        system_prompt = file.read().strip()
-
-    if not system_prompt:
-        raise ValueError(
-            f"O arquivo de prompt está vazio: {prompt_path}"
-        )
-
-    return system_prompt
-
-
-def build_chain(
-    settings: Settings | None = None,
-):
-    """
-    Constrói as chains conversacionais com histórico.
-
-    Returns:
-        Tuple contendo:
+        Tupla contendo:
         - Chain com saída textual.
         - Chain com resposta original do modelo (AIMessage).
     """
@@ -63,43 +40,52 @@ def build_chain(
     if settings is None:
         settings = get_settings()
 
-    # Carrega o prompt principal.
-    system_prompt = load_system_prompt(settings)
+    # 1. Carrega e combina os prompts.
+    system_prompt = load_prompt(
+        task=task,
+        style=style,
+    )
 
-    # Monta o template de mensagens.
+    # 2. Cria a mensagem de sistema.
+    # SystemMessage evita que o conteúdo XML seja
+    # interpretado como um template de variáveis.
+    system_message = SystemMessage(
+        content=system_prompt
+    )
+
+    # 3. Monta o template conversacional.
     prompt = ChatPromptTemplate.from_messages([
-        (
-            "system",
-            system_prompt,
-        ),
-        (
-            "placeholder",
-            "{history}",
-        ),
+        system_message,
+
+        ("placeholder", "{history}"),
+
         (
             "human",
             """
-            Contexto dos dados:
-            {context}
+            <user_context>
+                <retrieved_documents>
+                    {context}
+                </retrieved_documents>
 
-            Pergunta do usuário:
-            {question}
+                <user_question>
+                    {question}
+                </user_question>
+            </user_context>
             """,
         ),
     ])
 
-    # Instancia o modelo através da factory.
-    llm = create_chat_model(settings=settings)
+    # 4. Instancia o modelo centralizado.
+    llm = create_chat_model(
+        settings=settings
+    )
 
-    # Chain original: retorna AIMessage.
+    # 5. Constrói as chains.
     chain_completa = prompt | llm
 
-    # Chain textual: retorna apenas o conteúdo da resposta.
-    parser = StrOutputParser()
+    chain = chain_completa | StrOutputParser()
 
-    chain = chain_completa | parser
-
-    # Adiciona histórico à chain textual.
+    # 6. Adiciona histórico à chain textual.
     chain_com_memoria = RunnableWithMessageHistory(
         chain,
         get_session_history,
@@ -107,7 +93,7 @@ def build_chain(
         history_messages_key="history",
     )
 
-    # Adiciona histórico à chain original.
+    # 7. Adiciona histórico à chain original.
     chain_completa_com_memoria = RunnableWithMessageHistory(
         chain_completa,
         get_session_history,
@@ -125,14 +111,20 @@ def build_structured_chain(
     schema: Any,
     instrucoes: str,
     settings: Settings | None = None,
+    *,
+    task: str = "information_extraction",
 ):
     """
     Constrói uma chain com saída estruturada.
 
+    Utiliza o Core e a Task informada, permitindo
+    complementar as instruções específicas da aplicação.
+
     Args:
-        schema: schema utilizado para validar a saída.
-        instrucoes: instruções específicas da tarefa.
-        settings: configurações opcionais da aplicação.
+        schema: schema Pydantic ou formato estruturado.
+        instrucoes: instruções complementares da tarefa.
+        settings: configurações opcionais.
+        task: nome da Task XML.
 
     Returns:
         Chain com saída estruturada.
@@ -143,39 +135,55 @@ def build_structured_chain(
 
     if not instrucoes or not instrucoes.strip():
         raise ValueError(
-            "As instruções da chain estruturada não podem estar vazias."
+            "As instruções complementares não podem estar vazias."
         )
 
-    # Monta o prompt específico da tarefa.
-    prompt = ChatPromptTemplate.from_messages([
-        (
-            "system",
-            f"""
-            Siga rigorosamente as instruções abaixo
-            ao analisar o contexto e responder.
+    # 1. Carrega Core + Task.
+    system_prompt = load_prompt(
+        task=task
+    )
 
-            Instruções da tarefa:
-            {instrucoes}
-            """,
+    # 2. Separa as instruções complementares.
+    messages = [
+        SystemMessage(content=system_prompt),
+
+        SystemMessage(
+            content=(
+                "Instruções complementares da aplicação:\n"
+                f"{instrucoes}"
+            )
         ),
+
         (
             "human",
             """
-            Contexto dos dados:
-            {context}
+            <user_context>
+                <retrieved_documents>
+                    {context}
+                </retrieved_documents>
 
-            Pergunta do usuário:
-            {question}
+                <user_question>
+                    {question}
+                </user_question>
+            </user_context>
             """,
         ),
-    ])
+    ]
 
-    # Reutiliza a mesma factory de modelos.
-    llm = create_chat_model(settings=settings)
+    # 3. Cria o template.
+    prompt = ChatPromptTemplate.from_messages(
+        messages
+    )
 
-    # Solicita saída estruturada ao modelo.
-    structured_llm = llm.with_structured_output(schema)
+    # 4. Instancia o modelo.
+    llm = create_chat_model(
+        settings=settings
+    )
 
-    chain = prompt | structured_llm
+    # 5. Configura a saída estruturada.
+    structured_llm = llm.with_structured_output(
+        schema
+    )
 
-    return chain
+    # 6. Constrói a chain.
+    return prompt | structured_llm

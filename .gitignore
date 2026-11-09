@@ -4,11 +4,14 @@ __pycache__/
 *.pyc
 .env
 teste.py
+teste2.py
+teste_parent_retriever.py
 
 
 # Bancos vetoriais locais gerados pelo GurAI
 /data/chroma_db/
 /data/chroma_test/
+/data/parent_documents
 
 #precauções:
 

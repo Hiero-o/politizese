@@ -1,5 +1,4 @@
 
-import re
 from collections.abc import Mapping, Sequence
 from typing import Any
 
@@ -7,11 +6,10 @@ from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 
+# Valores provisórios para o primeiro experimento.
+# Serão comparados com outras configurações na avaliação do RAG.
 DEFAULT_CHUNK_SIZE = 512
 DEFAULT_CHUNK_OVERLAP = 80
-
-
-
 
 
 def split_pages_into_chunks(
@@ -21,10 +19,22 @@ def split_pages_into_chunks(
     chunk_overlap: int = DEFAULT_CHUNK_OVERLAP,
     excluded_pages_by_document: Mapping[str, set[int]] | None = None,
 ) -> list[Document]:
-    """Divide páginas em chunks e preserva os metadados de origem."""
+    """
+    Divide as páginas em chunks e preserva os metadados de origem.
+
+    O chunk_size e o chunk_overlap são medidos em caracteres, não em tokens.
+
+    excluded_pages_by_document permite ignorar páginas específicas. A chave deve ser o nome do documento, por exemplo: {"Constituicao.pdf": {1, 2}}.
+    """
+
+    if not isinstance(chunk_size, int) or isinstance(chunk_size, bool):
+        raise TypeError("chunk_size deve ser um número inteiro.")
 
     if chunk_size <= 0:
         raise ValueError("chunk_size deve ser maior que zero.")
+
+    if not isinstance(chunk_overlap, int) or isinstance(chunk_overlap, bool):
+        raise TypeError("chunk_overlap deve ser um número inteiro.")
 
     if chunk_overlap < 0:
         raise ValueError("chunk_overlap não pode ser negativo.")
@@ -44,6 +54,8 @@ def split_pages_into_chunks(
     )
 
     chunks: list[Document] = []
+
+    excluded_pages = excluded_pages_by_document or {}
 
     for page in pages:
         page_text = page.get("texto", "")
@@ -81,6 +93,10 @@ def split_pages_into_chunks(
                 f"O número de página deve ser positivo: {page_number}."
             )
 
+        # Permite ignorar páginas específicas de um documento.
+        if page_number in excluded_pages.get(document_name, set()):
+            continue
+
         base_metadata = {
             "documento": document_name,
             "source": source_path,
@@ -88,7 +104,6 @@ def split_pages_into_chunks(
             "page": page_number,
         }
 
-        # 1. Chunks normais.
         page_chunks = splitter.create_documents(
             texts=[page_text],
             metadatas=[base_metadata],
@@ -96,6 +111,7 @@ def split_pages_into_chunks(
 
         for chunk_index, split_document in enumerate(page_chunks):
             metadata = dict(split_document.metadata)
+
             metadata["chunk_index"] = chunk_index
             metadata["chunk_id"] = (
                 f"{document_name}|p{page_number}|c{chunk_index:04d}"
@@ -111,5 +127,4 @@ def split_pages_into_chunks(
                 )
             )
 
-        
     return chunks

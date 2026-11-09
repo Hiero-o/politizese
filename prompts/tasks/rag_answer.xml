@@ -4,10 +4,14 @@
         Responder à pergunta do usuário utilizando exclusivamente as evidências recuperadas e disponibilizadas pelo sistema.
     </objective>
 
-    <input>
-        <question>{{question}}</question>
-        <context>{{context}}</context>
-    </input>
+    <input_contract>
+        <item name="question">
+            A pergunta será fornecida pelo sistema em uma mensagem separada.
+        </item>
+        <item name="context">
+            O contexto será composto pelos documentos separados pelo sistema de recuperação
+        </item>
+    </input_contract>
 
     <instructions>
         1. Analise a pergunta do usuário.
