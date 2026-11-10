@@ -1,0 +1,66 @@
+
+{
+    "dataset_id": "constituicao_federal_1988",
+    "name": "Avaliação RAG - Constituição Federal",
+    "version": "1.0",
+    "description": "Conjunto de perguntas para avaliar a recuperação de informações da Constituição da República Federativa do Brasil de 1988.",
+    "source": "Constituição da República Federativa do Brasil de 1988",
+    "questions": [
+        {
+            "id": "Q1",
+            "category": "simples",
+            "question": "Quais direitos sociais são garantidos pela Constituição Federal?",
+            "ground_truth": null,
+            "reference_articles": []
+        },
+        {
+            "id": "Q2",
+            "category": "simples",
+            "question": "Quais são os requisitos constitucionais para alguém se candidatar à Presidência da República?",
+            "ground_truth": null,
+            "reference_articles": []
+        },
+        {
+            "id": "Q3",
+            "category": "simples",
+            "question": "Quais são as competências legislativas privativas da União?",
+            "ground_truth": null,
+            "reference_articles": []
+        },
+        {
+            "id": "Q4",
+            "category": "simples",
+            "question": "Como é composto o Congresso Nacional?",
+            "ground_truth": null,
+            "reference_articles": []
+        },
+        {
+            "id": "Q5",
+            "category": "armadilha",
+            "question": "A Constituição permite pena de morte para crimes hediondos em tempos de paz?",
+            "ground_truth": null,
+            "reference_articles": []
+        },
+        {
+            "id": "Q6",
+            "category": "armadilha",
+            "question": "O presidente pode editar medida provisória para criar crimes e estabelecer penas?",
+            "ground_truth": null,
+            "reference_articles": []
+        },
+        {
+            "id": "Q7",
+            "category": "armadilha",
+            "question": "Um brasileiro naturalizado pode ser eleito presidente da República?",
+            "ground_truth": null,
+            "reference_articles": []
+        },
+        {
+            "id": "Q8",
+            "category": "armadilha",
+            "question": "Qual é o valor atual do salário mínimo nacional estabelecido diretamente pela Constituição?",
+            "ground_truth": null,
+            "reference_articles": []
+        }
+    ]
+}

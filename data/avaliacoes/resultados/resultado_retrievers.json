@@ -1,0 +1,1432 @@
+{
+    "evaluation": {
+        "name": "Avaliação de retrievers",
+        "dataset_id": "constituicao_federal_1988",
+        "dataset_name": "Avaliação RAG - Constituição Federal",
+        "dataset_version": "1.0",
+        "dataset_source": "Constituição da República Federativa do Brasil de 1988",
+        "dataset_path": "data\\avaliacoes\\perguntas_constituicao.JSON",
+        "executed_at": "2026-11-10T03:13:28.802114+00:00"
+    },
+    "experiments": [
+        {
+            "experiment_id": "parent_1024",
+            "configuration": {
+                "id": "parent_1024",
+                "parent_chunk_size": 1024,
+                "parent_chunk_overlap": 128,
+                "retriever_type": "parent_document",
+                "provider": "local",
+                "child_chunk_size": 200,
+                "child_chunk_overlap": 40,
+                "top_k": 4
+            },
+            "collection": "politizese_parent_c200_p1024_nomic_search_prefix_v1_lo_fa9ce612",
+            "indexed_children": 4595,
+            "stored_parents": 814,
+            "questions": [
+                {
+                    "id": "Q1",
+                    "category": "simples",
+                    "question": "Quais direitos sociais são garantidos pela Constituição Federal?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.068194,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 225,
+                                "page": 225,
+                                "start_index": 977
+                            },
+                            "page_content": "normas fixadas para os demais juízes estaduais.\nArt. 22. É assegurado aos defensores públicos investidos na função até a data de insta­\nlação da Assembleia Nacional Constituinte o direito de opção pela carreira, com a obser­\nvância das garantias e vedações previstas no art. 134, parágrafo único, da Constituição.\nArt. 23. Até que se edite a regulamentação do art. 21, XVI, da Constituição, os atuais \nocupantes do cargo de censor federal continuarão exercendo funções com este compa­\ntíveis, no Departamento de Polícia Federal, observadas as disposições constitucionais.\nParágrafo único. A lei referida disporá sobre o aproveitamento dos Censores Federais, \nnos termos deste artigo.\nArt. 24. A União, os Estados, o Distrito Federal e os Municípios editarão leis que es­\ntabeleçam critérios para a compatibilização de seus quadros de pessoal ao disposto no \nart. 39 da Constituição e à reforma administrativa dela decorrente, no prazo de dezoito \nmeses, contados da sua promulgação.",
+                            "characters": 982
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 20,
+                                "page": 20,
+                                "start_index": 894
+                            },
+                            "page_content": "vados, em cada Casa do Congresso Nacional, em dois turnos, por três quintos dos votos \ndos respectivos membros, serão equivalentes às emendas constitucionais. (Incluído pela \nEC n. 45/2004) (Vide ADI 3.392)\n§ 4º O Brasil se submete à jurisdição de Tribunal Penal Internacional a cuja criação \ntenha manifestado adesão. (Incluído pela EC n. 45/2004)\nCAPÍTULO II\nDos Direitos Sociais\nArt. 6º São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, \no transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à \ninfância, a assistência aos desamparados, na forma desta Constituição. (Redação dada \npela EC n. 90/2015)\nParágrafo único. Todo brasileiro em situação de vulnerabilidade social terá direito a \numa renda básica familiar, garantida pelo poder público em programa permanente de \ntransferência de renda, cujas normas e requisitos de acesso serão determinados em lei, \nobservada a legislação fiscal e orçamentária. (Incluído pela EC n. 114/2021)",
+                            "characters": 999
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 205,
+                                "page": 205,
+                                "start_index": 1778
+                            },
+                            "page_content": "§ 2º A lei disporá sobre normas de construção dos logradouros e dos edifícios de uso \npúblico e de fabricação de veículos de transporte coletivo, a fim de garantir acesso ade­\nquado às pessoas portadoras de deficiência.\n§ 3º O direito a proteção especial abrangerá os seguintes aspectos:\nI – idade mínima de quatorze anos para admissão ao trabalho, observado o disposto \nno art. 7º, XXXIII;\nII – garantia de direitos previdenciários e trabalhistas;\nIII – garantia de acesso do trabalhador adolescente e jovem à escola; (Redação dada \npela EC n. 65/2010)\nIV – garantia de pleno e formal conhecimento da atribuição de ato infracional, igual­\ndade na relação processual e defesa técnica por profissional habilitado, segundo dispuser \na legislação tutelar específica;\nArt. 226, § 7º\nsumário",
+                            "characters": 786
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 107,
+                                "page": 107,
+                                "start_index": 928
+                            },
+                            "page_content": "lei, a supervisão administrativa, orçamentária, financeira e patrimonial da Justiça do \nTrabalho de primeiro e segundo graus, como órgão central do sistema, cujas decisões \nterão efeito vinculante. (Incluído pela EC n. 45/2004)\n§ 3º Compete ao Tribunal Superior do Trabalho processar e julgar, originariamente, \na reclamação para a preservação de sua competência e garantia da autoridade de suas \ndecisões. (Incluído pela EC n. 92/2016)\nArt. 112. A lei criará varas da Justiça do Trabalho, podendo, nas comarcas não abran­\ngidas por sua jurisdição, atribuí-la aos juízes de direito, com recurso para o respectivo \nTribunal Regional do Trabalho. (Redação dada pela EC n. 45/2004)\nArt. 113. A lei disporá sobre a constituição, investidura, jurisdição, competência, \ngarantias e condições de exercício dos órgãos da Justiça do Trabalho. (Redação dada \npela EC n. 24/1999)\nArt. 114. Compete à Justiça do Trabalho processar e julgar: (Redação dada pela EC \nn. 45/2004) (Vide ADI 3.392) (Vide ADI 3.432)",
+                            "characters": 997
+                        }
+                    ]
+                },
+                {
+                    "id": "Q2",
+                    "category": "simples",
+                    "question": "Quais são os requisitos constitucionais para alguém se candidatar à Presidência da República?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.052644,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 158,
+                                "page": 158,
+                                "start_index": 0
+                            },
+                            "page_content": "157\n§ 3º As emendas ao projeto de lei do orçamento anual ou aos projetos que o modifiquem \nsomente podem ser aprovadas caso:\nI – sejam compatíveis com o plano plurianual e com a lei de diretrizes orçamentárias;\nII – indiquem os recursos necessários, admitidos apenas os provenientes de anulação \nde despesa, excluídas as que incidam sobre:\na) dotações para pessoal e seus encargos;\nb) serviço da dívida;\nc) transferências tributárias constitucionais para Estados, Municípios e Distrito \nFederal; ou\nIII – sejam relacionadas:\na) com a correção de erros ou omissões; ou\nb) com os dispositivos do texto do projeto de lei.\n§ 4º As emendas ao projeto de lei de diretrizes orçamentárias não poderão ser apro­\nvadas quando incompatíveis com o plano plurianual.\n§ 5º O Presidente da República poderá enviar mensagem ao Congresso Nacional para \npropor modificação nos projetos a que se refere este artigo enquanto não iniciada a \nvotação, na Comissão mista, da parte cuja alteração é proposta.",
+                            "characters": 984
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 51,
+                                "page": 51,
+                                "start_index": 919
+                            },
+                            "page_content": "de sua competência, regime jurídico único e planos de carreira para os servidores da \nadministração pública direta, das autarquias e das fundações públicas.2\n§ 1º A fixação dos padrões de vencimento e dos demais componentes do sistema \nremuneratório observará: (Redação dada pela EC n. 19/1998)\nI – a natureza, o grau de responsabilidade e a complexidade dos cargos componentes \nde cada carreira; (Incluído pela EC n. 19/1998)\nII – os requisitos para a investidura; (Incluído pela EC n. 19/1998)\nIII – as peculiaridades dos cargos. (Incluído pela EC n. 19/1998)\n§ 2º A União, os Estados e o Distrito Federal manterão escolas de governo para a \nformação e o aperfeiçoamento dos servidores públicos, constituindo-se a participa­\nção nos cursos um dos requisitos para a promoção na carreira, facultada, para isso, \na celebração de convênios ou contratos entre os entes federados. (Redação dada pela \nEC n. 19/1998)\n§ 3º Aplica-se aos servidores ocupantes de cargo público o disposto no art. 7º, IV, VII,",
+                            "characters": 1000
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 219,
+                                "page": 219,
+                                "start_index": 0
+                            },
+                            "page_content": "218\nADCT – Art. 5º, § 1º\n§ 1º Para as eleições de 15 de novembro de 1988 será exigido domicílio eleitoral na \ncircunscrição pelo menos durante os quatro meses anteriores ao pleito, podendo os \ncandidatos que preencham este requisito, atendidas as demais exigências da lei, ter seu \nregistro efetivado pela Justiça Eleitoral após a promulgação da Constituição.\n§ 2º Na ausência de norma legal específica, caberá ao Tribunal Superior Eleitoral editar \nas normas necessárias à realização das eleições de 1988, respeitada a legislação vigente.\n§ 3º Os atuais parlamentares federais e estaduais eleitos Vice-Prefeitos, se convocados \na exercer a função de Prefeito, não perderão o mandato parlamentar.\n§ 4º O número de vereadores por município será fixado, para a representação a ser \neleita em 1988, pelo respectivo Tribunal Regional Eleitoral, respeitados os limites esti­\npulados no art. 29, IV, da Constituição.\n§ 5º Para as eleições de 15 de novembro de 1988, ressalvados os que já exercem mandato",
+                            "characters": 997
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 98,
+                                "page": 98,
+                                "start_index": 876
+                            },
+                            "page_content": "III – a Mesa da Câmara dos Deputados;\nIV – a Mesa de Assembleia Legislativa ou da Câmara Legislativa do Distrito Federal; \n(Redação dada pela EC n. 45/2004)\nV – o Governador de Estado ou do Distrito Federal; (Redação dada pela EC n. 45/2004)\nVI – o Procurador-Geral da República;\nVII – o Conselho Federal da Ordem dos Advogados do Brasil;\nVIII – partido político com representação no Congresso Nacional;\nIX – confederação sindical ou entidade de classe de âmbito nacional.\n§ 1º O Procurador-Geral da República deverá ser previamente ouvido nas ações de in­\nconstitucionalidade e em todos os processos de competência do Supremo Tribunal Federal.\n§ 2º Declarada a inconstitucionalidade por omissão de medida para tornar efetiva \nnorma constitucional, será dada ciência ao Poder competente para a adoção das provi­\ndências necessárias e, em se tratando de órgão administrativo, para fazê-lo em trinta dias.\n§ 3º Quando o Supremo Tribunal Federal apreciar a inconstitucionalidade, em tese,",
+                            "characters": 985
+                        }
+                    ]
+                },
+                {
+                    "id": "Q3",
+                    "category": "simples",
+                    "question": "Quais são as competências legislativas privativas da União?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.052251,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 71,
+                                "page": 71,
+                                "start_index": 0
+                            },
+                            "page_content": "70\nArt. 61, § 1º\n§ 1º São de iniciativa privativa do Presidente da República as leis que:\nI – fixem ou modifiquem os efetivos das Forças Armadas;\nII – disponham sobre:\na) criação de cargos, funções ou empregos públicos na administração direta e \nautárquica ou aumento de sua remuneração;\nb) organização administrativa e judiciária, matéria tributária e orçamentária, \nserviços públicos e pessoal da administração dos Territórios;\nc) servidores públicos da União e Territórios, seu regime jurídico, provimento de \ncargos, estabilidade e aposentadoria; (Redação dada pela EC n. 18/1998)\nd) organização do Ministério Público e da Defensoria Pública da União, bem \ncomo normas gerais para a organização do Ministério Público e da Defensoria \nPública dos Estados, do Distrito Federal e dos Territórios;\ne) criação e extinção de Ministérios e órgãos da administração pública, obser­\nvado o disposto no art. 84, VI; (Redação dada pela EC n. 32/2001)\nf) militares das Forças Armadas, seu regime jurídico, provimento de cargos,",
+                            "characters": 1018
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 33,
+                                "page": 33,
+                                "start_index": 861
+                            },
+                            "page_content": "guintes princípios e condições:\na) toda atividade nuclear em território nacional somente será admitida para fins \npacíficos e mediante aprovação do Congresso Nacional;\nb) sob regime de permissão, são autorizadas a comercialização e a utilização de \nradioisótopos para pesquisa e uso agrícolas e industriais; (Redação dada pela  EC \nn. 118/2022)\nc) sob regime de permissão, são autorizadas a produção, a comercialização e a \nutilização de radioisótopos para pesquisa e uso médicos; (Redação dada pela  EC \nn. 118/2022)\nd) a responsabilidade civil por danos nucleares independe da existência de culpa; \n(Redação dada pela EC n. 49/2006)\nXXIV – organizar, manter e executar a inspeção do trabalho;\nXXV – estabelecer as áreas e as condições para o exercício da atividade de garimpa­\ngem, em forma associativa;\nXXVI – organizar e fiscalizar a proteção e o tratamento de dados pessoais, nos termos \nda lei. (Incluído pela EC n. 115/2022)\nArt. 22. Compete privativamente à União legislar sobre:",
+                            "characters": 987
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 114,
+                                "page": 114,
+                                "start_index": 858
+                            },
+                            "page_content": "de magistério;\ne) exercer atividade político-partidária; (Redação dada pela EC n. 45/2004)\nf) receber, a qualquer título ou pretexto, auxílios ou contribuições de pessoas físicas, \nentidades públicas ou privadas, ressalvadas as exceções previstas em lei. (Incluída pela \nEC n. 45/2004)\n§ 6º Aplica-se aos membros do Ministério Público o disposto no art. 95, parágrafo \núnico, V. (Incluído pela EC n. 45/2004)\nArt. 129. São funções institucionais do Ministério Público:\nI – promover, privativamente, a ação penal pública, na forma da lei;\nII – zelar pelo efetivo respeito dos Poderes Públicos e dos serviços de relevância pú­\nblica aos direitos assegurados nesta Constituição, promovendo as medidas necessárias \na sua garantia;\nIII – promover o inquérito civil e a ação civil pública, para a proteção do patrimônio \npúblico e social, do meio ambiente e de outros interesses difusos e coletivos;\nIV – promover a ação de inconstitucionalidade ou representação para fins de inter­",
+                            "characters": 976
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 231,
+                                "page": 231,
+                                "start_index": 0
+                            },
+                            "page_content": "230\nADCT – Art. 35, § 2º, I\nnanceiro do mandato presidencial subsequente, será encaminhado até quatro meses \nantes do encerramento do primeiro exercício financeiro e devolvido para sanção até o \nencerramento da sessão legislativa;\nII – o projeto de lei de diretrizes orçamentárias será encaminhado até oito meses e \nmeio antes do encerramento do exercício financeiro e devolvido para sanção até o en­\ncerramento do primeiro período da sessão legislativa;\nIII – o projeto de lei orçamentária da União será encaminhado até quatro meses antes \ndo encerramento do exercício financeiro e devolvido para sanção até o encerramento \nda sessão legislativa.\nArt. 36. Os fundos existentes na data da promulgação da Constituição, excetuados \nos resultantes de isenções fiscais que passem a integrar patrimônio privado e os que \ninteressem à defesa nacional, extinguir-se-ão, se não forem ratificados pelo Congresso \nNacional no prazo de dois anos.\nArt. 37. A adaptação ao que estabelece o art. 167, III, deverá processar-se no prazo de",
+                            "characters": 1023
+                        }
+                    ]
+                },
+                {
+                    "id": "Q4",
+                    "category": "simples",
+                    "question": "Como é composto o Congresso Nacional?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.080496,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 86,
+                                "page": 86,
+                                "start_index": 1874
+                            },
+                            "page_content": "XIII – o número de juízes na unidade jurisdicional será proporcional à efetiva demanda \njudicial e à respectiva população; (Incluído pela EC n. 45/2004)\nXIV – os servidores receberão delegação para a prática de atos de administração e \natos de mero expediente sem caráter decisório; (Incluído pela EC n. 45/2004)\nXV – a distribuição de processos será imediata, em todos os graus de jurisdição. \n(Incluído pela EC n. 45/2004)\nArt. 94. Um quinto dos lugares dos Tribunais Regionais Federais, dos Tribunais dos \nEstados, e do Distrito Federal e Territórios será composto de membros, do Ministério \nPúblico, com mais de dez anos de carreira, e de advogados de notório saber jurídico e de \nreputação ilibada, com mais de dez anos de efetiva atividade profissional, indicados em \nlista sêxtupla pelos órgãos de representação das respectivas classes.\nParágrafo único. Recebidas as indicações, o tribunal formará lista tríplice, enviando-a \nsumário",
+                            "characters": 940
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 285,
+                                "page": 285,
+                                "start_index": 0
+                            },
+                            "page_content": "Esta obra foi impressa e encadernada em papel offset 75 g/m² \n(miolo), no formato 148 x 210 mm, pela Secretaria de Altos Es­\ntudos do Supremo Tribunal Federal.\nFoi projetada e composta na fonte Kepler Std.\n\nEsta obra foi finalizada, em maio de 2026, pela Secretaria de \nAltos Estudos do Supremo Tribunal Federal.\nFoi projetada e composta na fonte Kepler Std.",
+                            "characters": 358
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 78,
+                                "page": 78,
+                                "start_index": 1776
+                            },
+                            "page_content": "Congresso Nacional, prestando o compromisso de manter, defender e cumprir a Cons­\ntituição, observar as leis, promover o bem geral do povo brasileiro, sustentar a união, a \nintegridade e a independência do Brasil.\nParágrafo único. Se, decorridos dez dias da data fixada para a posse, o Presidente \nou o Vice-Presidente, salvo motivo de força maior, não tiver assumido o cargo, este será \ndeclarado vago.\nsumário",
+                            "characters": 411
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 88,
+                                "page": 88,
+                                "start_index": 0
+                            },
+                            "page_content": "87\nArt. 99, caput\nII – ao Supremo Tribunal Federal, aos Tribunais Superiores e aos Tribunais de Justiça \npropor ao Poder Legislativo respectivo, observado o disposto no art. 169:\na) a alteração do número de membros dos tribunais inferiores;\nb) a criação e a extinção de cargos e a remuneração dos seus serviços auxiliares e dos \njuízos que lhes forem vinculados, bem como a fixação do subsídio de seus membros e dos \njuízes, inclusive dos tribunais inferiores, onde houver; (Redação dada pela EC n. 41/2003)\nc) a criação ou extinção dos tribunais inferiores;\nd) a alteração da organização e da divisão judiciárias;\nIII – aos Tribunais de Justiça julgar os juízes estaduais e do Distrito Federal e Terri­\ntórios, bem como os membros do Ministério Público, nos crimes comuns e de responsa­\nbilidade, ressalvada a competência da Justiça Eleitoral.\nParágrafo único. Nos Tribunais de Justiça compostos de mais de 170 (cento e setenta) \ndesembargadores em efetivo exercício, a eleição para os cargos diretivos, de que trata a",
+                            "characters": 1019
+                        }
+                    ]
+                },
+                {
+                    "id": "Q5",
+                    "category": "armadilha",
+                    "question": "A Constituição permite pena de morte para crimes hediondos em tempos de paz?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.051096,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 17,
+                                "page": 17,
+                                "start_index": 817
+                            },
+                            "page_content": "definidos como crimes hediondos, por eles respondendo os mandantes, os executores e \nos que, podendo evitá-los, se omitirem;\nXLIV – constitui crime inafiançável e imprescritível a ação de grupos armados, civis \nou militares, contra a ordem constitucional e o Estado Democrático;\nXLV – nenhuma pena passará da pessoa do condenado, podendo a obrigação de re­\nparar o dano e a decretação do perdimento de bens ser, nos termos da lei, estendidas \naos sucessores e contra eles executadas, até o limite do valor do patrimônio transferido;\nXLVI – a lei regulará a individualização da pena e adotará, entre outras, as seguintes:\na) privação ou restrição da liberdade;\nb) perda de bens;\nc) multa;\nd) prestação social alternativa;\ne) suspensão ou interdição de direitos;\nXLVII – não haverá penas:\na) de morte, salvo em caso de guerra declarada, nos termos do art. 84, XIX;\nb) de caráter perpétuo;\nc) de trabalhos forçados;\nd) de banimento; \ne) cruéis;\nsumário",
+                            "characters": 949
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 123,
+                                "page": 123,
+                                "start_index": 1833
+                            },
+                            "page_content": "a reserva, sendo depois de dois anos de afastamento, contínuos ou não, transferido para \na reserva, nos termos da lei; (Redação dada pela EC n. 77/2014)\nIV – ao militar são proibidas a sindicalização e a greve; (Incluído pela EC n. 18/1998)\nV – o militar, enquanto em serviço ativo, não pode estar filiado a partidos políticos; \n(Incluído pela EC n. 18/1998)\nVI – o oficial só perderá o posto e a patente se for julgado indigno do oficialato ou com \nele incompatível, por decisão de tribunal militar de caráter permanente, em tempo de \npaz, ou de tribunal especial, em tempo de guerra; (Incluído pela EC n. 18/1998)\nVII – o oficial condenado na justiça comum ou militar a pena privativa de liberdade \nsuperior a dois anos, por sentença transitada em julgado, será submetido ao julgamento \nprevisto no inciso anterior; (Incluído pela EC n. 18/1998)\nsumário",
+                            "characters": 855
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 17,
+                                "page": 17,
+                                "start_index": 0
+                            },
+                            "page_content": "16\nArt. 5º, XXXVIII\nXXXVIII – é reconhecida a instituição do júri, com a organização que lhe der a lei, \nassegurados:\na) a plenitude de defesa;\nb) o sigilo das votações;\nc) a soberania dos veredictos;\nd) a competência para o julgamento dos crimes dolosos contra a vida;\nXXXIX – não há crime sem lei anterior que o defina, nem pena sem prévia cominação \nlegal;\nXL – a lei penal não retroagirá, salvo para beneficiar o réu;\nXLI – a lei punirá qualquer discriminação atentatória dos direitos e liberdades fun­\ndamentais;\nXLII – a prática do racismo constitui crime inafiançável e imprescritível, sujeito à \npena de reclusão, nos termos da lei;\nXLIII – a lei considerará crimes inafiançáveis e insuscetíveis de graça ou anistia a \nprática da tortura, o tráfico ilícito de entorpecentes e drogas afins, o terrorismo e os \ndefinidos como crimes hediondos, por eles respondendo os mandantes, os executores e \nos que, podendo evitá-los, se omitirem;",
+                            "characters": 941
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 81,
+                                "page": 81,
+                                "start_index": 1746
+                            },
+                            "page_content": "I – nas infrações penais comuns, se recebida a denúncia ou queixa-crime pelo Supremo \nTribunal Federal;\nII – nos crimes de responsabilidade, após a instauração do processo pelo Senado Federal.\n§ 2º Se, decorrido o prazo de cento e oitenta dias, o julgamento não estiver concluído, \ncessará o afastamento do Presidente, sem prejuízo do regular prosseguimento do processo.\nArt. 84, XXV\nsumário",
+                            "characters": 391
+                        }
+                    ]
+                },
+                {
+                    "id": "Q6",
+                    "category": "armadilha",
+                    "question": "O presidente pode editar medida provisória para criar crimes e estabelecer penas?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.046286,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 81,
+                                "page": 81,
+                                "start_index": 1746
+                            },
+                            "page_content": "I – nas infrações penais comuns, se recebida a denúncia ou queixa-crime pelo Supremo \nTribunal Federal;\nII – nos crimes de responsabilidade, após a instauração do processo pelo Senado Federal.\n§ 2º Se, decorrido o prazo de cento e oitenta dias, o julgamento não estiver concluído, \ncessará o afastamento do Presidente, sem prejuízo do regular prosseguimento do processo.\nArt. 84, XXV\nsumário",
+                            "characters": 391
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 81,
+                                "page": 81,
+                                "start_index": 872
+                            },
+                            "page_content": "contra a Constituição Federal e, especialmente, contra:\nI – a existência da União;\nII – o livre exercício do Poder Legislativo, do Poder Judiciário, do Ministério Público \ne dos Poderes constitucionais das unidades da Federação;\nIII – o exercício dos direitos políticos, individuais e sociais;\nIV – a segurança interna do País;\nV – a probidade na administração;\nVI – a lei orçamentária;\nVII – o cumprimento das leis e das decisões judiciais.\nParágrafo único. Esses crimes serão definidos em lei especial, que estabelecerá as \nnormas de processo e julgamento.\nArt. 86. Admitida a acusação contra o Presidente da República, por dois terços da Câmara \ndos Deputados, será ele submetido a julgamento perante o Supremo Tribunal Federal, nas \ninfrações penais comuns, ou perante o Senado Federal, nos crimes de responsabilidade.\n§ 1º O Presidente ficará suspenso de suas funções:\nI – nas infrações penais comuns, se recebida a denúncia ou queixa-crime pelo Supremo \nTribunal Federal;",
+                            "characters": 977
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 120,
+                                "page": 120,
+                                "start_index": 0
+                            },
+                            "page_content": "119\nArt. 136, § 3º\nTÍTULO V\nDa Defesa do Estado e das Instituições Democráticas\nCAPÍTULO I\nDo Estado de Defesa e do Estado de Sítio\nSEÇÃO I\nDo Estado de Defesa\nArt. 136. O Presidente da República pode, ouvidos o Conselho da República e o Conse­\nlho de Defesa Nacional, decretar estado de defesa para preservar ou prontamente resta­\nbelecer, em locais restritos e determinados, a ordem pública ou a paz social ameaçadas \npor grave e iminente instabilidade institucional ou atingidas por calamidades de grandes \nproporções na natureza.\n§ 1º O decreto que instituir o estado de defesa determinará o tempo de sua duração, \nespecificará as áreas a serem abrangidas e indicará, nos termos e limites da lei, as medidas \ncoercitivas a vigorarem, dentre as seguintes:\nI – restrições aos direitos de:\na) reunião, ainda que exercida no seio das associações;\nb) sigilo de correspondência;\nc) sigilo de comunicação telegráfica e telefônica;\nII – ocupação e uso temporário de bens e serviços públicos, na hipótese de calamidade",
+                            "characters": 1013
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 125,
+                                "page": 125,
+                                "start_index": 874
+                            },
+                            "page_content": "§ 4º Às polícias civis, dirigidas por delegados de polícia de carreira, incumbem, ressal­\nvada a competência da União, as funções de polícia judiciária e a apuração de infrações \npenais, exceto as militares.\n§ 5º Às polícias militares cabem a polícia ostensiva e a preservação da ordem pública; \naos corpos de bombeiros militares, além das atribuições definidas em lei, incumbe a \nexecução de atividades de defesa civil.\n§ 5º-A Às polícias penais, vinculadas ao órgão administrador do sistema penal da \nunidade federativa a que pertencem, cabe a segurança dos estabelecimentos penais. \n(Incluído pela EC n. 104/2019)\n§ 6º As polícias militares e os corpos de bombeiros militares, forças auxiliares e re­\nserva do Exército subordinam-se, juntamente com as polícias civis e as polícias penais \nestaduais e distrital, aos Governadores dos Estados, do Distrito Federal e dos Territórios. \n(Redação dada pela EC n. 104/2019)\n§ 7º A lei disciplinará a organização e o funcionamento dos órgãos responsáveis pela",
+                            "characters": 1004
+                        }
+                    ]
+                },
+                {
+                    "id": "Q7",
+                    "category": "armadilha",
+                    "question": "Um brasileiro naturalizado pode ser eleito presidente da República?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 3,
+                    "elapsed_seconds": 0.044112,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 24,
+                                "page": 24,
+                                "start_index": 0
+                            },
+                            "page_content": "23\nArt. 12, § 4º, I\nCAPÍTULO III\nDa Nacionalidade\nArt. 12. São brasileiros:\nI – natos:\na) os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde \nque estes não estejam a serviço de seu país;\nb) os nascidos no estrangeiro, de pai brasileiro ou mãe brasileira, desde que qualquer \ndeles esteja a serviço da República Federativa do Brasil;\nc) os nascidos no estrangeiro de pai brasileiro ou de mãe brasileira, desde que sejam \nregistrados em repartição brasileira competente ou venham a residir na República Fe­\nderativa do Brasil e optem, em qualquer tempo, depois de atingida a maioridade, pela \nnacionalidade brasileira; (Redação dada pela EC n. 54/2007)\nII – naturalizados:\na) os que, na forma da lei, adquiram a nacionalidade brasileira, exigidas aos originários de \npaíses de língua portuguesa apenas residência por um ano ininterrupto e idoneidade moral;\nb) os estrangeiros de qualquer nacionalidade, residentes na República Federativa do",
+                            "characters": 972
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 202,
+                                "page": 202,
+                                "start_index": 0
+                            },
+                            "page_content": "201\nII – promoção da cultura nacional e regional e estímulo à produção independente \nque objetive sua divulgação;\nIII – regionalização da produção cultural, artística e jornalística, conforme percen­\ntuais estabelecidos em lei;\nIV – respeito aos valores éticos e sociais da pessoa e da família.\nArt. 222. A propriedade de empresa jornalística e de radiodifusão sonora e de sons \ne imagens é privativa de brasileiros natos ou naturalizados há mais de dez anos, ou de \npessoas jurídicas constituídas sob as leis brasileiras e que tenham sede no País. (Redação \ndada pela EC n. 36/2002)\n§ 1º Em qualquer caso, pelo menos setenta por cento do capital total e do capital \nvotante das empresas jornalísticas e de radiodifusão sonora e de sons e imagens deverá \npertencer, direta ou indiretamente, a brasileiros natos ou naturalizados há mais de dez \nanos, que exercerão obrigatoriamente a gestão das atividades e estabelecerão o conteúdo \nda programação. (Redação dada pela EC n. 36/2002)",
+                            "characters": 982
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 202,
+                                "page": 202,
+                                "start_index": 933
+                            },
+                            "page_content": "da programação. (Redação dada pela EC n. 36/2002)\n§ 2º A responsabilidade editorial e as atividades de seleção e direção da programação \nveiculada são privativas de brasileiros natos ou naturalizados há mais de dez anos, em \nqualquer meio de comunicação social. (Redação dada pela EC n. 36/2002)\n§ 3º Os meios de comunicação social eletrônica, independentemente da tecnologia \nutilizada para a prestação do serviço, deverão observar os princípios enunciados no \nart. 221, na forma de lei específica, que também garantirá a prioridade de profissionais \nbrasileiros na execução de produções nacionais. (Incluído pela EC n. 36/2002)\n§ 4º Lei disciplinará a participação de capital estrangeiro nas empresas de que trata \no § 1º. (Incluído pela EC n. 36/2002)\n§ 5º As alterações de controle societário das empresas de que trata o § 1º serão comu­\nnicadas ao Congresso Nacional. (Incluído pela EC n. 36/2002)\nArt. 223. Compete ao Poder Executivo outorgar e renovar concessão, permissão e",
+                            "characters": 981
+                        }
+                    ]
+                },
+                {
+                    "id": "Q8",
+                    "category": "armadilha",
+                    "question": "Qual é o valor atual do salário mínimo nacional estabelecido diretamente pela Constituição?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.050157,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 95,
+                                "page": 95,
+                                "start_index": 1767
+                            },
+                            "page_content": "rências voluntárias, enquanto perdurar a omissão. (Incluído pela EC n. 136/2025)\n§ 28. Os Estados, o Distrito Federal e os Municípios, mediante dotação orçamentária \nespecífica, poderão efetuar pagamentos de precatórios que superem os limites previstos \nno § 23 deste artigo. (Incluído pela EC n. 136/2025)\n§ 29. É facultado ao credor de precatório dos Estados, do Distrito Federal e dos Mu­\nnicípios que não tenha sido pago em razão do disposto nos §§ 20 ou 23 deste artigo, sem \nprejuízo dos procedimentos previstos nos §§ 9º e 21 deste artigo, optar pelo recebimen­\nto, mediante acordos diretos perante Juízos Auxiliares de Conciliação de Pagamento \nde Condenações Judiciais contra a Fazenda Pública estadual, municipal ou do Distrito \nFederal, em parcela única, até o final do exercício seguinte, com renúncia de parcela do \nvalor desse crédito. (Incluído pela EC n. 136/2025)\n§ 30. Os valores efetivamente aportados pelos entes federativos nas contas especiais \nsumário",
+                            "characters": 974
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 157,
+                                "page": 157,
+                                "start_index": 923
+                            },
+                            "page_content": "Emenda Constitucional n. 126, de 21 de dezembro de 2022. (Incluído pela EC n. 136/2025)\n§ 21. A partir de 2027, as despesas anuais da União com precatórios e requisições de \npequeno valor, decorrentes de decisões judiciais transitadas em julgado, de que trata o \nart. 100 desta Constituição, serão incorporadas gradualmente na apuração da meta de \nresultado primário estabelecida na lei de diretrizes orçamentárias, de forma cumula­\ntiva a cada exercício, em, no mínimo, 10% (dez por cento) do montante previsto dessas \ndespesas. (Incluído pela EC n. 136/2025)\n§ 22. Para o exercício financeiro de 2026, não será computado na meta de resultado \nprimário estabelecida na lei de diretrizes orçamentárias o valor excedente ao limite de \nque trata o art. 107-A do Ato das Disposições Constitucionais Transitórias. (Incluído \npela EC n. 136/2025)\nArt. 166. Os projetos de lei relativos ao plano plurianual, às diretrizes orçamentárias, \nao orçamento anual e aos créditos adicionais serão apreciados pelas duas Casas do Con­",
+                            "characters": 1018
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 268,
+                                "page": 268,
+                                "start_index": 920
+                            },
+                            "page_content": "previamente aceitos pela União; (Incluído pela EC n. 136/2025)\nV – transferência de créditos do Município com a União reconhecidos por ambas as \npartes; (Incluído pela EC n. 136/2025)\nVI – cessão, para a União, dos recebíveis originados de créditos inscritos na dívida ativa \nda Fazenda Pública municipal confessados e considerados recuperáveis nos termos da \nlegislação aplicável, nas seguintes condições: (Incluído pela EC n. 136/2025)\na) o valor considerado para amortização da dívida será o valor atualizado dos créditos \ncom ou sem deságio, negociado entre as partes; (Incluída pela EC n. 136/2025)\nb) a cessão do crédito não gerará qualquer alteração na situação do devedor nem ensejará \nexpedição de certidão negativa; (Incluída pela EC n. 136/2025)\nc) na hipótese de crédito cedido, regulamento disporá sobre as regras às quais se \nsubmeterão os sujeitos passivos; (Incluída pela EC n. 136/2025)\nd) os valores dos créditos de que trata este inciso, líquidos do deságio a que se refere",
+                            "characters": 992
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 54,
+                                "page": 54,
+                                "start_index": 903
+                            },
+                            "page_content": "permanente, o valor real, conforme critérios estabelecidos em lei. (Redação dada pela \nEC n. 41/2003)\n§ 9º O tempo de contribuição federal, estadual, distrital ou municipal será contado \npara fins de aposentadoria, observado o disposto nos §§ 9º e 9º-A do art. 201, e o tempo \nde serviço correspondente será contado para fins de disponibilidade. (Redação dada \npela EC n. 103/2019)\n§ 10. A lei não poderá estabelecer qualquer forma de contagem de tempo de contribuição \nfictício. (Incluído pela EC n. 20/1998)\n§ 11. Aplica-se o limite fixado no art. 37, XI, à soma total dos proventos de inatividade, \ninclusive quando decorrentes da acumulação de cargos ou empregos públicos, bem como \nde outras atividades sujeitas a contribuição para o regime geral de previdência social, \ne ao montante resultante da adição de proventos de inatividade com remuneração de \ncargo acumulável na forma desta Constituição, cargo em comissão declarado em lei de \nlivre nomeação e exoneração, e de cargo eletivo. (Incluído pela EC n. 20/1998)",
+                            "characters": 1022
+                        }
+                    ]
+                }
+            ],
+            "summary": {
+                "questions_evaluated": 8,
+                "total_parents_retrieved": 31,
+                "average_parents_per_question": 3.88,
+                "average_context_characters": 900.77,
+                "average_query_seconds": 0.055655
+            }
+        },
+        {
+            "experiment_id": "parent_1512",
+            "configuration": {
+                "id": "parent_1512",
+                "parent_chunk_size": 1512,
+                "parent_chunk_overlap": 192,
+                "retriever_type": "parent_document",
+                "provider": "local",
+                "child_chunk_size": 200,
+                "child_chunk_overlap": 40,
+                "top_k": 4
+            },
+            "collection": "politizese_parent_c200_p1512_nomic_search_prefix_v1_lo_fbf2766b",
+            "indexed_children": 4518,
+            "stored_parents": 566,
+            "questions": [
+                {
+                    "id": "Q1",
+                    "category": "simples",
+                    "question": "Quais direitos sociais são garantidos pela Constituição Federal?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.052041,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 16,
+                                "page": 16,
+                                "start_index": 0
+                            },
+                            "page_content": "15\nArt. 5º, XXXVII\nXXV – no caso de iminente perigo público, a autoridade competente poderá usar de \npropriedade particular, assegurada ao proprietário indenização ulterior, se houver dano;\nXXVI – a pequena propriedade rural, assim definida em lei, desde que trabalhada \npela família, não será objeto de penhora para pagamento de débitos decorrentes de sua \natividade produtiva, dispondo a lei sobre os meios de financiar o seu desenvolvimento;\nXXVII – aos autores pertence o direito exclusivo de utilização, publicação ou repro­\ndução de suas obras, transmissível aos herdeiros pelo tempo que a lei fixar;\nXXVIII – são assegurados, nos termos da lei:\na) a proteção às participações individuais em obras coletivas e à reprodução da imagem \ne voz humanas, inclusive nas atividades desportivas;\nb) o direito de fiscalização do aproveitamento econômico das obras que criarem ou de \nque participarem aos criadores, aos intérpretes e às respectivas representações sindicais \ne associativas;\nXXIX – a lei assegurará aos autores de inventos industriais privilégio temporário para \nsua utilização, bem como proteção às criações industriais, à propriedade das marcas, \naos nomes de empresas e a outros signos distintivos, tendo em vista o interesse social e \no desenvolvimento tecnológico e econômico do País;\nXXX – é garantido o direito de herança;\nXXXI – a sucessão de bens de estrangeiros situados no País será regulada pela lei \nbrasileira em benefício do cônjuge ou dos filhos brasileiros, sempre que não lhes seja",
+                            "characters": 1510
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 225,
+                                "page": 225,
+                                "start_index": 0
+                            },
+                            "page_content": "224\nADCT – Art. 19, § 2º\nde serviço não será computado para os fins do caput deste artigo, exceto se se tratar de \nservidor.\n§ 3º O disposto neste artigo não se aplica aos professores de nível superior, nos termos \nda lei.\nArt. 20. Dentro de cento e oitenta dias, proceder-se-á à revisão dos direitos dos ser­\nvidores públicos inativos e pensionistas e à atualização dos proventos e pensões a eles \ndevidos, a fim de ajustá-los ao disposto na Constituição.\nArt. 21. Os juízes togados de investidura limitada no tempo, admitidos mediante con­\ncurso público de provas e títulos e que estejam em exercício na data da promulgação da \nConstituição, adquirem estabilidade, observado o estágio probatório, e passam a compor \nquadro em extinção, mantidas as competências, prerrogativas e restrições da legislação \na que se achavam submetidos, salvo as inerentes à transitoriedade da investidura.\nParágrafo único. A aposentadoria dos juízes de que trata este artigo regular-se-á pelas \nnormas fixadas para os demais juízes estaduais.\nArt. 22. É assegurado aos defensores públicos investidos na função até a data de insta­\nlação da Assembleia Nacional Constituinte o direito de opção pela carreira, com a obser­\nvância das garantias e vedações previstas no art. 134, parágrafo único, da Constituição.\nArt. 23. Até que se edite a regulamentação do art. 21, XVI, da Constituição, os atuais \nocupantes do cargo de censor federal continuarão exercendo funções com este compa­",
+                            "characters": 1461
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 20,
+                                "page": 20,
+                                "start_index": 0
+                            },
+                            "page_content": "19\nArt. 7º, I\nLXXVII – são gratuitas as ações de habeas corpus e habeas data, e, na forma da lei, os \natos necessários ao exercício da cidadania;\nLXXVIII – a todos, no âmbito judicial e administrativo, são assegurados a razoável \nduração do processo e os meios que garantam a celeridade de sua tramitação; (Incluído \npela EC n. 45/2004) (Vide ADI 3.392)\nLXXIX – é assegurado, nos termos da lei, o direito à proteção dos dados pessoais, \ninclusive nos meios digitais. (Incluído pela EC n. 115/2022) \n§ 1º As normas definidoras dos direitos e garantias fundamentais têm aplicação ime­\ndiata.\n§ 2º Os direitos e garantias expressos nesta Constituição não excluem outros decor­\nrentes do regime e dos princípios por ela adotados, ou dos tratados internacionais em \nque a República Federativa do Brasil seja parte.\n§ 3º Os tratados e convenções internacionais sobre direitos humanos que forem apro­\nvados, em cada Casa do Congresso Nacional, em dois turnos, por três quintos dos votos \ndos respectivos membros, serão equivalentes às emendas constitucionais. (Incluído pela \nEC n. 45/2004) (Vide ADI 3.392)\n§ 4º O Brasil se submete à jurisdição de Tribunal Penal Internacional a cuja criação \ntenha manifestado adesão. (Incluído pela EC n. 45/2004)\nCAPÍTULO II\nDos Direitos Sociais\nArt. 6º São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, \no transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à",
+                            "characters": 1451
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 189,
+                                "page": 189,
+                                "start_index": 1298
+                            },
+                            "page_content": "VII – garantia de padrão de qualidade;\nVIII – piso salarial profissional nacional para os profissionais da educação escolar \npública, nos termos de lei federal. (Incluído pela EC n. 53/2006)\nIX – garantia do direito à educação e à aprendizagem ao longo da vida. (Incluído pela \nEC n. 108/2020)\nParágrafo único. A lei disporá sobre as categorias de trabalhadores considerados pro­\nfissionais da educação básica e sobre a fixação de prazo para a elaboração ou adequação \nde seus planos de carreira, no âmbito da União, dos Estados, do Distrito Federal e dos \nMunicípios. (Incluído pela EC n. 53/2006)\nArt. 207. As universidades gozam de autonomia didático-científica, administrativa e \nArt. 204, parágrafo único, I\nsumário",
+                            "characters": 720
+                        }
+                    ]
+                },
+                {
+                    "id": "Q2",
+                    "category": "simples",
+                    "question": "Quais são os requisitos constitucionais para alguém se candidatar à Presidência da República?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.051106,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 158,
+                                "page": 158,
+                                "start_index": 0
+                            },
+                            "page_content": "157\n§ 3º As emendas ao projeto de lei do orçamento anual ou aos projetos que o modifiquem \nsomente podem ser aprovadas caso:\nI – sejam compatíveis com o plano plurianual e com a lei de diretrizes orçamentárias;\nII – indiquem os recursos necessários, admitidos apenas os provenientes de anulação \nde despesa, excluídas as que incidam sobre:\na) dotações para pessoal e seus encargos;\nb) serviço da dívida;\nc) transferências tributárias constitucionais para Estados, Municípios e Distrito \nFederal; ou\nIII – sejam relacionadas:\na) com a correção de erros ou omissões; ou\nb) com os dispositivos do texto do projeto de lei.\n§ 4º As emendas ao projeto de lei de diretrizes orçamentárias não poderão ser apro­\nvadas quando incompatíveis com o plano plurianual.\n§ 5º O Presidente da República poderá enviar mensagem ao Congresso Nacional para \npropor modificação nos projetos a que se refere este artigo enquanto não iniciada a \nvotação, na Comissão mista, da parte cuja alteração é proposta.\n§ 6º Os projetos de lei do plano plurianual, das diretrizes orçamentárias e do orçamento \nanual serão enviados pelo Presidente da República ao Congresso Nacional, nos termos \nda lei complementar a que se refere o art. 165, § 9º.\n§ 7º Aplicam-se aos projetos mencionados neste artigo, no que não contrariar o dis­\nposto nesta seção, as demais normas relativas ao processo legislativo.\n§ 8º Os recursos que, em decorrência de veto, emenda ou rejeição do projeto de lei",
+                            "characters": 1451
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 51,
+                                "page": 51,
+                                "start_index": 1298
+                            },
+                            "page_content": "de cada carreira; (Incluído pela EC n. 19/1998)\nII – os requisitos para a investidura; (Incluído pela EC n. 19/1998)\nIII – as peculiaridades dos cargos. (Incluído pela EC n. 19/1998)\n§ 2º A União, os Estados e o Distrito Federal manterão escolas de governo para a \nformação e o aperfeiçoamento dos servidores públicos, constituindo-se a participa­\nção nos cursos um dos requisitos para a promoção na carreira, facultada, para isso, \na celebração de convênios ou contratos entre os entes federados. (Redação dada pela \nEC n. 19/1998)\n§ 3º Aplica-se aos servidores ocupantes de cargo público o disposto no art. 7º, IV, VII, \n2\t O Plenário do STF deferiu medida cautelar na ADI 2.135 MC, para suspender, com efeitos ex \nnunc, a eficácia do caput do art. 39 da CF, na redação da EC n. 19/1998: “A União, os Estados, o \nDistrito Federal e os Municípios instituirão conselho de política de administração e remune­\nração de pessoal, integrado por servidores designados pelos respectivos Poderes.”\nsumário",
+                            "characters": 997
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 219,
+                                "page": 219,
+                                "start_index": 0
+                            },
+                            "page_content": "218\nADCT – Art. 5º, § 1º\n§ 1º Para as eleições de 15 de novembro de 1988 será exigido domicílio eleitoral na \ncircunscrição pelo menos durante os quatro meses anteriores ao pleito, podendo os \ncandidatos que preencham este requisito, atendidas as demais exigências da lei, ter seu \nregistro efetivado pela Justiça Eleitoral após a promulgação da Constituição.\n§ 2º Na ausência de norma legal específica, caberá ao Tribunal Superior Eleitoral editar \nas normas necessárias à realização das eleições de 1988, respeitada a legislação vigente.\n§ 3º Os atuais parlamentares federais e estaduais eleitos Vice-Prefeitos, se convocados \na exercer a função de Prefeito, não perderão o mandato parlamentar.\n§ 4º O número de vereadores por município será fixado, para a representação a ser \neleita em 1988, pelo respectivo Tribunal Regional Eleitoral, respeitados os limites esti­\npulados no art. 29, IV, da Constituição.\n§ 5º Para as eleições de 15 de novembro de 1988, ressalvados os que já exercem mandato \neletivo, são inelegíveis para qualquer cargo, no território de jurisdição do titular, o cônjuge \ne os parentes por consanguinidade ou afinidade, até o segundo grau, ou por adoção, do \nPresidente da República, do Governador de Estado, do Governador do Distrito Federal e \ndo Prefeito que tenham exercido mais da metade do mandato.\nArt. 6º Nos seis meses posteriores à promulgação da Constituição, parlamentares \nfederais, reunidos em número não inferior a trinta, poderão requerer ao Tribunal Superior",
+                            "characters": 1499
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 78,
+                                "page": 78,
+                                "start_index": 1287
+                            },
+                            "page_content": "mais votados e considerando-se eleito aquele que obtiver a maioria dos votos válidos.\n§ 4º Se, antes de realizado o segundo turno, ocorrer morte, desistência ou impedi­\nmento legal de candidato, convocar-se-á, dentre os remanescentes, o de maior votação.\n§ 5º Se, na hipótese dos parágrafos anteriores, remanescer, em segundo lugar, mais \nde um candidato com a mesma votação, qualificar-se-á o mais idoso.\nArt. 78. O Presidente e o Vice-Presidente da República tomarão posse em sessão do \nCongresso Nacional, prestando o compromisso de manter, defender e cumprir a Cons­\ntituição, observar as leis, promover o bem geral do povo brasileiro, sustentar a união, a \nintegridade e a independência do Brasil.\nParágrafo único. Se, decorridos dez dias da data fixada para a posse, o Presidente \nou o Vice-Presidente, salvo motivo de força maior, não tiver assumido o cargo, este será \ndeclarado vago.\nsumário",
+                            "characters": 900
+                        }
+                    ]
+                },
+                {
+                    "id": "Q3",
+                    "category": "simples",
+                    "question": "Quais são as competências legislativas privativas da União?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.051539,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 71,
+                                "page": 71,
+                                "start_index": 0
+                            },
+                            "page_content": "70\nArt. 61, § 1º\n§ 1º São de iniciativa privativa do Presidente da República as leis que:\nI – fixem ou modifiquem os efetivos das Forças Armadas;\nII – disponham sobre:\na) criação de cargos, funções ou empregos públicos na administração direta e \nautárquica ou aumento de sua remuneração;\nb) organização administrativa e judiciária, matéria tributária e orçamentária, \nserviços públicos e pessoal da administração dos Territórios;\nc) servidores públicos da União e Territórios, seu regime jurídico, provimento de \ncargos, estabilidade e aposentadoria; (Redação dada pela EC n. 18/1998)\nd) organização do Ministério Público e da Defensoria Pública da União, bem \ncomo normas gerais para a organização do Ministério Público e da Defensoria \nPública dos Estados, do Distrito Federal e dos Territórios;\ne) criação e extinção de Ministérios e órgãos da administração pública, obser­\nvado o disposto no art. 84, VI; (Redação dada pela EC n. 32/2001)\nf) militares das Forças Armadas, seu regime jurídico, provimento de cargos, \npromoções, estabilidade, remuneração, reforma e transferência para a reserva. \n(Incluída pela EC n. 18/1998)\n§ 2º A iniciativa popular pode ser exercida pela apresentação à Câmara dos Depu­\ntados de projeto de lei subscrito por, no mínimo, um por cento do eleitorado nacional, \ndistribuído pelo menos por cinco Estados, com não menos de três décimos por cento dos \neleitores de cada um deles.\nArt. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar",
+                            "characters": 1495
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 114,
+                                "page": 114,
+                                "start_index": 0
+                            },
+                            "page_content": "113\nArt. 129, VII\na) vitaliciedade, após dois anos de exercício, não podendo perder o cargo senão por \nsentença judicial transitada em julgado;\nb) inamovibilidade, salvo por motivo de interesse público, mediante decisão do ór­\ngão colegiado competente do Ministério Público, pelo voto da maioria absoluta de seus \nmembros, assegurada ampla defesa; (Redação dada pela EC n. 45/2004)\nc) irredutibilidade de subsídio, fixado na forma do art. 39, § 4º, e ressalvado o disposto \nnos arts. 37, X e XI; 150, II; 153, III; 153, § 2º, I; (Redação dada pela EC n. 19/1998)\nII – as seguintes vedações:\na) receber, a qualquer título e sob qualquer pretexto, honorários, percentagens ou \ncustas processuais;\nb) exercer a advocacia;\nc) participar de sociedade comercial, na forma da lei;\nd) exercer, ainda que em disponibilidade, qualquer outra função pública, salvo uma \nde magistério;\ne) exercer atividade político-partidária; (Redação dada pela EC n. 45/2004)\nf) receber, a qualquer título ou pretexto, auxílios ou contribuições de pessoas físicas, \nentidades públicas ou privadas, ressalvadas as exceções previstas em lei. (Incluída pela \nEC n. 45/2004)\n§ 6º Aplica-se aos membros do Ministério Público o disposto no art. 95, parágrafo \núnico, V. (Incluído pela EC n. 45/2004)\nArt. 129. São funções institucionais do Ministério Público:\nI – promover, privativamente, a ação penal pública, na forma da lei;\nII – zelar pelo efetivo respeito dos Poderes Públicos e dos serviços de relevância pú­",
+                            "characters": 1482
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 231,
+                                "page": 231,
+                                "start_index": 0
+                            },
+                            "page_content": "230\nADCT – Art. 35, § 2º, I\nnanceiro do mandato presidencial subsequente, será encaminhado até quatro meses \nantes do encerramento do primeiro exercício financeiro e devolvido para sanção até o \nencerramento da sessão legislativa;\nII – o projeto de lei de diretrizes orçamentárias será encaminhado até oito meses e \nmeio antes do encerramento do exercício financeiro e devolvido para sanção até o en­\ncerramento do primeiro período da sessão legislativa;\nIII – o projeto de lei orçamentária da União será encaminhado até quatro meses antes \ndo encerramento do exercício financeiro e devolvido para sanção até o encerramento \nda sessão legislativa.\nArt. 36. Os fundos existentes na data da promulgação da Constituição, excetuados \nos resultantes de isenções fiscais que passem a integrar patrimônio privado e os que \ninteressem à defesa nacional, extinguir-se-ão, se não forem ratificados pelo Congresso \nNacional no prazo de dois anos.\nArt. 37. A adaptação ao que estabelece o art. 167, III, deverá processar-se no prazo de \ncinco anos, reduzindo-se o excesso à base de, pelo menos, um quinto por ano.\nArt. 38. Até a promulgação da lei complementar referida no art. 169, a União, os Esta­\ndos, o Distrito Federal e os Municípios não poderão despender com pessoal mais do que \nsessenta e cinco por cento do valor das respectivas receitas correntes.\n§ 1º A União, os Estados, o Distrito Federal e os Municípios, quando a respectiva",
+                            "characters": 1429
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 79,
+                                "page": 79,
+                                "start_index": 0
+                            },
+                            "page_content": "78\nArt. 79, caput\nArt. 79. Substituirá o Presidente, no caso de impedimento, e suceder-lhe-á, no de \nvaga, o Vice-Presidente.\nParágrafo único. O Vice-Presidente da República, além de outras atribuições que \nlhe forem conferidas por lei complementar, auxiliará o Presidente, sempre que por ele \nconvocado para missões especiais.\nArt. 80. Em caso de impedimento do Presidente e do Vice-Presidente, ou vacância dos \nrespectivos cargos, serão sucessivamente chamados ao exercício da Presidência o Presi­\ndente da Câmara dos Deputados, o do Senado Federal e o do Supremo Tribunal Federal.\nArt. 81. Vagando os cargos de Presidente e Vice-Presidente da República, far-se-á \neleição noventa dias depois de aberta a última vaga.\n§ 1º Ocorrendo a vacância nos últimos dois anos do período presidencial, a eleição para \nambos os cargos será feita trinta dias depois da última vaga, pelo Congresso Nacional, \nna forma da lei.\n§ 2º Em qualquer dos casos, os eleitos deverão completar o período de seus antecessores.\nArt. 82. O mandato do Presidente da República é de quatro anos e terá início em \n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)\nArt. 83. O Presidente e o Vice-Presidente da República não poderão, sem licença do \nCongresso Nacional, ausentar-se do País por período superior a quinze dias, sob pena \nde perda do cargo.\nSEÇÃO II\nDas Atribuições do Presidente da República\nArt. 84. Compete privativamente ao Presidente da República:",
+                            "characters": 1467
+                        }
+                    ]
+                },
+                {
+                    "id": "Q4",
+                    "category": "simples",
+                    "question": "Como é composto o Congresso Nacional?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.039939,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 285,
+                                "page": 285,
+                                "start_index": 0
+                            },
+                            "page_content": "Esta obra foi impressa e encadernada em papel offset 75 g/m² \n(miolo), no formato 148 x 210 mm, pela Secretaria de Altos Es­\ntudos do Supremo Tribunal Federal.\nFoi projetada e composta na fonte Kepler Std.\n\nEsta obra foi finalizada, em maio de 2026, pela Secretaria de \nAltos Estudos do Supremo Tribunal Federal.\nFoi projetada e composta na fonte Kepler Std.",
+                            "characters": 358
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 272,
+                                "page": 272,
+                                "start_index": 0
+                            },
+                            "page_content": "271\nADCT – Art. 126, III, a\ntituição Federal, será cobrada à alíquota de 0,9% (nove décimos por cento). (Incluído \npela EC n. 132/2023)\n§ 1º O montante recolhido na forma do caput será compensado com o valor devido \ndas contribuições previstas no art. 195, I, b, e IV, e da contribuição para o Programa de \nIntegração Social a que se refere o art. 239, ambos da Constituição Federal. (Incluído \npela EC n. 132/2023)\n§ 2º Caso o contribuinte não possua débitos suficientes para efetuar a compensação \nde que trata o § 1º, o valor recolhido poderá ser compensado com qualquer outro tributo \nfederal ou ser ressarcido em até 60 (sessenta) dias, mediante requerimento. (Incluído \npela EC n. 132/2023)\n§ 3º A arrecadação do imposto previsto no art. 156-A da Constituição Federal de­\ncorrente do disposto no caput deste artigo não observará as vinculações, repartições e \ndestinações previstas na Constituição Federal, devendo ser aplicada, integral e sucessi­\nvamente, para: (Incluído pela EC n. 132/2023)\nI – o financiamento do Comitê Gestor do Imposto sobre Bens e Serviços, nos termos \ndo art. 156-B, § 2º, III, da Constituição Federal; (Incluído pela EC n. 132/2023)\nII – compor o Fundo de Compensação de Benefícios Fiscais ou Financeiro-Fiscais do \nimposto de que trata o art. 155, II, da Constituição Federal. (Incluído pela EC n. 132/2023)\n§ 4º Durante o período de que trata o caput, os sujeitos passivos que cumprirem as",
+                            "characters": 1424
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 110,
+                                "page": 110,
+                                "start_index": 1317
+                            },
+                            "page_content": "III – versarem sobre inelegibilidade ou expedição de diplomas nas eleições federais \nou estaduais;\nIV – anularem diplomas ou decretarem a perda de mandatos eletivos federais ou \nestaduais;\nV – denegarem habeas corpus, mandado de segurança, habeas data ou mandado de \ninjunção.\nSEÇÃO VII\nDos Tribunais e Juízes Militares\nArt. 122. São órgãos da Justiça Militar:\nI – o Superior Tribunal Militar;\nII – os Tribunais e Juízes Militares instituídos por lei.\nArt. 123. O Superior Tribunal Militar compor-se-á de quinze Ministros vitalícios, \nnomeados pelo Presidente da República, depois de aprovada a indicação pelo Senado \nFederal, sendo três dentre oficiais-generais da Marinha, quatro dentre oficiais-generais \ndo Exército, três dentre oficiais-generais da Aeronáutica, todos da ativa e do posto mais \nelevado da carreira, e cinco dentre civis.\nsumário",
+                            "characters": 849
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 78,
+                                "page": 78,
+                                "start_index": 1287
+                            },
+                            "page_content": "mais votados e considerando-se eleito aquele que obtiver a maioria dos votos válidos.\n§ 4º Se, antes de realizado o segundo turno, ocorrer morte, desistência ou impedi­\nmento legal de candidato, convocar-se-á, dentre os remanescentes, o de maior votação.\n§ 5º Se, na hipótese dos parágrafos anteriores, remanescer, em segundo lugar, mais \nde um candidato com a mesma votação, qualificar-se-á o mais idoso.\nArt. 78. O Presidente e o Vice-Presidente da República tomarão posse em sessão do \nCongresso Nacional, prestando o compromisso de manter, defender e cumprir a Cons­\ntituição, observar as leis, promover o bem geral do povo brasileiro, sustentar a união, a \nintegridade e a independência do Brasil.\nParágrafo único. Se, decorridos dez dias da data fixada para a posse, o Presidente \nou o Vice-Presidente, salvo motivo de força maior, não tiver assumido o cargo, este será \ndeclarado vago.\nsumário",
+                            "characters": 900
+                        }
+                    ]
+                },
+                {
+                    "id": "Q5",
+                    "category": "armadilha",
+                    "question": "A Constituição permite pena de morte para crimes hediondos em tempos de paz?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.050064,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 123,
+                                "page": 123,
+                                "start_index": 1351
+                            },
+                            "page_content": "nos termos da lei; (Redação dada pela EC n. 77/2014)\nIII – o militar da ativa que, de acordo com a lei, tomar posse em cargo, emprego \nou função pública civil temporária, não eletiva, ainda que da administração indireta, \nressalvada a hipótese prevista no art. 37, XVI, c, ficará agregado ao respectivo quadro e \nsomente poderá, enquanto permanecer nessa situação, ser promovido por antiguidade, \ncontando-se-lhe o tempo de serviço apenas para aquela promoção e transferência para \na reserva, sendo depois de dois anos de afastamento, contínuos ou não, transferido para \na reserva, nos termos da lei; (Redação dada pela EC n. 77/2014)\nIV – ao militar são proibidas a sindicalização e a greve; (Incluído pela EC n. 18/1998)\nV – o militar, enquanto em serviço ativo, não pode estar filiado a partidos políticos; \n(Incluído pela EC n. 18/1998)\nVI – o oficial só perderá o posto e a patente se for julgado indigno do oficialato ou com \nele incompatível, por decisão de tribunal militar de caráter permanente, em tempo de \npaz, ou de tribunal especial, em tempo de guerra; (Incluído pela EC n. 18/1998)\nVII – o oficial condenado na justiça comum ou militar a pena privativa de liberdade \nsuperior a dois anos, por sentença transitada em julgado, será submetido ao julgamento \nprevisto no inciso anterior; (Incluído pela EC n. 18/1998)\nsumário",
+                            "characters": 1337
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 96,
+                                "page": 96,
+                                "start_index": 0
+                            },
+                            "page_content": "95\nArt. 102, I, h\ndo Poder Judiciário destinadas ao pagamento de precatórios deverão ser imediatamente \nexcluídos do estoque da dívida para fins de apuração do saldo devedor, vedada a incidência \nde juros, de correção monetária ou de quaisquer acréscimos legais sobre esses valores \napós sua transferência. (Incluído pela EC n. 136/2025)\nSEÇÃO II\nDo Supremo Tribunal Federal\nArt. 101. O Supremo Tribunal Federal compõe-se de onze Ministros, escolhidos dentre \ncidadãos com mais de trinta e cinco e menos de setenta anos de idade, de notável saber \njurídico e reputação ilibada. (Redação dada pela EC n. 122/2022)\nParágrafo único. Os Ministros do Supremo Tribunal Federal serão nomeados pelo Presi­\ndente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal.\nArt. 102. Compete ao Supremo Tribunal Federal, precipuamente, a guarda da Cons­\ntituição, cabendo-lhe:\nI – processar e julgar, originariamente:\na) a ação direta de inconstitucionalidade de lei ou ato normativo federal ou estadual \ne a ação declaratória de constitucionalidade de lei ou ato normativo federal; (Redação \ndada pela EC n. 3/1993)\nb) nas infrações penais comuns, o Presidente da República, o Vice-Presidente, os mem­\nbros do Congresso Nacional, seus próprios Ministros e o Procurador-Geral da República;\nc) nas infrações penais comuns e nos crimes de responsabilidade, os Ministros de Es­\ntado e os Comandantes da Marinha, do Exército e da Aeronáutica, ressalvado o disposto",
+                            "characters": 1474
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 96,
+                                "page": 96,
+                                "start_index": 1304
+                            },
+                            "page_content": "c) nas infrações penais comuns e nos crimes de responsabilidade, os Ministros de Es­\ntado e os Comandantes da Marinha, do Exército e da Aeronáutica, ressalvado o disposto \nno art. 52, I, os membros dos Tribunais Superiores, os do Tribunal de Contas da União e os \nchefes de missão diplomática de caráter permanente; (Redação dada pela EC n. 23/1999)\nd) o habeas corpus, sendo paciente qualquer das pessoas referidas nas alíneas anterio­\nres; o mandado de segurança e o habeas data contra atos do Presidente da República, das \nMesas da Câmara dos Deputados e do Senado Federal, do Tribunal de Contas da União, \ndo Procurador-Geral da República e do próprio Supremo Tribunal Federal;\ne) o litígio entre Estado estrangeiro ou organismo internacional e a União, o Estado, \no Distrito Federal ou o Território;\nf) as causas e os conflitos entre a União e os Estados, a União e o Distrito Federal, ou \nentre uns e outros, inclusive as respectivas entidades da administração indireta;\ng) a extradição solicitada por Estado estrangeiro;\nh) (Revogada pela EC n. 45/2004)\nsumário",
+                            "characters": 1068
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 17,
+                                "page": 17,
+                                "start_index": 0
+                            },
+                            "page_content": "16\nArt. 5º, XXXVIII\nXXXVIII – é reconhecida a instituição do júri, com a organização que lhe der a lei, \nassegurados:\na) a plenitude de defesa;\nb) o sigilo das votações;\nc) a soberania dos veredictos;\nd) a competência para o julgamento dos crimes dolosos contra a vida;\nXXXIX – não há crime sem lei anterior que o defina, nem pena sem prévia cominação \nlegal;\nXL – a lei penal não retroagirá, salvo para beneficiar o réu;\nXLI – a lei punirá qualquer discriminação atentatória dos direitos e liberdades fun­\ndamentais;\nXLII – a prática do racismo constitui crime inafiançável e imprescritível, sujeito à \npena de reclusão, nos termos da lei;\nXLIII – a lei considerará crimes inafiançáveis e insuscetíveis de graça ou anistia a \nprática da tortura, o tráfico ilícito de entorpecentes e drogas afins, o terrorismo e os \ndefinidos como crimes hediondos, por eles respondendo os mandantes, os executores e \nos que, podendo evitá-los, se omitirem;\nXLIV – constitui crime inafiançável e imprescritível a ação de grupos armados, civis \nou militares, contra a ordem constitucional e o Estado Democrático;\nXLV – nenhuma pena passará da pessoa do condenado, podendo a obrigação de re­\nparar o dano e a decretação do perdimento de bens ser, nos termos da lei, estendidas \naos sucessores e contra eles executadas, até o limite do valor do patrimônio transferido;\nXLVI – a lei regulará a individualização da pena e adotará, entre outras, as seguintes:\na) privação ou restrição da liberdade;\nb) perda de bens;\nc) multa;",
+                            "characters": 1504
+                        }
+                    ]
+                },
+                {
+                    "id": "Q6",
+                    "category": "armadilha",
+                    "question": "O presidente pode editar medida provisória para criar crimes e estabelecer penas?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.039063,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 18,
+                                "page": 18,
+                                "start_index": 1285
+                            },
+                            "page_content": "LIX – será admitida ação privada nos crimes de ação pública, se esta não for intentada \nno prazo legal;\nLX – a lei só poderá restringir a publicidade dos atos processuais quando a defesa da \nintimidade ou o interesse social o exigirem;\nLXI – ninguém será preso senão em flagrante delito ou por ordem escrita e funda­\nmentada de autoridade judiciária competente, salvo nos casos de transgressão militar \nou crime propriamente militar, definidos em lei;\nLXII – a prisão de qualquer pessoa e o local onde se encontre serão comunicados \nimediatamente ao juiz competente e à família do preso ou à pessoa por ele indicada;\nLXIII – o preso será informado de seus direitos, entre os quais o de permanecer calado, \nsendo-lhe assegurada a assistência da família e de advogado;\nLXIV – o preso tem direito à identificação dos responsáveis por sua prisão ou por seu \ninterrogatório policial;\nLXV – a prisão ilegal será imediatamente relaxada pela autoridade judiciária;\nLXVI – ninguém será levado à prisão ou nela mantido, quando a lei admitir a liberdade \nprovisória, com ou sem fiança;\nsumário",
+                            "characters": 1082
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 81,
+                                "page": 81,
+                                "start_index": 1259
+                            },
+                            "page_content": "VII – o cumprimento das leis e das decisões judiciais.\nParágrafo único. Esses crimes serão definidos em lei especial, que estabelecerá as \nnormas de processo e julgamento.\nArt. 86. Admitida a acusação contra o Presidente da República, por dois terços da Câmara \ndos Deputados, será ele submetido a julgamento perante o Supremo Tribunal Federal, nas \ninfrações penais comuns, ou perante o Senado Federal, nos crimes de responsabilidade.\n§ 1º O Presidente ficará suspenso de suas funções:\nI – nas infrações penais comuns, se recebida a denúncia ou queixa-crime pelo Supremo \nTribunal Federal;\nII – nos crimes de responsabilidade, após a instauração do processo pelo Senado Federal.\n§ 2º Se, decorrido o prazo de cento e oitenta dias, o julgamento não estiver concluído, \ncessará o afastamento do Presidente, sem prejuízo do regular prosseguimento do processo.\nArt. 84, XXV\nsumário",
+                            "characters": 878
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 96,
+                                "page": 96,
+                                "start_index": 0
+                            },
+                            "page_content": "95\nArt. 102, I, h\ndo Poder Judiciário destinadas ao pagamento de precatórios deverão ser imediatamente \nexcluídos do estoque da dívida para fins de apuração do saldo devedor, vedada a incidência \nde juros, de correção monetária ou de quaisquer acréscimos legais sobre esses valores \napós sua transferência. (Incluído pela EC n. 136/2025)\nSEÇÃO II\nDo Supremo Tribunal Federal\nArt. 101. O Supremo Tribunal Federal compõe-se de onze Ministros, escolhidos dentre \ncidadãos com mais de trinta e cinco e menos de setenta anos de idade, de notável saber \njurídico e reputação ilibada. (Redação dada pela EC n. 122/2022)\nParágrafo único. Os Ministros do Supremo Tribunal Federal serão nomeados pelo Presi­\ndente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal.\nArt. 102. Compete ao Supremo Tribunal Federal, precipuamente, a guarda da Cons­\ntituição, cabendo-lhe:\nI – processar e julgar, originariamente:\na) a ação direta de inconstitucionalidade de lei ou ato normativo federal ou estadual \ne a ação declaratória de constitucionalidade de lei ou ato normativo federal; (Redação \ndada pela EC n. 3/1993)\nb) nas infrações penais comuns, o Presidente da República, o Vice-Presidente, os mem­\nbros do Congresso Nacional, seus próprios Ministros e o Procurador-Geral da República;\nc) nas infrações penais comuns e nos crimes de responsabilidade, os Ministros de Es­\ntado e os Comandantes da Marinha, do Exército e da Aeronáutica, ressalvado o disposto",
+                            "characters": 1474
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 96,
+                                "page": 96,
+                                "start_index": 1304
+                            },
+                            "page_content": "c) nas infrações penais comuns e nos crimes de responsabilidade, os Ministros de Es­\ntado e os Comandantes da Marinha, do Exército e da Aeronáutica, ressalvado o disposto \nno art. 52, I, os membros dos Tribunais Superiores, os do Tribunal de Contas da União e os \nchefes de missão diplomática de caráter permanente; (Redação dada pela EC n. 23/1999)\nd) o habeas corpus, sendo paciente qualquer das pessoas referidas nas alíneas anterio­\nres; o mandado de segurança e o habeas data contra atos do Presidente da República, das \nMesas da Câmara dos Deputados e do Senado Federal, do Tribunal de Contas da União, \ndo Procurador-Geral da República e do próprio Supremo Tribunal Federal;\ne) o litígio entre Estado estrangeiro ou organismo internacional e a União, o Estado, \no Distrito Federal ou o Território;\nf) as causas e os conflitos entre a União e os Estados, a União e o Distrito Federal, ou \nentre uns e outros, inclusive as respectivas entidades da administração indireta;\ng) a extradição solicitada por Estado estrangeiro;\nh) (Revogada pela EC n. 45/2004)\nsumário",
+                            "characters": 1068
+                        }
+                    ]
+                },
+                {
+                    "id": "Q7",
+                    "category": "armadilha",
+                    "question": "Um brasileiro naturalizado pode ser eleito presidente da República?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 2,
+                    "elapsed_seconds": 0.042159,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 24,
+                                "page": 24,
+                                "start_index": 0
+                            },
+                            "page_content": "23\nArt. 12, § 4º, I\nCAPÍTULO III\nDa Nacionalidade\nArt. 12. São brasileiros:\nI – natos:\na) os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde \nque estes não estejam a serviço de seu país;\nb) os nascidos no estrangeiro, de pai brasileiro ou mãe brasileira, desde que qualquer \ndeles esteja a serviço da República Federativa do Brasil;\nc) os nascidos no estrangeiro de pai brasileiro ou de mãe brasileira, desde que sejam \nregistrados em repartição brasileira competente ou venham a residir na República Fe­\nderativa do Brasil e optem, em qualquer tempo, depois de atingida a maioridade, pela \nnacionalidade brasileira; (Redação dada pela EC n. 54/2007)\nII – naturalizados:\na) os que, na forma da lei, adquiram a nacionalidade brasileira, exigidas aos originários de \npaíses de língua portuguesa apenas residência por um ano ininterrupto e idoneidade moral;\nb) os estrangeiros de qualquer nacionalidade, residentes na República Federativa do \nBrasil há mais de quinze anos ininterruptos e sem condenação penal, desde que requeiram \na nacionalidade brasileira. (Redação dada pela ECR n. 3/1994)\n§ 1º Aos portugueses com residência permanente no País, se houver reciprocidade em \nfavor de brasileiros, serão atribuídos os direitos inerentes ao brasileiro, salvo os casos \nprevistos nesta Constituição. (Redação dada pela ECR n. 3/1994)\n§ 2º A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados, \nsalvo nos casos previstos nesta Constituição.",
+                            "characters": 1496
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 202,
+                                "page": 202,
+                                "start_index": 0
+                            },
+                            "page_content": "201\nII – promoção da cultura nacional e regional e estímulo à produção independente \nque objetive sua divulgação;\nIII – regionalização da produção cultural, artística e jornalística, conforme percen­\ntuais estabelecidos em lei;\nIV – respeito aos valores éticos e sociais da pessoa e da família.\nArt. 222. A propriedade de empresa jornalística e de radiodifusão sonora e de sons \ne imagens é privativa de brasileiros natos ou naturalizados há mais de dez anos, ou de \npessoas jurídicas constituídas sob as leis brasileiras e que tenham sede no País. (Redação \ndada pela EC n. 36/2002)\n§ 1º Em qualquer caso, pelo menos setenta por cento do capital total e do capital \nvotante das empresas jornalísticas e de radiodifusão sonora e de sons e imagens deverá \npertencer, direta ou indiretamente, a brasileiros natos ou naturalizados há mais de dez \nanos, que exercerão obrigatoriamente a gestão das atividades e estabelecerão o conteúdo \nda programação. (Redação dada pela EC n. 36/2002)\n§ 2º A responsabilidade editorial e as atividades de seleção e direção da programação \nveiculada são privativas de brasileiros natos ou naturalizados há mais de dez anos, em \nqualquer meio de comunicação social. (Redação dada pela EC n. 36/2002)\n§ 3º Os meios de comunicação social eletrônica, independentemente da tecnologia \nutilizada para a prestação do serviço, deverão observar os princípios enunciados no \nart. 221, na forma de lei específica, que também garantirá a prioridade de profissionais",
+                            "characters": 1483
+                        }
+                    ]
+                },
+                {
+                    "id": "Q8",
+                    "category": "armadilha",
+                    "question": "Qual é o valor atual do salário mínimo nacional estabelecido diretamente pela Constituição?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.051326,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 95,
+                                "page": 95,
+                                "start_index": 1298
+                            },
+                            "page_content": "valor devido, das contas municipais, estaduais ou distrital do ente federativo inadim­\nplente para fins de pagamento de precatórios; (Incluído pela EC n. 136/2025)\nIII – o Governador do Estado ou do Distrito Federal ou o Prefeito do Município ina­\ndimplente responderá na forma da legislação de responsabilidade fiscal e de improbidade \nadministrativa; (Incluído pela EC n. 136/2025)\nIV – o Estado, o Distrito Federal ou o Município ficará impedido de receber transfe­\nrências voluntárias, enquanto perdurar a omissão. (Incluído pela EC n. 136/2025)\n§ 28. Os Estados, o Distrito Federal e os Municípios, mediante dotação orçamentária \nespecífica, poderão efetuar pagamentos de precatórios que superem os limites previstos \nno § 23 deste artigo. (Incluído pela EC n. 136/2025)\n§ 29. É facultado ao credor de precatório dos Estados, do Distrito Federal e dos Mu­\nnicípios que não tenha sido pago em razão do disposto nos §§ 20 ou 23 deste artigo, sem \nprejuízo dos procedimentos previstos nos §§ 9º e 21 deste artigo, optar pelo recebimen­\nto, mediante acordos diretos perante Juízos Auxiliares de Conciliação de Pagamento \nde Condenações Judiciais contra a Fazenda Pública estadual, municipal ou do Distrito \nFederal, em parcela única, até o final do exercício seguinte, com renúncia de parcela do \nvalor desse crédito. (Incluído pela EC n. 136/2025)\n§ 30. Os valores efetivamente aportados pelos entes federativos nas contas especiais \nsumário",
+                            "characters": 1443
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 268,
+                                "page": 268,
+                                "start_index": 1280
+                            },
+                            "page_content": "legislação aplicável, nas seguintes condições: (Incluído pela EC n. 136/2025)\na) o valor considerado para amortização da dívida será o valor atualizado dos créditos \ncom ou sem deságio, negociado entre as partes; (Incluída pela EC n. 136/2025)\nb) a cessão do crédito não gerará qualquer alteração na situação do devedor nem ensejará \nexpedição de certidão negativa; (Incluída pela EC n. 136/2025)\nc) na hipótese de crédito cedido, regulamento disporá sobre as regras às quais se \nsubmeterão os sujeitos passivos; (Incluída pela EC n. 136/2025)\nd) os valores dos créditos de que trata este inciso, líquidos do deságio a que se refere \na alínea “a” deste inciso, poderão ser utilizados como pagamento da dívida com a União \naté o limite de 10% (dez por cento) do montante da dívida, e a cessão terá de ser aceita em \ncomum acordo entre a União e o Município cedente; (Incluída pela EC n. 136/2025)\ne) o Município deverá fornecer todas as informações necessárias à avaliação, pela \nadministração tributária da União, representada pela Procuradoria-Geral da Fazenda \nNacional, da carteira de dívida ativa originadora dos direitos cedidos, especialmente em \nrelação à expectativa de recebimento do fluxo futuro; (Incluída pela EC n. 136/2025)\nf) as Fazendas Públicas municipais e a Procuradoria-Geral da Fazenda Nacional \npoderão implementar soluções integradas para otimizar a administração, a cobrança e \na representação judicial e extrajudicial dos créditos inscritos em dívida ativa; e (Incluída",
+                            "characters": 1494
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 193,
+                                "page": 193,
+                                "start_index": 0
+                            },
+                            "page_content": "192\nexercício de sua competência estadual, nos termos do art. 156-A, § 2º; e (Incluída pela \nEC n. 132/2023)\nc) dos recursos a que se referem os incisos I, II e III do caput do art. 155, o inciso II do \ncaput do art. 157, os incisos II, III e IV do caput do art. 158 e as alíneas a e b do inciso I e \no inciso II do caput do art. 159 desta Constituição; (Incluída pela EC n. 132/2023)\nIII – os recursos referidos no inciso II do caput deste artigo serão distribuídos entre \ncada Estado e seus Municípios, proporcionalmente ao número de alunos das diversas \netapas e modalidades da educação básica presencial matriculados nas respectivas redes, \nnos âmbitos de atuação prioritária, conforme estabelecido nos §§ 2º e 3º do art. 211 desta \nConstituição, observadas as ponderações referidas na alínea a do inciso X do caput e no \n§ 2º deste artigo; (Incluído pela EC n. 108/2020)\nIV – a União complementará os recursos dos fundos a que se refere o inciso II do caput \ndeste artigo; (Incluído pela EC n. 108/2020)\nV – a complementação da União será equivalente a, no mínimo, 23% (vinte e três por \ncento) do total de recursos a que se refere o inciso II do caput deste artigo, distribuída \nda seguinte forma: (Incluído pela EC n. 108/2020)\na) 10 (dez) pontos percentuais no âmbito de cada Estado e do Distrito Federal, sempre \nque o valor anual por aluno (VAAF), nos termos do inciso III do caput deste artigo, não \nalcançar o mínimo definido nacionalmente; (Incluída pela EC n. 108/2020)",
+                            "characters": 1483
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 193,
+                                "page": 193,
+                                "start_index": 1322
+                            },
+                            "page_content": "que o valor anual por aluno (VAAF), nos termos do inciso III do caput deste artigo, não \nalcançar o mínimo definido nacionalmente; (Incluída pela EC n. 108/2020)\nb) no mínimo, 10,5 (dez inteiros e cinco décimos) pontos percentuais em cada rede \npública de ensino municipal, estadual ou distrital, sempre que o valor anual total por \naluno (VAAT), referido no inciso VI do caput deste artigo, não alcançar o mínimo definido \nnacionalmente; (Incluída pela EC n. 108/2020)\nc) 2,5 (dois inteiros e cinco décimos) pontos percentuais nas redes públicas que, cum­\npridas condicionalidades de melhoria de gestão previstas em lei, alcançarem evolução \nde indicadores a serem definidos, de atendimento e melhoria da aprendizagem com \nredução das desigualdades, nos termos do sistema nacional de avaliação da educação \nbásica; (Incluída pela EC n. 108/2020)\nVI – o VAAT será calculado, na forma da lei de que trata o inciso X do caput deste \nartigo, com base nos recursos a que se refere o inciso II do caput deste artigo, acrescidos \nde outras receitas e de transferências vinculadas à educação, observado o disposto no § 1º\ne consideradas as matrículas nos termos do inciso III do caput deste artigo; (Incluído \npela EC n. 108/2020)\nVII – os recursos de que tratam os incisos II e IV do caput deste artigo serão aplicados \npelos Estados e pelos Municípios exclusivamente nos respectivos âmbitos de atuação \nArt. 212-A, II, b\nsumário",
+                            "characters": 1423
+                        }
+                    ]
+                }
+            ],
+            "summary": {
+                "questions_evaluated": 8,
+                "total_parents_retrieved": 30,
+                "average_parents_per_question": 3.75,
+                "average_context_characters": 1270.0,
+                "average_query_seconds": 0.047155
+            }
+        },
+        {
+            "experiment_id": "parent_2024",
+            "configuration": {
+                "id": "parent_2024",
+                "parent_chunk_size": 2024,
+                "parent_chunk_overlap": 256,
+                "retriever_type": "parent_document",
+                "provider": "local",
+                "child_chunk_size": 200,
+                "child_chunk_overlap": 40,
+                "top_k": 4
+            },
+            "collection": "politizese_parent_c200_p2024_nomic_search_prefix_v1_lo_4f8991e8",
+            "indexed_children": 4539,
+            "stored_parents": 517,
+            "questions": [
+                {
+                    "id": "Q1",
+                    "category": "simples",
+                    "question": "Quais direitos sociais são garantidos pela Constituição Federal?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.087778,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 16,
+                                "page": 16,
+                                "start_index": 0
+                            },
+                            "page_content": "15\nArt. 5º, XXXVII\nXXV – no caso de iminente perigo público, a autoridade competente poderá usar de \npropriedade particular, assegurada ao proprietário indenização ulterior, se houver dano;\nXXVI – a pequena propriedade rural, assim definida em lei, desde que trabalhada \npela família, não será objeto de penhora para pagamento de débitos decorrentes de sua \natividade produtiva, dispondo a lei sobre os meios de financiar o seu desenvolvimento;\nXXVII – aos autores pertence o direito exclusivo de utilização, publicação ou repro­\ndução de suas obras, transmissível aos herdeiros pelo tempo que a lei fixar;\nXXVIII – são assegurados, nos termos da lei:\na) a proteção às participações individuais em obras coletivas e à reprodução da imagem \ne voz humanas, inclusive nas atividades desportivas;\nb) o direito de fiscalização do aproveitamento econômico das obras que criarem ou de \nque participarem aos criadores, aos intérpretes e às respectivas representações sindicais \ne associativas;\nXXIX – a lei assegurará aos autores de inventos industriais privilégio temporário para \nsua utilização, bem como proteção às criações industriais, à propriedade das marcas, \naos nomes de empresas e a outros signos distintivos, tendo em vista o interesse social e \no desenvolvimento tecnológico e econômico do País;\nXXX – é garantido o direito de herança;\nXXXI – a sucessão de bens de estrangeiros situados no País será regulada pela lei \nbrasileira em benefício do cônjuge ou dos filhos brasileiros, sempre que não lhes seja \nmais favorável a lei pessoal do de cujus;\nXXXII – o Estado promoverá, na forma da lei, a defesa do consumidor;\nXXXIII – todos têm direito a receber dos órgãos públicos informações de seu interesse \nparticular, ou de interesse coletivo ou geral, que serão prestadas no prazo da lei, sob pena \nde responsabilidade, ressalvadas aquelas cujo sigilo seja imprescindível à segurança da \nsociedade e do Estado;\nXXXIV – são a todos assegurados, independentemente do pagamento de taxas:",
+                            "characters": 1989
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 225,
+                                "page": 225,
+                                "start_index": 0
+                            },
+                            "page_content": "224\nADCT – Art. 19, § 2º\nde serviço não será computado para os fins do caput deste artigo, exceto se se tratar de \nservidor.\n§ 3º O disposto neste artigo não se aplica aos professores de nível superior, nos termos \nda lei.\nArt. 20. Dentro de cento e oitenta dias, proceder-se-á à revisão dos direitos dos ser­\nvidores públicos inativos e pensionistas e à atualização dos proventos e pensões a eles \ndevidos, a fim de ajustá-los ao disposto na Constituição.\nArt. 21. Os juízes togados de investidura limitada no tempo, admitidos mediante con­\ncurso público de provas e títulos e que estejam em exercício na data da promulgação da \nConstituição, adquirem estabilidade, observado o estágio probatório, e passam a compor \nquadro em extinção, mantidas as competências, prerrogativas e restrições da legislação \na que se achavam submetidos, salvo as inerentes à transitoriedade da investidura.\nParágrafo único. A aposentadoria dos juízes de que trata este artigo regular-se-á pelas \nnormas fixadas para os demais juízes estaduais.\nArt. 22. É assegurado aos defensores públicos investidos na função até a data de insta­\nlação da Assembleia Nacional Constituinte o direito de opção pela carreira, com a obser­\nvância das garantias e vedações previstas no art. 134, parágrafo único, da Constituição.\nArt. 23. Até que se edite a regulamentação do art. 21, XVI, da Constituição, os atuais \nocupantes do cargo de censor federal continuarão exercendo funções com este compa­\ntíveis, no Departamento de Polícia Federal, observadas as disposições constitucionais.\nParágrafo único. A lei referida disporá sobre o aproveitamento dos Censores Federais, \nnos termos deste artigo.\nArt. 24. A União, os Estados, o Distrito Federal e os Municípios editarão leis que es­\ntabeleçam critérios para a compatibilização de seus quadros de pessoal ao disposto no \nart. 39 da Constituição e à reforma administrativa dela decorrente, no prazo de dezoito \nmeses, contados da sua promulgação.",
+                            "characters": 1959
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 20,
+                                "page": 20,
+                                "start_index": 0
+                            },
+                            "page_content": "19\nArt. 7º, I\nLXXVII – são gratuitas as ações de habeas corpus e habeas data, e, na forma da lei, os \natos necessários ao exercício da cidadania;\nLXXVIII – a todos, no âmbito judicial e administrativo, são assegurados a razoável \nduração do processo e os meios que garantam a celeridade de sua tramitação; (Incluído \npela EC n. 45/2004) (Vide ADI 3.392)\nLXXIX – é assegurado, nos termos da lei, o direito à proteção dos dados pessoais, \ninclusive nos meios digitais. (Incluído pela EC n. 115/2022) \n§ 1º As normas definidoras dos direitos e garantias fundamentais têm aplicação ime­\ndiata.\n§ 2º Os direitos e garantias expressos nesta Constituição não excluem outros decor­\nrentes do regime e dos princípios por ela adotados, ou dos tratados internacionais em \nque a República Federativa do Brasil seja parte.\n§ 3º Os tratados e convenções internacionais sobre direitos humanos que forem apro­\nvados, em cada Casa do Congresso Nacional, em dois turnos, por três quintos dos votos \ndos respectivos membros, serão equivalentes às emendas constitucionais. (Incluído pela \nEC n. 45/2004) (Vide ADI 3.392)\n§ 4º O Brasil se submete à jurisdição de Tribunal Penal Internacional a cuja criação \ntenha manifestado adesão. (Incluído pela EC n. 45/2004)\nCAPÍTULO II\nDos Direitos Sociais\nArt. 6º São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, \no transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à \ninfância, a assistência aos desamparados, na forma desta Constituição. (Redação dada \npela EC n. 90/2015)\nParágrafo único. Todo brasileiro em situação de vulnerabilidade social terá direito a \numa renda básica familiar, garantida pelo poder público em programa permanente de \ntransferência de renda, cujas normas e requisitos de acesso serão determinados em lei, \nobservada a legislação fiscal e orçamentária. (Incluído pela EC n. 114/2021)\nArt. 7º São direitos dos trabalhadores urbanos e rurais, além de outros que visem à \nmelhoria de sua condição social:",
+                            "characters": 2011
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 174,
+                                "page": 174,
+                                "start_index": 1840
+                            },
+                            "page_content": "senvolvimento das funções sociais da cidade e garantir o bem-estar de seus habitantes.\n§ 1º O plano diretor, aprovado pela Câmara Municipal, obrigatório para cidades com \nmais de vinte mil habitantes, é o instrumento básico da política de desenvolvimento e \nde expansão urbana.\n§ 2º A propriedade urbana cumpre sua função social quando atende às exigências \nfundamentais de ordenação da cidade expressas no plano diretor.\n§ 3º As desapropriações de imóveis urbanos serão feitas com prévia e justa indeni­\nzação em dinheiro.\nsumário",
+                            "characters": 531
+                        }
+                    ]
+                },
+                {
+                    "id": "Q2",
+                    "category": "simples",
+                    "question": "Quais são os requisitos constitucionais para alguém se candidatar à Presidência da República?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.084902,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 158,
+                                "page": 158,
+                                "start_index": 0
+                            },
+                            "page_content": "157\n§ 3º As emendas ao projeto de lei do orçamento anual ou aos projetos que o modifiquem \nsomente podem ser aprovadas caso:\nI – sejam compatíveis com o plano plurianual e com a lei de diretrizes orçamentárias;\nII – indiquem os recursos necessários, admitidos apenas os provenientes de anulação \nde despesa, excluídas as que incidam sobre:\na) dotações para pessoal e seus encargos;\nb) serviço da dívida;\nc) transferências tributárias constitucionais para Estados, Municípios e Distrito \nFederal; ou\nIII – sejam relacionadas:\na) com a correção de erros ou omissões; ou\nb) com os dispositivos do texto do projeto de lei.\n§ 4º As emendas ao projeto de lei de diretrizes orçamentárias não poderão ser apro­\nvadas quando incompatíveis com o plano plurianual.\n§ 5º O Presidente da República poderá enviar mensagem ao Congresso Nacional para \npropor modificação nos projetos a que se refere este artigo enquanto não iniciada a \nvotação, na Comissão mista, da parte cuja alteração é proposta.\n§ 6º Os projetos de lei do plano plurianual, das diretrizes orçamentárias e do orçamento \nanual serão enviados pelo Presidente da República ao Congresso Nacional, nos termos \nda lei complementar a que se refere o art. 165, § 9º.\n§ 7º Aplicam-se aos projetos mencionados neste artigo, no que não contrariar o dis­\nposto nesta seção, as demais normas relativas ao processo legislativo.\n§ 8º Os recursos que, em decorrência de veto, emenda ou rejeição do projeto de lei \norçamentária anual, ficarem sem despesas correspondentes poderão ser utilizados, \nconforme o caso, mediante créditos especiais ou suplementares, com prévia e específica \nautorização legislativa.\n§ 9º As emendas individuais ao projeto de lei orçamentária serão aprovadas no limite \nde 2% (dois por cento) da receita corrente líquida do exercício anterior ao do encami­\nnhamento do projeto, observado que a metade desse percentual será destinada a ações \ne serviços públicos de saúde. (Redação dada pela EC n. 126/2022)",
+                            "characters": 1970
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 51,
+                                "page": 51,
+                                "start_index": 0
+                            },
+                            "page_content": "50\nArt. 38, II\nII – investido no mandato de Prefeito, será afastado do cargo, emprego ou função, \nsendo-lhe facultado optar pela sua remuneração;\nIII – investido no mandato de Vereador, havendo compatibilidade de horários, per­\nceberá as vantagens de seu cargo, emprego ou função, sem prejuízo da remuneração do \ncargo eletivo, e, não havendo compatibilidade, será aplicada a norma do inciso anterior;\nIV – em qualquer caso que exija o afastamento para o exercício de mandato eletivo, \nseu tempo de serviço será contado para todos os efeitos legais, exceto para promoção \npor merecimento;\nV – na hipótese de ser segurado de regime próprio de previdência social, permanecerá \nfiliado a esse regime, no ente federativo de origem. (Redação dada pela EC n. 103/2019)\nSEÇÃO II\nDos Servidores Públicos\n(Redação dada pela EC n. 18/1998)\nArt. 39. A União, os Estados, o Distrito Federal e os Municípios instituirão, no âmbito \nde sua competência, regime jurídico único e planos de carreira para os servidores da \nadministração pública direta, das autarquias e das fundações públicas.2\n§ 1º A fixação dos padrões de vencimento e dos demais componentes do sistema \nremuneratório observará: (Redação dada pela EC n. 19/1998)\nI – a natureza, o grau de responsabilidade e a complexidade dos cargos componentes \nde cada carreira; (Incluído pela EC n. 19/1998)\nII – os requisitos para a investidura; (Incluído pela EC n. 19/1998)\nIII – as peculiaridades dos cargos. (Incluído pela EC n. 19/1998)\n§ 2º A União, os Estados e o Distrito Federal manterão escolas de governo para a \nformação e o aperfeiçoamento dos servidores públicos, constituindo-se a participa­\nção nos cursos um dos requisitos para a promoção na carreira, facultada, para isso, \na celebração de convênios ou contratos entre os entes federados. (Redação dada pela \nEC n. 19/1998)\n§ 3º Aplica-se aos servidores ocupantes de cargo público o disposto no art. 7º, IV, VII, \n2\t O Plenário do STF deferiu medida cautelar na ADI 2.135 MC, para suspender, com efeitos ex",
+                            "characters": 2013
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 219,
+                                "page": 219,
+                                "start_index": 0
+                            },
+                            "page_content": "218\nADCT – Art. 5º, § 1º\n§ 1º Para as eleições de 15 de novembro de 1988 será exigido domicílio eleitoral na \ncircunscrição pelo menos durante os quatro meses anteriores ao pleito, podendo os \ncandidatos que preencham este requisito, atendidas as demais exigências da lei, ter seu \nregistro efetivado pela Justiça Eleitoral após a promulgação da Constituição.\n§ 2º Na ausência de norma legal específica, caberá ao Tribunal Superior Eleitoral editar \nas normas necessárias à realização das eleições de 1988, respeitada a legislação vigente.\n§ 3º Os atuais parlamentares federais e estaduais eleitos Vice-Prefeitos, se convocados \na exercer a função de Prefeito, não perderão o mandato parlamentar.\n§ 4º O número de vereadores por município será fixado, para a representação a ser \neleita em 1988, pelo respectivo Tribunal Regional Eleitoral, respeitados os limites esti­\npulados no art. 29, IV, da Constituição.\n§ 5º Para as eleições de 15 de novembro de 1988, ressalvados os que já exercem mandato \neletivo, são inelegíveis para qualquer cargo, no território de jurisdição do titular, o cônjuge \ne os parentes por consanguinidade ou afinidade, até o segundo grau, ou por adoção, do \nPresidente da República, do Governador de Estado, do Governador do Distrito Federal e \ndo Prefeito que tenham exercido mais da metade do mandato.\nArt. 6º Nos seis meses posteriores à promulgação da Constituição, parlamentares \nfederais, reunidos em número não inferior a trinta, poderão requerer ao Tribunal Superior \nEleitoral o registro de novo partido político, juntando ao requerimento o manifesto, o \nestatuto e o programa devidamente assinados pelos requerentes.\n§ 1º O registro provisório, que será concedido de plano pelo Tribunal Superior Eleitoral, \nnos termos deste artigo, defere ao novo partido todos os direitos, deveres e prerrogativas \ndos atuais, entre eles o de participar, sob legenda própria, das eleições que vierem a ser \nrealizadas nos doze meses seguintes a sua formação.",
+                            "characters": 1978
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 78,
+                                "page": 78,
+                                "start_index": 0
+                            },
+                            "page_content": "77\nArt. 78, parágrafo único\nFederal, bem como dos Tribunais e Conselhos de Contas dos Municípios, vedada sua ex­\ntinção, criação ou instalação. (Redação dada pela Emenda Constitucional nº 139, de 2026)\nParágrafo único. As Constituições estaduais disporão sobre os Tribunais de Contas \nrespectivos, que serão integrados por sete Conselheiros.\nCAPÍTULO II\nDo Poder Executivo\nSEÇÃO I\nDo Presidente e do Vice-Presidente da República\nArt. 76. O Poder Executivo é exercido pelo Presidente da República, auxiliado pelos \nMinistros de Estado.\nArt. 77. A eleição do Presidente e do Vice-Presidente da República realizar-se-á, simul­\ntaneamente, no primeiro domingo de outubro, em primeiro turno, e no último domingo \nde outubro, em segundo turno, se houver, do ano anterior ao do término do mandato \npresidencial vigente. (Redação dada pela EC n. 16/1997)\n§ 1º A eleição do Presidente da República importará a do Vice-Presidente com ele \nregistrado.\n§ 2º Será considerado eleito Presidente o candidato que, registrado por partido político, \nobtiver a maioria absoluta de votos, não computados os em branco e os nulos.\n§ 3º Se nenhum candidato alcançar maioria absoluta na primeira votação, far-se-á nova \neleição em até vinte dias após a proclamação do resultado, concorrendo os dois candidatos \nmais votados e considerando-se eleito aquele que obtiver a maioria dos votos válidos.\n§ 4º Se, antes de realizado o segundo turno, ocorrer morte, desistência ou impedi­\nmento legal de candidato, convocar-se-á, dentre os remanescentes, o de maior votação.\n§ 5º Se, na hipótese dos parágrafos anteriores, remanescer, em segundo lugar, mais \nde um candidato com a mesma votação, qualificar-se-á o mais idoso.\nArt. 78. O Presidente e o Vice-Presidente da República tomarão posse em sessão do \nCongresso Nacional, prestando o compromisso de manter, defender e cumprir a Cons­\ntituição, observar as leis, promover o bem geral do povo brasileiro, sustentar a união, a \nintegridade e a independência do Brasil.",
+                            "characters": 1989
+                        }
+                    ]
+                },
+                {
+                    "id": "Q3",
+                    "category": "simples",
+                    "question": "Quais são as competências legislativas privativas da União?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.091116,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 71,
+                                "page": 71,
+                                "start_index": 0
+                            },
+                            "page_content": "70\nArt. 61, § 1º\n§ 1º São de iniciativa privativa do Presidente da República as leis que:\nI – fixem ou modifiquem os efetivos das Forças Armadas;\nII – disponham sobre:\na) criação de cargos, funções ou empregos públicos na administração direta e \nautárquica ou aumento de sua remuneração;\nb) organização administrativa e judiciária, matéria tributária e orçamentária, \nserviços públicos e pessoal da administração dos Territórios;\nc) servidores públicos da União e Territórios, seu regime jurídico, provimento de \ncargos, estabilidade e aposentadoria; (Redação dada pela EC n. 18/1998)\nd) organização do Ministério Público e da Defensoria Pública da União, bem \ncomo normas gerais para a organização do Ministério Público e da Defensoria \nPública dos Estados, do Distrito Federal e dos Territórios;\ne) criação e extinção de Ministérios e órgãos da administração pública, obser­\nvado o disposto no art. 84, VI; (Redação dada pela EC n. 32/2001)\nf) militares das Forças Armadas, seu regime jurídico, provimento de cargos, \npromoções, estabilidade, remuneração, reforma e transferência para a reserva. \n(Incluída pela EC n. 18/1998)\n§ 2º A iniciativa popular pode ser exercida pela apresentação à Câmara dos Depu­\ntados de projeto de lei subscrito por, no mínimo, um por cento do eleitorado nacional, \ndistribuído pelo menos por cinco Estados, com não menos de três décimos por cento dos \neleitores de cada um deles.\nArt. 62. Em caso de relevância e urgência, o Presidente da República poderá adotar \nmedidas provisórias, com força de lei, devendo submetê-las de imediato ao Congresso \nNacional. (Redação dada pela EC n. 32/2001)\n§ 1º É vedada a edição de medidas provisórias sobre matéria: (Incluído pela EC n. \n32/2001)\nI – relativa a: (Incluído pela EC n. 32/2001)\na) nacionalidade, cidadania, direitos políticos, partidos políticos e direito eleitoral; \n(Incluída pela EC n. 32/2001)\nb) direito penal, processual penal e processual civil; (Incluída pela EC n. 32/2001)",
+                            "characters": 1968
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 114,
+                                "page": 114,
+                                "start_index": 0
+                            },
+                            "page_content": "113\nArt. 129, VII\na) vitaliciedade, após dois anos de exercício, não podendo perder o cargo senão por \nsentença judicial transitada em julgado;\nb) inamovibilidade, salvo por motivo de interesse público, mediante decisão do ór­\ngão colegiado competente do Ministério Público, pelo voto da maioria absoluta de seus \nmembros, assegurada ampla defesa; (Redação dada pela EC n. 45/2004)\nc) irredutibilidade de subsídio, fixado na forma do art. 39, § 4º, e ressalvado o disposto \nnos arts. 37, X e XI; 150, II; 153, III; 153, § 2º, I; (Redação dada pela EC n. 19/1998)\nII – as seguintes vedações:\na) receber, a qualquer título e sob qualquer pretexto, honorários, percentagens ou \ncustas processuais;\nb) exercer a advocacia;\nc) participar de sociedade comercial, na forma da lei;\nd) exercer, ainda que em disponibilidade, qualquer outra função pública, salvo uma \nde magistério;\ne) exercer atividade político-partidária; (Redação dada pela EC n. 45/2004)\nf) receber, a qualquer título ou pretexto, auxílios ou contribuições de pessoas físicas, \nentidades públicas ou privadas, ressalvadas as exceções previstas em lei. (Incluída pela \nEC n. 45/2004)\n§ 6º Aplica-se aos membros do Ministério Público o disposto no art. 95, parágrafo \núnico, V. (Incluído pela EC n. 45/2004)\nArt. 129. São funções institucionais do Ministério Público:\nI – promover, privativamente, a ação penal pública, na forma da lei;\nII – zelar pelo efetivo respeito dos Poderes Públicos e dos serviços de relevância pú­\nblica aos direitos assegurados nesta Constituição, promovendo as medidas necessárias \na sua garantia;\nIII – promover o inquérito civil e a ação civil pública, para a proteção do patrimônio \npúblico e social, do meio ambiente e de outros interesses difusos e coletivos;\nIV – promover a ação de inconstitucionalidade ou representação para fins de inter­\nvenção da União e dos Estados, nos casos previstos nesta Constituição;\nV – defender judicialmente os direitos e interesses das populações indígenas;",
+                            "characters": 1983
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 231,
+                                "page": 231,
+                                "start_index": 0
+                            },
+                            "page_content": "230\nADCT – Art. 35, § 2º, I\nnanceiro do mandato presidencial subsequente, será encaminhado até quatro meses \nantes do encerramento do primeiro exercício financeiro e devolvido para sanção até o \nencerramento da sessão legislativa;\nII – o projeto de lei de diretrizes orçamentárias será encaminhado até oito meses e \nmeio antes do encerramento do exercício financeiro e devolvido para sanção até o en­\ncerramento do primeiro período da sessão legislativa;\nIII – o projeto de lei orçamentária da União será encaminhado até quatro meses antes \ndo encerramento do exercício financeiro e devolvido para sanção até o encerramento \nda sessão legislativa.\nArt. 36. Os fundos existentes na data da promulgação da Constituição, excetuados \nos resultantes de isenções fiscais que passem a integrar patrimônio privado e os que \ninteressem à defesa nacional, extinguir-se-ão, se não forem ratificados pelo Congresso \nNacional no prazo de dois anos.\nArt. 37. A adaptação ao que estabelece o art. 167, III, deverá processar-se no prazo de \ncinco anos, reduzindo-se o excesso à base de, pelo menos, um quinto por ano.\nArt. 38. Até a promulgação da lei complementar referida no art. 169, a União, os Esta­\ndos, o Distrito Federal e os Municípios não poderão despender com pessoal mais do que \nsessenta e cinco por cento do valor das respectivas receitas correntes.\n§ 1º A União, os Estados, o Distrito Federal e os Municípios, quando a respectiva \ndespesa de pessoal exceder o limite previsto neste artigo, deverão retornar àquele limi­\nte, reduzindo o percentual excedente à razão de um quinto por ano. (Renumerado do \nparágrafo único pela EC n. 127/2022)\n§ 2º As despesas com pessoal resultantes do cumprimento do disposto nos §§ 12, 13, 14 \ne 15 do art. 198 da Constituição Federal serão contabilizadas, para fins dos limites de que \ntrata o art. 169 da Constituição Federal, da seguinte forma: (Incluído pela EC n. 127/2022)\nI – até o fim do exercício financeiro subsequente ao da publicação deste dispositivo,",
+                            "characters": 1997
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 63,
+                                "page": 63,
+                                "start_index": 1808
+                            },
+                            "page_content": "diretrizes orçamentárias; (Redação dada pela EC n. 19/1998)\nV – eleger membros do Conselho da República, nos termos do art. 89, VII.\nSEÇÃO IV\nDo Senado Federal\nArt. 52. Compete privativamente ao Senado Federal:\nI – processar e julgar o Presidente e o Vice-Presidente da República nos crimes de \nresponsabilidade, bem como os Ministros de Estado e os Comandantes da Marinha, do \nsumário",
+                            "characters": 385
+                        }
+                    ]
+                },
+                {
+                    "id": "Q4",
+                    "category": "simples",
+                    "question": "Como é composto o Congresso Nacional?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.077429,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 86,
+                                "page": 86,
+                                "start_index": 1710
+                            },
+                            "page_content": "juízos e tribunais de segundo grau, funcionando, nos dias em que não houver expediente \nforense normal, juízes em plantão permanente; (Incluído pela EC n. 45/2004)\nXIII – o número de juízes na unidade jurisdicional será proporcional à efetiva demanda \njudicial e à respectiva população; (Incluído pela EC n. 45/2004)\nXIV – os servidores receberão delegação para a prática de atos de administração e \natos de mero expediente sem caráter decisório; (Incluído pela EC n. 45/2004)\nXV – a distribuição de processos será imediata, em todos os graus de jurisdição. \n(Incluído pela EC n. 45/2004)\nArt. 94. Um quinto dos lugares dos Tribunais Regionais Federais, dos Tribunais dos \nEstados, e do Distrito Federal e Territórios será composto de membros, do Ministério \nPúblico, com mais de dez anos de carreira, e de advogados de notório saber jurídico e de \nreputação ilibada, com mais de dez anos de efetiva atividade profissional, indicados em \nlista sêxtupla pelos órgãos de representação das respectivas classes.\nParágrafo único. Recebidas as indicações, o tribunal formará lista tríplice, enviando-a \nsumário",
+                            "characters": 1104
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 285,
+                                "page": 285,
+                                "start_index": 0
+                            },
+                            "page_content": "Esta obra foi impressa e encadernada em papel offset 75 g/m² \n(miolo), no formato 148 x 210 mm, pela Secretaria de Altos Es­\ntudos do Supremo Tribunal Federal.\nFoi projetada e composta na fonte Kepler Std.\n\nEsta obra foi finalizada, em maio de 2026, pela Secretaria de \nAltos Estudos do Supremo Tribunal Federal.\nFoi projetada e composta na fonte Kepler Std.",
+                            "characters": 358
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 272,
+                                "page": 272,
+                                "start_index": 0
+                            },
+                            "page_content": "271\nADCT – Art. 126, III, a\ntituição Federal, será cobrada à alíquota de 0,9% (nove décimos por cento). (Incluído \npela EC n. 132/2023)\n§ 1º O montante recolhido na forma do caput será compensado com o valor devido \ndas contribuições previstas no art. 195, I, b, e IV, e da contribuição para o Programa de \nIntegração Social a que se refere o art. 239, ambos da Constituição Federal. (Incluído \npela EC n. 132/2023)\n§ 2º Caso o contribuinte não possua débitos suficientes para efetuar a compensação \nde que trata o § 1º, o valor recolhido poderá ser compensado com qualquer outro tributo \nfederal ou ser ressarcido em até 60 (sessenta) dias, mediante requerimento. (Incluído \npela EC n. 132/2023)\n§ 3º A arrecadação do imposto previsto no art. 156-A da Constituição Federal de­\ncorrente do disposto no caput deste artigo não observará as vinculações, repartições e \ndestinações previstas na Constituição Federal, devendo ser aplicada, integral e sucessi­\nvamente, para: (Incluído pela EC n. 132/2023)\nI – o financiamento do Comitê Gestor do Imposto sobre Bens e Serviços, nos termos \ndo art. 156-B, § 2º, III, da Constituição Federal; (Incluído pela EC n. 132/2023)\nII – compor o Fundo de Compensação de Benefícios Fiscais ou Financeiro-Fiscais do \nimposto de que trata o art. 155, II, da Constituição Federal. (Incluído pela EC n. 132/2023)\n§ 4º Durante o período de que trata o caput, os sujeitos passivos que cumprirem as \nobrigações acessórias relativas aos tributos referidos no caput poderão ser dispensados \ndo seu recolhimento, nos termos de lei complementar. (Incluído pela EC n. 132/2023)\nArt. 126. A partir de 2027: (Incluído pela EC n. 132/2023)\nI – serão cobrados: (Incluído pela EC n. 132/2023)\na) a contribuição prevista no art. 195, V, da Constituição Federal; (Incluída pela EC \nn. 132/2023)\nb) o imposto previsto no art. 153, VIII, da Constituição Federal; (Incluída pela EC n. \n132/2023)\nII – serão extintas as contribuições previstas no art. 195, I, b, e IV, e a contribuição",
+                            "characters": 1995
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 110,
+                                "page": 110,
+                                "start_index": 0
+                            },
+                            "page_content": "109\nArt. 123, caput\nIII – por nomeação, pelo Presidente da República, de dois juízes dentre seis advogados \nde notável saber jurídico e idoneidade moral, indicados pelo Tribunal de Justiça.\n§ 2º O Tribunal Regional Eleitoral elegerá seu Presidente e o Vice-Presidente dentre \nos desembargadores.\nArt. 121. Lei complementar disporá sobre a organização e competência dos tribunais, \ndos juízes de direito e das juntas eleitorais.\n§ 1º Os membros dos tribunais, os juízes de direito e os integrantes das juntas eleito­\nrais, no exercício de suas funções, e no que lhes for aplicável, gozarão de plenas garantias \ne serão inamovíveis.\n§ 2º Os juízes dos tribunais eleitorais, salvo motivo justificado, servirão por dois anos, \nno mínimo, e nunca por mais de dois biênios consecutivos, sendo os substitutos esco­\nlhidos na mesma ocasião e pelo mesmo processo, em número igual para cada categoria.\n§ 3º São irrecorríveis as decisões do Tribunal Superior Eleitoral, salvo as que contra­\nriarem esta Constituição e as denegatórias de habeas corpus ou mandado de segurança.\n§ 4º Das decisões dos Tribunais Regionais Eleitorais somente caberá recurso quando:\nI – forem proferidas contra disposição expressa desta Constituição ou de lei;\nII – ocorrer divergência na interpretação de lei entre dois ou mais tribunais eleitorais;\nIII – versarem sobre inelegibilidade ou expedição de diplomas nas eleições federais \nou estaduais;\nIV – anularem diplomas ou decretarem a perda de mandatos eletivos federais ou \nestaduais;\nV – denegarem habeas corpus, mandado de segurança, habeas data ou mandado de \ninjunção.\nSEÇÃO VII\nDos Tribunais e Juízes Militares\nArt. 122. São órgãos da Justiça Militar:\nI – o Superior Tribunal Militar;\nII – os Tribunais e Juízes Militares instituídos por lei.\nArt. 123. O Superior Tribunal Militar compor-se-á de quinze Ministros vitalícios, \nnomeados pelo Presidente da República, depois de aprovada a indicação pelo Senado \nFederal, sendo três dentre oficiais-generais da Marinha, quatro dentre oficiais-generais",
+                            "characters": 2023
+                        }
+                    ]
+                },
+                {
+                    "id": "Q5",
+                    "category": "armadilha",
+                    "question": "A Constituição permite pena de morte para crimes hediondos em tempos de paz?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 3,
+                    "elapsed_seconds": 0.080046,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 17,
+                                "page": 17,
+                                "start_index": 0
+                            },
+                            "page_content": "16\nArt. 5º, XXXVIII\nXXXVIII – é reconhecida a instituição do júri, com a organização que lhe der a lei, \nassegurados:\na) a plenitude de defesa;\nb) o sigilo das votações;\nc) a soberania dos veredictos;\nd) a competência para o julgamento dos crimes dolosos contra a vida;\nXXXIX – não há crime sem lei anterior que o defina, nem pena sem prévia cominação \nlegal;\nXL – a lei penal não retroagirá, salvo para beneficiar o réu;\nXLI – a lei punirá qualquer discriminação atentatória dos direitos e liberdades fun­\ndamentais;\nXLII – a prática do racismo constitui crime inafiançável e imprescritível, sujeito à \npena de reclusão, nos termos da lei;\nXLIII – a lei considerará crimes inafiançáveis e insuscetíveis de graça ou anistia a \nprática da tortura, o tráfico ilícito de entorpecentes e drogas afins, o terrorismo e os \ndefinidos como crimes hediondos, por eles respondendo os mandantes, os executores e \nos que, podendo evitá-los, se omitirem;\nXLIV – constitui crime inafiançável e imprescritível a ação de grupos armados, civis \nou militares, contra a ordem constitucional e o Estado Democrático;\nXLV – nenhuma pena passará da pessoa do condenado, podendo a obrigação de re­\nparar o dano e a decretação do perdimento de bens ser, nos termos da lei, estendidas \naos sucessores e contra eles executadas, até o limite do valor do patrimônio transferido;\nXLVI – a lei regulará a individualização da pena e adotará, entre outras, as seguintes:\na) privação ou restrição da liberdade;\nb) perda de bens;\nc) multa;\nd) prestação social alternativa;\ne) suspensão ou interdição de direitos;\nXLVII – não haverá penas:\na) de morte, salvo em caso de guerra declarada, nos termos do art. 84, XIX;\nb) de caráter perpétuo;\nc) de trabalhos forçados;\nd) de banimento; \ne) cruéis;\nsumário",
+                            "characters": 1766
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 123,
+                                "page": 123,
+                                "start_index": 1748
+                            },
+                            "page_content": "contando-se-lhe o tempo de serviço apenas para aquela promoção e transferência para \na reserva, sendo depois de dois anos de afastamento, contínuos ou não, transferido para \na reserva, nos termos da lei; (Redação dada pela EC n. 77/2014)\nIV – ao militar são proibidas a sindicalização e a greve; (Incluído pela EC n. 18/1998)\nV – o militar, enquanto em serviço ativo, não pode estar filiado a partidos políticos; \n(Incluído pela EC n. 18/1998)\nVI – o oficial só perderá o posto e a patente se for julgado indigno do oficialato ou com \nele incompatível, por decisão de tribunal militar de caráter permanente, em tempo de \npaz, ou de tribunal especial, em tempo de guerra; (Incluído pela EC n. 18/1998)\nVII – o oficial condenado na justiça comum ou militar a pena privativa de liberdade \nsuperior a dois anos, por sentença transitada em julgado, será submetido ao julgamento \nprevisto no inciso anterior; (Incluído pela EC n. 18/1998)\nsumário",
+                            "characters": 940
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 96,
+                                "page": 96,
+                                "start_index": 0
+                            },
+                            "page_content": "95\nArt. 102, I, h\ndo Poder Judiciário destinadas ao pagamento de precatórios deverão ser imediatamente \nexcluídos do estoque da dívida para fins de apuração do saldo devedor, vedada a incidência \nde juros, de correção monetária ou de quaisquer acréscimos legais sobre esses valores \napós sua transferência. (Incluído pela EC n. 136/2025)\nSEÇÃO II\nDo Supremo Tribunal Federal\nArt. 101. O Supremo Tribunal Federal compõe-se de onze Ministros, escolhidos dentre \ncidadãos com mais de trinta e cinco e menos de setenta anos de idade, de notável saber \njurídico e reputação ilibada. (Redação dada pela EC n. 122/2022)\nParágrafo único. Os Ministros do Supremo Tribunal Federal serão nomeados pelo Presi­\ndente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal.\nArt. 102. Compete ao Supremo Tribunal Federal, precipuamente, a guarda da Cons­\ntituição, cabendo-lhe:\nI – processar e julgar, originariamente:\na) a ação direta de inconstitucionalidade de lei ou ato normativo federal ou estadual \ne a ação declaratória de constitucionalidade de lei ou ato normativo federal; (Redação \ndada pela EC n. 3/1993)\nb) nas infrações penais comuns, o Presidente da República, o Vice-Presidente, os mem­\nbros do Congresso Nacional, seus próprios Ministros e o Procurador-Geral da República;\nc) nas infrações penais comuns e nos crimes de responsabilidade, os Ministros de Es­\ntado e os Comandantes da Marinha, do Exército e da Aeronáutica, ressalvado o disposto \nno art. 52, I, os membros dos Tribunais Superiores, os do Tribunal de Contas da União e os \nchefes de missão diplomática de caráter permanente; (Redação dada pela EC n. 23/1999)\nd) o habeas corpus, sendo paciente qualquer das pessoas referidas nas alíneas anterio­\nres; o mandado de segurança e o habeas data contra atos do Presidente da República, das \nMesas da Câmara dos Deputados e do Senado Federal, do Tribunal de Contas da União, \ndo Procurador-Geral da República e do próprio Supremo Tribunal Federal;",
+                            "characters": 1985
+                        }
+                    ]
+                },
+                {
+                    "id": "Q6",
+                    "category": "armadilha",
+                    "question": "O presidente pode editar medida provisória para criar crimes e estabelecer penas?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.060308,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 206,
+                                "page": 206,
+                                "start_index": 0
+                            },
+                            "page_content": "205\nV – obediência aos princípios de brevidade, excepcionalidade e respeito à condição \npeculiar de pessoa em desenvolvimento, quando da aplicação de qualquer medida pri­\nvativa da liberdade;\nVI – estímulo do Poder Público, através de assistência jurídica, incentivos fiscais e \nsubsídios, nos termos da lei, ao acolhimento, sob a forma de guarda, de criança ou ado­\nlescente órfão ou abandonado;\nVII – programas de prevenção e atendimento especializado à criança, ao adolescente e \nao jovem dependente de entorpecentes e drogas afins. (Redação dada pela EC n. 65/2010)\n§ 4º A lei punirá severamente o abuso, a violência e a exploração sexual da criança e \ndo adolescente.\n§ 5º A adoção será assistida pelo Poder Público, na forma da lei, que estabelecerá casos \ne condições de sua efetivação por parte de estrangeiros.\n§ 6º Os filhos, havidos ou não da relação do casamento, ou por adoção, terão os mes­\nmos direitos e qualificações, proibidas quaisquer designações discriminatórias relativas \nà filiação.\n§ 7º No atendimento dos direitos da criança e do adolescente levar-se-á em conside­\nração o disposto no art. 204.\n§ 8º A lei estabelecerá: (Incluído pela EC n. 65/2010)\nI – o estatuto da juventude, destinado a regular os direitos dos jovens; (Incluído pela \nEC n. 65/2010)\nII – o plano nacional de juventude, de duração decenal, visando à articulação das \nvárias esferas do poder público para a execução de políticas públicas. (Incluído pela EC \nn. 65/2010)\nArt. 228. São penalmente inimputáveis os menores de dezoito anos, sujeitos às normas \nda legislação especial.\nArt. 229. Os pais têm o dever de assistir, criar e educar os filhos menores, e os filhos \nmaiores têm o dever de ajudar e amparar os pais na velhice, carência ou enfermidade.\nArt. 230. A família, a sociedade e o Estado têm o dever de amparar as pessoas idosas, \nassegurando sua participação na comunidade, defendendo sua dignidade e bem-estar e \ngarantindo-lhes o direito à vida.",
+                            "characters": 1954
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 81,
+                                "page": 81,
+                                "start_index": 0
+                            },
+                            "page_content": "80\nArt. 85, XXV\nXXV – prover e extinguir os cargos públicos federais, na forma da lei;\nXXVI – editar medidas provisórias com força de lei, nos termos do art. 62;\nXXVII – exercer outras atribuições previstas nesta Constituição;\nXXVIII – propor ao Congresso Nacional a decretação do estado de calamidade públi­\nca de âmbito nacional previsto nos arts. 167-B, 167-C, 167-D, 167-E, 167-F e 167-G desta \nConstituição. (Incluído pela EC n. 109/2021)\nParágrafo único. O Presidente da República poderá delegar as atribuições mencionadas \nnos incisos VI, XII e XXV, primeira parte, aos Ministros de Estado, ao Procurador-Geral \nda República ou ao Advogado-Geral da União, que observarão os limites traçados nas \nrespectivas delegações.\nSEÇÃO III\nDa Responsabilidade do Presidente da República\nArt. 85. São crimes de responsabilidade os atos do Presidente da República que atentem \ncontra a Constituição Federal e, especialmente, contra:\nI – a existência da União;\nII – o livre exercício do Poder Legislativo, do Poder Judiciário, do Ministério Público \ne dos Poderes constitucionais das unidades da Federação;\nIII – o exercício dos direitos políticos, individuais e sociais;\nIV – a segurança interna do País;\nV – a probidade na administração;\nVI – a lei orçamentária;\nVII – o cumprimento das leis e das decisões judiciais.\nParágrafo único. Esses crimes serão definidos em lei especial, que estabelecerá as \nnormas de processo e julgamento.\nArt. 86. Admitida a acusação contra o Presidente da República, por dois terços da Câmara \ndos Deputados, será ele submetido a julgamento perante o Supremo Tribunal Federal, nas \ninfrações penais comuns, ou perante o Senado Federal, nos crimes de responsabilidade.\n§ 1º O Presidente ficará suspenso de suas funções:\nI – nas infrações penais comuns, se recebida a denúncia ou queixa-crime pelo Supremo \nTribunal Federal;\nII – nos crimes de responsabilidade, após a instauração do processo pelo Senado Federal.",
+                            "characters": 1938
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 96,
+                                "page": 96,
+                                "start_index": 0
+                            },
+                            "page_content": "95\nArt. 102, I, h\ndo Poder Judiciário destinadas ao pagamento de precatórios deverão ser imediatamente \nexcluídos do estoque da dívida para fins de apuração do saldo devedor, vedada a incidência \nde juros, de correção monetária ou de quaisquer acréscimos legais sobre esses valores \napós sua transferência. (Incluído pela EC n. 136/2025)\nSEÇÃO II\nDo Supremo Tribunal Federal\nArt. 101. O Supremo Tribunal Federal compõe-se de onze Ministros, escolhidos dentre \ncidadãos com mais de trinta e cinco e menos de setenta anos de idade, de notável saber \njurídico e reputação ilibada. (Redação dada pela EC n. 122/2022)\nParágrafo único. Os Ministros do Supremo Tribunal Federal serão nomeados pelo Presi­\ndente da República, depois de aprovada a escolha pela maioria absoluta do Senado Federal.\nArt. 102. Compete ao Supremo Tribunal Federal, precipuamente, a guarda da Cons­\ntituição, cabendo-lhe:\nI – processar e julgar, originariamente:\na) a ação direta de inconstitucionalidade de lei ou ato normativo federal ou estadual \ne a ação declaratória de constitucionalidade de lei ou ato normativo federal; (Redação \ndada pela EC n. 3/1993)\nb) nas infrações penais comuns, o Presidente da República, o Vice-Presidente, os mem­\nbros do Congresso Nacional, seus próprios Ministros e o Procurador-Geral da República;\nc) nas infrações penais comuns e nos crimes de responsabilidade, os Ministros de Es­\ntado e os Comandantes da Marinha, do Exército e da Aeronáutica, ressalvado o disposto \nno art. 52, I, os membros dos Tribunais Superiores, os do Tribunal de Contas da União e os \nchefes de missão diplomática de caráter permanente; (Redação dada pela EC n. 23/1999)\nd) o habeas corpus, sendo paciente qualquer das pessoas referidas nas alíneas anterio­\nres; o mandado de segurança e o habeas data contra atos do Presidente da República, das \nMesas da Câmara dos Deputados e do Senado Federal, do Tribunal de Contas da União, \ndo Procurador-Geral da República e do próprio Supremo Tribunal Federal;",
+                            "characters": 1985
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 120,
+                                "page": 120,
+                                "start_index": 0
+                            },
+                            "page_content": "119\nArt. 136, § 3º\nTÍTULO V\nDa Defesa do Estado e das Instituições Democráticas\nCAPÍTULO I\nDo Estado de Defesa e do Estado de Sítio\nSEÇÃO I\nDo Estado de Defesa\nArt. 136. O Presidente da República pode, ouvidos o Conselho da República e o Conse­\nlho de Defesa Nacional, decretar estado de defesa para preservar ou prontamente resta­\nbelecer, em locais restritos e determinados, a ordem pública ou a paz social ameaçadas \npor grave e iminente instabilidade institucional ou atingidas por calamidades de grandes \nproporções na natureza.\n§ 1º O decreto que instituir o estado de defesa determinará o tempo de sua duração, \nespecificará as áreas a serem abrangidas e indicará, nos termos e limites da lei, as medidas \ncoercitivas a vigorarem, dentre as seguintes:\nI – restrições aos direitos de:\na) reunião, ainda que exercida no seio das associações;\nb) sigilo de correspondência;\nc) sigilo de comunicação telegráfica e telefônica;\nII – ocupação e uso temporário de bens e serviços públicos, na hipótese de calamidade \npública, respondendo a União pelos danos e custos decorrentes.\n§ 2º O tempo de duração do estado de defesa não será superior a trinta dias, podendo \nser prorrogado uma vez, por igual período, se persistirem as razões que justificaram a \nsua decretação.\n§ 3º Na vigência do estado de defesa:\nsumário",
+                            "characters": 1313
+                        }
+                    ]
+                },
+                {
+                    "id": "Q7",
+                    "category": "armadilha",
+                    "question": "Um brasileiro naturalizado pode ser eleito presidente da República?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 2,
+                    "elapsed_seconds": 0.05132,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 24,
+                                "page": 24,
+                                "start_index": 0
+                            },
+                            "page_content": "23\nArt. 12, § 4º, I\nCAPÍTULO III\nDa Nacionalidade\nArt. 12. São brasileiros:\nI – natos:\na) os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde \nque estes não estejam a serviço de seu país;\nb) os nascidos no estrangeiro, de pai brasileiro ou mãe brasileira, desde que qualquer \ndeles esteja a serviço da República Federativa do Brasil;\nc) os nascidos no estrangeiro de pai brasileiro ou de mãe brasileira, desde que sejam \nregistrados em repartição brasileira competente ou venham a residir na República Fe­\nderativa do Brasil e optem, em qualquer tempo, depois de atingida a maioridade, pela \nnacionalidade brasileira; (Redação dada pela EC n. 54/2007)\nII – naturalizados:\na) os que, na forma da lei, adquiram a nacionalidade brasileira, exigidas aos originários de \npaíses de língua portuguesa apenas residência por um ano ininterrupto e idoneidade moral;\nb) os estrangeiros de qualquer nacionalidade, residentes na República Federativa do \nBrasil há mais de quinze anos ininterruptos e sem condenação penal, desde que requeiram \na nacionalidade brasileira. (Redação dada pela ECR n. 3/1994)\n§ 1º Aos portugueses com residência permanente no País, se houver reciprocidade em \nfavor de brasileiros, serão atribuídos os direitos inerentes ao brasileiro, salvo os casos \nprevistos nesta Constituição. (Redação dada pela ECR n. 3/1994)\n§ 2º A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados, \nsalvo nos casos previstos nesta Constituição.\n§ 3º São privativos de brasileiro nato os cargos:\nI – de Presidente e Vice-Presidente da República;\nII – de Presidente da Câmara dos Deputados;\nIII – de Presidente do Senado Federal;\nIV – de Ministro do Supremo Tribunal Federal;\nV – da carreira diplomática;\nVI – de oficial das Forças Armadas;\nVII – de Ministro de Estado da Defesa. (Incluído pela EC n. 23/1999)\n§ 4º Será declarada a perda da nacionalidade do brasileiro que:\nI – tiver cancelada sua naturalização, por sentença judicial, em virtude de fraude relacio­",
+                            "characters": 2015
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 202,
+                                "page": 202,
+                                "start_index": 0
+                            },
+                            "page_content": "201\nII – promoção da cultura nacional e regional e estímulo à produção independente \nque objetive sua divulgação;\nIII – regionalização da produção cultural, artística e jornalística, conforme percen­\ntuais estabelecidos em lei;\nIV – respeito aos valores éticos e sociais da pessoa e da família.\nArt. 222. A propriedade de empresa jornalística e de radiodifusão sonora e de sons \ne imagens é privativa de brasileiros natos ou naturalizados há mais de dez anos, ou de \npessoas jurídicas constituídas sob as leis brasileiras e que tenham sede no País. (Redação \ndada pela EC n. 36/2002)\n§ 1º Em qualquer caso, pelo menos setenta por cento do capital total e do capital \nvotante das empresas jornalísticas e de radiodifusão sonora e de sons e imagens deverá \npertencer, direta ou indiretamente, a brasileiros natos ou naturalizados há mais de dez \nanos, que exercerão obrigatoriamente a gestão das atividades e estabelecerão o conteúdo \nda programação. (Redação dada pela EC n. 36/2002)\n§ 2º A responsabilidade editorial e as atividades de seleção e direção da programação \nveiculada são privativas de brasileiros natos ou naturalizados há mais de dez anos, em \nqualquer meio de comunicação social. (Redação dada pela EC n. 36/2002)\n§ 3º Os meios de comunicação social eletrônica, independentemente da tecnologia \nutilizada para a prestação do serviço, deverão observar os princípios enunciados no \nart. 221, na forma de lei específica, que também garantirá a prioridade de profissionais \nbrasileiros na execução de produções nacionais. (Incluído pela EC n. 36/2002)\n§ 4º Lei disciplinará a participação de capital estrangeiro nas empresas de que trata \no § 1º. (Incluído pela EC n. 36/2002)\n§ 5º As alterações de controle societário das empresas de que trata o § 1º serão comu­\nnicadas ao Congresso Nacional. (Incluído pela EC n. 36/2002)\nArt. 223. Compete ao Poder Executivo outorgar e renovar concessão, permissão e \nautorização para o serviço de radiodifusão sonora e de sons e imagens, observado o",
+                            "characters": 1998
+                        }
+                    ]
+                },
+                {
+                    "id": "Q8",
+                    "category": "armadilha",
+                    "question": "Qual é o valor atual do salário mínimo nacional estabelecido diretamente pela Constituição?",
+                    "ground_truth": null,
+                    "reference_articles": [],
+                    "retrieved_count": 4,
+                    "elapsed_seconds": 0.062403,
+                    "retrieved_documents": [
+                        {
+                            "rank": 1,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 95,
+                                "page": 95,
+                                "start_index": 1767
+                            },
+                            "page_content": "rências voluntárias, enquanto perdurar a omissão. (Incluído pela EC n. 136/2025)\n§ 28. Os Estados, o Distrito Federal e os Municípios, mediante dotação orçamentária \nespecífica, poderão efetuar pagamentos de precatórios que superem os limites previstos \nno § 23 deste artigo. (Incluído pela EC n. 136/2025)\n§ 29. É facultado ao credor de precatório dos Estados, do Distrito Federal e dos Mu­\nnicípios que não tenha sido pago em razão do disposto nos §§ 20 ou 23 deste artigo, sem \nprejuízo dos procedimentos previstos nos §§ 9º e 21 deste artigo, optar pelo recebimen­\nto, mediante acordos diretos perante Juízos Auxiliares de Conciliação de Pagamento \nde Condenações Judiciais contra a Fazenda Pública estadual, municipal ou do Distrito \nFederal, em parcela única, até o final do exercício seguinte, com renúncia de parcela do \nvalor desse crédito. (Incluído pela EC n. 136/2025)\n§ 30. Os valores efetivamente aportados pelos entes federativos nas contas especiais \nsumário",
+                            "characters": 974
+                        },
+                        {
+                            "rank": 2,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 268,
+                                "page": 268,
+                                "start_index": 0
+                            },
+                            "page_content": "267\nADCT – Art. 116, § 12, VI, f\n§ 12. A quitação antecipada de parcela da dívida de que trata o § 3º deste artigo poderá \nser realizada por meio dos seguintes instrumentos: (Incluído pela EC n. 136/2025)\nI – transferência de valores em moeda corrente à conta única do Tesouro Nacional, \na título de amortização extraordinária do saldo devedor; (Incluído pela EC n. 136/2025)\nII – transferência, para a União, de participações societárias em empresas de propriedade \ndo Município, desde que a operação seja autorizada mediante leis específicas da União e \ndo Município; (Incluído pela EC n. 136/2025)\nIII – transferência de bens móveis ou imóveis do Município para a União, desde que \nhaja manifestação de aceite por ambas as partes e a operação seja autorizada mediante \nlei específica do Município; (Incluído pela EC n. 136/2025)\nIV – cessão de créditos líquidos e certos do Município para o setor privado, desde que \npreviamente aceitos pela União; (Incluído pela EC n. 136/2025)\nV – transferência de créditos do Município com a União reconhecidos por ambas as \npartes; (Incluído pela EC n. 136/2025)\nVI – cessão, para a União, dos recebíveis originados de créditos inscritos na dívida ativa \nda Fazenda Pública municipal confessados e considerados recuperáveis nos termos da \nlegislação aplicável, nas seguintes condições: (Incluído pela EC n. 136/2025)\na) o valor considerado para amortização da dívida será o valor atualizado dos créditos \ncom ou sem deságio, negociado entre as partes; (Incluída pela EC n. 136/2025)\nb) a cessão do crédito não gerará qualquer alteração na situação do devedor nem ensejará \nexpedição de certidão negativa; (Incluída pela EC n. 136/2025)\nc) na hipótese de crédito cedido, regulamento disporá sobre as regras às quais se \nsubmeterão os sujeitos passivos; (Incluída pela EC n. 136/2025)\nd) os valores dos créditos de que trata este inciso, líquidos do deságio a que se refere \na alínea “a” deste inciso, poderão ser utilizados como pagamento da dívida com a União",
+                            "characters": 2000
+                        },
+                        {
+                            "rank": 3,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 193,
+                                "page": 193,
+                                "start_index": 0
+                            },
+                            "page_content": "192\nexercício de sua competência estadual, nos termos do art. 156-A, § 2º; e (Incluída pela \nEC n. 132/2023)\nc) dos recursos a que se referem os incisos I, II e III do caput do art. 155, o inciso II do \ncaput do art. 157, os incisos II, III e IV do caput do art. 158 e as alíneas a e b do inciso I e \no inciso II do caput do art. 159 desta Constituição; (Incluída pela EC n. 132/2023)\nIII – os recursos referidos no inciso II do caput deste artigo serão distribuídos entre \ncada Estado e seus Municípios, proporcionalmente ao número de alunos das diversas \netapas e modalidades da educação básica presencial matriculados nas respectivas redes, \nnos âmbitos de atuação prioritária, conforme estabelecido nos §§ 2º e 3º do art. 211 desta \nConstituição, observadas as ponderações referidas na alínea a do inciso X do caput e no \n§ 2º deste artigo; (Incluído pela EC n. 108/2020)\nIV – a União complementará os recursos dos fundos a que se refere o inciso II do caput \ndeste artigo; (Incluído pela EC n. 108/2020)\nV – a complementação da União será equivalente a, no mínimo, 23% (vinte e três por \ncento) do total de recursos a que se refere o inciso II do caput deste artigo, distribuída \nda seguinte forma: (Incluído pela EC n. 108/2020)\na) 10 (dez) pontos percentuais no âmbito de cada Estado e do Distrito Federal, sempre \nque o valor anual por aluno (VAAF), nos termos do inciso III do caput deste artigo, não \nalcançar o mínimo definido nacionalmente; (Incluída pela EC n. 108/2020)\nb) no mínimo, 10,5 (dez inteiros e cinco décimos) pontos percentuais em cada rede \npública de ensino municipal, estadual ou distrital, sempre que o valor anual total por \naluno (VAAT), referido no inciso VI do caput deste artigo, não alcançar o mínimo definido \nnacionalmente; (Incluída pela EC n. 108/2020)\nc) 2,5 (dois inteiros e cinco décimos) pontos percentuais nas redes públicas que, cum­\npridas condicionalidades de melhoria de gestão previstas em lei, alcançarem evolução",
+                            "characters": 1963
+                        },
+                        {
+                            "rank": 4,
+                            "metadata": {
+                                "documento": "Constituicao-Brasil-EC139-2026.pdf",
+                                "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                                "pagina": 141,
+                                "page": 141,
+                                "start_index": 0
+                            },
+                            "page_content": "140\nIV – (Revogado pela EC n. 3/1993)\n§ 1º Sem prejuízo da progressividade no tempo a que se refere o art. 182, § 4º, II, o \nimposto previsto no inciso I poderá: (Redação dada pela EC n. 29/2000)\nI – ser progressivo em razão do valor do imóvel; (Incluído pela EC n. 29/2000)\nII – ter alíquotas diferentes de acordo com a localização e o uso do imóvel; (Incluído \npela EC n. 29/2000)\nIII – ter sua base de cálculo atualizada pelo Poder Executivo, conforme critérios es­\ntabelecidos em lei municipal. (Incluído pela EC n. 132/2023)\n§ 1º-A O imposto previsto no inciso I do caput deste artigo não incide sobre templos de \nqualquer culto, ainda que as entidades abrangidas pela imunidade de que trata a alínea \nb do inciso VI do caput do art. 150 desta Constituição sejam apenas locatárias do bem \nimóvel. (Incluído pela EC n. 116/2022)\n§ 2º O imposto previsto no inciso II:\nI – não incide sobre a transmissão de bens ou direitos incorporados ao patrimônio de \npessoa jurídica em realização de capital, nem sobre a transmissão de bens ou direitos \ndecorrente de fusão, incorporação, cisão ou extinção de pessoa jurídica, salvo se, nesses \ncasos, a atividade preponderante do adquirente for a compra e venda desses bens ou \ndireitos, locação de bens imóveis ou arrendamento mercantil;\nII – compete ao Município da situação do bem.\n§ 3º Em relação ao imposto previsto no inciso III do caput deste artigo, cabe à lei \ncomplementar: (Redação dada pela EC n. 37/2002)\nI – fixar as suas alíquotas máximas e mínimas; (Redação dada pela EC n. 37/2002)\nII – excluir da sua incidência exportações de serviços para o exterior. (Incluído pela \nEC n. 3/1993)\n III – regular a forma e as condições como isenções, incentivos e benefícios fiscais \nserão concedidos e revogados. (Incluído pela EC n. 37/2002)\n§ 4º (Revogado pela EC n. 3/1993)\nSEÇÃO V-A\nDo Imposto de Competência Compartilhada entre Estados,\nDistrito Federal e Municípios\n(Incluída pela EC n. 132/2023)",
+                            "characters": 1947
+                        }
+                    ]
+                }
+            ],
+            "summary": {
+                "questions_evaluated": 8,
+                "total_parents_retrieved": 29,
+                "average_parents_per_question": 3.62,
+                "average_context_characters": 1690.72,
+                "average_query_seconds": 0.074413
+            }
+        }
+    ]
+}
