@@ -3,9 +3,18 @@ venv/
 __pycache__/
 *.pyc
 .env
+
+
+# Testes
+
 teste.py
 teste2.py
 teste_parent_retriever.py
+testar_parser_constitucional.py
+experimentos_parent_retriever.py
+teste*
+*teste*
+*testar*
 
 
 # Bancos vetoriais locais gerados pelo GurAI

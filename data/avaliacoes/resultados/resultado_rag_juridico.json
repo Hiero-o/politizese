@@ -1,0 +1,1328 @@
+{
+    "evaluation": {
+        "name": "Avaliação do RAG Jurídico",
+        "dataset_id": "constituicao_federal_1988",
+        "dataset_name": "Avaliação RAG - Constituição Federal",
+        "dataset_version": "1.1",
+        "dataset_source": "Constituicao-Brasil-EC139-2026.pdf",
+        "dataset_path": "data\\avaliacoes\\perguntas_constituicao.JSON",
+        "executed_at": "2026-11-11T05:02:29.833420+00:00",
+        "methodology": {
+            "retrieval_uses_ground_truth": false,
+            "article_level": "Identificadores distintos de artigos na ordem de recuperação.",
+            "legal_unit_level": "Identificadores source_node_id distintos na ordem de recuperação.",
+            "precision_denominator": "Valor de K, mesmo quando menos de K resultados são recuperados."
+        }
+    },
+    "results": {
+        "configuration": {
+            "retriever_type": "legal_hybrid",
+            "provider": "local",
+            "collection_name": "constituicao_legal_nomic_search_prefix_v1_local_nomic_56079265",
+            "indexed_documents": 3374,
+            "top_k": 4,
+            "candidate_k": 24,
+            "k_values": [
+                1,
+                2,
+                4
+            ]
+        },
+        "questions": [
+            {
+                "id": "Q1",
+                "category": "simples",
+                "question": "Quais direitos sociais são garantidos pela Constituição Federal?",
+                "ground_truth": "O artigo 6º estabelece como direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à infância e a assistência aos desamparados. Seu parágrafo único também prevê renda básica familiar para brasileiros em situação de vulnerabilidade social. O artigo 7º detalha os direitos dos trabalhadores urbanos e rurais.",
+                "reference_articles": [
+                    "CF1988-ART-0006",
+                    "CF1988-ART-0007"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ART-0006",
+                    "CF1988-ART-0085",
+                    "CF1988-ART-0129",
+                    "CF1988-ART-0227"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ART-0006-CAPUT",
+                    "CF1988-ART-0085-INC-III",
+                    "CF1988-ART-0129-INC-II",
+                    "CF1988-ART-0227-PAR-0003-INC-II"
+                ],
+                "elapsed_seconds": 0.051929,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 1.0,
+                            "recall": 0.5,
+                            "mrr": 1.0,
+                            "hit_rate": 1.0
+                        },
+                        "2": {
+                            "precision": 0.5,
+                            "recall": 0.5,
+                            "mrr": 1.0,
+                            "hit_rate": 1.0
+                        },
+                        "4": {
+                            "precision": 0.25,
+                            "recall": 0.5,
+                            "mrr": 1.0,
+                            "hit_rate": 1.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ART-0006-CAPUT",
+                        "article_id": "CF1988-ART-0006",
+                        "metadata": {
+                            "article_number": "6",
+                            "pagina_inicial": 20,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "document_part": "CF",
+                            "legal_unit": "caput",
+                            "source_node_id": "CF1988-ART-0006-CAPUT",
+                            "document_id": "CF1988",
+                            "article_id": "CF1988-ART-0006",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "parent_id": "CF1988-ART-0006",
+                            "pagina_final": 20,
+                            "chunk_id": "CF1988-ART-0006-CAPUT"
+                        },
+                        "page_content": "São direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia,\no transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à\ninfância, a assistência aos desamparados, na forma desta Constituição. (Redação dada\npela EC n. 90/2015)",
+                        "characters": 271
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0085-INC-III",
+                        "article_id": "CF1988-ART-0085",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0085-INC-III",
+                            "parent_id": "CF1988-ART-0085",
+                            "article_id": "CF1988-ART-0085",
+                            "article_number": "85",
+                            "chunk_id": "CF1988-ART-0085-INC-III",
+                            "pagina_final": 81,
+                            "document_part": "CF",
+                            "document_id": "CF1988",
+                            "pagina_inicial": 81,
+                            "number": "III",
+                            "legal_unit": "inciso",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf"
+                        },
+                        "page_content": "o exercício dos direitos políticos, individuais e sociais;",
+                        "characters": 58
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ART-0129-INC-II",
+                        "article_id": "CF1988-ART-0129",
+                        "metadata": {
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "document_part": "CF",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "article_id": "CF1988-ART-0129",
+                            "number": "II",
+                            "pagina_inicial": 114,
+                            "pagina_final": 114,
+                            "parent_id": "CF1988-ART-0129",
+                            "legal_unit": "inciso",
+                            "article_number": "129",
+                            "chunk_id": "CF1988-ART-0129-INC-II",
+                            "source_node_id": "CF1988-ART-0129-INC-II"
+                        },
+                        "page_content": "zelar pelo efetivo respeito dos Poderes Públicos e dos serviços de relevância pú\nblica aos direitos assegurados nesta Constituição, promovendo as medidas necessárias\na sua garantia;",
+                        "characters": 181
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ART-0227-PAR-0003-INC-II",
+                        "article_id": "CF1988-ART-0227",
+                        "metadata": {
+                            "document_part": "CF",
+                            "chunk_id": "CF1988-ART-0227-PAR-0003-INC-II",
+                            "parent_id": "CF1988-ART-0227-PAR-0003",
+                            "legal_unit": "inciso",
+                            "pagina_final": 205,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "article_number": "227",
+                            "number": "II",
+                            "source_node_id": "CF1988-ART-0227-PAR-0003-INC-II",
+                            "article_id": "CF1988-ART-0227",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 205
+                        },
+                        "page_content": "garantia de direitos previdenciários e trabalhistas;",
+                        "characters": 52
+                    }
+                ]
+            },
+            {
+                "id": "Q2",
+                "category": "simples",
+                "question": "Quais são os requisitos constitucionais para alguém se candidatar à Presidência da República?",
+                "ground_truth": "As condições gerais de elegibilidade incluem nacionalidade brasileira, pleno exercício dos direitos políticos, alistamento eleitoral, domicílio eleitoral na circunscrição, filiação partidária e idade mínima de 35 anos para Presidente e Vice-Presidente da República. Também são inelegíveis os inalistáveis e os analfabetos. Além disso, o cargo de Presidente da República é privativo de brasileiro nato.",
+                "reference_articles": [
+                    "CF1988-ART-0012",
+                    "CF1988-ART-0014"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ART-0103",
+                    "CF1988-ART-0166",
+                    "CF1988-ART-0039",
+                    "CF1988-ART-0037"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ART-0103-PAR-0001",
+                    "CF1988-ART-0166-PAR-0003-INC-II-ALI-C",
+                    "CF1988-ART-0039-PAR-0002",
+                    "CF1988-ART-0037-PAR-0007"
+                ],
+                "elapsed_seconds": 0.032377,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "2": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "4": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ART-0103-PAR-0001",
+                        "article_id": "CF1988-ART-0103",
+                        "metadata": {
+                            "document_part": "CF",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "pagina_inicial": 98,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ART-0103-PAR-0001",
+                            "article_id": "CF1988-ART-0103",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "article_number": "103",
+                            "pagina_final": 98,
+                            "parent_id": "CF1988-ART-0103",
+                            "source_node_id": "CF1988-ART-0103-PAR-0001"
+                        },
+                        "page_content": "O Procurador-Geral da República deverá ser previamente ouvido nas ações de in\nconstitucionalidade e em todos os processos de competência do Supremo Tribunal Federal.",
+                        "characters": 165
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0166-PAR-0003-INC-II-ALI-C",
+                        "article_id": "CF1988-ART-0166",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0166-PAR-0003-INC-II-ALI-C",
+                            "article_number": "166",
+                            "number": "c",
+                            "pagina_final": 158,
+                            "chunk_id": "CF1988-ART-0166-PAR-0003-INC-II-ALI-C",
+                            "document_id": "CF1988",
+                            "legal_unit": "alinea",
+                            "article_id": "CF1988-ART-0166",
+                            "document_part": "CF",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 158,
+                            "parent_id": "CF1988-ART-0166-PAR-0003-INC-II",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf"
+                        },
+                        "page_content": "transferências tributárias constitucionais para Estados, Municípios e Distrito\nFederal; ou",
+                        "characters": 90
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ART-0039-PAR-0002",
+                        "article_id": "CF1988-ART-0039",
+                        "metadata": {
+                            "chunk_id": "CF1988-ART-0039-PAR-0002",
+                            "article_id": "CF1988-ART-0039",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "39",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "source_node_id": "CF1988-ART-0039-PAR-0002",
+                            "legal_unit": "paragraph",
+                            "document_id": "CF1988",
+                            "pagina_inicial": 51,
+                            "document_part": "CF",
+                            "parent_id": "CF1988-ART-0039",
+                            "number": "2",
+                            "pagina_final": 51
+                        },
+                        "page_content": "A União, os Estados e o Distrito Federal manterão escolas de governo para a\nformação e o aperfeiçoamento dos servidores públicos, constituindo-se a participa\nção nos cursos um dos requisitos para a promoção na carreira, facultada, para isso,\na celebração de convênios ou contratos entre os entes federados. (Redação dada pela\nEC n. 19/1998)",
+                        "characters": 340
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ART-0037-PAR-0007",
+                        "article_id": "CF1988-ART-0037",
+                        "metadata": {
+                            "document_part": "CF",
+                            "number": "7",
+                            "document_id": "CF1988",
+                            "chunk_id": "CF1988-ART-0037-PAR-0007",
+                            "pagina_inicial": 49,
+                            "article_number": "37",
+                            "legal_unit": "paragraph",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_final": 49,
+                            "source_node_id": "CF1988-ART-0037-PAR-0007",
+                            "parent_id": "CF1988-ART-0037",
+                            "article_id": "CF1988-ART-0037",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf"
+                        },
+                        "page_content": "A lei disporá sobre os requisitos e as restrições ao ocupante de cargo ou emprego\nda administração direta e indireta que possibilite o acesso a informações privilegiadas.\n(Incluído pela EC n. 19/1998)",
+                        "characters": 200
+                    }
+                ]
+            },
+            {
+                "id": "Q3",
+                "category": "simples",
+                "question": "Quais são as competências legislativas privativas da União?",
+                "ground_truth": "O artigo 22 estabelece as matérias sobre as quais compete privativamente à União legislar. Entre elas estão direito civil, comercial, penal, processual, eleitoral, agrário, marítimo, aeronáutico, espacial e do trabalho; desapropriação; águas, energia, informática, telecomunicações, radiodifusão; serviço postal; comércio exterior e interestadual; trânsito e transporte, entre outras matérias enumeradas em seus incisos. O parágrafo único permite que lei complementar autorize os Estados a legislar sobre questões específicas dessas matérias.",
+                "reference_articles": [
+                    "CF1988-ART-0022"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ART-0032",
+                    "CF1988-ART-0222",
+                    "CF1988-ART-0022",
+                    "CF1988-ART-0061"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ART-0032-PAR-0001",
+                    "CF1988-ART-0222-PAR-0002",
+                    "CF1988-ART-0022-CAPUT",
+                    "CF1988-ART-0061-PAR-0001"
+                ],
+                "elapsed_seconds": 0.031514,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "2": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "4": {
+                            "precision": 0.25,
+                            "recall": 1.0,
+                            "mrr": 0.3333,
+                            "hit_rate": 1.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ART-0032-PAR-0001",
+                        "article_id": "CF1988-ART-0032",
+                        "metadata": {
+                            "article_number": "32",
+                            "source_node_id": "CF1988-ART-0032-PAR-0001",
+                            "article_id": "CF1988-ART-0032",
+                            "parent_id": "CF1988-ART-0032",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "number": "1",
+                            "chunk_id": "CF1988-ART-0032-PAR-0001",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 43,
+                            "legal_unit": "paragraph",
+                            "document_id": "CF1988",
+                            "pagina_final": 43,
+                            "document_part": "CF"
+                        },
+                        "page_content": "Ao Distrito Federal são atribuídas as competências legislativas reservadas aos\nEstados e Municípios.",
+                        "characters": 100
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0222-PAR-0002",
+                        "article_id": "CF1988-ART-0222",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0222-PAR-0002",
+                            "legal_unit": "paragraph",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_final": 202,
+                            "pagina_inicial": 202,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "222",
+                            "document_part": "CF",
+                            "document_id": "CF1988",
+                            "number": "2",
+                            "parent_id": "CF1988-ART-0222",
+                            "chunk_id": "CF1988-ART-0222-PAR-0002",
+                            "article_id": "CF1988-ART-0222"
+                        },
+                        "page_content": "A responsabilidade editorial e as atividades de seleção e direção da programação\nveiculada são privativas de brasileiros natos ou naturalizados há mais de dez anos, em\nqualquer meio de comunicação social. (Redação dada pela EC n. 36/2002)",
+                        "characters": 238
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ART-0022-CAPUT",
+                        "article_id": "CF1988-ART-0022",
+                        "metadata": {
+                            "chunk_id": "CF1988-ART-0022-CAPUT",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 33,
+                            "article_id": "CF1988-ART-0022",
+                            "document_part": "CF",
+                            "article_number": "22",
+                            "source_node_id": "CF1988-ART-0022-CAPUT",
+                            "parent_id": "CF1988-ART-0022",
+                            "legal_unit": "caput",
+                            "pagina_final": 33,
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988"
+                        },
+                        "page_content": "Compete privativamente à União legislar sobre:",
+                        "characters": 46
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ART-0061-PAR-0001",
+                        "article_id": "CF1988-ART-0061",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0061-PAR-0001",
+                            "document_part": "CF",
+                            "legal_unit": "paragraph",
+                            "pagina_final": 71,
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "chunk_id": "CF1988-ART-0061-PAR-0001",
+                            "article_id": "CF1988-ART-0061",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "parent_id": "CF1988-ART-0061",
+                            "number": "1",
+                            "article_number": "61",
+                            "pagina_inicial": 71
+                        },
+                        "page_content": "São de iniciativa privativa do Presidente da República as leis que:",
+                        "characters": 67
+                    }
+                ]
+            },
+            {
+                "id": "Q4",
+                "category": "simples",
+                "question": "Como é composto o Congresso Nacional?",
+                "ground_truth": "O Poder Legislativo federal é exercido pelo Congresso Nacional, composto pela Câmara dos Deputados e pelo Senado Federal, conforme o artigo 44 da Constituição.",
+                "reference_articles": [
+                    "CF1988-ART-0044"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ADC-ART-0001",
+                    "CF1988-ART-0078",
+                    "CF1988-ADC-ART-0125",
+                    "CF1988-ADC-ART-0063"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ADC-ART-0001-CAPUT",
+                    "CF1988-ART-0078-CAPUT",
+                    "CF1988-ADC-ART-0125-PAR-0003-INC-II",
+                    "CF1988-ADC-ART-0063-CAPUT"
+                ],
+                "elapsed_seconds": 0.061118,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "2": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "4": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ADC-ART-0001-CAPUT",
+                        "article_id": "CF1988-ADC-ART-0001",
+                        "metadata": {
+                            "document_part": "ADCT",
+                            "article_id": "CF1988-ADC-ART-0001",
+                            "pagina_final": 218,
+                            "document_id": "CF1988",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 218,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "1",
+                            "source_node_id": "CF1988-ADC-ART-0001-CAPUT",
+                            "chunk_id": "CF1988-ADC-ART-0001-CAPUT",
+                            "legal_unit": "caput",
+                            "parent_id": "CF1988-ADC-ART-0001"
+                        },
+                        "page_content": "O Presidente da República, o Presidente do Supremo Tribunal Federal e os\nmembros do Congresso Nacional prestarão o compromisso de manter, defender e cumprir\na Constituição, no ato e na data de sua promulgação.",
+                        "characters": 209
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0078-CAPUT",
+                        "article_id": "CF1988-ART-0078",
+                        "metadata": {
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_part": "CF",
+                            "article_id": "CF1988-ART-0078",
+                            "chunk_id": "CF1988-ART-0078-CAPUT",
+                            "article_number": "78",
+                            "legal_unit": "caput",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "pagina_inicial": 78,
+                            "source_node_id": "CF1988-ART-0078-CAPUT",
+                            "pagina_final": 78,
+                            "parent_id": "CF1988-ART-0078"
+                        },
+                        "page_content": "O Presidente e o Vice-Presidente da República tomarão posse em sessão do\nCongresso Nacional, prestando o compromisso de manter, defender e cumprir a Cons\ntituição, observar as leis, promover o bem geral do povo brasileiro, sustentar a união, a\nintegridade e a independência do Brasil.",
+                        "characters": 284
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ADC-ART-0125-PAR-0003-INC-II",
+                        "article_id": "CF1988-ADC-ART-0125",
+                        "metadata": {
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 272,
+                            "document_part": "ADCT",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "125",
+                            "source_node_id": "CF1988-ADC-ART-0125-PAR-0003-INC-II",
+                            "number": "II",
+                            "chunk_id": "CF1988-ADC-ART-0125-PAR-0003-INC-II",
+                            "parent_id": "CF1988-ADC-ART-0125-PAR-0003",
+                            "article_id": "CF1988-ADC-ART-0125",
+                            "document_id": "CF1988",
+                            "legal_unit": "inciso",
+                            "pagina_final": 272
+                        },
+                        "page_content": "compor o Fundo de Compensação de Benefícios Fiscais ou Financeiro-Fiscais do\nimposto de que trata o art. 155, II, da Constituição Federal. (Incluído pela EC n. 132/2023)",
+                        "characters": 169
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ADC-ART-0063-CAPUT",
+                        "article_id": "CF1988-ADC-ART-0063",
+                        "metadata": {
+                            "article_id": "CF1988-ADC-ART-0063",
+                            "document_part": "ADCT",
+                            "pagina_inicial": 239,
+                            "parent_id": "CF1988-ADC-ART-0063",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "63",
+                            "document_id": "CF1988",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ADC-ART-0063-CAPUT",
+                            "legal_unit": "caput",
+                            "pagina_final": 239,
+                            "source_node_id": "CF1988-ADC-ART-0063-CAPUT"
+                        },
+                        "page_content": "É criada uma Comissão composta de nove membros, sendo três do Poder Legis\nlativo, três do Poder Judiciário e três do Poder Executivo, para promover as comemorações\ndo centenário da proclamação da República e da promulgação da primeira Constituição\nrepublicana do País, podendo, a seu critério, desdobrar-se em tantas subcomissões quantas\nforem necessárias.",
+                        "characters": 356
+                    }
+                ]
+            },
+            {
+                "id": "Q5",
+                "category": "armadilha",
+                "question": "A Constituição permite pena de morte para crimes hediondos em tempos de paz?",
+                "ground_truth": "Não. O artigo 5º, inciso XLVII, alínea a, proíbe a pena de morte, exceto em caso de guerra declarada, nos termos do artigo 84, inciso XIX. A prática de crime hediondo em tempo de paz não constitui uma exceção constitucional a essa proibição.",
+                "reference_articles": [
+                    "CF1988-ART-0005",
+                    "CF1988-ART-0084"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ADC-ART-0030",
+                    "CF1988-ART-0005",
+                    "CF1988-ART-0037"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ADC-ART-0030-CAPUT",
+                    "CF1988-ART-0005-INC-XLIII",
+                    "CF1988-ART-0037-PAR-0015",
+                    "CF1988-ART-0005-INC-XV"
+                ],
+                "elapsed_seconds": 0.030574,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "2": {
+                            "precision": 0.5,
+                            "recall": 0.5,
+                            "mrr": 0.5,
+                            "hit_rate": 1.0
+                        },
+                        "4": {
+                            "precision": 0.25,
+                            "recall": 0.5,
+                            "mrr": 0.5,
+                            "hit_rate": 1.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ADC-ART-0030-CAPUT",
+                        "article_id": "CF1988-ADC-ART-0030",
+                        "metadata": {
+                            "document_id": "CF1988",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 228,
+                            "parent_id": "CF1988-ADC-ART-0030",
+                            "pagina_final": 228,
+                            "document_part": "ADCT",
+                            "article_id": "CF1988-ADC-ART-0030",
+                            "chunk_id": "CF1988-ADC-ART-0030-CAPUT",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "30",
+                            "source_node_id": "CF1988-ADC-ART-0030-CAPUT",
+                            "legal_unit": "caput"
+                        },
+                        "page_content": "A legislação que criar a justiça de paz manterá os atuais juízes de paz até a\nposse dos novos titulares, assegurando-lhes os direitos e atribuições conferidos a estes,\ne designará o dia para a eleição prevista no art. 98, II, da Constituição.",
+                        "characters": 242
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0005-INC-XLIII",
+                        "article_id": "CF1988-ART-0005",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0005-INC-XLIII",
+                            "legal_unit": "inciso",
+                            "pagina_inicial": 17,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "document_part": "CF",
+                            "number": "XLIII",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ART-0005-INC-XLIII",
+                            "article_number": "5",
+                            "parent_id": "CF1988-ART-0005",
+                            "pagina_final": 17,
+                            "article_id": "CF1988-ART-0005"
+                        },
+                        "page_content": "a lei considerará crimes inafiançáveis e insuscetíveis de graça ou anistia a\nprática da tortura, o tráfico ilícito de entorpecentes e drogas afins, o terrorismo e os\ndefinidos como crimes hediondos, por eles respondendo os mandantes, os executores e\nos que, podendo evitá-los, se omitirem;",
+                        "characters": 289
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ART-0037-PAR-0015",
+                        "article_id": "CF1988-ART-0037",
+                        "metadata": {
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ART-0037-PAR-0015",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "number": "15",
+                            "legal_unit": "paragraph",
+                            "article_id": "CF1988-ART-0037",
+                            "pagina_inicial": 50,
+                            "document_part": "CF",
+                            "pagina_final": 50,
+                            "document_id": "CF1988",
+                            "source_node_id": "CF1988-ART-0037-PAR-0015",
+                            "parent_id": "CF1988-ART-0037",
+                            "article_number": "37"
+                        },
+                        "page_content": "É vedada a complementação de aposentadorias de servidores públicos e de pen\nsões por morte a seus dependentes que não seja decorrente do disposto nos §§ 14 a 16 do\nart. 40 ou que não seja prevista em lei que extinga regime próprio de previdência social.\n(Incluído pela EC n. 103/2019)",
+                        "characters": 284
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ART-0005-INC-XV",
+                        "article_id": "CF1988-ART-0005",
+                        "metadata": {
+                            "pagina_final": 15,
+                            "parent_id": "CF1988-ART-0005",
+                            "article_id": "CF1988-ART-0005",
+                            "chunk_id": "CF1988-ART-0005-INC-XV",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "pagina_inicial": 15,
+                            "document_part": "CF",
+                            "article_number": "5",
+                            "legal_unit": "inciso",
+                            "source_node_id": "CF1988-ART-0005-INC-XV",
+                            "number": "XV",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf"
+                        },
+                        "page_content": "é livre a locomoção no território nacional em tempo de paz, podendo qualquer\npessoa, nos termos da lei, nele entrar, permanecer ou dele sair com seus bens;",
+                        "characters": 155
+                    }
+                ]
+            },
+            {
+                "id": "Q6",
+                "category": "armadilha",
+                "question": "O presidente pode editar medida provisória para criar crimes e estabelecer penas?",
+                "ground_truth": "Não. O artigo 62, parágrafo 1º, inciso I, alínea b, veda a edição de medidas provisórias sobre matéria de direito penal, processual penal e processual civil. Portanto, não se pode utilizar medida provisória para criar crimes e estabelecer penas.",
+                "reference_articles": [
+                    "CF1988-ART-0062"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ART-0062",
+                    "CF1988-ART-0052",
+                    "CF1988-ART-0136",
+                    "CF1988-ART-0086"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ART-0062-PAR-0011",
+                    "CF1988-ART-0052-INC-I",
+                    "CF1988-ART-0136-CAPUT",
+                    "CF1988-ART-0086-CAPUT"
+                ],
+                "elapsed_seconds": 0.031186,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 1.0,
+                            "recall": 1.0,
+                            "mrr": 1.0,
+                            "hit_rate": 1.0
+                        },
+                        "2": {
+                            "precision": 0.5,
+                            "recall": 1.0,
+                            "mrr": 1.0,
+                            "hit_rate": 1.0
+                        },
+                        "4": {
+                            "precision": 0.25,
+                            "recall": 1.0,
+                            "mrr": 1.0,
+                            "hit_rate": 1.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ART-0062-PAR-0011",
+                        "article_id": "CF1988-ART-0062",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0062-PAR-0011",
+                            "number": "11",
+                            "pagina_inicial": 73,
+                            "legal_unit": "paragraph",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "article_id": "CF1988-ART-0062",
+                            "parent_id": "CF1988-ART-0062",
+                            "document_part": "CF",
+                            "document_id": "CF1988",
+                            "article_number": "62",
+                            "pagina_final": 73,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ART-0062-PAR-0011"
+                        },
+                        "page_content": "Não editado o decreto legislativo a que se refere o § 3º até sessenta dias após a\nrejeição ou perda de eficácia de medida provisória, as relações jurídicas constituídas e\ndecorrentes de atos praticados durante sua vigência conservar-se-ão por ela regidas.\n(Incluído pela EC n. 32/2001)",
+                        "characters": 285
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0052-INC-I",
+                        "article_id": "CF1988-ART-0052",
+                        "metadata": {
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ART-0052-INC-I",
+                            "source_node_id": "CF1988-ART-0052-INC-I",
+                            "article_id": "CF1988-ART-0052",
+                            "article_number": "52",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_final": 64,
+                            "document_part": "CF",
+                            "legal_unit": "inciso",
+                            "parent_id": "CF1988-ART-0052",
+                            "document_id": "CF1988",
+                            "pagina_inicial": 63,
+                            "number": "I"
+                        },
+                        "page_content": "processar e julgar o Presidente e o Vice-Presidente da República nos crimes de\nresponsabilidade, bem como os Ministros de Estado e os Comandantes da Marinha, do\nExército e da Aeronáutica nos crimes da mesma natureza conexos com aqueles; (Redação\ndada pela EC n. 23/1999)",
+                        "characters": 270
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ART-0136-CAPUT",
+                        "article_id": "CF1988-ART-0136",
+                        "metadata": {
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ART-0136-CAPUT",
+                            "parent_id": "CF1988-ART-0136",
+                            "pagina_final": 120,
+                            "document_id": "CF1988",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "136",
+                            "document_part": "CF",
+                            "article_id": "CF1988-ART-0136",
+                            "pagina_inicial": 120,
+                            "source_node_id": "CF1988-ART-0136-CAPUT",
+                            "legal_unit": "caput"
+                        },
+                        "page_content": "O Presidente da República pode, ouvidos o Conselho da República e o Conse\nlho de Defesa Nacional, decretar estado de defesa para preservar ou prontamente resta\nbelecer, em locais restritos e determinados, a ordem pública ou a paz social ameaçadas\npor grave e iminente instabilidade institucional ou atingidas por calamidades de grandes\nproporções na natureza.",
+                        "characters": 359
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ART-0086-CAPUT",
+                        "article_id": "CF1988-ART-0086",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0086-CAPUT",
+                            "chunk_id": "CF1988-ART-0086-CAPUT",
+                            "article_id": "CF1988-ART-0086",
+                            "article_number": "86",
+                            "legal_unit": "caput",
+                            "parent_id": "CF1988-ART-0086",
+                            "document_part": "CF",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_final": 81,
+                            "document_id": "CF1988",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 81
+                        },
+                        "page_content": "Admitida a acusação contra o Presidente da República, por dois terços da Câmara\ndos Deputados, será ele submetido a julgamento perante o Supremo Tribunal Federal, nas\ninfrações penais comuns, ou perante o Senado Federal, nos crimes de responsabilidade.",
+                        "characters": 252
+                    }
+                ]
+            },
+            {
+                "id": "Q7",
+                "category": "armadilha",
+                "question": "Um brasileiro naturalizado pode ser eleito presidente da República?",
+                "ground_truth": "Não. Embora o artigo 14 estabeleça a nacionalidade brasileira como condição geral de elegibilidade, o artigo 12, parágrafo 3º, inciso I, determina especificamente que o cargo de Presidente e Vice-Presidente da República é privativo de brasileiro nato.",
+                "reference_articles": [
+                    "CF1988-ART-0012",
+                    "CF1988-ART-0014"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ART-0005",
+                    "CF1988-ART-0089",
+                    "CF1988-ADC-ART-0029",
+                    "CF1988-ART-0014"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ART-0005-INC-LI",
+                    "CF1988-ART-0089-INC-VII",
+                    "CF1988-ADC-ART-0029-PAR-0005",
+                    "CF1988-ART-0014-PAR-0008-INC-II"
+                ],
+                "elapsed_seconds": 0.028569,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "2": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "4": {
+                            "precision": 0.25,
+                            "recall": 0.5,
+                            "mrr": 0.25,
+                            "hit_rate": 1.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ART-0005-INC-LI",
+                        "article_id": "CF1988-ART-0005",
+                        "metadata": {
+                            "number": "LI",
+                            "pagina_inicial": 18,
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "article_id": "CF1988-ART-0005",
+                            "pagina_final": 18,
+                            "document_part": "CF",
+                            "chunk_id": "CF1988-ART-0005-INC-LI",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "legal_unit": "inciso",
+                            "parent_id": "CF1988-ART-0005",
+                            "article_number": "5",
+                            "source_node_id": "CF1988-ART-0005-INC-LI"
+                        },
+                        "page_content": "nenhum brasileiro será extraditado, salvo o naturalizado, em caso de crime co\nmum, praticado antes da naturalização, ou de comprovado envolvimento em tráfico\nilícito de entorpecentes e drogas afins, na forma da lei;",
+                        "characters": 215
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0089-INC-VII",
+                        "article_id": "CF1988-ART-0089",
+                        "metadata": {
+                            "document_id": "CF1988",
+                            "pagina_final": 83,
+                            "article_id": "CF1988-ART-0089",
+                            "chunk_id": "CF1988-ART-0089-INC-VII",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_part": "CF",
+                            "parent_id": "CF1988-ART-0089",
+                            "article_number": "89",
+                            "source_node_id": "CF1988-ART-0089-INC-VII",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "legal_unit": "inciso",
+                            "pagina_inicial": 83,
+                            "number": "VII"
+                        },
+                        "page_content": "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                        "characters": 252
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ADC-ART-0029-PAR-0005",
+                        "article_id": "CF1988-ADC-ART-0029",
+                        "metadata": {
+                            "pagina_final": 228,
+                            "legal_unit": "paragraph",
+                            "document_id": "CF1988",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_part": "ADCT",
+                            "chunk_id": "CF1988-ADC-ART-0029-PAR-0005",
+                            "article_id": "CF1988-ADC-ART-0029",
+                            "source_node_id": "CF1988-ADC-ART-0029-PAR-0005",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "article_number": "29",
+                            "pagina_inicial": 228,
+                            "parent_id": "CF1988-ADC-ART-0029",
+                            "number": "5"
+                        },
+                        "page_content": "Cabe à atual Procuradoria-Geral da Fazenda Nacional, diretamente ou por dele\ngação, que pode ser ao Ministério Público Estadual, representar judicialmente a União\nnas causas de natureza fiscal, na área da respectiva competência, até a promulgação das\nleis complementares previstas neste artigo.",
+                        "characters": 294
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ART-0014-PAR-0008-INC-II",
+                        "article_id": "CF1988-ART-0014",
+                        "metadata": {
+                            "source_node_id": "CF1988-ART-0014-PAR-0008-INC-II",
+                            "legal_unit": "inciso",
+                            "document_id": "CF1988",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "chunk_id": "CF1988-ART-0014-PAR-0008-INC-II",
+                            "pagina_final": 26,
+                            "parent_id": "CF1988-ART-0014-PAR-0008",
+                            "article_number": "14",
+                            "article_id": "CF1988-ART-0014",
+                            "number": "II",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 26,
+                            "document_part": "CF"
+                        },
+                        "page_content": "se contar mais de dez anos de serviço, será agregado pela autoridade superior e,\nse eleito, passará automaticamente, no ato da diplomação, para a inatividade.",
+                        "characters": 158
+                    }
+                ]
+            },
+            {
+                "id": "Q8",
+                "category": "armadilha",
+                "question": "Qual é o valor atual do salário mínimo nacional estabelecido diretamente pela Constituição?",
+                "ground_truth": "A Constituição não estabelece um valor monetário específico para o salário mínimo. O artigo 7º, inciso IV, determina que ele seja fixado em lei, nacionalmente unificado, capaz de atender às necessidades vitais básicas do trabalhador e de sua família e sujeito a reajustes periódicos que preservem seu poder aquisitivo.",
+                "reference_articles": [
+                    "CF1988-ART-0007"
+                ],
+                "reference_nodes": [],
+                "retrieved_count": 4,
+                "retrieved_article_ids": [
+                    "CF1988-ADC-ART-0029",
+                    "CF1988-ART-0201",
+                    "CF1988-ART-0021",
+                    "CF1988-ADC-ART-0087"
+                ],
+                "retrieved_node_ids": [
+                    "CF1988-ADC-ART-0029-PAR-0005",
+                    "CF1988-ART-0201-PAR-0013",
+                    "CF1988-ART-0021-INC-XXI",
+                    "CF1988-ADC-ART-0087-PAR-UNICO"
+                ],
+                "elapsed_seconds": 0.033876,
+                "metrics": {
+                    "article_level": {
+                        "1": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "2": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        },
+                        "4": {
+                            "precision": 0.0,
+                            "recall": 0.0,
+                            "mrr": 0.0,
+                            "hit_rate": 0.0
+                        }
+                    },
+                    "legal_unit_level": {
+                        "1": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "2": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        },
+                        "4": {
+                            "precision": null,
+                            "recall": null,
+                            "mrr": null,
+                            "hit_rate": null
+                        }
+                    }
+                },
+                "retrieved_documents": [
+                    {
+                        "rank": 1,
+                        "node_id": "CF1988-ADC-ART-0029-PAR-0005",
+                        "article_id": "CF1988-ADC-ART-0029",
+                        "metadata": {
+                            "document_part": "ADCT",
+                            "pagina_inicial": 228,
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_id": "CF1988",
+                            "legal_unit": "paragraph",
+                            "article_number": "29",
+                            "chunk_id": "CF1988-ADC-ART-0029-PAR-0005",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "number": "5",
+                            "article_id": "CF1988-ADC-ART-0029",
+                            "parent_id": "CF1988-ADC-ART-0029",
+                            "source_node_id": "CF1988-ADC-ART-0029-PAR-0005",
+                            "pagina_final": 228
+                        },
+                        "page_content": "Cabe à atual Procuradoria-Geral da Fazenda Nacional, diretamente ou por dele\ngação, que pode ser ao Ministério Público Estadual, representar judicialmente a União\nnas causas de natureza fiscal, na área da respectiva competência, até a promulgação das\nleis complementares previstas neste artigo.",
+                        "characters": 294
+                    },
+                    {
+                        "rank": 2,
+                        "node_id": "CF1988-ART-0201-PAR-0013",
+                        "article_id": "CF1988-ART-0201",
+                        "metadata": {
+                            "document_part": "CF",
+                            "article_number": "201",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "source_node_id": "CF1988-ART-0201-PAR-0013",
+                            "chunk_id": "CF1988-ART-0201-PAR-0013",
+                            "parent_id": "CF1988-ART-0201",
+                            "article_id": "CF1988-ART-0201",
+                            "pagina_final": 187,
+                            "legal_unit": "paragraph",
+                            "document_id": "CF1988",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 187,
+                            "number": "13"
+                        },
+                        "page_content": "A aposentadoria concedida ao segurado de que trata o § 12 terá valor de 1 (um)\nsalário mínimo. (Redação dada pela EC n. 103/2019)",
+                        "characters": 129
+                    },
+                    {
+                        "rank": 3,
+                        "node_id": "CF1988-ART-0021-INC-XXI",
+                        "article_id": "CF1988-ART-0021",
+                        "metadata": {
+                            "article_id": "CF1988-ART-0021",
+                            "article_number": "21",
+                            "source_node_id": "CF1988-ART-0021-INC-XXI",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "document_part": "CF",
+                            "legal_unit": "inciso",
+                            "number": "XXI",
+                            "chunk_id": "CF1988-ART-0021-INC-XXI",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_final": 33,
+                            "parent_id": "CF1988-ART-0021",
+                            "pagina_inicial": 33,
+                            "document_id": "CF1988"
+                        },
+                        "page_content": "estabelecer princípios e diretrizes para o sistema nacional de viação;",
+                        "characters": 70
+                    },
+                    {
+                        "rank": 4,
+                        "node_id": "CF1988-ADC-ART-0087-PAR-UNICO",
+                        "article_id": "CF1988-ADC-ART-0087",
+                        "metadata": {
+                            "number": "unico",
+                            "document_part": "ADCT",
+                            "chunk_id": "CF1988-ADC-ART-0087-PAR-UNICO",
+                            "article_number": "87",
+                            "source_node_id": "CF1988-ADC-ART-0087-PAR-UNICO",
+                            "article_id": "CF1988-ADC-ART-0087",
+                            "document_name": "Constituicao-Brasil-EC139-2026.pdf",
+                            "source": "C:\\Users\\gugag\\politizese\\knowledge\\Constituicao-Brasil-EC139-2026.pdf",
+                            "pagina_inicial": 250,
+                            "pagina_final": 250,
+                            "legal_unit": "paragraph",
+                            "document_id": "CF1988",
+                            "parent_id": "CF1988-ADC-ART-0087"
+                        },
+                        "page_content": "Se o valor da execução ultrapassar o estabelecido neste artigo, o\npagamento far-se-á, sempre, por meio de precatório, sendo facultada à parte exequente\na renúncia ao crédito do valor excedente, para que possa optar pelo pagamento do saldo\nsem o precatório, da forma prevista no § 3º do art. 100. (Incluído pela EC n. 37/2002)",
+                        "characters": 325
+                    }
+                ]
+            }
+        ],
+        "summary": {
+            "questions_evaluated": 8,
+            "average_retrieved_documents": 4,
+            "average_query_seconds": 0.037643,
+            "article_level": {
+                "questions_with_references": 8,
+                "metrics": {
+                    "1": {
+                        "precision@1": 0.25,
+                        "recall@1": 0.1875,
+                        "mrr@1": 0.25,
+                        "hit_rate@1": 0.25
+                    },
+                    "2": {
+                        "precision@2": 0.1875,
+                        "recall@2": 0.25,
+                        "mrr@2": 0.3125,
+                        "hit_rate@2": 0.375
+                    },
+                    "4": {
+                        "precision@4": 0.1562,
+                        "recall@4": 0.4375,
+                        "mrr@4": 0.3854,
+                        "hit_rate@4": 0.625
+                    }
+                }
+            },
+            "legal_unit_level": {
+                "questions_with_references": 0,
+                "metrics": {
+                    "1": {
+                        "precision@1": null,
+                        "recall@1": null,
+                        "mrr@1": null,
+                        "hit_rate@1": null
+                    },
+                    "2": {
+                        "precision@2": null,
+                        "recall@2": null,
+                        "mrr@2": null,
+                        "hit_rate@2": null
+                    },
+                    "4": {
+                        "precision@4": null,
+                        "recall@4": null,
+                        "mrr@4": null,
+                        "hit_rate@4": null
+                    }
+                }
+            }
+        }
+    }
+}

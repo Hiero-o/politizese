@@ -17,6 +17,9 @@ from src.rag.vector_store import create_vector_store
 DEFAULT_TOP_K = 4
 DEFAULT_CANDIDATE_K = 24
 
+# Coleção exclusiva da Constituição.
+DEFAULT_COLLECTION_NAME = "constituicao_legal"
+
 # Parâmetros do BM25.
 BM25_K1 = 1.5
 BM25_B = 0.75
@@ -100,6 +103,7 @@ def _calculate_bm25_scores(
     ]
 
     total_documents = len(documents)
+
     average_length = (
         sum(document_lengths) / total_documents
         if total_documents > 0
@@ -161,6 +165,32 @@ def _calculate_bm25_scores(
     return scores
 
 
+def _get_source_node_id(document: Document) -> str:
+    """
+    Identifica a unidade jurídica original de um resultado.
+
+    Vários fragmentos podem pertencer ao mesmo LegalNode.
+    """
+
+    metadata = document.metadata
+
+    source_node_id = metadata.get("source_node_id")
+
+    if source_node_id:
+        return str(source_node_id)
+
+    # Compatibilidade com documentos que ainda não possuem
+    # source_node_id.
+    chunk_id = metadata.get("chunk_id")
+
+    if chunk_id:
+        return str(chunk_id)
+
+    raise ValueError(
+        "Documento recuperado sem source_node_id ou chunk_id."
+    )
+
+
 class PolitizeseRetriever(BaseRetriever):
     """Retriever híbrido que combina busca semântica e lexical."""
 
@@ -183,15 +213,19 @@ class PolitizeseRetriever(BaseRetriever):
         *,
         run_manager: CallbackManagerForRetrieverRun,
     ) -> list[Document]:
-        """Recupera candidatos no ChromaDB e os reordena usando BM25."""
+        """Recupera candidatos e reordena usando BM25."""
 
         if not isinstance(query, str) or not query.strip():
-            raise ValueError("A pergunta de busca não pode estar vazia.")
+            raise ValueError(
+                "A pergunta de busca não pode estar vazia."
+            )
 
         # 1. Recupera candidatos pela similaridade semântica.
-        candidates = self.vector_store.similarity_search_with_relevance_scores(
-            query,
-            k=self.candidate_k,
+        candidates = (
+            self.vector_store.similarity_search_with_relevance_scores(
+                query,
+                k=self.candidate_k,
+            )
         )
 
         if not candidates:
@@ -212,8 +246,10 @@ class PolitizeseRetriever(BaseRetriever):
             if not isfinite(semantic_score):
                 semantic_score = 0.0
 
-            # Mantém a pontuação no intervalo esperado de relevância.
-            semantic_score = max(0.0, min(1.0, semantic_score))
+            semantic_score = max(
+                0.0,
+                min(1.0, semantic_score),
+            )
 
             documents.append(document)
             semantic_scores.append(semantic_score)
@@ -221,10 +257,16 @@ class PolitizeseRetriever(BaseRetriever):
         if not documents:
             return []
 
-        # 2. Calcula a relevância lexical dos mesmos candidatos.
-        lexical_scores = _calculate_bm25_scores(query, documents)
+        # 2. Calcula a relevância lexical.
+        lexical_scores = _calculate_bm25_scores(
+            query,
+            documents,
+        )
 
-        maximum_lexical_score = max(lexical_scores, default=0.0)
+        maximum_lexical_score = max(
+            lexical_scores,
+            default=0.0,
+        )
 
         if maximum_lexical_score > 0:
             normalized_lexical_scores = [
@@ -237,7 +279,7 @@ class PolitizeseRetriever(BaseRetriever):
                 for _ in lexical_scores
             ]
 
-        # 3. Combina as pontuações semânticas e lexicais.
+        # 3. Combina as pontuações.
         lexical_weight = 1.0 - self.semantic_weight
 
         ranked_documents = []
@@ -257,11 +299,24 @@ class PolitizeseRetriever(BaseRetriever):
             reverse=True,
         )
 
-        # 4. Retorna somente os K documentos mais relevantes.
-        return [
-            document
-            for _, document in ranked_documents[:self.k]
-        ]
+        # 4. Retorna somente o fragmento mais relevante
+        # de cada unidade jurídica original.
+        selected_documents = []
+        seen_source_nodes = set()
+
+        for _, document in ranked_documents:
+            source_node_id = _get_source_node_id(document)
+
+            if source_node_id in seen_source_nodes:
+                continue
+
+            seen_source_nodes.add(source_node_id)
+            selected_documents.append(document)
+
+            if len(selected_documents) >= self.k:
+                break
+
+        return selected_documents
 
 
 def create_retriever(
@@ -269,22 +324,33 @@ def create_retriever(
     k: int = DEFAULT_TOP_K,
     candidate_k: int = DEFAULT_CANDIDATE_K,
     settings: Settings | None = None,
+    collection_name: str = DEFAULT_COLLECTION_NAME,
 ) -> tuple[PolitizeseRetriever, str]:
-    """Cria o retriever e inicializa o acesso ao ChromaDB."""
+    """Cria o retriever e inicializa o acesso à coleção jurídica."""
 
     if k <= 0:
-        raise ValueError("O parâmetro k precisa ser maior que zero.")
+        raise ValueError(
+            "O parâmetro k precisa ser maior que zero."
+        )
 
     if candidate_k <= 0:
-        raise ValueError("O parâmetro candidate_k precisa ser maior que zero.")
+        raise ValueError(
+            "O parâmetro candidate_k precisa ser maior que zero."
+        )
 
     if candidate_k < k:
         raise ValueError(
             "candidate_k não pode ser menor que k."
         )
 
+    if not collection_name or not collection_name.strip():
+        raise ValueError(
+            "O nome da coleção não pode estar vazio."
+        )
+
     vector_store, selected_provider = create_vector_store(
         provider=provider,
+        collection_name=collection_name,
         settings=settings,
     )
 

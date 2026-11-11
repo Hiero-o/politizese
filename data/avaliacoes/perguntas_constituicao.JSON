@@ -2,65 +2,85 @@
 {
     "dataset_id": "constituicao_federal_1988",
     "name": "Avaliação RAG - Constituição Federal",
-    "version": "1.0",
-    "description": "Conjunto de perguntas para avaliar a recuperação de informações da Constituição da República Federativa do Brasil de 1988.",
-    "source": "Constituição da República Federativa do Brasil de 1988",
+    "version": "1.1",
+    "description": "Conjunto de perguntas para avaliar a recuperação de informações da Constituição da República Federativa do Brasil de 1988, com referências aos identificadores jurídicos da base indexada.",
+    "source": "Constituicao-Brasil-EC139-2026.pdf",
     "questions": [
         {
             "id": "Q1",
             "category": "simples",
             "question": "Quais direitos sociais são garantidos pela Constituição Federal?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "O artigo 6º estabelece como direitos sociais a educação, a saúde, a alimentação, o trabalho, a moradia, o transporte, o lazer, a segurança, a previdência social, a proteção à maternidade e à infância e a assistência aos desamparados. Seu parágrafo único também prevê renda básica familiar para brasileiros em situação de vulnerabilidade social. O artigo 7º detalha os direitos dos trabalhadores urbanos e rurais.",
+            "reference_articles": [
+                "CF1988-ART-0006",
+                "CF1988-ART-0007"
+            ]
         },
         {
             "id": "Q2",
             "category": "simples",
             "question": "Quais são os requisitos constitucionais para alguém se candidatar à Presidência da República?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "As condições gerais de elegibilidade incluem nacionalidade brasileira, pleno exercício dos direitos políticos, alistamento eleitoral, domicílio eleitoral na circunscrição, filiação partidária e idade mínima de 35 anos para Presidente e Vice-Presidente da República. Também são inelegíveis os inalistáveis e os analfabetos. Além disso, o cargo de Presidente da República é privativo de brasileiro nato.",
+            "reference_articles": [
+                "CF1988-ART-0012",
+                "CF1988-ART-0014"
+            ]
         },
         {
             "id": "Q3",
             "category": "simples",
             "question": "Quais são as competências legislativas privativas da União?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "O artigo 22 estabelece as matérias sobre as quais compete privativamente à União legislar. Entre elas estão direito civil, comercial, penal, processual, eleitoral, agrário, marítimo, aeronáutico, espacial e do trabalho; desapropriação; águas, energia, informática, telecomunicações, radiodifusão; serviço postal; comércio exterior e interestadual; trânsito e transporte, entre outras matérias enumeradas em seus incisos. O parágrafo único permite que lei complementar autorize os Estados a legislar sobre questões específicas dessas matérias.",
+            "reference_articles": [
+                "CF1988-ART-0022"
+            ]
         },
         {
             "id": "Q4",
             "category": "simples",
             "question": "Como é composto o Congresso Nacional?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "O Poder Legislativo federal é exercido pelo Congresso Nacional, composto pela Câmara dos Deputados e pelo Senado Federal, conforme o artigo 44 da Constituição.",
+            "reference_articles": [
+                "CF1988-ART-0044"
+            ]
         },
         {
             "id": "Q5",
             "category": "armadilha",
             "question": "A Constituição permite pena de morte para crimes hediondos em tempos de paz?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "Não. O artigo 5º, inciso XLVII, alínea a, proíbe a pena de morte, exceto em caso de guerra declarada, nos termos do artigo 84, inciso XIX. A prática de crime hediondo em tempo de paz não constitui uma exceção constitucional a essa proibição.",
+            "reference_articles": [
+                "CF1988-ART-0005",
+                "CF1988-ART-0084"
+            ]
         },
         {
             "id": "Q6",
             "category": "armadilha",
             "question": "O presidente pode editar medida provisória para criar crimes e estabelecer penas?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "Não. O artigo 62, parágrafo 1º, inciso I, alínea b, veda a edição de medidas provisórias sobre matéria de direito penal, processual penal e processual civil. Portanto, não se pode utilizar medida provisória para criar crimes e estabelecer penas.",
+            "reference_articles": [
+                "CF1988-ART-0062"
+            ]
         },
         {
             "id": "Q7",
             "category": "armadilha",
             "question": "Um brasileiro naturalizado pode ser eleito presidente da República?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "Não. Embora o artigo 14 estabeleça a nacionalidade brasileira como condição geral de elegibilidade, o artigo 12, parágrafo 3º, inciso I, determina especificamente que o cargo de Presidente e Vice-Presidente da República é privativo de brasileiro nato.",
+            "reference_articles": [
+                "CF1988-ART-0012",
+                "CF1988-ART-0014"
+            ]
         },
         {
             "id": "Q8",
             "category": "armadilha",
             "question": "Qual é o valor atual do salário mínimo nacional estabelecido diretamente pela Constituição?",
-            "ground_truth": null,
-            "reference_articles": []
+            "ground_truth": "A Constituição não estabelece um valor monetário específico para o salário mínimo. O artigo 7º, inciso IV, determina que ele seja fixado em lei, nacionalmente unificado, capaz de atender às necessidades vitais básicas do trabalhador e de sua família e sujeito a reajustes periódicos que preservem seu poder aquisitivo.",
+            "reference_articles": [
+                "CF1988-ART-0007"
+            ]
         }
     ]
 }

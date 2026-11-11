@@ -6,7 +6,7 @@
         "dataset_version": "1.0",
         "dataset_source": "Constituição da República Federativa do Brasil de 1988",
         "dataset_path": "data\\avaliacoes\\perguntas_constituicao.JSON",
-        "executed_at": "2026-11-10T03:13:28.802114+00:00"
+        "executed_at": "2026-11-10T21:45:04.582105+00:00"
     },
     "experiments": [
         {
@@ -32,7 +32,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.068194,
+                    "elapsed_seconds": 0.081165,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -91,7 +91,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.052644,
+                    "elapsed_seconds": 0.05636,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -150,7 +150,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.052251,
+                    "elapsed_seconds": 0.058784,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -209,7 +209,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.080496,
+                    "elapsed_seconds": 0.091392,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -268,7 +268,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.051096,
+                    "elapsed_seconds": 0.070395,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -327,7 +327,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.046286,
+                    "elapsed_seconds": 0.057245,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -386,7 +386,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 3,
-                    "elapsed_seconds": 0.044112,
+                    "elapsed_seconds": 0.048201,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -433,7 +433,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.050157,
+                    "elapsed_seconds": 0.055661,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -491,7 +491,7 @@
                 "total_parents_retrieved": 31,
                 "average_parents_per_question": 3.88,
                 "average_context_characters": 900.77,
-                "average_query_seconds": 0.055655
+                "average_query_seconds": 0.0649
             }
         },
         {
@@ -517,7 +517,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.052041,
+                    "elapsed_seconds": 0.055328,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -576,7 +576,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.051106,
+                    "elapsed_seconds": 0.056128,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -635,7 +635,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.051539,
+                    "elapsed_seconds": 0.054956,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -694,7 +694,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.039939,
+                    "elapsed_seconds": 0.042976,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -753,7 +753,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.050064,
+                    "elapsed_seconds": 0.059514,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -812,7 +812,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.039063,
+                    "elapsed_seconds": 0.039785,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -871,7 +871,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 2,
-                    "elapsed_seconds": 0.042159,
+                    "elapsed_seconds": 0.043007,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -906,7 +906,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.051326,
+                    "elapsed_seconds": 0.057706,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -964,7 +964,7 @@
                 "total_parents_retrieved": 30,
                 "average_parents_per_question": 3.75,
                 "average_context_characters": 1270.0,
-                "average_query_seconds": 0.047155
+                "average_query_seconds": 0.051175
             }
         },
         {
@@ -990,7 +990,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.087778,
+                    "elapsed_seconds": 0.102136,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1049,7 +1049,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.084902,
+                    "elapsed_seconds": 0.111308,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1108,7 +1108,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.091116,
+                    "elapsed_seconds": 0.104023,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1167,7 +1167,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.077429,
+                    "elapsed_seconds": 0.101976,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1226,7 +1226,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 3,
-                    "elapsed_seconds": 0.080046,
+                    "elapsed_seconds": 0.087821,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1273,7 +1273,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.060308,
+                    "elapsed_seconds": 0.063684,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1332,7 +1332,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 2,
-                    "elapsed_seconds": 0.05132,
+                    "elapsed_seconds": 0.05601,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1367,7 +1367,7 @@
                     "ground_truth": null,
                     "reference_articles": [],
                     "retrieved_count": 4,
-                    "elapsed_seconds": 0.062403,
+                    "elapsed_seconds": 0.060348,
                     "retrieved_documents": [
                         {
                             "rank": 1,
@@ -1425,7 +1425,7 @@
                 "total_parents_retrieved": 29,
                 "average_parents_per_question": 3.62,
                 "average_context_characters": 1690.72,
-                "average_query_seconds": 0.074413
+                "average_query_seconds": 0.085913
             }
         }
     ]

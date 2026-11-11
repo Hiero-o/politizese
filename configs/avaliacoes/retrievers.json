@@ -2,31 +2,17 @@
 {
     "dataset": "data/avaliacoes/perguntas_constituicao.json",
     "retriever": {
-        "type": "parent_document",
+        "type": "legal_hybrid",
         "provider": "local",
         "top_k": 4,
-        "child_chunk_size": 200,
-        "child_chunk_overlap": 40
+        "candidate_k": 24,
+        "collection_name": "constituicao_legal"
     },
-    "experiments": [
-        {
-            "id": "parent_1024",
-            "parent_chunk_size": 1024,
-            "parent_chunk_overlap": 128
-        },
-        {
-            "id": "parent_1512",
-            "parent_chunk_size": 1512,
-            "parent_chunk_overlap": 192
-        },
-        {
-            "id": "parent_2024",
-            "parent_chunk_size": 2024,
-            "parent_chunk_overlap": 256
-        }
-    ],
+    "evaluation": {
+        "k_values": [1, 2, 4]
+    },
     "output": {
         "directory": "data/avaliacoes/resultados",
-        "filename": "resultado_retrievers.json"
+        "filename": "resultado_rag_juridico.json"
     }
 }
