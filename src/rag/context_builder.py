@@ -7,16 +7,22 @@ from typing import Any
 from langchain_core.documents import Document
 
 from src.core.config import PROJECT_ROOT
-from src.rag.retriever import (
-    PolitizeseRetriever,
-    create_retriever,
+from src.rag.reranker import (
+    PolitizeseCrossEncoderRetriever,
+    create_reranked_retriever,
 )
 
 
 DEFAULT_TOP_K = 4
-DEFAULT_CANDIDATE_K = 24
+DEFAULT_RERANK_K = 24
+
+DEFAULT_CANDIDATE_K = 48
+
+DEFAULT_COLLECTION_NAME = "constituicao_legal"
 
 MAX_DESCENDANT_CONTEXT_CHARS = 5000
+
+MAX_CAPUT_SIBLING_CONTEXT_CHARS = 6000
 
 ARTICLE_STORE_PATH = (
     PROJECT_ROOT
@@ -26,22 +32,31 @@ ARTICLE_STORE_PATH = (
 )
 
 
+
 @lru_cache(maxsize=1)
-def get_documentation_retriever() -> PolitizeseRetriever:
+def get_documentation_retriever() -> PolitizeseCrossEncoderRetriever:
     """
-    Inicializa o retriever jurídico uma única vez por processo.
+    Inicializa o retriever jurídico híbrido com Cross-Encoder.
+
+    A instância e o modelo são carregados uma única vez por processo.
     """
 
-    retriever, provider = create_retriever(
+    retriever, provider = create_reranked_retriever(
         provider="local",
-        k=DEFAULT_TOP_K,
+        top_k=DEFAULT_TOP_K,
+        rerank_k=DEFAULT_RERANK_K,
         candidate_k=DEFAULT_CANDIDATE_K,
-        collection_name="constituicao_legal",
+        collection_name=DEFAULT_COLLECTION_NAME,
     )
 
     print(
-        "[RAG] Retriever jurídico inicializado. "
-        f"Provedor de embeddings: {provider}"
+        "[RAG] Retriever jurídico inicializado.\n"
+        f"Provedor de embeddings: {provider}\n"
+        f"Cross-Encoder: {retriever.model_name}\n"
+        f"Dispositivo: {retriever.reranker.device}\n"
+        f"Candidatos: {DEFAULT_CANDIDATE_K}\n"
+        f"Documentos para reranking: {DEFAULT_RERANK_K}\n"
+        f"Documentos finais: {DEFAULT_TOP_K}"
     )
 
     return retriever
@@ -258,6 +273,101 @@ def _collect_descendant_context(
     return sections, omitted_count
 
 
+def _collect_caput_sibling_context(
+    root: Mapping[str, Any],
+    selected_node: Mapping[str, Any],
+    hierarchy: list[str],
+    included_node_ids: set[str],
+    max_chars: int = MAX_CAPUT_SIBLING_CONTEXT_CHARS,
+) -> tuple[list[str], int]:
+    """
+    Recupera os incisos que são irmãos de um caput.
+
+    Aplica-se quando o caput termina com dois-pontos,
+    indicando que introduz uma enumeração de dispositivos.
+
+    Exemplo:
+        Art. 22
+        ├── Caput
+        ├── Inciso I
+        ├── Inciso II
+        └── Inciso III
+    """
+
+    # A expansão só se aplica a caputs.
+    if selected_node.get("legal_unit") != "caput":
+        return [], 0
+
+    caput_text = str(
+        selected_node.get("texto") or ""
+    ).strip()
+
+    # Dois-pontos indicam que o caput introduz uma lista.
+    if not caput_text.endswith(":"):
+        return [], 0
+
+    article_children = root.get("children") or []
+
+    # Seleciona os incisos diretamente subordinados ao artigo.
+    sibling_incisos = [
+        child
+        for child in article_children
+        if (
+            child.get("legal_unit") == "inciso"
+            and child.get("chunk_id")
+            != selected_node.get("chunk_id")
+        )
+    ]
+
+    if not sibling_incisos:
+        return [], 0
+
+    sections = []
+    remaining_chars = max_chars
+    omitted_count = 0
+
+    # Remove o Caput da hierarquia para construir a identificação
+    # dos incisos irmãos corretamente.
+    article_hierarchy = hierarchy[:-1]
+
+    for sibling in sibling_incisos:
+        sibling_id = sibling.get("chunk_id")
+
+        if not sibling_id or sibling_id in included_node_ids:
+            continue
+
+        label = _format_legal_label(sibling)
+
+        sibling_hierarchy = (
+            article_hierarchy + [label]
+        )
+
+        content = str(
+            sibling.get("texto") or ""
+        ).strip()
+
+        if not content:
+            continue
+
+        block = (
+            f"[{' > '.join(sibling_hierarchy)}]\n"
+            f"{content}"
+        )
+
+        # Inclui somente dispositivos cujo texto completo caiba.
+        if len(block) <= remaining_chars:
+            sections.append(block)
+
+            included_node_ids.add(sibling_id)
+
+            remaining_chars -= len(block)
+
+        else:
+            omitted_count += 1
+
+    return sections, omitted_count
+
+
 
 def _format_legal_label(node: Mapping[str, Any]) -> str:
     """Converte uma unidade jurídica em uma identificação legível."""
@@ -342,7 +452,7 @@ def format_documentation_context(
 
         source_node_id = str(source_node_id)
 
-        if source_node_id in seen_source_nodes:
+        if (source_node_id in seen_source_nodes or source_node_id in included_node_ids):
             continue
 
         seen_source_nodes.add(source_node_id)
@@ -470,7 +580,33 @@ def format_documentation_context(
 
         included_node_ids.add(source_node_id)
 
-        # NOVO: recupera os dispositivos subordinados.
+        
+        # Recupera incisos irmãos quando o caput introduz uma enumeração.
+        sibling_sections, omitted_sibling_count = (
+            _collect_caput_sibling_context(
+                root=root,
+                selected_node=selected_node,
+                hierarchy=hierarchy_labels,
+                included_node_ids=included_node_ids,
+            )
+        )
+
+        if sibling_sections:
+            section_lines.append(
+                "\nDispositivos do mesmo artigo "
+                "(incisos introduzidos pelo caput):"
+            )
+
+            section_lines.extend(sibling_sections)
+
+        if omitted_sibling_count:
+            section_lines.append(
+                f"\n[ATENÇÃO: {omitted_sibling_count} "
+                "inciso(s) não incluído(s) "
+                "devido ao limite de contexto.]"
+            )
+
+        # Recupera os descendentes do dispositivo selecionado.
         descendants, omitted_count = (
             _collect_descendant_context(
                 selected_node,

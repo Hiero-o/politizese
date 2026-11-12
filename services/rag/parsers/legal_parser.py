@@ -57,17 +57,37 @@ ITEM_PATTERN = re.compile(
     r"^\s*(?P<number>\d+)[.)]\s*(?P<body>.*)$"
 )
 
+
+ARTICLE_HEADER_UNIT_PATTERN = (
+    r"(?:"
+    r"§\s*\d+\s*[º°]?(?:\s*-\s*[A-Za-z])?"
+    r"|parágrafo\s+único"
+    r"|caput"
+    r"|inciso\s+[IVXLCDM]+(?:-[A-Za-z])?"
+    r"|alínea\s+[a-z]"
+    r"|[IVXLCDM]+"
+    r"|[a-z]"
+    r")"
+)
+
 ARTICLE_HEADER_PATTERN = re.compile(
-    r"^\s*Art\.\s*\d+\s*[º°]?\s*,"
-    r"\s*(?:§\s*)?[\wº°IVXLCDM]+"
-    r"(?:\s*,\s*(?:§\s*)?[\wº°IVXLCDM]+)*"
-    r"\s*$",
+    r"^\s*Art\.\s*\d+\s*[º°]?\s*,\s*"
+    + ARTICLE_HEADER_UNIT_PATTERN
+    + r"(?:\s*,\s*"
+    + ARTICLE_HEADER_UNIT_PATTERN
+    + r")*\s*$",
     re.IGNORECASE,
 )
+
 
 SECTION_HEADER_PATTERN = re.compile(
     r"^\s*(?:T[IÍ]TULO|CAP[IÍ]TULO|SE[CÇ][AÃ]O|SUBSE[CÇ][AÃ]O)"
     r"\s+[IVXLCDM0-9]+(?:\s*[º°ª])?\s*$",
+    re.IGNORECASE,
+)
+
+EDITORIAL_SIGNATURE_START_PATTERN = re.compile(
+    r"^\s*Bras[ií]lia,\s*5\s+de\s+outubro\s+de\s+1988\.?\s*$",
     re.IGNORECASE,
 )
 
@@ -154,6 +174,8 @@ def _normalize_heading(text:str) -> str:
     ).strip()
     
 
+
+
 def _clean_line(text:str) -> str:
     
     """Realiza uma limpeza consevadora das linhas extraídas. Não remove palavras, pontuação jurídica ou conteúdo normativo."""
@@ -165,6 +187,23 @@ def _clean_line(text:str) -> str:
     text = text.replace("\u200f", "")
     
     return text.strip()
+
+
+def _join_soft_hyphenated_line_breaks(text: str) -> str:
+    """
+    Une palavras separadas por um hífen condicional
+    no final de uma linha extraída do PDF.
+
+    Exemplo:
+        ques\\xad\\ntões -> questões
+
+    Não altera quebras de linha comuns.
+    """
+    return re.sub(
+        r"\u00ad[ \t]*\r?\n[ \t]*",
+        "",
+        text,
+    )
 
 
 def _is_noise_line(text: str) -> bool:
@@ -597,6 +636,8 @@ def _parse_single_document(
     
     skip_section_title = False
     
+    skip_editorial_block = False
+    
     def finalize_article() -> None:
         nonlocal current_article
         nonlocal last_main_article_number
@@ -717,12 +758,33 @@ def _parse_single_document(
             raise ValueError(
                 "A numeração das páginas precisa ser positiva."
             )
+        
+        text = _join_soft_hyphenated_line_breaks(text)
 
         for raw_line in text.splitlines():
             line = _clean_line(raw_line)
 
             if not line:
                 continue
+
+            # Identifica o encerramento do texto normativo
+            # e finaliza o artigo antes das assinaturas.
+            if EDITORIAL_SIGNATURE_START_PATTERN.match(line):
+                finalize_article()
+                skip_editorial_block = True
+                continue
+
+            # Ignora assinaturas e créditos editoriais até
+            # encontrar o próximo artigo constitucional.
+            if skip_editorial_block:
+                if _is_noise_line(line):
+                    continue
+
+                if not ARTICLE_PATTERN.match(line):
+                    continue
+
+                # Encontramos um novo artigo.
+                skip_editorial_block = False
 
             if _is_noise_line(line):
                 continue
@@ -804,7 +866,7 @@ def _parse_single_document(
 
             current_article.body_lines.append(
                 (line, page_number)
-            )
+            ) 
 
     finalize_article()
 

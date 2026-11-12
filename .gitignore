@@ -15,6 +15,16 @@ experimentos_parent_retriever.py
 teste*
 *teste*
 *testar*
+testar_cross_encoder.py
+diagnosticar_artigo_22.py
+diagnosticar_hifenizacao_estrutural.py
+diagnosticar_artigos_extensos.py
+comparar_parseres.py
+testar_context_builder.py
+validar_caputs_em_memoria.py
+comparar_parser_json.py
+
+
 
 
 # Bancos vetoriais locais gerados pelo GurAI
