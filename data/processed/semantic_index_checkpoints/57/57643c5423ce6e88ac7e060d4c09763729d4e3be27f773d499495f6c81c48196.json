@@ -1,0 +1,51 @@
+{
+  "format_version": 2,
+  "document_id": "CF1988",
+  "section_id": "CF1988-ART-0004",
+  "content_hash": "285f9d03cac92f936259866ff661cdc328e5efc29c36f79d3ffd7dfe8dc73f5c",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-12T07:05:32.103872+00:00",
+  "completed_units": 4,
+  "units": [
+    {
+      "node_id": "CF1988-ART-0004-CAPUT",
+      "summary": "Estabelece os princípios que regem as relações internacionais da República Federativa do Brasil.",
+      "keywords": [
+        "Relações internacionais",
+        "Princípios",
+        "República Federativa do Brasil"
+      ]
+    },
+    {
+      "node_id": "CF1988-ART-0004-INC-I",
+      "summary": "Princípio da independência nacional nas relações internacionais.",
+      "keywords": [
+        "Independência nacional",
+        "Soberania"
+      ]
+    },
+    {
+      "node_id": "CF1988-ART-0004-INC-II",
+      "summary": "Princípio da prevalência dos direitos humanos nas relações internacionais.",
+      "keywords": [
+        "Direitos humanos",
+        "Prevalência"
+      ]
+    },
+    {
+      "node_id": "CF1988-ART-0004-INC-III",
+      "summary": "Princípio da autodeterminação dos povos nas relações internacionais.",
+      "keywords": [
+        "Autodeterminação dos povos",
+        "Soberania popular"
+      ]
+    }
+  ]
+}

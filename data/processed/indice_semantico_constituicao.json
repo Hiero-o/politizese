@@ -1,0 +1,10 @@
+{
+  "index_id": "constituicao_semantica",
+  "format_version": 1,
+  "source_file": "data\\processed\\constituicao_artigos.json",
+  "model_name": "gemma4:31b",
+  "prompt_version": "1.0",
+  "generated_at": "2026-11-12T04:17:30.110611+00:00",
+  "article_count": 0,
+  "articles": []
+}

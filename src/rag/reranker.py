@@ -120,14 +120,17 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
 
         return document.page_content
 
-    def _get_relevant_documents(
+    def rerank_documents(
         self,
         query: str,
-        *,
-        run_manager: CallbackManagerForRetrieverRun,
+        candidates: list[Document],
     ) -> list[Document]:
         """
-        Recupera candidatos e os reordena pelo score do Cross-Encoder.
+        Reordena uma lista de documentos usando o Cross-Encoder.
+
+        Este método também pode ser utilizado pelo avaliador
+        para comparar o ranking híbrido e o ranking reranked
+        sobre exatamente o mesmo conjunto de candidatos.
         """
 
         if not isinstance(query, str) or not query.strip():
@@ -135,14 +138,10 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
                 "A pergunta de busca não pode estar vazia."
             )
 
-        # 1. Recuperação inicial:
-        # busca semântica + BM25 + combinação de scores.
-        candidates = self.base_retriever.invoke(query)
-
         if not candidates:
             return []
 
-        # 2. Preparação dos pares pergunta-documento.
+        # 1. Preparação dos pares pergunta-documento.
         pairs = [
             (
                 query,
@@ -151,14 +150,14 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
             for document in candidates
         ]
 
-        # 3. Inferência do Cross-Encoder.
+        # 2. Inferência do Cross-Encoder.
         raw_scores = self.reranker.predict(
             pairs,
             batch_size=self.batch_size,
             show_progress_bar=False,
         )
 
-        # 4. Normalização do formato dos scores.
+        # 3. Normalização do formato dos scores.
         if hasattr(raw_scores, "tolist"):
             raw_scores = raw_scores.tolist()
 
@@ -168,6 +167,7 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
         scores = []
 
         for raw_score in raw_scores:
+
             # Alguns modelos retornam uma lista por documento.
             if isinstance(raw_score, (list, tuple)):
                 if len(raw_score) != 1:
@@ -193,18 +193,18 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
                 "à quantidade de documentos candidatos."
             )
 
-        # 5. Associa os scores aos documentos.
+        # 4. Associa scores e documentos.
         ranked_documents = list(
             zip(scores, candidates)
         )
 
-        # 6. Ordena do mais relevante para o menos relevante.
+        # 5. Ordena do mais relevante para o menos relevante.
         ranked_documents.sort(
             key=lambda item: item[0],
             reverse=True,
         )
 
-        # 7. Seleciona os documentos finais.
+        # 6. Seleciona os documentos finais.
         selected_documents = []
 
         for score, document in ranked_documents[:self.top_k]:
@@ -227,6 +227,34 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
             )
 
         return selected_documents
+
+    def _get_relevant_documents(
+        self,
+        query: str,
+        *,
+        run_manager: CallbackManagerForRetrieverRun,
+    ) -> list[Document]:
+        """
+        Recupera candidatos e os reordena pelo Cross-Encoder.
+        """
+
+        if not isinstance(query, str) or not query.strip():
+            raise ValueError(
+                "A pergunta de busca não pode estar vazia."
+            )
+
+        # 1. Recuperação inicial:
+        # busca semântica + BM25 + combinação de scores.
+        candidates = self.base_retriever.invoke(query)
+
+        if not candidates:
+            return []
+
+        # 2. Utiliza o mesmo método disponibilizado ao avaliador.
+        return self.rerank_documents(
+            query=query,
+            candidates=candidates,
+        )
 
 
 def create_reranked_retriever(

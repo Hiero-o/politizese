@@ -11,6 +11,7 @@ from pydantic import (
 )
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
+
 # Raiz do projeto:
 # src/core/config.py -> projeto/
 
@@ -23,6 +24,10 @@ class Settings(BaseSettings):
 
     As configurações podem ser definidas no arquivo .env
     ou através de variáveis de ambiente do sistema.
+
+    Permite configurar independentemente:
+    - Assistente principal;
+    - Gerador de índice semântico.
     """
 
     model_config = SettingsConfigDict(
@@ -32,7 +37,9 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
+    # ==========================================
     # Aplicação
+    # ==========================================
 
     app_name: str = "Politize-se AI"
 
@@ -42,7 +49,9 @@ class Settings(BaseSettings):
         "production",
     ] = "development"
 
-    # Ollama
+    # ==========================================
+    # Ollama — conexão e autenticação
+    # ==========================================
 
     ollama_provider: Literal["local", "cloud"] = "local"
 
@@ -52,9 +61,11 @@ class Settings(BaseSettings):
 
     ollama_api_key: SecretStr | None = None
 
-    # Modelos de linguagem
+    # ==========================================
+    # Modelo principal — assistente
+    # ==========================================
 
-    llm_model: str = "gemma4:31b"
+    llm_model: str = "gemma4:12b"
 
     llm_temperature: float = Field(
         default=0.3,
@@ -72,12 +83,49 @@ class Settings(BaseSettings):
         default=1200,
         gt=0,
     )
+    
+    semantic_index_num_ctx: int = Field(
+        default=8192,
+        gt=0,
+    )   
 
+    # ==========================================
+    # Modelo auxiliar — índice semântico
+    # ==========================================
+
+    semantic_index_provider: Literal[
+        "local",
+        "cloud",
+    ] = "local"
+
+    semantic_index_model: str = "gemma4:12b"
+
+    semantic_index_temperature: float = Field(
+        default=0.1,
+        ge=0,
+        le=2,
+    )
+
+    semantic_index_top_p: float = Field(
+        default=0.9,
+        gt=0,
+        le=1,
+    )
+
+    semantic_index_num_predict: int = Field(
+        default=2048,
+        gt=0,
+    )
+
+    # ==========================================
     # Prompt
+    # ==========================================
 
     system_prompt_file: str = "system_prompt_v1.md"
 
+    # ==========================================
     # Embeddings
+    # ==========================================
 
     rag_embedding_provider: Literal[
         "local",
@@ -87,7 +135,9 @@ class Settings(BaseSettings):
 
     rag_embedding_model: str = "nomic-embed-text"
 
+    # ==========================================
     # ChromaDB
+    # ==========================================
 
     chroma_persist_directory: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "data" / "chroma_db"
@@ -95,17 +145,28 @@ class Settings(BaseSettings):
 
     chroma_collection_prefix: str = "politizese"
 
+    # ==========================================
     # Documentos
+    # ==========================================
 
     documents_directory: Path = Field(
         default_factory=lambda: PROJECT_ROOT / "knowledge"
     )
 
+    # ==========================================
     # Validadores
+    # ==========================================
 
     @field_validator("ollama_api_key", mode="before")
     @classmethod
     def empty_api_key_to_none(cls, value):
+        """
+        Converte uma chave vazia em None.
+
+        Isso permite manter OLLAMA_API_KEY=
+        quando nenhum modelo utiliza Cloud.
+        """
+
         if value is None:
             return None
 
@@ -116,13 +177,21 @@ class Settings(BaseSettings):
 
     @model_validator(mode="after")
     def validate_cloud_configuration(self):
-        if (
+        """
+        Exige a chave de API caso qualquer um dos
+        modelos utilize Ollama Cloud.
+        """
+
+        cloud_is_used = (
             self.ollama_provider == "cloud"
-            and self.ollama_api_key is None
-        ):
+            or self.semantic_index_provider == "cloud"
+        )
+
+        if cloud_is_used and self.ollama_api_key is None:
             raise ValueError(
-                "OLLAMA_API_KEY é obrigatória "
-                "quando OLLAMA_PROVIDER=cloud."
+                "OLLAMA_API_KEY é obrigatória quando "
+                "OLLAMA_PROVIDER=cloud ou "
+                "SEMANTIC_INDEX_PROVIDER=cloud."
             )
 
         return self
@@ -134,18 +203,40 @@ class Settings(BaseSettings):
     )
     @classmethod
     def resolve_project_paths(cls, path: Path) -> Path:
+        """
+        Converte caminhos relativos em caminhos absolutos
+        a partir da raiz do projeto.
+        """
+
         if not path.is_absolute():
             return (PROJECT_ROOT / path).resolve()
 
         return path.resolve()
 
+    # ==========================================
     # Propriedades calculadas
+    # ==========================================
 
     @property
     def ollama_base_url(self) -> str:
-        """Retorna a URL correspondente ao provedor selecionado."""
+        """
+        Retorna a URL correspondente ao provider
+        do assistente principal.
+        """
 
         if self.ollama_provider == "cloud":
+            return self.ollama_cloud_base_url
+
+        return self.ollama_local_base_url
+
+    @property
+    def semantic_index_base_url(self) -> str:
+        """
+        Retorna a URL correspondente ao provider
+        do gerador de índice semântico.
+        """
+
+        if self.semantic_index_provider == "cloud":
             return self.ollama_cloud_base_url
 
         return self.ollama_local_base_url

@@ -1,0 +1,42 @@
+{
+  "audit_id": "0e352153d33045238856eb4dab932141",
+  "auditor_version": "1.0",
+  "generated_at": "2026-11-12T21:17:48.606971+00:00",
+  "status": "passed",
+  "document": {
+    "document_id": "CF1988",
+    "document_title": "constituicao_artigos",
+    "source_path": "C:\\Users\\gugag\\politizese\\data\\processed\\constituicao_artigos.json"
+  },
+  "index": {
+    "path": "C:\\Users\\gugag\\politizese\\data\\processed\\indice_semantico.json",
+    "format_version": 2,
+    "section_count": 424,
+    "unit_count": 3360
+  },
+  "source": {
+    "section_count": 424,
+    "unit_count": 3360
+  },
+  "coverage": {
+    "section_coverage": 100.0,
+    "unit_coverage": 100.0
+  },
+  "statistics": {
+    "sections_valid": 424,
+    "sections_with_issues": 0,
+    "missing_units": 0,
+    "extra_units": 0,
+    "duplicate_units": 0,
+    "records_without_keywords": 0,
+    "historical_truncated_calls": 0,
+    "invalid_metrics_lines": 0
+  },
+  "checks": {
+    "structure": "passed",
+    "keywords": "passed",
+    "truncation_history": "passed"
+  },
+  "errors": [],
+  "warnings": []
+}

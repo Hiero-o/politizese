@@ -23,8 +23,16 @@ comparar_parseres.py
 testar_context_builder.py
 validar_caputs_em_memoria.py
 comparar_parser_json.py
-
-
+anotacoes.txt
+testar_recuperacao_semantica.py
+testar_referencias_dataset.py
+testar_indice_semantico.py
+comparar_recuperadores.py
+testar_recuperacao_semantica_120.py
+diagnosticar_semantica_texto_original.py
+diagnosticar_contexto_embeddings.py
+diagnosticar_prefixos_nomic.py
+diagnosticar_consistencia_vetores.py
 
 
 # Bancos vetoriais locais gerados pelo GurAI

@@ -1,0 +1,47 @@
+{
+  "audit_id": "126b3bcc01b945fa80ac2766959c1eab",
+  "auditor_version": "1.0",
+  "generated_at": "2026-11-12T21:10:06.924364+00:00",
+  "status": "passed_with_warnings",
+  "document": {
+    "document_id": "CF1988",
+    "document_title": "constituicao_artigos",
+    "source_path": "C:\\Users\\gugag\\politizese\\data\\processed\\constituicao_artigos.json"
+  },
+  "index": {
+    "path": "C:\\Users\\gugag\\politizese\\data\\processed\\indice_semantico.json",
+    "format_version": 2,
+    "section_count": 424,
+    "unit_count": 3360
+  },
+  "source": {
+    "section_count": 424,
+    "unit_count": 3360
+  },
+  "coverage": {
+    "section_coverage": 100.0,
+    "unit_coverage": 100.0
+  },
+  "statistics": {
+    "sections_valid": 424,
+    "sections_with_issues": 0,
+    "missing_units": 0,
+    "extra_units": 0,
+    "duplicate_units": 0,
+    "records_without_keywords": 0,
+    "historical_truncated_calls": 4,
+    "invalid_metrics_lines": 0
+  },
+  "checks": {
+    "structure": "passed",
+    "keywords": "passed",
+    "truncation_history": "warning"
+  },
+  "errors": [],
+  "warnings": [
+    "Último resumo geral de CF1988-ART-0073 terminou por limite de geração. Revisar a completude.",
+    "Último resumo geral de CF1988-ART-0095 terminou por limite de geração. Revisar a completude.",
+    "Último resumo geral de CF1988-ART-0173 terminou por limite de geração. Revisar a completude.",
+    "Último resumo geral de CF1988-ART-0202 terminou por limite de geração. Revisar a completude."
+  ]
+}

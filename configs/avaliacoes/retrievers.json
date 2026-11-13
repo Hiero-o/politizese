@@ -1,18 +1,26 @@
 
 {
-    "dataset": "data/avaliacoes/perguntas_constituicao.json",
+    "name": "Comparação entre Retriever Híbrido e CrossEncoder",
+    "dataset": "data/avaliacoes/perguntas_constituicao.JSON",
     "retriever": {
         "type": "legal_hybrid",
         "provider": "local",
         "top_k": 4,
-        "candidate_k": 24,
+        "rerank_k": 24,
+        "candidate_k": 48,
         "collection_name": "constituicao_legal"
+    },
+    "reranker": {
+        "model_name": "BAAI/bge-reranker-v2-m3",
+        "device": "cuda",
+        "batch_size": 8,
+        "max_length": 512
     },
     "evaluation": {
         "k_values": [1, 2, 4]
     },
     "output": {
         "directory": "data/avaliacoes/resultados",
-        "filename": "resultado_rag_juridico.json"
+        "filename": "resultado_comparacao_retrievers.json"
     }
 }
