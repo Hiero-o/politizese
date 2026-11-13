@@ -8,7 +8,11 @@ from langchain_core.retrievers import BaseRetriever
 from pydantic import ConfigDict, Field
 
 from src.core.config import Settings
-from src.rag.retriever import create_retriever
+from src.rag.retriever import (
+    DEFAULT_LEXICAL_CANDIDATE_K,
+    DEFAULT_RRF_CONSTANT,
+    create_retriever,
+)
 
 
 # Modelo padrão do Cross-Encoder.
@@ -28,7 +32,7 @@ DEFAULT_BATCH_SIZE = 8
 DEFAULT_MAX_LENGTH = 512
 
 # Coleção jurídica padrão.
-DEFAULT_COLLECTION_NAME = "constituicao_legal"
+DEFAULT_COLLECTION_NAME = "constituicao_legal_clean_v2"
 
 
 class PolitizeseCrossEncoderRetriever(BaseRetriever):
@@ -262,6 +266,8 @@ def create_reranked_retriever(
     top_k: int = DEFAULT_RERANK_TOP_K,
     rerank_k: int = DEFAULT_RERANK_K,
     candidate_k: int = DEFAULT_CANDIDATE_K,
+    lexical_candidate_k: int = DEFAULT_LEXICAL_CANDIDATE_K,
+    rrf_constant: int = DEFAULT_RRF_CONSTANT,
     settings: Settings | None = None,
     collection_name: str = DEFAULT_COLLECTION_NAME,
     model_name: str = DEFAULT_RERANKER_MODEL,
@@ -338,6 +344,8 @@ def create_reranked_retriever(
         provider=provider,
         k=rerank_k,
         candidate_k=candidate_k,
+        lexical_candidate_k=lexical_candidate_k,
+        rrf_constant=rrf_constant,
         settings=settings,
         collection_name=collection_name,
     )

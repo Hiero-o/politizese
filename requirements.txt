@@ -23,6 +23,7 @@ pydantic-settings>=2,<3
 langchain-core==1.6.3
 sentence-transformers==6.3.0
 transformers==5.22.2
+pytest==9.2.0
 
 --extra-index-url https://download.pytorch.org/whl/cu128
 

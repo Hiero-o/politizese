@@ -40,7 +40,7 @@ OUTPUT_DIRECTORY = (
 OUTPUT_FILENAME = "comparacao_reranking_estrategias.json"
 
 PROVIDER = "local"
-LEGAL_COLLECTION_NAME = "constituicao_legal"
+LEGAL_COLLECTION_NAME = "constituicao_legal_clean_v2"
 SEMANTIC_COLLECTION_NAME = "politizese_semantic_aux_v1"
 
 # Recuperação inicial.

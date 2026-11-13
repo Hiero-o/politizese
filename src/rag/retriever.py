@@ -1,8 +1,9 @@
+"""Recuperador híbrido do Politizese: ChromaDB + BM25 global + RRF."""
 
-import re
-import unicodedata
-from collections import Counter
-from math import isfinite, log
+from __future__ import annotations
+
+from collections import defaultdict
+from pathlib import Path
 from typing import Any, Literal
 
 from langchain_core.callbacks.manager import CallbackManagerForRetrieverRun
@@ -11,201 +12,166 @@ from langchain_core.retrievers import BaseRetriever
 from pydantic import ConfigDict, Field
 
 from src.core.config import Settings
+from src.rag.lexical_index import (
+    DEFAULT_LEGAL_TREE_PATH,
+    LegalBM25Index,
+    load_legal_bm25_index,
+)
 from src.rag.vector_store import create_vector_store
 
 
 DEFAULT_TOP_K = 4
-DEFAULT_CANDIDATE_K = 24
+DEFAULT_CANDIDATE_K = 48
+DEFAULT_LEXICAL_CANDIDATE_K = 120
+DEFAULT_RRF_CONSTANT = 60
 
-# Coleção exclusiva da Constituição.
-DEFAULT_COLLECTION_NAME = "constituicao_legal"
-
-# Parâmetros do BM25.
-BM25_K1 = 1.5
-BM25_B = 0.75
-
-# Peso da busca semântica na combinação final.
-DEFAULT_SEMANTIC_WEIGHT = 0.75
-
-
-STOPWORDS = {
-    "",
-    "a", "as", "o", "os",
-    "um", "uma", "uns", "umas",
-    "de", "da", "das", "do", "dos",
-    "em", "no", "na", "nos", "nas",
-    "ao", "aos", "à", "às",
-    "e", "ou",
-    "com", "por", "para", "pelo", "pela",
-    "pelos", "pelas",
-    "que", "qual", "quais",
-    "quem", "quando", "onde",
-    "como", "quanto", "quanta", "quantos", "quantas",
-    "se", "sua", "suas", "seu", "seus",
-    "meu", "minha", "meus", "minhas",
-    "esse", "essa", "esses", "essas",
-    "este", "esta", "estes", "estas",
-    "aquele", "aquela", "aqueles", "aquelas",
-    "ele", "ela", "eles", "elas",
-    "eu", "tu", "nos", "vos",
-    "tambem", "ja", "ainda", "muito", "muita",
-    "muitos", "muitas",
-}
-
-# Não removemos palavras como "não", "nunca", "sem" e "exceto".
-# Elas podem alterar completamente o sentido de uma pergunta.
-
-
-def _normalize_text(text: str) -> str:
-    """Normaliza texto, removendo acentos e diferenças entre maiúsculas/minúsculas."""
-
-    normalized = unicodedata.normalize("NFKD", text.casefold())
-
-    return "".join(
-        char
-        for char in normalized
-        if not unicodedata.combining(char)
-    )
-
-
-def _tokenize(text: str) -> list[str]:
-    """Divide um texto normalizado em tokens."""
-
-    normalized = _normalize_text(text)
-    tokens = re.findall(r"[a-z0-9]+", normalized)
-
-    return [
-        token
-        for token in tokens
-        if token not in STOPWORDS
-    ]
-
-
-def _calculate_bm25_scores(
-    query: str,
-    documents: list[Document],
-) -> list[float]:
-    """Calcula a relevância lexical dos documentos usando BM25."""
-
-    query_tokens = set(_tokenize(query))
-
-    if not query_tokens or not documents:
-        return [0.0] * len(documents)
-
-    tokenized_documents = [
-        _tokenize(document.page_content)
-        for document in documents
-    ]
-
-    document_lengths = [
-        len(tokens)
-        for tokens in tokenized_documents
-    ]
-
-    total_documents = len(documents)
-
-    average_length = (
-        sum(document_lengths) / total_documents
-        if total_documents > 0
-        else 0.0
-    )
-
-    average_length = max(average_length, 1.0)
-
-    term_frequencies = [
-        Counter(tokens)
-        for tokens in tokenized_documents
-    ]
-
-    document_frequencies = Counter(
-        token
-        for tokens in tokenized_documents
-        for token in set(tokens)
-    )
-
-    scores = [0.0] * total_documents
-
-    for term in query_tokens:
-        document_frequency = document_frequencies.get(term, 0)
-
-        if document_frequency == 0:
-            continue
-
-        inverse_document_frequency = log(
-            1
-            + (
-                total_documents - document_frequency + 0.5
-            )
-            / (
-                document_frequency + 0.5
-            )
-        )
-
-        for index in range(total_documents):
-            term_frequency = term_frequencies[index].get(term, 0)
-
-            if term_frequency == 0:
-                continue
-
-            document_length = document_lengths[index]
-
-            denominator = term_frequency + BM25_K1 * (
-                1
-                - BM25_B
-                + BM25_B * (document_length / average_length)
-            )
-
-            score = inverse_document_frequency * (
-                (term_frequency * (BM25_K1 + 1))
-                / denominator
-            )
-
-            scores[index] += score
-
-    return scores
+# A coleção limpa foi criada e validada separadamente da coleção anterior.
+DEFAULT_COLLECTION_NAME = "constituicao_legal_clean_v2"
 
 
 def _get_source_node_id(document: Document) -> str:
+    """Retorna o identificador estável da unidade jurídica."""
+
+    metadata = document.metadata or {}
+    source_node_id = metadata.get("source_node_id") or metadata.get("chunk_id")
+
+    if not source_node_id:
+        raise ValueError(
+            "Documento recuperado sem source_node_id ou chunk_id."
+        )
+
+    return str(source_node_id)
+
+
+def _reciprocal_rank_fusion(
+    semantic_documents: list[Document],
+    lexical_results: list[tuple[float, Document]],
+    *,
+    top_k: int,
+    rrf_constant: int = DEFAULT_RRF_CONSTANT,
+) -> list[Document]:
+    """Combina rankings independentes usando Reciprocal Rank Fusion.
+
+    Cada unidade jurídica contribui no máximo uma vez por estratégia. Quando
+    uma unidade aparece nos dois rankings, seus votos são somados. O documento
+    lexical (texto integral da unidade) é preferido em caso de duplicidade com
+    um fragmento semântico, pois mantém o texto jurídico completo.
     """
-    Identifica a unidade jurídica original de um resultado.
 
-    Vários fragmentos podem pertencer ao mesmo LegalNode.
-    """
+    if top_k <= 0:
+        raise ValueError("top_k precisa ser maior que zero.")
+    if rrf_constant <= 0:
+        raise ValueError("rrf_constant precisa ser maior que zero.")
 
-    metadata = document.metadata
+    fused: dict[str, dict[str, Any]] = {}
 
-    source_node_id = metadata.get("source_node_id")
+    def add_result(
+        document: Document,
+        *,
+        source: str,
+        rank: int,
+        raw_score: float | None = None,
+    ) -> None:
+        if not document.page_content.strip():
+            return
 
-    if source_node_id:
-        return str(source_node_id)
+        node_id = _get_source_node_id(document)
+        entry = fused.get(node_id)
 
-    # Compatibilidade com documentos que ainda não possuem
-    # source_node_id.
-    chunk_id = metadata.get("chunk_id")
+        if entry is None:
+            entry = {
+                "document": document,
+                "rrf_score": 0.0,
+                "sources": set(),
+                "semantic_rank": None,
+                "lexical_rank": None,
+                "bm25_score": None,
+                "best_rank": rank,
+            }
+            fused[node_id] = entry
 
-    if chunk_id:
-        return str(chunk_id)
+        # Um mesmo nó pode aparecer em vários fragmentos do ChromaDB.
+        # Contabilizamos somente sua primeira ocorrência em cada ranking.
+        rank_key = f"{source}_rank"
+        if entry[rank_key] is not None:
+            return
 
-    raise ValueError(
-        "Documento recuperado sem source_node_id ou chunk_id."
+        entry[rank_key] = rank
+        entry["rrf_score"] += 1.0 / (rrf_constant + rank)
+        entry["sources"].add(source)
+        entry["best_rank"] = min(entry["best_rank"], rank)
+
+        if source == "lexical":
+            entry["bm25_score"] = raw_score
+            # BM25 contém a unidade completa; substitui eventual fragmento.
+            if len(document.page_content) > len(entry["document"].page_content):
+                entry["document"] = document
+
+    for rank, document in enumerate(semantic_documents, start=1):
+        add_result(
+            document,
+            source="semantic",
+            rank=rank,
+        )
+
+    for rank, (score, document) in enumerate(lexical_results, start=1):
+        add_result(
+            document,
+            source="lexical",
+            rank=rank,
+            raw_score=float(score),
+        )
+
+    ranked_entries = sorted(
+        fused.items(),
+        key=lambda item: (
+            -item[1]["rrf_score"],
+            item[1]["best_rank"],
+            item[0],
+        ),
     )
+
+    results: list[Document] = []
+
+    for node_id, entry in ranked_entries[:top_k]:
+        original = entry["document"]
+        metadata = dict(original.metadata or {})
+        metadata["source_node_id"] = node_id
+        metadata["retrieval_sources"] = sorted(entry["sources"])
+        metadata["semantic_rank"] = entry["semantic_rank"]
+        metadata["lexical_rank"] = entry["lexical_rank"]
+        metadata["bm25_score"] = (
+            round(entry["bm25_score"], 6)
+            if entry["bm25_score"] is not None
+            else None
+        )
+        metadata["rrf_score"] = round(entry["rrf_score"], 8)
+
+        results.append(
+            Document(
+                page_content=original.page_content,
+                metadata=metadata,
+            )
+        )
+
+    return results
 
 
 class PolitizeseRetriever(BaseRetriever):
-    """Retriever híbrido que combina busca semântica e lexical."""
+    """Retriever que une busca vetorial e BM25 independente via RRF."""
 
     model_config = ConfigDict(arbitrary_types_allowed=True)
 
     vector_store: Any = Field(exclude=True, repr=False)
+    lexical_index: LegalBM25Index = Field(exclude=True, repr=False)
 
-    k: int = DEFAULT_TOP_K
-    candidate_k: int = DEFAULT_CANDIDATE_K
-
-    semantic_weight: float = Field(
-        default=DEFAULT_SEMANTIC_WEIGHT,
-        ge=0.0,
-        le=1.0,
+    k: int = Field(default=DEFAULT_TOP_K, ge=1)
+    candidate_k: int = Field(default=DEFAULT_CANDIDATE_K, ge=1)
+    lexical_candidate_k: int = Field(
+        default=DEFAULT_LEXICAL_CANDIDATE_K,
+        ge=1,
     )
+    rrf_constant: int = Field(default=DEFAULT_RRF_CONSTANT, ge=1)
 
     def _get_relevant_documents(
         self,
@@ -213,140 +179,56 @@ class PolitizeseRetriever(BaseRetriever):
         *,
         run_manager: CallbackManagerForRetrieverRun,
     ) -> list[Document]:
-        """Recupera candidatos e reordena usando BM25."""
+        """Executa duas recuperações independentes e combina seus rankings."""
+
+        del run_manager  # A implementação não precisa do callback manager.
 
         if not isinstance(query, str) or not query.strip():
-            raise ValueError(
-                "A pergunta de busca não pode estar vazia."
-            )
+            raise ValueError("A pergunta de busca não pode estar vazia.")
 
-        # 1. Recupera candidatos pela similaridade semântica.
-        candidates = (
-            self.vector_store.similarity_search_with_relevance_scores(
-                query,
-                k=self.candidate_k,
-            )
-        )
-
-        if not candidates:
-            return []
-
-        documents: list[Document] = []
-        semantic_scores: list[float] = []
-
-        for document, score in candidates:
-            if not document.page_content.strip():
-                continue
-
-            try:
-                semantic_score = float(score)
-            except (TypeError, ValueError):
-                semantic_score = 0.0
-
-            if not isfinite(semantic_score):
-                semantic_score = 0.0
-
-            semantic_score = max(
-                0.0,
-                min(1.0, semantic_score),
-            )
-
-            documents.append(document)
-            semantic_scores.append(semantic_score)
-
-        if not documents:
-            return []
-
-        # 2. Calcula a relevância lexical.
-        lexical_scores = _calculate_bm25_scores(
+        # Fonte 1: candidatos semânticos da coleção ChromaDB limpa.
+        semantic_documents = self.vector_store.similarity_search(
             query,
-            documents,
+            k=self.candidate_k,
         )
 
-        maximum_lexical_score = max(
-            lexical_scores,
-            default=0.0,
+        # Fonte 2: BM25 calculado sobre todo o corpus jurídico original.
+        lexical_results = self.lexical_index.search(
+            query,
+            top_k=self.lexical_candidate_k,
         )
 
-        if maximum_lexical_score > 0:
-            normalized_lexical_scores = [
-                score / maximum_lexical_score
-                for score in lexical_scores
-            ]
-        else:
-            normalized_lexical_scores = [
-                0.0
-                for _ in lexical_scores
-            ]
-
-        # 3. Combina as pontuações.
-        lexical_weight = 1.0 - self.semantic_weight
-
-        ranked_documents = []
-
-        for index, document in enumerate(documents):
-            combined_score = (
-                self.semantic_weight * semantic_scores[index]
-                + lexical_weight * normalized_lexical_scores[index]
-            )
-
-            ranked_documents.append(
-                (combined_score, document)
-            )
-
-        ranked_documents.sort(
-            key=lambda item: item[0],
-            reverse=True,
+        # Fusão por ranking: não soma scores de escalas diferentes.
+        return _reciprocal_rank_fusion(
+            semantic_documents,
+            lexical_results,
+            top_k=self.k,
+            rrf_constant=self.rrf_constant,
         )
-
-        # 4. Retorna somente o fragmento mais relevante
-        # de cada unidade jurídica original.
-        selected_documents = []
-        seen_source_nodes = set()
-
-        for _, document in ranked_documents:
-            source_node_id = _get_source_node_id(document)
-
-            if source_node_id in seen_source_nodes:
-                continue
-
-            seen_source_nodes.add(source_node_id)
-            selected_documents.append(document)
-
-            if len(selected_documents) >= self.k:
-                break
-
-        return selected_documents
 
 
 def create_retriever(
     provider: Literal["local", "cloud", "auto"] | None = None,
     k: int = DEFAULT_TOP_K,
     candidate_k: int = DEFAULT_CANDIDATE_K,
+    lexical_candidate_k: int = DEFAULT_LEXICAL_CANDIDATE_K,
+    rrf_constant: int = DEFAULT_RRF_CONSTANT,
     settings: Settings | None = None,
     collection_name: str = DEFAULT_COLLECTION_NAME,
+    legal_tree_path: str | Path = DEFAULT_LEGAL_TREE_PATH,
 ) -> tuple[PolitizeseRetriever, str]:
-    """Cria o retriever e inicializa o acesso à coleção jurídica."""
+    """Inicializa ChromaDB e o índice BM25 global do Politizese."""
 
     if k <= 0:
-        raise ValueError(
-            "O parâmetro k precisa ser maior que zero."
-        )
-
+        raise ValueError("O parâmetro k precisa ser maior que zero.")
     if candidate_k <= 0:
-        raise ValueError(
-            "O parâmetro candidate_k precisa ser maior que zero."
-        )
-
-    if candidate_k < k:
-        raise ValueError(
-            "candidate_k não pode ser menor que k."
-        )
-
+        raise ValueError("candidate_k precisa ser maior que zero.")
+    if lexical_candidate_k <= 0:
+        raise ValueError("lexical_candidate_k precisa ser maior que zero.")
+    if rrf_constant <= 0:
+        raise ValueError("rrf_constant precisa ser maior que zero.")
     if not collection_name or not collection_name.strip():
-        raise ValueError(
-            "O nome da coleção não pode estar vazio."
-        )
+        raise ValueError("O nome da coleção não pode estar vazio.")
 
     vector_store, selected_provider = create_vector_store(
         provider=provider,
@@ -354,10 +236,33 @@ def create_retriever(
         settings=settings,
     )
 
+    collection_count = vector_store._collection.count()
+    if collection_count <= 0:
+        raise RuntimeError(
+            f"A coleção ChromaDB '{vector_store._collection.name}' está vazia. "
+            "Confira o collection_name e execute a indexação correta."
+        )
+
+    lexical_index = load_legal_bm25_index(legal_tree_path)
+
     retriever = PolitizeseRetriever(
         vector_store=vector_store,
+        lexical_index=lexical_index,
         k=k,
         candidate_k=candidate_k,
+        lexical_candidate_k=lexical_candidate_k,
+        rrf_constant=rrf_constant,
+    )
+
+    print(
+        "[RETRIEVER] Recuperação híbrida inicializada.\n"
+        f"Coleção vetorial: {vector_store._collection.name}\n"
+        f"Documentos semânticos: {collection_count}\n"
+        f"Unidades no BM25 global: {lexical_index.doc_count}\n"
+        f"Candidatos semânticos: {candidate_k}\n"
+        f"Candidatos lexicais: {lexical_candidate_k}\n"
+        f"RRF constant: {rrf_constant}\n"
+        f"Candidatos finais: {k}"
     )
 
     return retriever, selected_provider

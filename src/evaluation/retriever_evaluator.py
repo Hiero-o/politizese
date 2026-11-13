@@ -233,11 +233,15 @@ def _validate_config(config: dict[str, Any]) -> None:
     top_k = retriever_config.get("top_k", 4)
     rerank_k = retriever_config.get("rerank_k", 24)
     candidate_k = retriever_config.get("candidate_k", 48)
+    lexical_candidate_k = retriever_config.get("lexical_candidate_k", 120)
+    rrf_constant = retriever_config.get("rrf_constant", 60)
 
     for name, value in (
         ("top_k", top_k),
         ("rerank_k", rerank_k),
         ("candidate_k", candidate_k),
+        ("lexical_candidate_k", lexical_candidate_k),
+        ("rrf_constant", rrf_constant),
     ):
         if (
             not isinstance(value, int)
@@ -267,7 +271,7 @@ def _validate_config(config: dict[str, Any]) -> None:
 
     collection_name = retriever_config.get(
         "collection_name",
-        "constituicao_legal",
+        "constituicao_legal_clean_v2",
     )
 
     if (
@@ -701,6 +705,8 @@ def _run_comparative_evaluation(
     top_k = retriever_config.get("top_k", 4)
     rerank_k = retriever_config.get("rerank_k", 24)
     candidate_k = retriever_config.get("candidate_k", 48)
+    lexical_candidate_k = retriever_config.get("lexical_candidate_k", 120)
+    rrf_constant = retriever_config.get("rrf_constant", 60)
 
     model_name = reranker_config.get(
         "model_name",
@@ -716,9 +722,11 @@ def _run_comparative_evaluation(
         top_k=top_k,
         rerank_k=rerank_k,
         candidate_k=candidate_k,
+        lexical_candidate_k=lexical_candidate_k,
+        rrf_constant=rrf_constant,
         collection_name=retriever_config.get(
             "collection_name",
-            "constituicao_legal",
+            "constituicao_legal_clean_v2",
         ),
         model_name=model_name,
         device=reranker_config.get("device"),
@@ -1055,6 +1063,8 @@ def _run_comparative_evaluation(
             "provider": provider,
             "collection_name": collection_name,
             "indexed_documents": indexed_count,
+            "lexical_candidate_k": lexical_candidate_k,
+            "rrf_constant": rrf_constant,
             "top_k": top_k,
             "rerank_k": rerank_k,
             "candidate_k": candidate_k,
