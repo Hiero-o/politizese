@@ -173,37 +173,62 @@ class PolitizeseRetriever(BaseRetriever):
     )
     rrf_constant: int = Field(default=DEFAULT_RRF_CONSTANT, ge=1)
 
+    def search_with_queries(
+    self,
+    semantic_query: str,
+    lexical_query: str,
+) -> list[Document]:
+        """
+        Executa busca semântica e lexical usando consultas independentes.
+
+        Args:
+            semantic_query: consulta enviada ao ChromaDB.
+            lexical_query: consulta enviada ao BM25.
+
+        Returns:
+            Documentos combinados por Reciprocal Rank Fusion.
+        """
+
+        if not isinstance(semantic_query, str) or not semantic_query.strip():
+            raise ValueError("A consulta semântica não pode estar vazia.")
+
+        if not isinstance(lexical_query, str) or not lexical_query.strip():
+            raise ValueError("A consulta lexical não pode estar vazia.")
+
+        semantic_documents = self.vector_store.similarity_search(
+            semantic_query,
+            k=self.candidate_k,
+        )
+
+        lexical_results = self.lexical_index.search(
+            lexical_query,
+            top_k=self.lexical_candidate_k,
+        )
+
+        return _reciprocal_rank_fusion(
+            semantic_documents,
+            lexical_results,
+            top_k=self.k,
+            rrf_constant=self.rrf_constant,
+        )
+
     def _get_relevant_documents(
         self,
         query: str,
         *,
         run_manager: CallbackManagerForRetrieverRun,
     ) -> list[Document]:
-        """Executa duas recuperações independentes e combina seus rankings."""
+        """
+        Mantém compatibilidade com a interface padrão do LangChain.
 
-        del run_manager  # A implementação não precisa do callback manager.
+        Quando recebe uma única consulta, utiliza-a nas duas estratégias.
+        """
 
-        if not isinstance(query, str) or not query.strip():
-            raise ValueError("A pergunta de busca não pode estar vazia.")
+        del run_manager
 
-        # Fonte 1: candidatos semânticos da coleção ChromaDB limpa.
-        semantic_documents = self.vector_store.similarity_search(
-            query,
-            k=self.candidate_k,
-        )
-
-        # Fonte 2: BM25 calculado sobre todo o corpus jurídico original.
-        lexical_results = self.lexical_index.search(
-            query,
-            top_k=self.lexical_candidate_k,
-        )
-
-        # Fusão por ranking: não soma scores de escalas diferentes.
-        return _reciprocal_rank_fusion(
-            semantic_documents,
-            lexical_results,
-            top_k=self.k,
-            rrf_constant=self.rrf_constant,
+        return self.search_with_queries(
+            semantic_query=query,
+            lexical_query=query,
         )
 
 

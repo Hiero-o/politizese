@@ -33,6 +33,16 @@ diagnosticar_semantica_texto_original.py
 diagnosticar_contexto_embeddings.py
 diagnosticar_prefixos_nomic.py
 diagnosticar_consistencia_vetores.py
+diagnosticar_query_rewriter_ll.py
+diagnosticar_chain_query_rewriter.py
+diagnosticar_structured_no_reasoning.py
+testar_query_rewriter_retriever.py
+testar_question_decomposer.py
+testar_retrieval_iterativo.py
+testar_ablation_retrieval.py
+testar_react_agent.py
+testar_deepseek_tool_call.py
+testar_recuperacao_elegibilidade.py
 
 
 # Bancos vetoriais locais gerados pelo GurAI
