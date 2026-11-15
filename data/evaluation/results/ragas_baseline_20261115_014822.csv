@@ -1,0 +1,14 @@
+﻿id,category,trap_type,user_input,response,reference,reference_source,retrieved_context_count,agent_total_duration_seconds,agent_tool_calls_count,faithfulness,answer_relevancy,context_precision,context_recall,agent_error
+Q03,easy,,Quais os fundamentos da República Federativa do Brasil?,"Com base na pesquisa realizada na Constituição Federal de 1988, os fundamentos da República Federativa do Brasil estão previstos no **Artigo 1º**.
+
+De acordo com o documento recuperado **[CF1988-ART-0001-CAPUT]**, a República Federativa do Brasil constitui-se em Estado Democrático de Direito e tem como fundamentos:
+
+1. **Soberania** - conforme inciso I **[CF1988-ART-0001-INC-I]**
+2. **Cidadania** - conforme inciso II **[CF1988-ART-0001-INC-II]**
+3. **Dignidade da pessoa humana** - conforme inciso III **[CF1988-ART-0001-INC-III]**
+
+A Constituição Federal estabelece ainda outros fundamentos no mesmo artigo, que incluem:
+4. Valores sociais do trabalho e da livre iniciativa
+5. Pluralismo político
+
+Estes fundamentos constituem os princípios essenciais sobre os quais se assenta a organização política, social e econômica do Brasil, refletindo o compromisso com a democracia, os direitos humanos e a justiça social.","Os fundamentos da República Federativa do Brasil são: a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa, e o pluralismo político.","Constituição Federal de 1988, art. 1º, incisos I a V.",,102.9419,1,0.45454545454545453,0.7174241046472174,0.9999999999,0.0,

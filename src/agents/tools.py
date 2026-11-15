@@ -17,8 +17,11 @@ from src.agents.tool_schemas import (
 
 logger = logging.getLogger(__name__)
 
-MAX_TOOL_DOCUMENTS = 8
+MAX_TOOL_DOCUMENTS = 6
+MAX_COMPOUND_TOOL_DOCUMENTS = 16
 MAX_DOCUMENT_CONTENT_LENGTH = 1800
+MAX_PARENT_CONTEXT_LENGTH = 600
+MAX_PARENT_CONTEXT_DOCUMENTS = 2
 
 
 class PolitizeseToolbox:
@@ -82,6 +85,12 @@ class PolitizeseToolbox:
             tool.name: tool
             for tool in self._tools
         }
+        
+        self._reranker = getattr(
+            iterative_retriever,
+            "reranker",
+            None,
+        )
 
     @property
     def tools(self) -> list[StructuredTool]:
@@ -130,19 +139,51 @@ class PolitizeseToolbox:
             }
         )
 
+
     @staticmethod
     def _serialize_documents(
         documents: list[Any],
     ) -> list[dict[str, Any]]:
-        """
-        Converte documentos LangChain em evidências serializáveis.
+        """Converte documentos em evidências serializáveis."""
 
-        Preserva o identificador documental necessário para as citações.
-        """
+        is_compound = any(
+            (document.metadata or {}).get(
+                "decomposition_is_compound",
+                False,
+            )
+            for document in documents
+        )
+
+        document_limit = (
+            MAX_COMPOUND_TOOL_DOCUMENTS
+            if is_compound
+            else MAX_TOOL_DOCUMENTS
+        )
 
         serialized = []
 
-        for document in documents[:MAX_TOOL_DOCUMENTS]:
+        # Apenas os metadados úteis para fundamentação jurídica
+        # e rastreabilidade serão enviados ao LLM.
+        fields = [
+            "document_part",
+            "article_number",
+            "legal_unit",
+            "number",
+            "retrieval_sources",
+            "matched_subquestions",
+        ]
+
+        parent_metadata_fields = [
+            "document_part",
+            "article_number",
+            "legal_unit",
+            "number",
+        ]
+
+        for document in documents:
+            if len(serialized) >= document_limit:
+                break
+
             metadata = dict(document.metadata or {})
 
             doc_id = (
@@ -156,22 +197,75 @@ class PolitizeseToolbox:
 
             selected_metadata = {}
 
-            fields = [
-                "document_part",
-                "article_number",
-                "legal_unit",
-                "number",
-                "retrieval_sources",
-                "semantic_rank",
-                "lexical_rank",
-                "rrf_score",
-                "rerank_score",
-                "matched_subquestions",
-            ]
-
             for field in fields:
                 if field in metadata:
                     selected_metadata[field] = metadata[field]
+
+            # Preserva o contexto dos dispositivos superiores,
+            # aceitando tanto o formato original quanto o novo formato textual.
+            parent_context = metadata.get("parent_context") or []
+
+            # Novo formato: contexto textual simples.
+            if isinstance(parent_context, str):
+                parent_context_items = [
+                    {
+                        "doc_id": str(
+                            metadata.get("parent_context_id", "")
+                        ),
+                        "content": parent_context,
+                        "metadata": {
+                            "document_part": metadata.get("document_part"),
+                            "article_number": metadata.get("article_number"),
+                            "legal_unit": "caput",
+                        },
+                    }
+                ]
+
+            # Compatibilidade com um único contexto em formato de dicionário.
+            elif isinstance(parent_context, dict):
+                parent_context_items = [parent_context]
+
+            # Formato original: lista de documentos superiores.
+            elif isinstance(parent_context, list):
+                parent_context_items = parent_context
+
+            else:
+                parent_context_items = []
+
+            if parent_context_items:
+                selected_parents = []
+
+                for parent in parent_context_items[
+                    :MAX_PARENT_CONTEXT_DOCUMENTS
+                ]:
+                    if not isinstance(parent, dict):
+                        continue
+
+                    parent_metadata = parent.get("metadata") or {}
+
+                    if not isinstance(parent_metadata, dict):
+                        parent_metadata = {}
+
+                    selected_parent_metadata = {
+                        field: parent_metadata[field]
+                        for field in parent_metadata_fields
+                        if field in parent_metadata
+                    }
+
+                    selected_parents.append(
+                        {
+                            "doc_id": str(
+                                parent.get("doc_id", "")
+                            ),
+                            "content": str(
+                                parent.get("content", "")
+                            )[:MAX_PARENT_CONTEXT_LENGTH],
+                            "metadata": selected_parent_metadata,
+                        }
+                    )
+
+                if selected_parents:
+                    selected_metadata["parent_context"] = selected_parents
 
             serialized.append(
                 {
@@ -199,10 +293,38 @@ class PolitizeseToolbox:
         try:
             rewritten = self._rewriter.rewrite(question)
 
-            documents = self._base_retriever.search_with_queries(
+            candidates = self._base_retriever.search_with_queries(
                 semantic_query=rewritten.semantic_query,
                 lexical_query=rewritten.lexical_query,
             )
+
+            documents = candidates
+
+            if self._reranker is not None:
+                documents = self._reranker.rerank_documents(
+                    query=rewritten.semantic_query,
+                    candidates=candidates,
+                )
+            
+            # Expande enumerações quando o retriever oferece esse recurso.
+            # Mantém compatibilidade com retrievers de teste e implementações alternativas.
+            hierarchical_expansion = getattr(
+                self._base_retriever,
+                "expand_hierarchical_lists",
+                None,
+            )
+
+            if callable(hierarchical_expansion):
+                documents = hierarchical_expansion(
+                    documents=documents,
+                    query=(
+                        f"{question}\n"
+                        f"{rewritten.semantic_query}\n"
+                        f"{rewritten.lexical_query}"
+                    ),
+                    max_documents=MAX_TOOL_DOCUMENTS,
+                )
+                        
 
             return self._json(
                 {
@@ -250,6 +372,19 @@ class PolitizeseToolbox:
                 }
                 for item in result.trace.subqueries
             ]
+            
+            serialized_documents = self._serialize_documents(
+                result.documents
+            )
+
+            logger.warning(
+                "[RAG DEBUG] Documentos enviados ao agente (%s): %s",
+                len(serialized_documents),
+                [
+                    document["doc_id"]
+                    for document in serialized_documents
+                ],
+            )
 
             return self._json(
                 {
@@ -261,10 +396,9 @@ class PolitizeseToolbox:
                         result.trace.decomposition_reason
                     ),
                     "subquestions": subquestions,
-                    "document_count": len(result.documents),
-                    "documents": self._serialize_documents(
-                        result.documents
-                    ),
+                    "retrieved_document_count": len(result.documents),
+                    "document_count": len(serialized_documents),
+                    "documents": serialized_documents,
                 }
             )
 

@@ -1,0 +1,75 @@
+
+[
+    {
+        "id": "Q01",
+        "category": "easy",
+        "trap_type": null,
+        "user_input": "Em que data foi promulgada a Constituição Federal de 1988?",
+        "reference": "A Constituição Federal de 1988 foi promulgada em 5 de outubro de 1988.",
+        "reference_source": "Texto constitucional — identificação oficial da promulgação (sem artigo específico)."
+    },
+    {
+        "id": "Q02",
+        "category": "easy",
+        "trap_type": null,
+        "user_input": "O Presidente pode nomear e exonerar Ministros de Estado?",
+        "reference": "Sim. Compete privativamente ao Presidente da República nomear e exonerar os Ministros de Estado, conforme estabelecido na Constituição Federal de 1988.",
+        "reference_source": "Constituição Federal de 1988, art. 84, inciso I."
+    },
+    {
+        "id": "Q03",
+        "category": "easy",
+        "trap_type": null,
+        "user_input": "Quais os fundamentos da República Federativa do Brasil?",
+        "reference": "Os fundamentos da República Federativa do Brasil são: a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa, e o pluralismo político.",
+        "reference_source": "Constituição Federal de 1988, art. 1º, incisos I a V."
+    },
+    {
+        "id": "Q04",
+        "category": "easy",
+        "trap_type": null,
+        "user_input": "A Educação é um direito constitucional?",
+        "reference": "Sim. A educação é um direito social garantido pela Constituição Federal de 1988. O art. 205 estabelece que a educação é direito de todos e dever do Estado e da família.",
+        "reference_source": "Constituição Federal de 1988, art. 6º e art. 205."
+    },
+    {
+        "id": "Q05",
+        "category": "pitfall",
+        "trap_type": "comparison_of_minimum_age_requirements",
+        "user_input": "A idade para se tornar Prefeito de uma cidade é a mesma para se tornar Presidente da República?",
+        "reference": "Não. A idade mínima para concorrer ao cargo de Prefeito é de 21 anos, enquanto para concorrer à Presidência da República é de 35 anos.",
+        "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c."
+    },
+    {
+        "id": "Q06",
+        "category": "pitfall",
+        "trap_type": "misapplication_of_resignation_rule",
+        "user_input": "Um deputado Federal pode concorrer à Presidência da República enquanto ainda estiver no cargo de deputado?",
+        "reference": "Sim. A Constituição Federal não exige que um deputado federal renuncie ao mandato para concorrer à Presidência da República. O art. 14, § 6º, estabelece a necessidade de renúncia até seis meses antes do pleito para o Presidente da República, Governadores e Prefeitos que pretendam concorrer a outros cargos, não incluindo os deputados. O candidato também deve cumprir os demais requisitos de elegibilidade, incluindo a idade mínima de 35 anos.",
+        "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alínea a, e § 6º."
+    },
+    {
+        "id": "Q07",
+        "category": "pitfall",
+        "trap_type": "nonexistent_maximum_age",
+        "user_input": "A idade máxima para se tornar Presidente da República é a mesma para se tornar Prefeito de uma cidade?",
+        "reference": "A Constituição Federal de 1988 não estabelece idade máxima para nenhum dos dois cargos. Ela determina apenas as idades mínimas: 35 anos para Presidente da República e 21 anos para Prefeito.",
+        "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c."
+    },
+    {
+        "id": "Q08",
+        "category": "pitfall",
+        "trap_type": "constitutional_exception",
+        "user_input": "Em época de paz, existe pena de morte no Brasil?",
+        "reference": "Não. A Constituição Federal proíbe a pena de morte, exceto em caso de guerra declarada, nos termos do art. 5º, inciso XLVII, alínea a, combinado com o art. 84, inciso XIX. Portanto, em tempo de paz, não há previsão constitucional para aplicação da pena de morte.",
+        "reference_source": "Constituição Federal de 1988, art. 5º, inciso XLVII, alínea a, e art. 84, inciso XIX."
+    },
+    {
+        "id": "Q09",
+        "category": "pitfall",
+        "trap_type": "distinction_between_natural_born_and_naturalized",
+        "user_input": "Brasileiros natos podem ser extraditados?",
+        "reference": "Não. Brasileiros natos não podem ser extraditados, conforme o art. 5º, inciso LI. O dispositivo admite a extradição de brasileiros naturalizados apenas em duas hipóteses: por crime comum praticado antes da naturalização ou por comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei.",
+        "reference_source": "Constituição Federal de 1988, art. 5º, inciso LI."
+    }
+]

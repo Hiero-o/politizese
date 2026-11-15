@@ -1,0 +1,588 @@
+{
+    "evaluation_label": "trace_queries_6docs",
+    "generated_at": "2026-11-15T04:33:23.145515-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 2,
+    "completed_questions": 2,
+    "average_metrics": {
+        "faithfulness": null,
+        "answer_relevancy": 0.6205,
+        "context_precision": 0.0714,
+        "context_recall": 0.0
+    },
+    "category_averages": {
+        "pitfall": {
+            "faithfulness": null,
+            "answer_relevancy": 0.6205,
+            "context_precision": 0.0714,
+            "context_recall": 0.0
+        }
+    },
+    "results": [
+        {
+            "id": "Q07",
+            "category": "pitfall",
+            "trap_type": "nonexistent_maximum_age",
+            "user_input": "A idade máxima para se tornar Presidente da República é a mesma para se tornar Prefeito de uma cidade?",
+            "reference": "A Constituição Federal de 1988 não estabelece idade máxima para nenhum dos dois cargos. Ela determina apenas as idades mínimas: 35 anos para Presidente da República e 21 anos para Prefeito.",
+            "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c.",
+            "response": "**Resposta Direta**\n\nNão há **idade máxima** estabelecida na Constituição Federal para se tornar Presidente da República ou Prefeito de uma cidade.\n\n*   Para o cargo de **Presidente da República**, a Constituição estabelece apenas um limite de **idade mínima** (35 anos), conforme Artigo 14, §3º, VI, alínea 'a' (doc_id: CF1988-ART-0014-PAR-0003-INC-VI-ALI-A).\n*   Para o cargo de **Prefeito**, a Constituição também estabelece apenas um limite de **idade mínima** (21 anos), conforme Artigo 14, §3º, VI, alínea 'c' (doc_id: CF1988-ART-0014-PAR-0003-INC-VI-ALI-C).\n\nOs documentos recuperados não contêm disposições que imponham um limite superior de idade para a candidatura ou posse nesses cargos. As menções a faixas etárias superiores (como \"menos de setenta anos\") encontradas nos documentos referem-se a requisitos para nomeação de Ministros, Juízes e membros do TSE/TFR, e não à elegibilidade popular para Presidentes ou Prefeitos.\n\n**Fundamentação Documental**\n\n1.  **Presidente da República:** O Artigo 14, §3º, VI, alínea 'a' da Constituição Federal (doc_id: CF1988-ART-0014-PAR-0003-INC-VI-ALI-A) define a condição de elegibilidade como \"a idade mínima de trinta e cinco anos para Presidente e Vice-Presidente da República\". Não há menção a um limite máximo.\n2.  **Prefeito:** O Artigo 14, §3º, VI, alínea 'c' da Constituição Federal (doc_id: CF1988-ART-0014-PAR-0003-INC-VI-ALI-C) define a condição de elegibilidade como \"vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito, Vice-Prefeito e juiz de paz\". Não há menção a um limite máximo.\n\n**Observações e Limitações**\n\n*   A ausência de uma cláusula constitucional que estabeleça um limite máximo de idade para esses cargos específicos significa que, juridicamente, não existe proibição baseada na idade para concorrer à Presidência ou à Prefeitura.\n*   Os documentos CF1988-ART-0123-PAR-UNICO e CF1988-ART-0073-PAR-0001-INC-I mencionam faixas etárias (ex: \"menos de setenta anos\"), mas referem-se especificamente à escolha de Ministros Civis (Art. 123) e membros do TSE/TFR, não aplicando-se aos cargos eletivos de Presidente ou Prefeito.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0040-PAR-0001-INC-III",
+                    "source": "retrieved_document",
+                    "content": "no âmbito da União, aos sessenta e dois anos de idade, se mulher, e aos sessenta\ne cinco anos de idade, se homem, e, no âmbito dos Estados, do Distrito Federal e dos Municípios, na idade mínima estabelecida mediante emenda às respectivas Constituições e\nLeis Orgânicas, observados o tempo de contribuição e os demais requisitos estabelecidos\nem lei complementar do respectivo ente federativo. (Redação dada pela EC n. 103/2019)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "40",
+                        "legal_unit": "inciso",
+                        "number": "III"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-A",
+                    "source": "retrieved_document",
+                    "content": "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "a"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003",
+                    "source": "parent_context",
+                    "content": "São condições de elegibilidade, na forma da lei:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "3"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI",
+                    "source": "parent_context",
+                    "content": "a idade mínima de:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "inciso",
+                        "number": "VI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-C",
+                    "source": "retrieved_document",
+                    "content": "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "c"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0123-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "123",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0073-PAR-0001-INC-I",
+                    "source": "retrieved_document",
+                    "content": "mais de trinta e cinco e menos de setenta anos de idade; (Redação dada pela\nEC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "73",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0089-INC-VII",
+                    "source": "retrieved_document",
+                    "content": "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "89",
+                        "legal_unit": "inciso",
+                        "number": "VII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0082-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "82",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0201-PAR-0007-INC-I",
+                    "source": "retrieved_document",
+                    "content": "sessenta e cinco anos de idade, se homem, e sessenta e dois anos de idade, se mulher,\nobservado tempo mínimo de contribuição; (Redação dada pela EC n. 103/2019)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "201",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0029-INC-I",
+                    "source": "retrieved_document",
+                    "content": "eleição do Prefeito, do Vice-Prefeito e dos Vereadores, para mandato de quatro\nanos, mediante pleito direto e simultâneo realizado em todo o País;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "29",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0235-INC-VIII",
+                    "source": "retrieved_document",
+                    "content": "até a promulgação da Constituição Estadual, responderão pela Procuradoria-Geral, pela Advocacia-Geral e pela Defensoria-Geral do Estado advogados de notório\nsaber, com trinta e cinco anos de idade, no mínimo, nomeados pelo Governador eleito\ne demissíveis ad nutum;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "235",
+                        "legal_unit": "inciso",
+                        "number": "VIII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0007",
+                    "source": "retrieved_document",
+                    "content": "São inelegíveis, no território de jurisdição do titular, o cônjuge e os parentes\nconsanguíneos ou afins, até o segundo grau ou por adoção, do Presidente da República,\nde Governador de Estado ou Território, do Distrito Federal, de Prefeito ou de quem os\nhaja substituído dentro dos seis meses anteriores ao pleito, salvo se já titular de mandato\neletivo e candidato à reeleição.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "7"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0104-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "Os Ministros do Superior Tribunal de Justiça serão nomeados pelo\nPresidente da República, dentre brasileiros com mais de trinta e cinco e menos de setenta\nanos de idade, de notável saber jurídico e reputação ilibada, depois de aprovada a escolha\npela maioria absoluta do Senado Federal, sendo: (Redação dada pela EC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "104",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0029-INC-III",
+                    "source": "retrieved_document",
+                    "content": "posse do Prefeito e do Vice-Prefeito no dia 1º de janeiro do ano subsequente ao\nda eleição;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "29",
+                        "legal_unit": "inciso",
+                        "number": "III"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0107-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Os Tribunais Regionais Federais compõem-se de, no mínimo, sete juízes, recrutados, quando possível, na respectiva região e nomeados pelo Presidente da República\ndentre brasileiros com mais de trinta e menos de setenta anos de idade, sendo: (Redação\ndada pela EC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "107",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_document_count": 14,
+            "retrieved_contexts": [
+                "no âmbito da União, aos sessenta e dois anos de idade, se mulher, e aos sessenta\ne cinco anos de idade, se homem, e, no âmbito dos Estados, do Distrito Federal e dos Municípios, na idade mínima estabelecida mediante emenda às respectivas Constituições e\nLeis Orgânicas, observados o tempo de contribuição e os demais requisitos estabelecidos\nem lei complementar do respectivo ente federativo. (Redação dada pela EC n. 103/2019)",
+                "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                "São condições de elegibilidade, na forma da lei:",
+                "a idade mínima de:",
+                "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                "mais de trinta e cinco e menos de setenta anos de idade; (Redação dada pela\nEC n. 122/2022)",
+                "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)",
+                "sessenta e cinco anos de idade, se homem, e sessenta e dois anos de idade, se mulher,\nobservado tempo mínimo de contribuição; (Redação dada pela EC n. 103/2019)",
+                "eleição do Prefeito, do Vice-Prefeito e dos Vereadores, para mandato de quatro\nanos, mediante pleito direto e simultâneo realizado em todo o País;",
+                "até a promulgação da Constituição Estadual, responderão pela Procuradoria-Geral, pela Advocacia-Geral e pela Defensoria-Geral do Estado advogados de notório\nsaber, com trinta e cinco anos de idade, no mínimo, nomeados pelo Governador eleito\ne demissíveis ad nutum;",
+                "São inelegíveis, no território de jurisdição do titular, o cônjuge e os parentes\nconsanguíneos ou afins, até o segundo grau ou por adoção, do Presidente da República,\nde Governador de Estado ou Território, do Distrito Federal, de Prefeito ou de quem os\nhaja substituído dentro dos seis meses anteriores ao pleito, salvo se já titular de mandato\neletivo e candidato à reeleição.",
+                "Os Ministros do Superior Tribunal de Justiça serão nomeados pelo\nPresidente da República, dentre brasileiros com mais de trinta e cinco e menos de setenta\nanos de idade, de notável saber jurídico e reputação ilibada, depois de aprovada a escolha\npela maioria absoluta do Senado Federal, sendo: (Redação dada pela EC n. 122/2022)",
+                "posse do Prefeito e do Vice-Prefeito no dia 1º de janeiro do ano subsequente ao\nda eleição;",
+                "Os Tribunais Regionais Federais compõem-se de, no mínimo, sete juízes, recrutados, quando possível, na respectiva região e nomeados pelo Presidente da República\ndentre brasileiros com mais de trinta e menos de setenta anos de idade, sendo: (Redação\ndada pela EC n. 122/2022)"
+            ],
+            "retrieved_context_count": 16,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution_decomposed",
+                    "arguments": {
+                        "question": "Qual é a idade máxima para se tornar Presidente da República e qual é a idade máxima para se tornar Prefeito de uma cidade?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "decomposition_hybrid",
+                    "original_question": "Qual é a idade máxima para se tornar Presidente da República e qual é a idade máxima para se tornar Prefeito de uma cidade?",
+                    "semantic_query": null,
+                    "lexical_query": null,
+                    "is_compound": true,
+                    "decomposition_reason": "A pergunta original solicita informações sobre limites etários para dois cargos distintos e hierarquicamente diferentes (Presidência da República e Prefeitura). Embora ambos sejam cargos eletivos, as disposições constitucionais ou legais (e",
+                    "subquestions": [
+                        {
+                            "index": 1,
+                            "question": "Qual é a idade máxima para se tornar Presidente da República?",
+                            "focus": "Idade máxima para candidatura à Presidência da República.",
+                            "semantic_query": "Qual é o limite de idade para assumir o cargo de Presidente da República segundo a Constituição Federal?",
+                            "lexical_query": "idade máxima; Presidente da República; limite etário; elegibilidade presidencial; proibição de renovação consecutiva",
+                            "retrieved_count": 120
+                        },
+                        {
+                            "index": 2,
+                            "question": "Qual é a idade máxima para se tornar Prefeito de uma cidade?",
+                            "focus": "Idade máxima para candidatura ao cargo de Prefeito.",
+                            "semantic_query": "Qual é o limite máximo de idade para assumir o cargo de Prefeito segundo a Constituição Federal?",
+                            "lexical_query": "idade máxima; Prefeito; limite etário; cargo eletivo; município; prefeito; constituição federal",
+                            "retrieved_count": 120
+                        }
+                    ],
+                    "document_count_reported": 15,
+                    "retrieved_document_count_reported": 15,
+                    "document_count_observed": 15,
+                    "document_ids": [
+                        "CF1988-ART-0040-PAR-0001-INC-III",
+                        "CF1988-ART-0014-PAR-0003-INC-VI-ALI-A",
+                        "CF1988-ART-0014-PAR-0003-INC-VI-ALI-C",
+                        "CF1988-ART-0123-PAR-UNICO",
+                        "CF1988-ART-0073-PAR-0001-INC-I",
+                        "CF1988-ART-0089-INC-VII",
+                        "CF1988-ART-0082-CAPUT",
+                        "CF1988-ART-0201-PAR-0007-INC-I",
+                        "CF1988-ART-0029-INC-I",
+                        "CF1988-ART-0014-PAR-0003-INC-VI",
+                        "CF1988-ART-0235-INC-VIII",
+                        "CF1988-ART-0014-PAR-0007",
+                        "CF1988-ART-0104-PAR-UNICO",
+                        "CF1988-ART-0029-INC-III",
+                        "CF1988-ART-0107-CAPUT"
+                    ],
+                    "parent_context_ids": [
+                        "CF1988-ART-0014-PAR-0003",
+                        "CF1988-ART-0014-PAR-0003-INC-VI"
+                    ],
+                    "documents": [
+                        {
+                            "doc_id": "CF1988-ART-0040-PAR-0001-INC-III",
+                            "article_number": "40",
+                            "legal_unit": "inciso",
+                            "number": "III",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-A",
+                            "article_number": "14",
+                            "legal_unit": "alinea",
+                            "number": "a",
+                            "parent_context_ids": [
+                                "CF1988-ART-0014-PAR-0003",
+                                "CF1988-ART-0014-PAR-0003-INC-VI"
+                            ]
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-C",
+                            "article_number": "14",
+                            "legal_unit": "alinea",
+                            "number": "c",
+                            "parent_context_ids": [
+                                "CF1988-ART-0014-PAR-0003-INC-VI"
+                            ]
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0123-PAR-UNICO",
+                            "article_number": "123",
+                            "legal_unit": "paragraph",
+                            "number": "unico",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0073-PAR-0001-INC-I",
+                            "article_number": "73",
+                            "legal_unit": "inciso",
+                            "number": "I",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0089-INC-VII",
+                            "article_number": "89",
+                            "legal_unit": "inciso",
+                            "number": "VII",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0082-CAPUT",
+                            "article_number": "82",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0201-PAR-0007-INC-I",
+                            "article_number": "201",
+                            "legal_unit": "inciso",
+                            "number": "I",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0029-INC-I",
+                            "article_number": "29",
+                            "legal_unit": "inciso",
+                            "number": "I",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI",
+                            "article_number": "14",
+                            "legal_unit": "inciso",
+                            "number": "VI",
+                            "parent_context_ids": [
+                                "CF1988-ART-0014-PAR-0003"
+                            ]
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0235-INC-VIII",
+                            "article_number": "235",
+                            "legal_unit": "inciso",
+                            "number": "VIII",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0014-PAR-0007",
+                            "article_number": "14",
+                            "legal_unit": "paragraph",
+                            "number": "7",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0104-PAR-UNICO",
+                            "article_number": "104",
+                            "legal_unit": "paragraph",
+                            "number": "unico",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0029-INC-III",
+                            "article_number": "29",
+                            "legal_unit": "inciso",
+                            "number": "III",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0107-CAPUT",
+                            "article_number": "107",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": null,
+                "answer_relevancy": 0.5390839881965623,
+                "context_precision": 0.14285714284285714,
+                "context_recall": 0.0
+            },
+            "metric_errors": {
+                "faithfulness": "IncompleteOutputException: The output is incomplete due to a max_tokens length limit."
+            },
+            "agent_error": null,
+            "agent_total_duration_seconds": 174.2846,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "Q09",
+            "category": "pitfall",
+            "trap_type": "distinction_between_natural_born_and_naturalized",
+            "user_input": "Brasileiros natos podem ser extraditados?",
+            "reference": "Não. Brasileiros natos não podem ser extraditados, conforme o art. 5º, inciso LI. O dispositivo admite a extradição de brasileiros naturalizados apenas em duas hipóteses: por crime comum praticado antes da naturalização ou por comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei.",
+            "reference_source": "Constituição Federal de 1988, art. 5º, inciso LI.",
+            "response": "A Constituição Federal do Brasil estabelece que **brasileiros natos não podem ser extraditados**. \n\nDe acordo com o artigo 5º, inciso XVI da CF/1988 [CF1988-ART-0005-INC-LII], a extradição só pode ser concedida a estrangeiros. O próprio conceito de \"brasileiro nato\" está definido no artigo 12 da Constituição [CF1988-ART-0012-INC-I], que diferencia brasileiros natos (aqueles nascidos no Brasil ou com pai/mãe brasileira) dos naturalizados.\n\nA proibição de extradição de brasileiros natos é uma garantia constitucional fundamental, baseada no princípio de que a nacionalidade brasileira não pode ser retirada por meio de processos de extradição.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0022-INC-XV",
+                    "source": "retrieved_document",
+                    "content": "emigração e imigração, entrada, extradição e expulsão de estrangeiros;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "22",
+                        "legal_unit": "inciso",
+                        "number": "XV"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0089-INC-VII",
+                    "source": "retrieved_document",
+                    "content": "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "89",
+                        "legal_unit": "inciso",
+                        "number": "VII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0102-INC-I-ALI-G",
+                    "source": "retrieved_document",
+                    "content": "a extradição solicitada por Estado estrangeiro;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "102",
+                        "legal_unit": "alinea",
+                        "number": "g"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0012-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados,\nsalvo nos casos previstos nesta Constituição.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "12",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0005-INC-LII",
+                    "source": "retrieved_document",
+                    "content": "não será concedida extradição de estrangeiro por crime político ou de opinião;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "inciso",
+                        "number": "LII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0012-INC-I",
+                    "source": "retrieved_document",
+                    "content": "natos:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "12",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "emigração e imigração, entrada, extradição e expulsão de estrangeiros;",
+                "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                "a extradição solicitada por Estado estrangeiro;",
+                "A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados,\nsalvo nos casos previstos nesta Constituição.",
+                "não será concedida extradição de estrangeiro por crime político ou de opinião;",
+                "natos:"
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quais são as regras sobre extradição de brasileiros natos na Constituição Federal?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "Quais são as regras sobre extradição de brasileiros natos na Constituição Federal?",
+                    "semantic_query": "Quais são as disposições constitucionais sobre a extradição de brasileiros natos?",
+                    "lexical_query": "extradição; brasileiros natos; proibição; Constituição Federal; direito internacional",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "CF1988-ART-0022-INC-XV",
+                        "CF1988-ART-0089-INC-VII",
+                        "CF1988-ART-0102-INC-I-ALI-G",
+                        "CF1988-ART-0012-PAR-0002",
+                        "CF1988-ART-0005-INC-LII",
+                        "CF1988-ART-0012-INC-I"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "CF1988-ART-0022-INC-XV",
+                            "article_number": "22",
+                            "legal_unit": "inciso",
+                            "number": "XV",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0089-INC-VII",
+                            "article_number": "89",
+                            "legal_unit": "inciso",
+                            "number": "VII",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0102-INC-I-ALI-G",
+                            "article_number": "102",
+                            "legal_unit": "alinea",
+                            "number": "g",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0012-PAR-0002",
+                            "article_number": "12",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0005-INC-LII",
+                            "article_number": "5",
+                            "legal_unit": "inciso",
+                            "number": "LII",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "CF1988-ART-0012-INC-I",
+                            "article_number": "12",
+                            "legal_unit": "inciso",
+                            "number": "I",
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": null,
+                "answer_relevancy": 0.7018227689540502,
+                "context_precision": 0.0,
+                "context_recall": 0.0
+            },
+            "metric_errors": {
+                "faithfulness": "IncompleteOutputException: The output is incomplete due to a max_tokens length limit."
+            },
+            "agent_error": null,
+            "agent_total_duration_seconds": 109.2705,
+            "agent_tool_calls_count": 1
+        }
+    ]
+}

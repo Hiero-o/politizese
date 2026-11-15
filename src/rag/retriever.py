@@ -16,7 +16,9 @@ from src.rag.lexical_index import (
     DEFAULT_LEGAL_TREE_PATH,
     LegalBM25Index,
     load_legal_bm25_index,
+    tokenize,
 )
+
 from src.rag.vector_store import create_vector_store
 
 
@@ -157,6 +159,232 @@ def _reciprocal_rank_fusion(
     return results
 
 
+
+# Termos que indicam que a pergunta busca uma enumeração jurídica.
+_ENUMERATION_TERMS = frozenset({
+    "fundamento",
+    "fundamentos",
+    "principio",
+    "principios",
+    "objetivo",
+    "objetivos",
+    "requisito",
+    "requisitos",
+    "direito",
+    "direitos",
+    "garantia",
+    "garantias",
+    "competencia",
+    "competencias",
+    "hipotese",
+    "hipoteses",
+    "vedacao",
+    "vedacoes",
+    "condicao",
+    "condicoes",
+    "dever",
+    "deveres",
+})
+
+
+def _attach_parent_context(
+    document: Document,
+    caput: Document,
+) -> Document:
+    """Anexa o contexto do caput ao dispositivo jurídico."""
+
+    metadata = dict(document.metadata or {})
+    caput_metadata = dict(caput.metadata or {})
+
+    caput_id = _get_source_node_id(caput)
+
+    selected_parent_metadata = {
+        field: caput_metadata[field]
+        for field in (
+            "document_part",
+            "article_number",
+            "legal_unit",
+            "number",
+        )
+        if field in caput_metadata
+    }
+
+    metadata["parent_context"] = [
+        {
+            "doc_id": caput_id,
+            "content": caput.page_content,
+            "metadata": selected_parent_metadata,
+        }
+    ]
+
+    metadata["parent_context_id"] = caput_id
+    metadata["hierarchy_expanded"] = True
+
+    sources = metadata.get("retrieval_sources") or []
+
+    if isinstance(sources, str):
+        sources = [sources]
+
+    if not isinstance(sources, list):
+        sources = []
+
+    if "hierarchical" not in sources:
+        sources.append("hierarchical")
+
+    metadata["retrieval_sources"] = sources
+
+    return Document(
+        id=document.id,
+        page_content=document.page_content,
+        metadata=metadata,
+    )
+
+
+def _expand_hierarchical_lists(
+    documents: list[Document],
+    lexical_index: LegalBM25Index,
+    *,
+    query: str,
+    max_documents: int = 8,
+) -> list[Document]:
+    """
+    Expande enumerações somente depois do reranking.
+
+    A expansão exige:
+    - O caput precisa estar entre os documentos selecionados.
+    - O caput precisa terminar com dois-pontos.
+    - A pergunta precisa mencionar o assunto da enumeração.
+    """
+
+    if max_documents <= 0:
+        raise ValueError("max_documents precisa ser maior que zero.")
+
+    if not documents:
+        return []
+
+    query_markers = (
+        _ENUMERATION_TERMS.intersection(tokenize(query))
+    )
+
+    if not query_markers:
+        return documents[:max_documents]
+
+    # 1. Identifica apenas os caputs selecionados pelo reranker
+    # que correspondem ao assunto solicitado.
+    selected_caputs: dict[str, Document] = {}
+
+    for document in documents:
+        metadata = document.metadata or {}
+
+        if metadata.get("legal_unit") != "caput":
+            continue
+
+        content = document.page_content.strip()
+
+        if not content.endswith(":"):
+            continue
+
+        caput_markers = (
+            _ENUMERATION_TERMS.intersection(tokenize(content))
+        )
+
+        if not query_markers.intersection(caput_markers):
+            continue
+
+        caput_id = _get_source_node_id(document)
+        selected_caputs[caput_id] = document
+
+    if not selected_caputs:
+        return documents[:max_documents]
+
+    # 2. Indexa os documentos já classificados pelo reranker.
+    ranked_by_id = {
+        _get_source_node_id(document): document
+        for document in documents
+    }
+
+    children_by_caput: dict[str, list[Document]] = {}
+    expanded_child_ids: set[str] = set()
+
+    # 3. Recupera os dispositivos diretamente relacionados
+    # a cada caput selecionado.
+    for caput_id, caput in selected_caputs.items():
+        caput_metadata = caput.metadata or {}
+
+        article_id = caput_metadata.get("article_id")
+        parent_id = caput_metadata.get("parent_id")
+
+        if not article_id or not parent_id:
+            continue
+
+        children = lexical_index.get_direct_children(
+            str(parent_id)
+        )
+
+        selected_children = []
+
+        for child in children:
+            child_metadata = child.metadata or {}
+
+            if str(child_metadata.get("article_id")) != str(article_id):
+                continue
+
+            if child_metadata.get("legal_unit") == "caput":
+                continue
+
+            child_id = _get_source_node_id(child)
+
+            # Se o dispositivo já foi classificado pelo reranker,
+            # preserva seus metadados e sua pontuação.
+            original_child = ranked_by_id.get(child_id, child)
+
+            contextualized_child = _attach_parent_context(
+                original_child,
+                caput,
+            )
+
+            selected_children.append(contextualized_child)
+            expanded_child_ids.add(child_id)
+
+        children_by_caput[caput_id] = selected_children
+
+    # 4. Monta o resultado mantendo cada enumeração junto
+    # do respectivo caput.
+    final_documents = []
+    seen_ids = set()
+
+    for document in documents:
+        document_id = _get_source_node_id(document)
+
+        # Os filhos serão inseridos logo após o caput.
+        if document_id in expanded_child_ids:
+            continue
+
+        if document_id in seen_ids:
+            continue
+
+        final_documents.append(document)
+        seen_ids.add(document_id)
+
+        # Insere os dispositivos relacionados ao caput.
+        for child in children_by_caput.get(document_id, []):
+            child_id = _get_source_node_id(child)
+
+            if child_id in seen_ids:
+                continue
+
+            if len(final_documents) >= max_documents:
+                return final_documents
+
+            final_documents.append(child)
+            seen_ids.add(child_id)
+
+        if len(final_documents) >= max_documents:
+            break
+
+    return final_documents
+
+
 class PolitizeseRetriever(BaseRetriever):
     """Retriever que une busca vetorial e BM25 independente via RRF."""
 
@@ -210,6 +438,22 @@ class PolitizeseRetriever(BaseRetriever):
             lexical_results,
             top_k=self.k,
             rrf_constant=self.rrf_constant,
+        )
+    
+    def expand_hierarchical_lists(
+        self,
+        documents: list[Document],
+        *,
+        query: str,
+        max_documents: int = 8,
+    ) -> list[Document]:
+        """Expande enumerações após a seleção dos documentos relevantes."""
+
+        return _expand_hierarchical_lists(
+            documents=documents,
+            lexical_index=self.lexical_index,
+            query=query,
+            max_documents=max_documents,
         )
 
     def _get_relevant_documents(

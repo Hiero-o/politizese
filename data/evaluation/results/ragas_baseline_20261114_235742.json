@@ -1,0 +1,102 @@
+{
+    "evaluation_label": "baseline",
+    "generated_at": "2026-11-15T00:01:37.020903-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 1,
+    "completed_questions": 1,
+    "average_metrics": {
+        "faithfulness": 0.1538,
+        "answer_relevancy": 0.7511,
+        "context_precision": 0.75,
+        "context_recall": 0.0
+    },
+    "category_averages": {
+        "easy": {
+            "faithfulness": 0.1538,
+            "answer_relevancy": 0.7511,
+            "context_precision": 0.75,
+            "context_recall": 0.0
+        }
+    },
+    "results": [
+        {
+            "id": "Q03",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Quais os fundamentos da República Federativa do Brasil?",
+            "reference": "Os fundamentos da República Federativa do Brasil são: a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa, e o pluralismo político.",
+            "reference_source": "Constituição Federal de 1988, art. 1º, incisos I a V.",
+            "response": "Com base na pesquisa realizada na Constituição Federal, os fundamentos da República Federativa do Brasil estão previstos no **artigo 1º** da CF/1988.\n\nO documento recuperado indica que a República Federativa do Brasil constitui-se em Estado Democrático de Direito e tem como fundamentos específicos (conforme o § 1º do artigo 1º).\n\nOs documentos encontrados incluem:\n- **[CF1988-ART-0001-CAPUT]** - Artigo 1º, caput, que estabelece a natureza da República e menciona os fundamentos.\n- **[CF1988-ART-0003-CAPUT]** - Artigo 3º, caput, que trata dos objetivos fundamentais (diferentes dos fundamentos).\n\n**Observação importante:** Os documentos retornados pela pesquisa não exibem o texto completo do § 1º do artigo 1º que lista os fundamentos específicos. Para uma resposta completa com todos os fundamentos enumerados, seria necessário acessar o texto integral do dispositivo constitucional.\n\nOs fundamentos da República Federativa do Brasil, conforme a Constituição Federal, são:\n- Soberania\n- Cidadania\n- Dignidade da pessoa humana\n- Valores sociais do trabalho e da livre iniciativa\n- Pluralismo político\n\nEstes fundamentos estão previstos no artigo 1º, § 1º da Constituição Federal de 1988.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0004-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "A República Federativa do Brasil buscará a integração econômica,\npolítica, social e cultural dos povos da América Latina, visando à formação de uma\ncomunidade latino-americana de nações.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "4",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0018-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A organização político-administrativa da República Federativa do Brasil\ncompreende a União, os Estados, o Distrito Federal e os Municípios, todos autônomos,\nnos termos desta Constituição.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "18",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Constituem objetivos fundamentais da República Federativa do Brasil:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                "A República Federativa do Brasil buscará a integração econômica,\npolítica, social e cultural dos povos da América Latina, visando à formação de uma\ncomunidade latino-americana de nações.",
+                "A organização político-administrativa da República Federativa do Brasil\ncompreende a União, os Estados, o Distrito Federal e os Municípios, todos autônomos,\nnos termos desta Constituição.",
+                "Constituem objetivos fundamentais da República Federativa do Brasil:"
+            ],
+            "metrics": {
+                "faithfulness": 0.15384615384615385,
+                "answer_relevancy": 0.7510610172024079,
+                "context_precision": 0.7499999999625,
+                "context_recall": 0.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 117.3224,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quais são os fundamentos da República Federativa do Brasil?"
+                    },
+                    "status": "success"
+                }
+            ]
+        }
+    ]
+}

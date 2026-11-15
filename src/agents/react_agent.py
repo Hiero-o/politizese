@@ -465,6 +465,114 @@ class PolitizeseReActAgent:
                 answer = self._content_to_text(
                     response.content
                 )
+                
+                response_metadata = (
+                    getattr(response, "response_metadata", {}) or {}
+                )
+
+                usage_metadata = (
+                    getattr(response, "usage_metadata", {}) or {}
+                )
+
+                additional_kwargs = (
+                    getattr(response, "additional_kwargs", {}) or {}
+                )
+
+                logger.info(
+                    "Diagnóstico da resposta final: "
+                    "content_type=%s | "
+                    "content_length=%s | "
+                    "finish_reason=%s | "
+                    "done_reason=%s | "
+                    "stop_reason=%s | "
+                    "prompt_tokens=%s | "
+                    "generated_tokens=%s | "
+                    "additional_kwargs_keys=%s",
+                    type(response.content).__name__,
+                    len(answer),
+                    response_metadata.get("finish_reason"),
+                    response_metadata.get("done_reason"),
+                    response_metadata.get("stop_reason"),
+                    response_metadata.get("prompt_eval_count")
+                    or usage_metadata.get("input_tokens"),
+                    response_metadata.get("eval_count")
+                    or usage_metadata.get("output_tokens"),
+                    list(additional_kwargs.keys()),
+                )
+
+                logger.debug(
+                    "Resposta final recebida: %r",
+                    answer
+                )
+            
+                if not answer:
+                    content = getattr(
+                        response,
+                        "content",
+                        None
+                    )
+
+                    additional_kwargs = (
+                        getattr(
+                            response,
+                            "additional_kwargs",
+                            {}
+                        ) or {}
+                    )
+
+                    response_metadata = (
+                        getattr(
+                            response,
+                            "response_metadata",
+                            {}
+                        ) or {}
+                    )
+
+                    content_shape = (
+                        [
+                            type(item).__name__
+                            for item in content
+                        ]
+                        if isinstance(content, list)
+                        else type(content).__name__
+                    )
+
+                    invalid_tool_calls = (
+                        getattr(
+                            response,
+                            "invalid_tool_calls",
+                            []
+                        ) or []
+                    )
+
+                    logger.warning(
+                        "LLM retornou resposta sem texto: "
+                        "content_type=%s | "
+                        "content_length=%s | "
+                        "content_shape=%s | "
+                        "tool_calls=%s | "
+                        "invalid_tool_calls=%s | "
+                        "additional_kwargs_keys=%s | "
+                        "response_metadata_keys=%s | "
+                        "finish_reason=%s | "
+                        "done_reason=%s",
+                        type(content).__name__,
+                        len(content) if isinstance(
+                            content,
+                            (str, list)
+                        ) else None,
+                        content_shape,
+                        len(requested_calls),
+                        len(invalid_tool_calls),
+                        list(additional_kwargs.keys()),
+                        list(response_metadata.keys()),
+                        response_metadata.get(
+                            "finish_reason"
+                        ),
+                        response_metadata.get(
+                            "done_reason"
+                        ),
+                    )
 
                 if not answer:
                     answer = (
@@ -628,6 +736,8 @@ def build_react_agent(
     rrf_constant: int = 60,
     collection_name: str = "constituicao_legal_clean_v2",
     max_tool_calls: int = MAX_TOOL_CALLS,
+    enable_reranker: bool = True,
+    rerank_top_k: int = 8,
 ) -> tuple[PolitizeseReActAgent, str]:
     """Inicializa retriever, ferramentas e modelo do agente."""
 
@@ -646,6 +756,9 @@ def build_react_agent(
             rrf_constant=rrf_constant,
             settings=settings,
             collection_name=collection_name,
+            enable_reranker=enable_reranker,
+            rerank_top_k=rerank_top_k,
+            reranker_device="cpu",
         )
     )
     
@@ -660,7 +773,7 @@ def build_react_agent(
 
     llm = llm.model_copy(
         update={
-            "reasoning": True,
+            "reasoning": False,
             "num_ctx": 8192,
             "num_predict": 2048,
         }

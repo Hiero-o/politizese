@@ -1,0 +1,364 @@
+{
+    "evaluation_label": "prompt_v2_6docs",
+    "generated_at": "2026-11-15T04:04:06.198952-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 2,
+    "completed_questions": 2,
+    "average_metrics": {
+        "faithfulness": 0.2532,
+        "answer_relevancy": 0.6093,
+        "context_precision": 0.125,
+        "context_recall": 0.75
+    },
+    "category_averages": {
+        "pitfall": {
+            "faithfulness": 0.2532,
+            "answer_relevancy": 0.6093,
+            "context_precision": 0.125,
+            "context_recall": 0.75
+        }
+    },
+    "results": [
+        {
+            "id": "Q07",
+            "category": "pitfall",
+            "trap_type": "nonexistent_maximum_age",
+            "user_input": "A idade máxima para se tornar Presidente da República é a mesma para se tornar Prefeito de uma cidade?",
+            "reference": "A Constituição Federal de 1988 não estabelece idade máxima para nenhum dos dois cargos. Ela determina apenas as idades mínimas: 35 anos para Presidente da República e 21 anos para Prefeito.",
+            "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c.",
+            "response": "Com base nos documentos recuperados, não há previsão de **idade máxima** para o exercício dos cargos de Presidente da República ou de Prefeito na Constituição Federal. A norma constitucional estabelece apenas **idades mínimas** para a elegibilidade.\n\nAbaixo estão os requisitos etários mínimos encontrados:\n\n### 1. Para Presidente da República\n*   **Idade mínima:** 35 anos.\n    *   *Fundamento:* Artigo 14, inciso VI, alínea 'a' da Constituição Federal (CF).<br>\n    *   *Trecho do documento:* \"trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;\" <doc_id=\"CF1988-ART-0014-PAR-0003-INC-VI-ALI-A\">\n\n### 2. Para Prefeito de uma cidade\n*   **Idade mínima:** 21 anos.\n    *   *Fundamento:* Artigo 14, inciso VI, alínea 'c' da Constituição Federal (CF).<br>\n    *   *Trecho do documento:* \"vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito, Vice-Prefeito e juiz de paz;\" <doc_id=\"CF1988-ART-0014-PAR-0003-INC-VI-ALI-C\">\n\n**Conclusão:**\nNão existe limite etário superior (idade máxima) para se tornar Presidente ou Prefeito. A única restrição constitucional é a idade mínima de 35 anos para o Presidente e 21 anos para o Prefeito.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0005",
+                    "source": "retrieved_document",
+                    "content": "O Presidente da República, os Governadores de Estado e do Distrito Federal, os\nPrefeitos e quem os houver sucedido, ou substituído no curso dos mandatos poderão ser\nreeleitos para um único período subsequente. (Redação dada pela EC n. 16/1997)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "5"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-A",
+                    "source": "retrieved_document",
+                    "content": "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "a"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003",
+                    "source": "parent_context",
+                    "content": "São condições de elegibilidade, na forma da lei:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "3"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI",
+                    "source": "parent_context",
+                    "content": "a idade mínima de:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "inciso",
+                        "number": "VI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-C",
+                    "source": "retrieved_document",
+                    "content": "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "c"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0040-PAR-0001-INC-III",
+                    "source": "retrieved_document",
+                    "content": "no âmbito da União, aos sessenta e dois anos de idade, se mulher, e aos sessenta\ne cinco anos de idade, se homem, e, no âmbito dos Estados, do Distrito Federal e dos Municípios, na idade mínima estabelecida mediante emenda às respectivas Constituições e\nLeis Orgânicas, observados o tempo de contribuição e os demais requisitos estabelecidos\nem lei complementar do respectivo ente federativo. (Redação dada pela EC n. 103/2019)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "40",
+                        "legal_unit": "inciso",
+                        "number": "III"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0089-INC-VII",
+                    "source": "retrieved_document",
+                    "content": "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "89",
+                        "legal_unit": "inciso",
+                        "number": "VII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0029-INC-I",
+                    "source": "retrieved_document",
+                    "content": "eleição do Prefeito, do Vice-Prefeito e dos Vereadores, para mandato de quatro\nanos, mediante pleito direto e simultâneo realizado em todo o País;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "29",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0082-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "82",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0123-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "123",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0201-PAR-0007-INC-I",
+                    "source": "retrieved_document",
+                    "content": "sessenta e cinco anos de idade, se homem, e sessenta e dois anos de idade, se mulher,\nobservado tempo mínimo de contribuição; (Redação dada pela EC n. 103/2019)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "201",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0131-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "A Advocacia-Geral da União tem por chefe o Advogado-Geral da União, de livre\nnomeação pelo Presidente da República dentre cidadãos maiores de trinta e cinco anos,\nde notável saber jurídico e reputação ilibada.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "131",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0029-INC-II",
+                    "source": "retrieved_document",
+                    "content": "eleição do Prefeito e do Vice-Prefeito realizada no primeiro domingo de outubro do\nano anterior ao término do mandato dos que devam suceder, aplicadas as regras do art. 77,\nno caso de Municípios com mais de duzentos mil eleitores; (Redação dada pela EC n. 16/1997)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "29",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0104-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "Os Ministros do Superior Tribunal de Justiça serão nomeados pelo\nPresidente da República, dentre brasileiros com mais de trinta e cinco e menos de setenta\nanos de idade, de notável saber jurídico e reputação ilibada, depois de aprovada a escolha\npela maioria absoluta do Senado Federal, sendo: (Redação dada pela EC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "104",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0007",
+                    "source": "retrieved_document",
+                    "content": "São inelegíveis, no território de jurisdição do titular, o cônjuge e os parentes\nconsanguíneos ou afins, até o segundo grau ou por adoção, do Presidente da República,\nde Governador de Estado ou Território, do Distrito Federal, de Prefeito ou de quem os\nhaja substituído dentro dos seis meses anteriores ao pleito, salvo se já titular de mandato\neletivo e candidato à reeleição.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "7"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0201-PAR-0007-INC-II",
+                    "source": "retrieved_document",
+                    "content": "sessenta anos de idade, se homem, e cinquenta e cinco anos de idade, se mulher,\npara os trabalhadores rurais e para os que exerçam suas atividades em regime de economia familiar, nestes incluídos o produtor rural, o garimpeiro e o pescador artesanal.\n(Redação dada pela EC n. 103/2019)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "201",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "O Presidente da República, os Governadores de Estado e do Distrito Federal, os\nPrefeitos e quem os houver sucedido, ou substituído no curso dos mandatos poderão ser\nreeleitos para um único período subsequente. (Redação dada pela EC n. 16/1997)",
+                "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                "São condições de elegibilidade, na forma da lei:",
+                "a idade mínima de:",
+                "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                "no âmbito da União, aos sessenta e dois anos de idade, se mulher, e aos sessenta\ne cinco anos de idade, se homem, e, no âmbito dos Estados, do Distrito Federal e dos Municípios, na idade mínima estabelecida mediante emenda às respectivas Constituições e\nLeis Orgânicas, observados o tempo de contribuição e os demais requisitos estabelecidos\nem lei complementar do respectivo ente federativo. (Redação dada pela EC n. 103/2019)",
+                "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                "eleição do Prefeito, do Vice-Prefeito e dos Vereadores, para mandato de quatro\nanos, mediante pleito direto e simultâneo realizado em todo o País;",
+                "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)",
+                "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                "sessenta e cinco anos de idade, se homem, e sessenta e dois anos de idade, se mulher,\nobservado tempo mínimo de contribuição; (Redação dada pela EC n. 103/2019)",
+                "A Advocacia-Geral da União tem por chefe o Advogado-Geral da União, de livre\nnomeação pelo Presidente da República dentre cidadãos maiores de trinta e cinco anos,\nde notável saber jurídico e reputação ilibada.",
+                "eleição do Prefeito e do Vice-Prefeito realizada no primeiro domingo de outubro do\nano anterior ao término do mandato dos que devam suceder, aplicadas as regras do art. 77,\nno caso de Municípios com mais de duzentos mil eleitores; (Redação dada pela EC n. 16/1997)",
+                "Os Ministros do Superior Tribunal de Justiça serão nomeados pelo\nPresidente da República, dentre brasileiros com mais de trinta e cinco e menos de setenta\nanos de idade, de notável saber jurídico e reputação ilibada, depois de aprovada a escolha\npela maioria absoluta do Senado Federal, sendo: (Redação dada pela EC n. 122/2022)",
+                "São inelegíveis, no território de jurisdição do titular, o cônjuge e os parentes\nconsanguíneos ou afins, até o segundo grau ou por adoção, do Presidente da República,\nde Governador de Estado ou Território, do Distrito Federal, de Prefeito ou de quem os\nhaja substituído dentro dos seis meses anteriores ao pleito, salvo se já titular de mandato\neletivo e candidato à reeleição.",
+                "sessenta anos de idade, se homem, e cinquenta e cinco anos de idade, se mulher,\npara os trabalhadores rurais e para os que exerçam suas atividades em regime de economia familiar, nestes incluídos o produtor rural, o garimpeiro e o pescador artesanal.\n(Redação dada pela EC n. 103/2019)"
+            ],
+            "metrics": {
+                "faithfulness": 0.36363636363636365,
+                "answer_relevancy": 0.5296341335851081,
+                "context_precision": 0.0,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 144.6547,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution_decomposed",
+                    "arguments": {
+                        "question": "Qual é a idade máxima para se tornar Presidente da República e qual é a idade máxima para se tornar Prefeito de uma cidade?"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q09",
+            "category": "pitfall",
+            "trap_type": "distinction_between_natural_born_and_naturalized",
+            "user_input": "Brasileiros natos podem ser extraditados?",
+            "reference": "Não. Brasileiros natos não podem ser extraditados, conforme o art. 5º, inciso LI. O dispositivo admite a extradição de brasileiros naturalizados apenas em duas hipóteses: por crime comum praticado antes da naturalização ou por comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei.",
+            "reference_source": "Constituição Federal de 1988, art. 5º, inciso LI.",
+            "response": "A resposta à sua pergunta está no **Artigo 5º, inciso XXXVII** da Constituição Federal de 1988:\n\n> **\"Não será concedida extradição de brasileiro nato ou naturalizado.\"** [CF1988-ART-0005-INC-XXXVII]\n\nIsso significa que a extradição é proibida para **todos os brasileiros**, tanto os natos quanto os naturalizados. A extradição só pode ser concedida a estrangeiros, e ainda assim, não por crimes políticos ou de opinião (Artigo 5º, inciso LII).\n\nPortanto, **brasileiros natos não podem ser extraditados** em nenhuma circunstância.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0005-INC-LII",
+                    "source": "retrieved_document",
+                    "content": "não será concedida extradição de estrangeiro por crime político ou de opinião;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "inciso",
+                        "number": "LII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0005-INC-XXXI",
+                    "source": "retrieved_document",
+                    "content": "a sucessão de bens de estrangeiros situados no País será regulada pela lei\nbrasileira em benefício do cônjuge ou dos filhos brasileiros, sempre que não lhes seja\nmais favorável a lei pessoal do de cujus;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "inciso",
+                        "number": "XXXI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0022-INC-XV",
+                    "source": "retrieved_document",
+                    "content": "emigração e imigração, entrada, extradição e expulsão de estrangeiros;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "22",
+                        "legal_unit": "inciso",
+                        "number": "XV"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0012-INC-I-ALI-A",
+                    "source": "retrieved_document",
+                    "content": "os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde\nque estes não estejam a serviço de seu país;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "12",
+                        "legal_unit": "alinea",
+                        "number": "a"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0012-INC-I",
+                    "source": "parent_context",
+                    "content": "natos:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "12",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0102-INC-I-ALI-G",
+                    "source": "retrieved_document",
+                    "content": "a extradição solicitada por Estado estrangeiro;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "102",
+                        "legal_unit": "alinea",
+                        "number": "g"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0012-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados,\nsalvo nos casos previstos nesta Constituição.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "12",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "não será concedida extradição de estrangeiro por crime político ou de opinião;",
+                "a sucessão de bens de estrangeiros situados no País será regulada pela lei\nbrasileira em benefício do cônjuge ou dos filhos brasileiros, sempre que não lhes seja\nmais favorável a lei pessoal do de cujus;",
+                "emigração e imigração, entrada, extradição e expulsão de estrangeiros;",
+                "os nascidos na República Federativa do Brasil, ainda que de pais estrangeiros, desde\nque estes não estejam a serviço de seu país;",
+                "natos:",
+                "a extradição solicitada por Estado estrangeiro;",
+                "A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados,\nsalvo nos casos previstos nesta Constituição."
+            ],
+            "metrics": {
+                "faithfulness": 0.14285714285714285,
+                "answer_relevancy": 0.689053313756347,
+                "context_precision": 0.249999999975,
+                "context_recall": 0.5
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 98.4261,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "brasileiros natos podem ser extraditados"
+                    },
+                    "status": "success"
+                }
+            ]
+        }
+    ]
+}

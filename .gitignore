@@ -43,6 +43,10 @@ testar_ablation_retrieval.py
 testar_react_agent.py
 testar_deepseek_tool_call.py
 testar_recuperacao_elegibilidade.py
+testar_reranker_elegibilidade.py
+diagnostico_q03_reranker.py
+
+
 
 
 # Bancos vetoriais locais gerados pelo GurAI

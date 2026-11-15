@@ -161,6 +161,7 @@ class LegalBM25Index:
         *,
         k1: float = BM25_K1,
         b: float = BM25_B,
+        
     ) -> None:
         if not documents:
             raise ValueError("O índice BM25 não pode ser criado sem documentos.")
@@ -173,6 +174,31 @@ class LegalBM25Index:
         self.k1 = float(k1)
         self.b = float(b)
         self.doc_count = len(documents)
+        
+        # Índices auxiliares para recuperação hierárquica.
+        self.documents_by_article_id: dict[str, list[Document]] = defaultdict(list)
+
+        self.documents_by_parent_id: dict[str, list[Document]] = defaultdict(list)
+
+        self.article_caputs: dict[str, Document] = {}
+
+        for document in documents:
+            metadata = document.metadata or {}
+
+            article_id = metadata.get("article_id")
+            parent_id = metadata.get("parent_id")
+            legal_unit = metadata.get("legal_unit")
+
+            if article_id:
+                article_key = str(article_id)
+
+                self.documents_by_article_id[article_key].append(document)
+
+                if legal_unit == "caput":
+                    self.article_caputs[article_key] = document
+
+            if parent_id:
+                self.documents_by_parent_id[str(parent_id)].append(document)
 
         self.tokenized_documents = [
             tokenize(document.page_content)
@@ -200,6 +226,20 @@ class LegalBM25Index:
                 self.postings[term].append(
                     (document_index, term_frequency)
                 )
+    
+    
+    def get_article_caput(self, article_id: str) -> Document | None:
+        """Retorna o caput de um artigo."""
+
+        return self.article_caputs.get(str(article_id))
+
+
+    def get_direct_children(self, parent_id: str) -> list[Document]:
+        """Retorna os dispositivos diretamente ligados a um mesmo pai."""
+
+        return list(
+            self.documents_by_parent_id.get(str(parent_id), [])
+        )
 
     @classmethod
     def from_json(

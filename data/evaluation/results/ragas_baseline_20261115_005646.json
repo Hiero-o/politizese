@@ -1,0 +1,113 @@
+{
+    "evaluation_label": "baseline",
+    "generated_at": "2026-11-15T01:01:42.031789-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 1,
+    "completed_questions": 1,
+    "average_metrics": {
+        "faithfulness": 0.2222,
+        "answer_relevancy": 0.7174,
+        "context_precision": 0.7,
+        "context_recall": 0.0
+    },
+    "category_averages": {
+        "easy": {
+            "faithfulness": 0.2222,
+            "answer_relevancy": 0.7174,
+            "context_precision": 0.7,
+            "context_recall": 0.0
+        }
+    },
+    "results": [
+        {
+            "id": "Q03",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Quais os fundamentos da República Federativa do Brasil?",
+            "reference": "Os fundamentos da República Federativa do Brasil são: a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa, e o pluralismo político.",
+            "reference_source": "Constituição Federal de 1988, art. 1º, incisos I a V.",
+            "response": "Os fundamentos da República Federativa do Brasil estão previstos no **artigo 1º da Constituição Federal de 1988**. De acordo com o documento recuperado:\n\n> \"A República Federativa do Brasil, formada pela união indissolúvel dos Estados e Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem como fundamentos:\" **[CF1988-ART-0001-CAPUT]**\n\nO artigo 1º lista os seguintes fundamentos (incisos):\n- **Dignidade da pessoa humana**;\n- **Valores sociais do trabalho e da livre iniciativa**;\n- **Soberania nacional**;\n- **Defesa do patrimônio público e privado**;\n- **Forma federativa de Estado**;\n- **Separação dos poderes**;\n- **Estado democrático de direito**;\n- **Pluralismo político**.\n\nAlém disso, o artigo 3º estabelece os **objetivos fundamentais** da República, que são:\n- Construir uma sociedade livre, justa e solidária;\n- Garantir o desenvolvimento nacional;\n- Erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais;\n- Promover o bem de todos, sem preconceitos de origem, raça, sexo, cor, idade e quaisquer outras formas de discriminação **[CF1988-ART-0003-CAPUT]**.\n\nEstes fundamentos orientam a organização político-administrativa do país, que compreende a União, os Estados, o Distrito Federal e os Municípios, todos autônomos **[CF1988-ART-0018-CAPUT]**.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0004-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "A República Federativa do Brasil buscará a integração econômica,\npolítica, social e cultural dos povos da América Latina, visando à formação de uma\ncomunidade latino-americana de nações.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "4",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0004-CAPUT",
+                    "source": "parent_context",
+                    "content": "A República Federativa do Brasil rege-se nas suas relações internacionais pelos\nseguintes princípios:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "4",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0018-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A organização político-administrativa da República Federativa do Brasil\ncompreende a União, os Estados, o Distrito Federal e os Municípios, todos autônomos,\nnos termos desta Constituição.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "18",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Constituem objetivos fundamentais da República Federativa do Brasil:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                "A República Federativa do Brasil buscará a integração econômica,\npolítica, social e cultural dos povos da América Latina, visando à formação de uma\ncomunidade latino-americana de nações.",
+                "A República Federativa do Brasil rege-se nas suas relações internacionais pelos\nseguintes princípios:",
+                "A organização político-administrativa da República Federativa do Brasil\ncompreende a União, os Estados, o Distrito Federal e os Municípios, todos autônomos,\nnos termos desta Constituição.",
+                "Constituem objetivos fundamentais da República Federativa do Brasil:"
+            ],
+            "metrics": {
+                "faithfulness": 0.2222222222222222,
+                "answer_relevancy": 0.7174241046472174,
+                "context_precision": 0.699999999965,
+                "context_recall": 0.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 186.5147,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quais são os fundamentos da República Federativa do Brasil?"
+                    },
+                    "status": "success"
+                }
+            ]
+        }
+    ]
+}

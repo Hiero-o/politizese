@@ -210,6 +210,12 @@ class PolitizeseIterativeRetriever(BaseRetriever):
         repr=False,
     )
 
+    reranker: Any = Field(
+        default=None,
+        exclude=True,
+        repr=False,
+    )
+    
     rewriter: Any = Field(
         exclude=True,
         repr=False,
@@ -224,6 +230,7 @@ class PolitizeseIterativeRetriever(BaseRetriever):
         default=60,
         ge=1,
     )
+    
 
     def retrieve_with_trace(
         self,
@@ -265,22 +272,33 @@ class PolitizeseIterativeRetriever(BaseRetriever):
                 subquestion.question
             )
 
-            # 2. Busca semântica e lexical independentes.
-            documents = self.base_retriever.search_with_queries(
+            # 2. Recuperação híbrida.
+            candidates = self.base_retriever.search_with_queries(
                 semantic_query=rewritten.semantic_query,
                 lexical_query=rewritten.lexical_query,
             )
 
+            # 3. Contextual Reranking.
+            documents = candidates
+
+            if self.reranker is not None:
+                documents = self.reranker.rerank_documents(
+                    query=rewritten.semantic_query,
+                    candidates=candidates,
+                )
+
+            # 4. Registro da recuperação.
             trace = SubqueryRetrievalTrace(
                 index=index,
                 question=subquestion.question,
                 focus=subquestion.focus,
                 semantic_query=rewritten.semantic_query,
                 lexical_query=rewritten.lexical_query,
-                retrieved_count=len(documents),
+                retrieved_count=len(candidates),
             )
 
             traces.append(trace)
+
             subquery_results.append(
                 (trace, documents)
             )
@@ -330,6 +348,9 @@ def build_iterative_retriever(
     rrf_constant: int = 60,
     settings: "Settings | None" = None,
     collection_name: str = "constituicao_legal_clean_v2",
+    enable_reranker: bool = False,
+    rerank_top_k: int = 8,
+    reranker_device: str = "cpu",
 ) -> tuple[PolitizeseIterativeRetriever, str]:
     """
     Inicializa o pipeline integrado do Politizese.
@@ -346,7 +367,11 @@ def build_iterative_retriever(
 
     base_retriever, selected_provider = create_retriever(
         provider=provider,
-        k=top_k,
+
+        # Quando o reranker está ativo, recupera 120 candidatos.
+        # Sem reranker, preserva o comportamento anterior.
+        k=candidate_k if enable_reranker else top_k,
+
         candidate_k=candidate_k,
         lexical_candidate_k=lexical_candidate_k,
         rrf_constant=rrf_constant,
@@ -361,11 +386,47 @@ def build_iterative_retriever(
     rewriter = build_query_rewriter(
         settings=settings
     )
+    
+    reranker = None
+    if enable_reranker:
+        if rerank_top_k <= 0:
+            raise ValueError(
+                "rerank_top_k precisa ser maior que zero."
+            )
+
+        if rerank_top_k > candidate_k:
+            raise ValueError(
+                "rerank_top_k não pode superar candidate_k."
+            )
+
+        from sentence_transformers import CrossEncoder
+
+        from src.rag.reranker import (
+            DEFAULT_BATCH_SIZE,
+            DEFAULT_MAX_LENGTH,
+            DEFAULT_RERANKER_MODEL,
+            PolitizeseCrossEncoderRetriever,
+        )
+
+        cross_encoder = CrossEncoder(
+            DEFAULT_RERANKER_MODEL,
+            device=reranker_device,
+            max_length=DEFAULT_MAX_LENGTH,
+        )
+
+        reranker = PolitizeseCrossEncoderRetriever(
+            base_retriever=base_retriever,
+            reranker=cross_encoder,
+            top_k=rerank_top_k,
+            batch_size=DEFAULT_BATCH_SIZE,
+            model_name=DEFAULT_RERANKER_MODEL,
+        )
 
     pipeline = PolitizeseIterativeRetriever(
         base_retriever=base_retriever,
         decomposer=decomposer,
         rewriter=rewriter,
+        reranker=reranker,
         top_k=top_k,
         rrf_constant=rrf_constant,
     )

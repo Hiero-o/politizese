@@ -68,12 +68,8 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
     @staticmethod
     def _format_passage(document: Document) -> str:
         """
-        Enriquece o trecho com informações da hierarquia jurídica.
-
-        Exemplo:
-        Constituição Federal | Art. 22 | Inciso I
-
-        O texto original continua preservado no documento.
+        Enriquece o trecho com informações da hierarquia jurídica
+        e com o contexto do dispositivo introdutório, quando disponível.
         """
 
         metadata = document.metadata or {}
@@ -119,22 +115,138 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
 
         hierarchy = " | ".join(labels)
 
+        parent_context = metadata.get("parent_context")
+
+        # Quando existe contexto hierárquico, ele é enviado junto
+        # com o texto original para avaliação do Cross-Encoder.
+        if parent_context and parent_context.strip():
+            sections = []
+
+            if hierarchy:
+                sections.append(hierarchy)
+
+            sections.append(
+                f"Contexto do caput:\n{parent_context}"
+            )
+
+            sections.append(
+                f"Texto do dispositivo:\n{document.page_content}"
+            )
+
+            return "\n\n".join(sections)
+
+        # Mantém o comportamento anterior para documentos sem contexto.
+        if hierarchy:
+            return f"{hierarchy}\n{document.page_content}"
+
+        return document.page_content
+    
+    
+    @staticmethod
+    def _get_document_id(document: Document) -> str | None:
+        """Obtém o identificador estável de uma unidade jurídica."""
+
+        metadata = document.metadata or {}
+
+        document_id = (
+            metadata.get("source_node_id")
+            or metadata.get("chunk_id")
+            or document.id
+        )
+
+        return str(document_id) if document_id else None
+
+    @staticmethod
+    def _format_passage(document: Document) -> str:
+        """Formata uma unidade jurídica com sua hierarquia."""
+
+        metadata = document.metadata or {}
+        labels = []
+
+        document_part = metadata.get("document_part")
+
+        if document_part == "CF":
+            labels.append("Constituição Federal")
+        elif document_part == "ADCT":
+            labels.append("Ato das Disposições Constitucionais Transitórias")
+
+        article_number = metadata.get("article_number")
+
+        if article_number:
+            labels.append(f"Art. {article_number}")
+
+        legal_unit = metadata.get("legal_unit")
+        number = metadata.get("number")
+
+        if legal_unit == "caput":
+            labels.append("Caput")
+        elif legal_unit == "paragraph" and number:
+            labels.append(f"§ {number}")
+        elif legal_unit == "inciso" and number:
+            labels.append(f"Inciso {number}")
+        elif legal_unit == "alinea" and number:
+            labels.append(f"Alínea {number}")
+        elif legal_unit == "item" and number:
+            labels.append(f"Item {number}")
+
+        hierarchy = " | ".join(labels)
+
         if hierarchy:
             return f"{hierarchy}\n{document.page_content}"
 
         return document.page_content
 
+
+    def _format_contextual_passage(
+        self,
+        document: Document,
+        documents_by_id: dict[str, Document],
+        max_parent_depth: int = 2,
+    ) -> str:
+        """Formata o documento incluindo seus dispositivos superiores."""
+
+        ancestors = self._get_parent_documents(
+            document=document,
+            documents_by_id=documents_by_id,
+            max_parent_depth=max_parent_depth,
+        )
+
+        sections = []
+
+        if ancestors:
+            sections.append(
+                "CONTEXTO NORMATIVO SUPERIOR:"
+            )
+
+            for ancestor in ancestors:
+                sections.append(
+                    self._format_passage(ancestor)
+                )
+
+        sections.append(
+            "DOCUMENTO-ALVO:"
+        )
+
+        sections.append(
+            self._format_passage(document)
+        )
+
+        return "\n\n".join(sections)
+
+
+    
     def rerank_documents(
         self,
         query: str,
         candidates: list[Document],
     ) -> list[Document]:
         """
-        Reordena uma lista de documentos usando o Cross-Encoder.
+        Reordena documentos usando Cross-Encoder com contexto jurídico.
 
-        Este método também pode ser utilizado pelo avaliador
-        para comparar o ranking híbrido e o ranking reranked
-        sobre exatamente o mesmo conjunto de candidatos.
+        Documentos pais presentes no conjunto de candidatos são
+        incorporados à representação utilizada durante a avaliação.
+
+        O conteúdo e os identificadores originais são preservados.
         """
 
         if not isinstance(query, str) or not query.strip():
@@ -145,23 +257,36 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
         if not candidates:
             return []
 
-        # 1. Preparação dos pares pergunta-documento.
+        # 1. Indexa os candidatos por identificador.
+        documents_by_id = {}
+
+        for candidate in candidates:
+            document_id = self._get_document_id(candidate)
+
+            if document_id:
+                documents_by_id[document_id] = candidate
+
+        # 2. Prepara pares pergunta-documento contextualizados.
         pairs = [
             (
                 query,
-                self._format_passage(document),
+                self._format_contextual_passage(
+                    document=document,
+                    documents_by_id=documents_by_id,
+                    max_parent_depth=2,
+                ),
             )
             for document in candidates
         ]
 
-        # 2. Inferência do Cross-Encoder.
+        # 3. Executa o Cross-Encoder.
         raw_scores = self.reranker.predict(
             pairs,
             batch_size=self.batch_size,
             show_progress_bar=False,
         )
 
-        # 3. Normalização do formato dos scores.
+        # 4. Normaliza o formato dos scores.
         if hasattr(raw_scores, "tolist"):
             raw_scores = raw_scores.tolist()
 
@@ -172,7 +297,6 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
 
         for raw_score in raw_scores:
 
-            # Alguns modelos retornam uma lista por documento.
             if isinstance(raw_score, (list, tuple)):
                 if len(raw_score) != 1:
                     raise RuntimeError(
@@ -197,29 +321,50 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
                 "à quantidade de documentos candidatos."
             )
 
-        # 4. Associa scores e documentos.
-        ranked_documents = list(
-            zip(scores, candidates)
-        )
+        # 5. Associa scores aos documentos originais.
+        ranked_documents = list(zip(scores, candidates))
 
-        # 5. Ordena do mais relevante para o menos relevante.
+        # 6. Ordena do mais relevante para o menos relevante.
         ranked_documents.sort(
             key=lambda item: item[0],
             reverse=True,
         )
 
-        # 6. Seleciona os documentos finais.
+        # 7. Seleciona os documentos finais.
         selected_documents = []
 
         for score, document in ranked_documents[:self.top_k]:
 
             metadata = dict(document.metadata or {})
-
-            metadata["rerank_score"] = round(
-                score,
-                6,
+            
+            parents = self._get_parent_documents(
+                document=document,
+                documents_by_id=documents_by_id,
+                max_parent_depth=2,
             )
 
+            if parents:
+                metadata["parent_context"] = [
+                    {
+                        "doc_id": self._get_document_id(parent),
+                        "content": parent.page_content,
+                        "metadata": {
+                            key: value
+                            for key, value in (
+                                parent.metadata or {}
+                            ).items()
+                            if key in {
+                                "document_part",
+                                "article_number",
+                                "legal_unit",
+                                "number",
+                            }
+                        },
+                    }
+                    for parent in parents
+                ]
+
+            metadata["rerank_score"] = round(score, 6)
             metadata["rerank_model"] = self.model_name
 
             selected_documents.append(
@@ -231,6 +376,7 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
             )
 
         return selected_documents
+
 
     def _get_relevant_documents(
         self,
@@ -259,6 +405,45 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
             query=query,
             candidates=candidates,
         )
+        
+    def _get_parent_documents(
+        self,
+        document: Document,
+        documents_by_id: dict[str, Document],
+        max_parent_depth: int = 2,
+    ) -> list[Document]:
+        """Recupera os ancestrais disponíveis de uma unidade jurídica."""
+
+        ancestors = []
+        current_document = document
+
+        document_id = self._get_document_id(document)
+        visited = {document_id} if document_id else set()
+
+        for _ in range(max_parent_depth):
+            metadata = current_document.metadata or {}
+            parent_id = metadata.get("parent_id")
+
+            if not parent_id:
+                break
+
+            parent_id = str(parent_id)
+
+            if parent_id in visited:
+                break
+
+            parent_document = documents_by_id.get(parent_id)
+
+            if parent_document is None:
+                break
+
+            ancestors.append(parent_document)
+            visited.add(parent_id)
+
+            current_document = parent_document
+
+        # Apresenta primeiro o ancestral mais amplo.
+        return list(reversed(ancestors))
 
 
 def create_reranked_retriever(

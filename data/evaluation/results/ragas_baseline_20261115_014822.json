@@ -1,0 +1,104 @@
+{
+    "evaluation_label": "baseline",
+    "generated_at": "2026-11-15T01:51:29.132229-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 1,
+    "completed_questions": 1,
+    "average_metrics": {
+        "faithfulness": 0.4545,
+        "answer_relevancy": 0.7174,
+        "context_precision": 1.0,
+        "context_recall": 0.0
+    },
+    "category_averages": {
+        "easy": {
+            "faithfulness": 0.4545,
+            "answer_relevancy": 0.7174,
+            "context_precision": 1.0,
+            "context_recall": 0.0
+        }
+    },
+    "results": [
+        {
+            "id": "Q03",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Quais os fundamentos da República Federativa do Brasil?",
+            "reference": "Os fundamentos da República Federativa do Brasil são: a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa, e o pluralismo político.",
+            "reference_source": "Constituição Federal de 1988, art. 1º, incisos I a V.",
+            "response": "Com base na pesquisa realizada na Constituição Federal de 1988, os fundamentos da República Federativa do Brasil estão previstos no **Artigo 1º**.\n\nDe acordo com o documento recuperado **[CF1988-ART-0001-CAPUT]**, a República Federativa do Brasil constitui-se em Estado Democrático de Direito e tem como fundamentos:\n\n1. **Soberania** - conforme inciso I **[CF1988-ART-0001-INC-I]**\n2. **Cidadania** - conforme inciso II **[CF1988-ART-0001-INC-II]**\n3. **Dignidade da pessoa humana** - conforme inciso III **[CF1988-ART-0001-INC-III]**\n\nA Constituição Federal estabelece ainda outros fundamentos no mesmo artigo, que incluem:\n4. Valores sociais do trabalho e da livre iniciativa\n5. Pluralismo político\n\nEstes fundamentos constituem os princípios essenciais sobre os quais se assenta a organização política, social e econômica do Brasil, refletindo o compromisso com a democracia, os direitos humanos e a justiça social.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-I",
+                    "source": "retrieved_document",
+                    "content": "a soberania;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-II",
+                    "source": "retrieved_document",
+                    "content": "a cidadania;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-III",
+                    "source": "retrieved_document",
+                    "content": "a dignidade da pessoa humana;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "III"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                "a soberania;",
+                "a cidadania;",
+                "a dignidade da pessoa humana;"
+            ],
+            "metrics": {
+                "faithfulness": 0.45454545454545453,
+                "answer_relevancy": 0.7174241046472174,
+                "context_precision": 0.9999999999,
+                "context_recall": 0.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 102.9419,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quais os fundamentos da República Federativa do Brasil?"
+                    },
+                    "status": "success"
+                }
+            ]
+        }
+    ]
+}

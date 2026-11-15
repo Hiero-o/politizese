@@ -1,0 +1,24 @@
+﻿id,category,trap_type,user_input,response,reference,reference_source,retrieved_context_count,agent_total_duration_seconds,agent_tool_calls_count,faithfulness,answer_relevancy,context_precision,context_recall,agent_error
+Q07,pitfall,nonexistent_maximum_age,A idade máxima para se tornar Presidente da República é a mesma para se tornar Prefeito de uma cidade?,"Com base nos documentos recuperados, não há previsão de **idade máxima** para o exercício dos cargos de Presidente da República ou de Prefeito na Constituição Federal. A norma constitucional estabelece apenas **idades mínimas** para a elegibilidade.
+
+Abaixo estão os requisitos etários mínimos encontrados:
+
+### 1. Para Presidente da República
+*   **Idade mínima:** 35 anos.
+    *   *Fundamento:* Artigo 14, inciso VI, alínea 'a' da Constituição Federal (CF).<br>
+    *   *Trecho do documento:* ""trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;"" <doc_id=""CF1988-ART-0014-PAR-0003-INC-VI-ALI-A"">
+
+### 2. Para Prefeito de uma cidade
+*   **Idade mínima:** 21 anos.
+    *   *Fundamento:* Artigo 14, inciso VI, alínea 'c' da Constituição Federal (CF).<br>
+    *   *Trecho do documento:* ""vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito, Vice-Prefeito e juiz de paz;"" <doc_id=""CF1988-ART-0014-PAR-0003-INC-VI-ALI-C"">
+
+**Conclusão:**
+Não existe limite etário superior (idade máxima) para se tornar Presidente ou Prefeito. A única restrição constitucional é a idade mínima de 35 anos para o Presidente e 21 anos para o Prefeito.",A Constituição Federal de 1988 não estabelece idade máxima para nenhum dos dois cargos. Ela determina apenas as idades mínimas: 35 anos para Presidente da República e 21 anos para Prefeito.,"Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c.",,144.6547,1,0.36363636363636365,0.5296341335851081,0.0,1.0,
+Q09,pitfall,distinction_between_natural_born_and_naturalized,Brasileiros natos podem ser extraditados?,"A resposta à sua pergunta está no **Artigo 5º, inciso XXXVII** da Constituição Federal de 1988:
+
+> **""Não será concedida extradição de brasileiro nato ou naturalizado.""** [CF1988-ART-0005-INC-XXXVII]
+
+Isso significa que a extradição é proibida para **todos os brasileiros**, tanto os natos quanto os naturalizados. A extradição só pode ser concedida a estrangeiros, e ainda assim, não por crimes políticos ou de opinião (Artigo 5º, inciso LII).
+
+Portanto, **brasileiros natos não podem ser extraditados** em nenhuma circunstância.","Não. Brasileiros natos não podem ser extraditados, conforme o art. 5º, inciso LI. O dispositivo admite a extradição de brasileiros naturalizados apenas em duas hipóteses: por crime comum praticado antes da naturalização ou por comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei.","Constituição Federal de 1988, art. 5º, inciso LI.",,98.4261,1,0.14285714285714285,0.689053313756347,0.249999999975,0.5,

@@ -1,0 +1,1152 @@
+{
+    "evaluation_label": "6docs",
+    "generated_at": "2026-11-15T03:15:53.154835-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 9,
+    "completed_questions": 9,
+    "average_metrics": {
+        "faithfulness": 0.6815,
+        "answer_relevancy": 0.4268,
+        "context_precision": 0.4259,
+        "context_recall": 0.7778
+    },
+    "category_averages": {
+        "easy": {
+            "faithfulness": 0.8333,
+            "answer_relevancy": 0.5041,
+            "context_precision": 0.6583,
+            "context_recall": 0.75
+        },
+        "pitfall": {
+            "faithfulness": 0.56,
+            "answer_relevancy": 0.365,
+            "context_precision": 0.24,
+            "context_recall": 0.8
+        }
+    },
+    "results": [
+        {
+            "id": "Q01",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Em que data foi promulgada a Constituição Federal de 1988?",
+            "reference": "A Constituição Federal de 1988 foi promulgada em 5 de outubro de 1988.",
+            "reference_source": "Texto constitucional — identificação oficial da promulgação (sem artigo específico).",
+            "response": "Com base na pesquisa realizada na base documental da Constituição Federal, **não encontrei evidências suficientes nos documentos recuperados para confirmar a data exata da promulgação da Constituição Federal de 1988**.\n\nOs documentos retornados pela busca são do ADCT (Ata das Disposições Constitucionais Transitórias) e mencionam datas relacionadas ao período pós-promulgação, como:\n- Referências a \"entre 3 de setembro de 1988 e a promulgação da Constituição\"\n- Menções a \"não antes de 15 de novembro de 1988\" para eleições\n- Referências a \"a partir de 1º de julho de 1989\"\n\nNo entanto, nenhum dos documentos recuperados especifica a data exata em que ocorreu a promulgação. A base documental disponível não contém informações sobre essa data específica.\n\n**Limitação:** Não foi possível confirmar a informação solicitada com base nos documentos recuperados pela ferramenta de pesquisa constitucional.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ADC-ART-0025-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os decretos-lei editados entre 3 de setembro de 1988 e a promulgação da Constituição serão convertidos, nesta data, em medidas provisórias, aplicando-se-lhes as\nregras estabelecidas no art. 62, parágrafo único.",
+                    "metadata": {
+                        "document_part": "ADCT",
+                        "article_number": "25",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ADC-ART-0013-PAR-0003",
+                    "source": "retrieved_document",
+                    "content": "O Governador, o Vice-Governador, os Senadores, os Deputados Federais e os\nDeputados Estaduais serão eleitos, em um único turno, até setenta e cinco dias após a\npromulgação da Constituição, mas não antes de 15 de novembro de 1988, a critério do\nTribunal Superior Eleitoral, obedecidas, entre outras, as seguintes normas:",
+                    "metadata": {
+                        "document_part": "ADCT",
+                        "article_number": "13",
+                        "legal_unit": "paragraph",
+                        "number": "3"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ADC-ART-0025-PAR-0001-INC-I",
+                    "source": "retrieved_document",
+                    "content": "se editados até 2 de setembro de 1988, serão apreciados pelo Congresso Nacional\nADCT – Art. 27, § 6º\nno prazo de até cento e oitenta dias a contar da promulgação da Constituição, não\ncomputado o recesso parlamentar;",
+                    "metadata": {
+                        "document_part": "ADCT",
+                        "article_number": "25",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ADC-ART-0025-PAR-0001",
+                    "source": "parent_context",
+                    "content": "Os decretos-lei em tramitação no Congresso Nacional e por este não apreciados\naté a promulgação da Constituição terão seus efeitos regulados da seguinte forma:",
+                    "metadata": {
+                        "document_part": "ADCT",
+                        "article_number": "25",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ADC-ART-0004-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "A primeira eleição para Presidente da República após a promulgação da Constituição será realizada no dia 15 de novembro de 1989, não se lhe aplicando o disposto no\nart. 16 da Constituição.",
+                    "metadata": {
+                        "document_part": "ADCT",
+                        "article_number": "4",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ADC-ART-0033-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Ressalvados os créditos de natureza alimentar, o valor dos precatórios judiciais pendentes de pagamento na data da promulgação da Constituição, incluído o\nremanescente de juros e correção monetária, poderá ser pago em moeda corrente, com\natualização, em prestações anuais, iguais e sucessivas, no prazo máximo de oito anos, a\npartir de 1º de julho de 1989, por decisão editada pelo Poder Executivo até cento e oitenta\ndias da promulgação da Constituição.",
+                    "metadata": {
+                        "document_part": "ADCT",
+                        "article_number": "33",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ADC-ART-0046-PAR-UNICO-INC-IV",
+                    "source": "retrieved_document",
+                    "content": "aos créditos das entidades da administração pública anteriores à promulgação\nda Constituição, não liquidados até 1 de janeiro de 1988.",
+                    "metadata": {
+                        "document_part": "ADCT",
+                        "article_number": "46",
+                        "legal_unit": "inciso",
+                        "number": "IV"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "Os decretos-lei editados entre 3 de setembro de 1988 e a promulgação da Constituição serão convertidos, nesta data, em medidas provisórias, aplicando-se-lhes as\nregras estabelecidas no art. 62, parágrafo único.",
+                "O Governador, o Vice-Governador, os Senadores, os Deputados Federais e os\nDeputados Estaduais serão eleitos, em um único turno, até setenta e cinco dias após a\npromulgação da Constituição, mas não antes de 15 de novembro de 1988, a critério do\nTribunal Superior Eleitoral, obedecidas, entre outras, as seguintes normas:",
+                "se editados até 2 de setembro de 1988, serão apreciados pelo Congresso Nacional\nADCT – Art. 27, § 6º\nno prazo de até cento e oitenta dias a contar da promulgação da Constituição, não\ncomputado o recesso parlamentar;",
+                "Os decretos-lei em tramitação no Congresso Nacional e por este não apreciados\naté a promulgação da Constituição terão seus efeitos regulados da seguinte forma:",
+                "A primeira eleição para Presidente da República após a promulgação da Constituição será realizada no dia 15 de novembro de 1989, não se lhe aplicando o disposto no\nart. 16 da Constituição.",
+                "Ressalvados os créditos de natureza alimentar, o valor dos precatórios judiciais pendentes de pagamento na data da promulgação da Constituição, incluído o\nremanescente de juros e correção monetária, poderá ser pago em moeda corrente, com\natualização, em prestações anuais, iguais e sucessivas, no prazo máximo de oito anos, a\npartir de 1º de julho de 1989, por decisão editada pelo Poder Executivo até cento e oitenta\ndias da promulgação da Constituição.",
+                "aos créditos das entidades da administração pública anteriores à promulgação\nda Constituição, não liquidados até 1 de janeiro de 1988."
+            ],
+            "metrics": {
+                "faithfulness": 1.0,
+                "answer_relevancy": 0.0,
+                "context_precision": 0.0,
+                "context_recall": 0.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 193.1097,
+            "agent_tool_calls_count": 2,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Em que data foi promulgada a Constituição Federal de 1988?"
+                    },
+                    "status": "success"
+                },
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Qual é a data exata da promulgação da Constituição Federal de 1988?"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q02",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "O Presidente pode nomear e exonerar Ministros de Estado?",
+            "reference": "Sim. Compete privativamente ao Presidente da República nomear e exonerar os Ministros de Estado, conforme estabelecido na Constituição Federal de 1988.",
+            "reference_source": "Constituição Federal de 1988, art. 84, inciso I.",
+            "response": "Sim, o Presidente da República pode nomear e exonerar Ministros de Estado.\n\n**Fundamentação Constitucional:**\n\nDe acordo com a **Constituição Federal de 1988**, esta competência é expressamente prevista no **artigo 84, inciso I**:\n\n> \"São atribuições do Presidente da República:\n> I - nomear e exonerar os Ministros de Estado;\" [CF1988-ART-0084-INC-I]\n\nAlém disso, o **artigo 76** estabelece que:\n\n> \"O Poder Executivo é exercido pelo Presidente da República, auxiliado pelos Ministros de Estado.\" [CF1988-ART-0076-CAPUT]\n\nPortanto, a nomeação e exoneração de Ministros de Estado constitui uma atribuição direta do Presidente da República, sem necessidade de aprovação prévia do Congresso Nacional.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0084-INC-I",
+                    "source": "retrieved_document",
+                    "content": "nomear e exonerar os Ministros de Estado;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "84",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0084-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "O Presidente da República poderá delegar as atribuições mencionadas\nnos incisos VI, XII e XXV, primeira parte, aos Ministros de Estado, ao Procurador-Geral\nda República ou ao Advogado-Geral da União, que observarão os limites traçados nas\nrespectivas delegações.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "84",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0090-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "O Presidente da República poderá convocar Ministro de Estado para participar\nda reunião do Conselho, quando constar da pauta questão relacionada com o respectivo\nMinistério.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "90",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0076-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O Poder Executivo é exercido pelo Presidente da República, auxiliado pelos\nMinistros de Estado.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "76",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0084-INC-XIV",
+                    "source": "retrieved_document",
+                    "content": "nomear, após aprovação pelo Senado Federal, os Ministros do Supremo Tribunal\nFederal e dos Tribunais Superiores, os Governadores de Territórios, o Procurador-Geral\nda República, o presidente e os diretores do Banco Central e outros servidores, quando\ndeterminado em lei;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "84",
+                        "legal_unit": "inciso",
+                        "number": "XIV"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0050-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A Câmara dos Deputados e o Senado Federal, ou qualquer de suas Comissões,\npoderão convocar Ministro de Estado, quaisquer titulares de órgãos diretamente subordinados à Presidência da República ou o Presidente do Comitê Gestor do Imposto sobre\nBens e Serviços para prestarem, pessoalmente, informações sobre assunto previamente\ndeterminado, importando crime de responsabilidade a ausência sem justificação adequada. (Redação dada pela EC n. 132/2023)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "50",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "nomear e exonerar os Ministros de Estado;",
+                "O Presidente da República poderá delegar as atribuições mencionadas\nnos incisos VI, XII e XXV, primeira parte, aos Ministros de Estado, ao Procurador-Geral\nda República ou ao Advogado-Geral da União, que observarão os limites traçados nas\nrespectivas delegações.",
+                "O Presidente da República poderá convocar Ministro de Estado para participar\nda reunião do Conselho, quando constar da pauta questão relacionada com o respectivo\nMinistério.",
+                "O Poder Executivo é exercido pelo Presidente da República, auxiliado pelos\nMinistros de Estado.",
+                "nomear, após aprovação pelo Senado Federal, os Ministros do Supremo Tribunal\nFederal e dos Tribunais Superiores, os Governadores de Territórios, o Procurador-Geral\nda República, o presidente e os diretores do Banco Central e outros servidores, quando\ndeterminado em lei;",
+                "A Câmara dos Deputados e o Senado Federal, ou qualquer de suas Comissões,\npoderão convocar Ministro de Estado, quaisquer titulares de órgãos diretamente subordinados à Presidência da República ou o Presidente do Comitê Gestor do Imposto sobre\nBens e Serviços para prestarem, pessoalmente, informações sobre assunto previamente\ndeterminado, importando crime de responsabilidade a ausência sem justificação adequada. (Redação dada pela EC n. 132/2023)"
+            ],
+            "metrics": {
+                "faithfulness": 0.3333333333333333,
+                "answer_relevancy": 0.5373302238327798,
+                "context_precision": 0.9999999999,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 104.5564,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "O Presidente pode nomear e exonerar Ministros de Estado?"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q03",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Quais os fundamentos da República Federativa do Brasil?",
+            "reference": "Os fundamentos da República Federativa do Brasil são: a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa, e o pluralismo político.",
+            "reference_source": "Constituição Federal de 1988, art. 1º, incisos I a V.",
+            "response": "De acordo com o Artigo 1º da Constituição Federal de 1988, a República Federativa do Brasil constitui-se em Estado Democrático de Direito e tem os seguintes fundamentos:\n\n**Fundamentos da República Federativa do Brasil:**\n\n1. **Soberania** [CF1988-ART-0001-INC-I]\n2. **Cidadania** [CF1988-ART-0001-INC-II]\n3. **Dignidade da pessoa humana** [CF1988-ART-0001-INC-III]\n4. **Valores sociais do trabalho e da livre iniciativa** [CF1988-ART-0001-INC-IV]\n5. **Pluralismo político** [CF1988-ART-0001-INC-V]\n\nEsses fundamentos estão estabelecidos no caput do Artigo 1º, que também define a República Federativa do Brasil como formada pela união indissolúvel dos Estados e Municípios e do Distrito Federal.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-I",
+                    "source": "retrieved_document",
+                    "content": "a soberania;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-II",
+                    "source": "retrieved_document",
+                    "content": "a cidadania;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-III",
+                    "source": "retrieved_document",
+                    "content": "a dignidade da pessoa humana;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "III"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-IV",
+                    "source": "retrieved_document",
+                    "content": "os valores sociais do trabalho e da livre iniciativa;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "IV"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0001-INC-V",
+                    "source": "retrieved_document",
+                    "content": "o pluralismo político.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "inciso",
+                        "number": "V"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "A República Federativa do Brasil, formada pela união indissolúvel dos Estados\ne Municípios e do Distrito Federal, constitui-se em Estado Democrático de Direito e tem\ncomo fundamentos:",
+                "a soberania;",
+                "a cidadania;",
+                "a dignidade da pessoa humana;",
+                "os valores sociais do trabalho e da livre iniciativa;",
+                "o pluralismo político."
+            ],
+            "metrics": {
+                "faithfulness": 1.0,
+                "answer_relevancy": 0.7545343025216359,
+                "context_precision": 0.6333333333122222,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 108.4379,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quais os fundamentos da República Federativa do Brasil?"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q04",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "A Educação é um direito constitucional?",
+            "reference": "Sim. A educação é um direito social garantido pela Constituição Federal de 1988. O art. 205 estabelece que a educação é direito de todos e dever do Estado e da família.",
+            "reference_source": "Constituição Federal de 1988, art. 6º e art. 205.",
+            "response": "Sim, a Educação é um direito constitucional no Brasil.\n\nSegundo a **Constituição Federal de 1988**, a educação está reconhecida como um direito fundamental:\n\n- **Artigo 205**: \"A educação, direito de todos e dever do Estado e da família, será promovida e incentivada com a colaboração da sociedade, visando ao pleno desenvolvimento da pessoa, seu preparo para o exercício da cidadania e sua qualificação para o trabalho.\" [CF1988-ART-0205-CAPUT]\n\n- **Artigo 227**: \"É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária...\" [CF1988-ART-0227-CAPUT]\n\nPortanto, a Constituição Federal estabelece que a educação é:\n- Um **direito de todos**\n- Um **dever do Estado e da família**\n- Deve ser **promovida e incentivada com a colaboração da sociedade**",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0205-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A educação, direito de todos e dever do Estado e da família, será promovida\ne incentivada com a colaboração da sociedade, visando ao pleno desenvolvimento da\npessoa, seu preparo para o exercício da cidadania e sua qualificação para o trabalho.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "205",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0206-INC-IX",
+                    "source": "retrieved_document",
+                    "content": "garantia do direito à educação e à aprendizagem ao longo da vida. (Incluído pela\nEC n. 108/2020)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "206",
+                        "legal_unit": "inciso",
+                        "number": "IX"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0227-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à\neducação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade\ne à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de\nnegligência, discriminação, exploração, violência, crueldade e opressão. (Redação dada\npela EC n. 65/2010)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "227",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0211-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "A União organizará o sistema federal de ensino e o dos Territórios, financiará as\ninstituições de ensino públicas federais e exercerá, em matéria educacional, função redistributiva e supletiva, de forma a garantir equalização de oportunidades educacionais\ne padrão mínimo de qualidade do ensino mediante assistência técnica e financeira aos\nEstados, ao Distrito Federal e aos Municípios; (Redação dada pela EC n. 14/1996)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "211",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0030-INC-VI",
+                    "source": "retrieved_document",
+                    "content": "manter, com a cooperação técnica e financeira da União e do Estado, programas\nde educação infantil e de ensino fundamental; (Redação dada pela EC n. 53/2006)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "30",
+                        "legal_unit": "inciso",
+                        "number": "VI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0214-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "A lei estabelecerá o plano nacional de educação, de duração decenal, com\no objetivo de articular o sistema nacional de educação em regime de colaboração e\ndefinir diretrizes, objetivos, metas e estratégias de implementação para assegurar a\nmanutenção e desenvolvimento do ensino em seus diversos níveis, etapas e modalidades\npor meio de ações integradas dos poderes públicos das diferentes esferas federativas\nque conduzam a: (Redação dada pela EC n. 59/2009)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "214",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "A educação, direito de todos e dever do Estado e da família, será promovida\ne incentivada com a colaboração da sociedade, visando ao pleno desenvolvimento da\npessoa, seu preparo para o exercício da cidadania e sua qualificação para o trabalho.",
+                "garantia do direito à educação e à aprendizagem ao longo da vida. (Incluído pela\nEC n. 108/2020)",
+                "É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à\neducação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade\ne à convivência familiar e comunitária, além de colocá-los a salvo de toda forma de\nnegligência, discriminação, exploração, violência, crueldade e opressão. (Redação dada\npela EC n. 65/2010)",
+                "A União organizará o sistema federal de ensino e o dos Territórios, financiará as\ninstituições de ensino públicas federais e exercerá, em matéria educacional, função redistributiva e supletiva, de forma a garantir equalização de oportunidades educacionais\ne padrão mínimo de qualidade do ensino mediante assistência técnica e financeira aos\nEstados, ao Distrito Federal e aos Municípios; (Redação dada pela EC n. 14/1996)",
+                "manter, com a cooperação técnica e financeira da União e do Estado, programas\nde educação infantil e de ensino fundamental; (Redação dada pela EC n. 53/2006)",
+                "A lei estabelecerá o plano nacional de educação, de duração decenal, com\no objetivo de articular o sistema nacional de educação em regime de colaboração e\ndefinir diretrizes, objetivos, metas e estratégias de implementação para assegurar a\nmanutenção e desenvolvimento do ensino em seus diversos níveis, etapas e modalidades\npor meio de ações integradas dos poderes públicos das diferentes esferas federativas\nque conduzam a: (Redação dada pela EC n. 59/2009)"
+            ],
+            "metrics": {
+                "faithfulness": 1.0,
+                "answer_relevancy": 0.7246907534490977,
+                "context_precision": 0.9999999999666667,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 109.5967,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "A Educação é um direito constitucional?"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q05",
+            "category": "pitfall",
+            "trap_type": "comparison_of_minimum_age_requirements",
+            "user_input": "A idade para se tornar Prefeito de uma cidade é a mesma para se tornar Presidente da República?",
+            "reference": "Não. A idade mínima para concorrer ao cargo de Prefeito é de 21 anos, enquanto para concorrer à Presidência da República é de 35 anos.",
+            "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c.",
+            "response": "**Não, as idades não são as mesmas.**\n\nDe acordo com a Constituição Federal de 1988 (artigo 14, parágrafo 3º, inciso VI), os requisitos de idade mínima para cada cargo são diferentes:\n\n| Cargo | Idade Mínima |\n|-------|-------------|\n| **Presidente da República** | 35 anos [CF1988-ART-0014-PAR-0003-INC-VI-ALI-A] |\n| **Prefeito** | 21 anos [CF1988-ART-0014-PAR-0003-INC-VI-ALI-C] |\n\nPortanto, para se tornar Presidente da República é necessário ter pelo menos 35 anos de idade, enquanto para se tornar Prefeito de uma cidade o requisito é ter pelo menos 21 anos.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-A",
+                    "source": "retrieved_document",
+                    "content": "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "a"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003",
+                    "source": "parent_context",
+                    "content": "São condições de elegibilidade, na forma da lei:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "3"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI",
+                    "source": "parent_context",
+                    "content": "a idade mínima de:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "inciso",
+                        "number": "VI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-C",
+                    "source": "retrieved_document",
+                    "content": "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "c"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0089-INC-VII",
+                    "source": "retrieved_document",
+                    "content": "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "89",
+                        "legal_unit": "inciso",
+                        "number": "VII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0040-PAR-0001-INC-III",
+                    "source": "retrieved_document",
+                    "content": "no âmbito da União, aos sessenta e dois anos de idade, se mulher, e aos sessenta\ne cinco anos de idade, se homem, e, no âmbito dos Estados, do Distrito Federal e dos Municípios, na idade mínima estabelecida mediante emenda às respectivas Constituições e\nLeis Orgânicas, observados o tempo de contribuição e os demais requisitos estabelecidos\nem lei complementar do respectivo ente federativo. (Redação dada pela EC n. 103/2019)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "40",
+                        "legal_unit": "inciso",
+                        "number": "III"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0123-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "123",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0082-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "82",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                "São condições de elegibilidade, na forma da lei:",
+                "a idade mínima de:",
+                "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                "no âmbito da União, aos sessenta e dois anos de idade, se mulher, e aos sessenta\ne cinco anos de idade, se homem, e, no âmbito dos Estados, do Distrito Federal e dos Municípios, na idade mínima estabelecida mediante emenda às respectivas Constituições e\nLeis Orgânicas, observados o tempo de contribuição e os demais requisitos estabelecidos\nem lei complementar do respectivo ente federativo. (Redação dada pela EC n. 103/2019)",
+                "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)"
+            ],
+            "metrics": {
+                "faithfulness": 0.8,
+                "answer_relevancy": 0.605785355186272,
+                "context_precision": 0.7499999999625,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 109.4953,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "qual é a idade mínima para se tornar Prefeito e qual é a idade mínima para se tornar Presidente da República na Constituição Federal do Brasil"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q06",
+            "category": "pitfall",
+            "trap_type": "misapplication_of_resignation_rule",
+            "user_input": "Um deputado Federal pode concorrer à Presidência da República enquanto ainda estiver no cargo de deputado?",
+            "reference": "Sim. A Constituição Federal não exige que um deputado federal renuncie ao mandato para concorrer à Presidência da República. O art. 14, § 6º, estabelece a necessidade de renúncia até seis meses antes do pleito para o Presidente da República, Governadores e Prefeitos que pretendam concorrer a outros cargos, não incluindo os deputados. O candidato também deve cumprir os demais requisitos de elegibilidade, incluindo a idade mínima de 35 anos.",
+            "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alínea a, e § 6º.",
+            "response": "Com base na pesquisa realizada no Artigo 14 da Constituição Federal, apresento as seguintes informações:\n\n## Requisitos de Elegibilidade para Presidente da República\n\nDe acordo com o **Artigo 14, § 3º** da CF/1988 [CF1988-ART-0014-PAR-0003], são condições de elegibilidade:\n\n1. **Nacionalidade brasileira** [CF1988-ART-0014-PAR-0003-INC-I]\n2. **Pleno exercício dos direitos políticos** [CF1988-ART-0014-PAR-0003-INC-II]\n3. **Idade mínima de 35 anos** para Presidente e Vice-Presidente da República e Senador [CF1988-ART-0014-PAR-0003-INC-VI-ALI-A]\n\n## Renúncia de Mandato",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0080-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Em caso de impedimento do Presidente e do Vice-Presidente, ou vacância dos\nrespectivos cargos, serão sucessivamente chamados ao exercício da Presidência o Presidente da Câmara dos Deputados, o do Senado Federal e o do Supremo Tribunal Federal.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "80",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0027-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "Será de quatro anos o mandato dos Deputados Estaduais, aplicando-se-lhes as\nregras desta Constituição sobre sistema eleitoral, inviolabilidade, imunidades, remuneração, perda de mandato, licença, impedimentos e incorporação às Forças Armadas.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "27",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0037-INC-XVI",
+                    "source": "retrieved_document",
+                    "content": "é vedada a acumulação remunerada de cargos públicos, exceto, quando houver compatibilidade de horários, observado em qualquer caso o disposto no inciso XI:\n(Redação dada pela EC n. 19/1998)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "37",
+                        "legal_unit": "inciso",
+                        "number": "XVI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0006",
+                    "source": "retrieved_document",
+                    "content": "Para concorrerem a outros cargos, o Presidente da República, os Governadores\nde Estado e do Distrito Federal e os Prefeitos devem renunciar aos respectivos mandatos\naté seis meses antes do pleito.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "6"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0029-INC-IX",
+                    "source": "retrieved_document",
+                    "content": "proibições e incompatibilidades, no exercício da vereança, similares, no que\ncouber, ao disposto nesta Constituição para os membros do Congresso Nacional e na\nConstituição do respectivo Estado para os membros da Assembleia Legislativa; (Renumerado do inciso VII pela EC n. 1/1992)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "29",
+                        "legal_unit": "inciso",
+                        "number": "IX"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0017-PAR-0006",
+                    "source": "retrieved_document",
+                    "content": "Os Deputados Federais, os Deputados Estaduais, os Deputados Distritais e os Vereadores que se desligarem do partido pelo qual tenham sido eleitos perderão o mandato,\nsalvo nos casos de anuência do partido ou de outras hipóteses de justa causa estabelecidas\nem lei, não computada, em qualquer caso, a migração de partido para fins de distribuição\nde recursos do fundo partidário ou de outros fundos públicos e de acesso gratuito ao\nrádio e à televisão. (Incluído pela EC n. 111/2021)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "17",
+                        "legal_unit": "paragraph",
+                        "number": "6"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-A",
+                    "source": "retrieved_document",
+                    "content": "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "a"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003",
+                    "source": "parent_context",
+                    "content": "São condições de elegibilidade, na forma da lei:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "3"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI",
+                    "source": "parent_context",
+                    "content": "a idade mínima de:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "inciso",
+                        "number": "VI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-C",
+                    "source": "retrieved_document",
+                    "content": "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "c"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-II",
+                    "source": "retrieved_document",
+                    "content": "o pleno exercício dos direitos políticos;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-I",
+                    "source": "retrieved_document",
+                    "content": "a nacionalidade brasileira;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0005",
+                    "source": "retrieved_document",
+                    "content": "O Presidente da República, os Governadores de Estado e do Distrito Federal, os\nPrefeitos e quem os houver sucedido, ou substituído no curso dos mandatos poderão ser\nreeleitos para um único período subsequente. (Redação dada pela EC n. 16/1997)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "5"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "Em caso de impedimento do Presidente e do Vice-Presidente, ou vacância dos\nrespectivos cargos, serão sucessivamente chamados ao exercício da Presidência o Presidente da Câmara dos Deputados, o do Senado Federal e o do Supremo Tribunal Federal.",
+                "Será de quatro anos o mandato dos Deputados Estaduais, aplicando-se-lhes as\nregras desta Constituição sobre sistema eleitoral, inviolabilidade, imunidades, remuneração, perda de mandato, licença, impedimentos e incorporação às Forças Armadas.",
+                "é vedada a acumulação remunerada de cargos públicos, exceto, quando houver compatibilidade de horários, observado em qualquer caso o disposto no inciso XI:\n(Redação dada pela EC n. 19/1998)",
+                "Para concorrerem a outros cargos, o Presidente da República, os Governadores\nde Estado e do Distrito Federal e os Prefeitos devem renunciar aos respectivos mandatos\naté seis meses antes do pleito.",
+                "proibições e incompatibilidades, no exercício da vereança, similares, no que\ncouber, ao disposto nesta Constituição para os membros do Congresso Nacional e na\nConstituição do respectivo Estado para os membros da Assembleia Legislativa; (Renumerado do inciso VII pela EC n. 1/1992)",
+                "Os Deputados Federais, os Deputados Estaduais, os Deputados Distritais e os Vereadores que se desligarem do partido pelo qual tenham sido eleitos perderão o mandato,\nsalvo nos casos de anuência do partido ou de outras hipóteses de justa causa estabelecidas\nem lei, não computada, em qualquer caso, a migração de partido para fins de distribuição\nde recursos do fundo partidário ou de outros fundos públicos e de acesso gratuito ao\nrádio e à televisão. (Incluído pela EC n. 111/2021)",
+                "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                "São condições de elegibilidade, na forma da lei:",
+                "a idade mínima de:",
+                "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                "o pleno exercício dos direitos políticos;",
+                "a nacionalidade brasileira;",
+                "O Presidente da República, os Governadores de Estado e do Distrito Federal, os\nPrefeitos e quem os houver sucedido, ou substituído no curso dos mandatos poderão ser\nreeleitos para um único período subsequente. (Redação dada pela EC n. 16/1997)"
+            ],
+            "metrics": {
+                "faithfulness": 1.0,
+                "answer_relevancy": 0.49193565456302396,
+                "context_precision": 0.249999999975,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 209.6827,
+            "agent_tool_calls_count": 2,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Um deputado Federal pode concorrer à Presidência da República enquanto ainda estiver no cargo de deputado? Requisitos para candidatura presidencial e incompatibilidades com mandato parlamentar"
+                    },
+                    "status": "success"
+                },
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Artigo 14 da Constituição Federal - requisitos para elegibilidade à Presidência e renúncia de mandato parlamentar antes da eleição presidencial"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q07",
+            "category": "pitfall",
+            "trap_type": "nonexistent_maximum_age",
+            "user_input": "A idade máxima para se tornar Presidente da República é a mesma para se tornar Prefeito de uma cidade?",
+            "reference": "A Constituição Federal de 1988 não estabelece idade máxima para nenhum dos dois cargos. Ela determina apenas as idades mínimas: 35 anos para Presidente da República e 21 anos para Prefeito.",
+            "reference_source": "Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c.",
+            "response": "Não consegui produzir uma resposta com as informações disponíveis.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-A",
+                    "source": "retrieved_document",
+                    "content": "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "a"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0089-INC-VII",
+                    "source": "retrieved_document",
+                    "content": "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "89",
+                        "legal_unit": "inciso",
+                        "number": "VII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0123-PAR-UNICO",
+                    "source": "retrieved_document",
+                    "content": "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "123",
+                        "legal_unit": "paragraph",
+                        "number": "unico"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0003-INC-VI-ALI-C",
+                    "source": "retrieved_document",
+                    "content": "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "alinea",
+                        "number": "c"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0082-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "82",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0005",
+                    "source": "retrieved_document",
+                    "content": "O Presidente da República, os Governadores de Estado e do Distrito Federal, os\nPrefeitos e quem os houver sucedido, ou substituído no curso dos mandatos poderão ser\nreeleitos para um único período subsequente. (Redação dada pela EC n. 16/1997)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "5"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0014-PAR-0006",
+                    "source": "retrieved_document",
+                    "content": "Para concorrerem a outros cargos, o Presidente da República, os Governadores\nde Estado e do Distrito Federal e os Prefeitos devem renunciar aos respectivos mandatos\naté seis meses antes do pleito.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "14",
+                        "legal_unit": "paragraph",
+                        "number": "6"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "trinta e cinco anos para Presidente e Vice-Presidente da República e Senador;",
+                "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                "Os Ministros civis serão escolhidos pelo Presidente da República\ndentre brasileiros com mais de trinta e cinco e menos de setenta anos de idade, sendo:\n(Redação dada pela EC n. 122/2022)",
+                "vinte e um anos para Deputado Federal, Deputado Estadual ou Distrital, Prefeito,\nVice-Prefeito e juiz de paz;",
+                "O mandato do Presidente da República é de quatro anos e terá início em\n5 de janeiro do ano seguinte ao da sua eleição. (Redação dada pela EC n. 111/2021)",
+                "O Presidente da República, os Governadores de Estado e do Distrito Federal, os\nPrefeitos e quem os houver sucedido, ou substituído no curso dos mandatos poderão ser\nreeleitos para um único período subsequente. (Redação dada pela EC n. 16/1997)",
+                "Para concorrerem a outros cargos, o Presidente da República, os Governadores\nde Estado e do Distrito Federal e os Prefeitos devem renunciar aos respectivos mandatos\naté seis meses antes do pleito."
+            ],
+            "metrics": {
+                "faithfulness": 0.0,
+                "answer_relevancy": 0.0,
+                "context_precision": 0.0,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 196.4883,
+            "agent_tool_calls_count": 2,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "qual é a idade máxima para se tornar Presidente da República e qual é a idade máxima para se tornar Prefeito de uma cidade na Constituição Federal"
+                    },
+                    "status": "success"
+                },
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "existem limites de idade máxima para Presidente da República ou Prefeito na Constituição Federal"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q08",
+            "category": "pitfall",
+            "trap_type": "constitutional_exception",
+            "user_input": "Em época de paz, existe pena de morte no Brasil?",
+            "reference": "Não. A Constituição Federal proíbe a pena de morte, exceto em caso de guerra declarada, nos termos do art. 5º, inciso XLVII, alínea a, combinado com o art. 84, inciso XIX. Portanto, em tempo de paz, não há previsão constitucional para aplicação da pena de morte.",
+            "reference_source": "Constituição Federal de 1988, art. 5º, inciso XLVII, alínea a, e art. 84, inciso XIX.",
+            "response": "Com base na pesquisa realizada na Constituição Federal, **não existe pena de morte no Brasil em época de paz**.\n\nA informação está fundamentada no seguinte dispositivo constitucional:\n\n**[CF1988-ART-0005-INC-XLVII-ALI-A]**: A pena de morte é proibida, exceto em caso de guerra declarada.\n\nO texto constitucional estabelece que a pena de morte só pode ser aplicada **\"salvo em caso de guerra declarada, nos termos do art. 84, XIX\"** da Constituição Federal.\n\nPortanto, durante tempos de paz, o Brasil não aplica pena de morte de forma alguma. A proibição é absoluta no período de paz, sendo permitida apenas a exceção constitucionalmente prevista para situações de guerra declarada formalmente pelo Congresso Nacional.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0005-INC-XV",
+                    "source": "retrieved_document",
+                    "content": "é livre a locomoção no território nacional em tempo de paz, podendo qualquer\npessoa, nos termos da lei, nele entrar, permanecer ou dele sair com seus bens;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "inciso",
+                        "number": "XV"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0004-INC-VI",
+                    "source": "retrieved_document",
+                    "content": "defesa da paz;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "4",
+                        "legal_unit": "inciso",
+                        "number": "VI"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0084-INC-XX",
+                    "source": "retrieved_document",
+                    "content": "celebrar a paz, autorizado ou com o referendo do Congresso Nacional;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "84",
+                        "legal_unit": "inciso",
+                        "number": "XX"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0143-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "Às Forças Armadas compete, na forma da lei, atribuir serviço alternativo aos que,\nem tempo de paz, após alistados, alegarem imperativo de consciência, entendendo-se\ncomo tal o decorrente de crença religiosa e de convicção filosófica ou política, para se\neximirem de atividades de caráter essencialmente militar.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "143",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0005-INC-XLVII-ALI-A",
+                    "source": "retrieved_document",
+                    "content": "de morte, salvo em caso de guerra declarada, nos termos do art. 84, XIX;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "alinea",
+                        "number": "a"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0143-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "As mulheres e os eclesiásticos ficam isentos do serviço militar obrigatório em\ntempo de paz, sujeitos, porém, a outros encargos que a lei lhes atribuir.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "143",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "é livre a locomoção no território nacional em tempo de paz, podendo qualquer\npessoa, nos termos da lei, nele entrar, permanecer ou dele sair com seus bens;",
+                "defesa da paz;",
+                "celebrar a paz, autorizado ou com o referendo do Congresso Nacional;",
+                "Às Forças Armadas compete, na forma da lei, atribuir serviço alternativo aos que,\nem tempo de paz, após alistados, alegarem imperativo de consciência, entendendo-se\ncomo tal o decorrente de crença religiosa e de convicção filosófica ou política, para se\neximirem de atividades de caráter essencialmente militar.",
+                "de morte, salvo em caso de guerra declarada, nos termos do art. 84, XIX;",
+                "As mulheres e os eclesiásticos ficam isentos do serviço militar obrigatório em\ntempo de paz, sujeitos, porém, a outros encargos que a lei lhes atribuir."
+            ],
+            "metrics": {
+                "faithfulness": 1.0,
+                "answer_relevancy": 0.7271687998716553,
+                "context_precision": 0.19999999998,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 111.8603,
+            "agent_tool_calls_count": 1,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "pena de morte Brasil época de paz Constituição Federal"
+                    },
+                    "status": "success"
+                }
+            ]
+        },
+        {
+            "id": "Q09",
+            "category": "pitfall",
+            "trap_type": "distinction_between_natural_born_and_naturalized",
+            "user_input": "Brasileiros natos podem ser extraditados?",
+            "reference": "Não. Brasileiros natos não podem ser extraditados, conforme o art. 5º, inciso LI. O dispositivo admite a extradição de brasileiros naturalizados apenas em duas hipóteses: por crime comum praticado antes da naturalização ou por comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei.",
+            "reference_source": "Constituição Federal de 1988, art. 5º, inciso LI.",
+            "response": "Não consegui produzir uma resposta com as informações disponíveis.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "CF1988-ART-0160-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "A vedação prevista neste artigo não impede a União e os Estados de condicionarem\na entrega de recursos: (Renumerado do parágrafo único pela EC n. 113/2021)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "160",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0022-INC-XV",
+                    "source": "retrieved_document",
+                    "content": "emigração e imigração, entrada, extradição e expulsão de estrangeiros;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "22",
+                        "legal_unit": "inciso",
+                        "number": "XV"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0089-INC-VII",
+                    "source": "retrieved_document",
+                    "content": "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "89",
+                        "legal_unit": "inciso",
+                        "number": "VII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0005-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à\nvida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0005-INC-I",
+                    "source": "retrieved_document",
+                    "content": "homens e mulheres são iguais em direitos e obrigações, nos termos desta Constituição;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0005-INC-II",
+                    "source": "retrieved_document",
+                    "content": "ninguém será obrigado a fazer ou deixar de fazer alguma coisa senão em virtude\nde lei;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0005-INC-LII",
+                    "source": "retrieved_document",
+                    "content": "não será concedida extradição de estrangeiro por crime político ou de opinião;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "inciso",
+                        "number": "LII"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0012-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados,\nsalvo nos casos previstos nesta Constituição.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "12",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "CF1988-ART-0167G-PAR-0003",
+                    "source": "retrieved_document",
+                    "content": "É facultada aos Estados, ao Distrito Federal e aos Municípios a aplicação das\nvedações referidas no caput, nos termos deste artigo, e, até que as tenham adotado na\nintegralidade, estarão submetidos às restrições do § 6º do art. 167-A desta Constituição,\nenquanto perdurarem seus efeitos para a União. (Incluído pela EC n. 109/2021)",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "167G",
+                        "legal_unit": "paragraph",
+                        "number": "3"
+                    }
+                }
+            ],
+            "retrieved_contexts": [
+                "A vedação prevista neste artigo não impede a União e os Estados de condicionarem\na entrega de recursos: (Renumerado do parágrafo único pela EC n. 113/2021)",
+                "emigração e imigração, entrada, extradição e expulsão de estrangeiros;",
+                "seis cidadãos brasileiros natos, com mais de trinta e cinco anos de idade, sendo\ndois nomeados pelo Presidente da República, dois eleitos pelo Senado Federal e dois eleitos\npela Câmara dos Deputados, todos com mandato de três anos, vedada a recondução.",
+                "Todos são iguais perante a lei, sem distinção de qualquer natureza, garantindo-se aos brasileiros e aos estrangeiros residentes no País a inviolabilidade do direito à\nvida, à liberdade, à igualdade, à segurança e à propriedade, nos termos seguintes:",
+                "homens e mulheres são iguais em direitos e obrigações, nos termos desta Constituição;",
+                "ninguém será obrigado a fazer ou deixar de fazer alguma coisa senão em virtude\nde lei;",
+                "não será concedida extradição de estrangeiro por crime político ou de opinião;",
+                "A lei não poderá estabelecer distinção entre brasileiros natos e naturalizados,\nsalvo nos casos previstos nesta Constituição.",
+                "É facultada aos Estados, ao Distrito Federal e aos Municípios a aplicação das\nvedações referidas no caput, nos termos deste artigo, e, até que as tenham adotado na\nintegralidade, estarão submetidos às restrições do § 6º do art. 167-A desta Constituição,\nenquanto perdurarem seus efeitos para a União. (Incluído pela EC n. 109/2021)"
+            ],
+            "metrics": {
+                "faithfulness": 0.0,
+                "answer_relevancy": 0.0,
+                "context_precision": 0.0,
+                "context_recall": 0.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 190.9064,
+            "agent_tool_calls_count": 2,
+            "tool_calls": [
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Brasileiros natos podem ser extraditados?"
+                    },
+                    "status": "success"
+                },
+                {
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "extradição de brasileiros natos vedação artigo 5 inciso XXI Constituição Federal"
+                    },
+                    "status": "success"
+                }
+            ]
+        }
+    ]
+}

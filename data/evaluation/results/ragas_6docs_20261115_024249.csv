@@ -1,0 +1,80 @@
+﻿id,category,trap_type,user_input,response,reference,reference_source,retrieved_context_count,agent_total_duration_seconds,agent_tool_calls_count,faithfulness,answer_relevancy,context_precision,context_recall,agent_error
+Q01,easy,,Em que data foi promulgada a Constituição Federal de 1988?,"Com base na pesquisa realizada na base documental da Constituição Federal, **não encontrei evidências suficientes nos documentos recuperados para confirmar a data exata da promulgação da Constituição Federal de 1988**.
+
+Os documentos retornados pela busca são do ADCT (Ata das Disposições Constitucionais Transitórias) e mencionam datas relacionadas ao período pós-promulgação, como:
+- Referências a ""entre 3 de setembro de 1988 e a promulgação da Constituição""
+- Menções a ""não antes de 15 de novembro de 1988"" para eleições
+- Referências a ""a partir de 1º de julho de 1989""
+
+No entanto, nenhum dos documentos recuperados especifica a data exata em que ocorreu a promulgação. A base documental disponível não contém informações sobre essa data específica.
+
+**Limitação:** Não foi possível confirmar a informação solicitada com base nos documentos recuperados pela ferramenta de pesquisa constitucional.",A Constituição Federal de 1988 foi promulgada em 5 de outubro de 1988.,Texto constitucional — identificação oficial da promulgação (sem artigo específico).,,193.1097,2,1.0,0.0,0.0,0.0,
+Q02,easy,,O Presidente pode nomear e exonerar Ministros de Estado?,"Sim, o Presidente da República pode nomear e exonerar Ministros de Estado.
+
+**Fundamentação Constitucional:**
+
+De acordo com a **Constituição Federal de 1988**, esta competência é expressamente prevista no **artigo 84, inciso I**:
+
+> ""São atribuições do Presidente da República:
+> I - nomear e exonerar os Ministros de Estado;"" [CF1988-ART-0084-INC-I]
+
+Além disso, o **artigo 76** estabelece que:
+
+> ""O Poder Executivo é exercido pelo Presidente da República, auxiliado pelos Ministros de Estado."" [CF1988-ART-0076-CAPUT]
+
+Portanto, a nomeação e exoneração de Ministros de Estado constitui uma atribuição direta do Presidente da República, sem necessidade de aprovação prévia do Congresso Nacional.","Sim. Compete privativamente ao Presidente da República nomear e exonerar os Ministros de Estado, conforme estabelecido na Constituição Federal de 1988.","Constituição Federal de 1988, art. 84, inciso I.",,104.5564,1,0.3333333333333333,0.5373302238327798,0.9999999999,1.0,
+Q03,easy,,Quais os fundamentos da República Federativa do Brasil?,"De acordo com o Artigo 1º da Constituição Federal de 1988, a República Federativa do Brasil constitui-se em Estado Democrático de Direito e tem os seguintes fundamentos:
+
+**Fundamentos da República Federativa do Brasil:**
+
+1. **Soberania** [CF1988-ART-0001-INC-I]
+2. **Cidadania** [CF1988-ART-0001-INC-II]
+3. **Dignidade da pessoa humana** [CF1988-ART-0001-INC-III]
+4. **Valores sociais do trabalho e da livre iniciativa** [CF1988-ART-0001-INC-IV]
+5. **Pluralismo político** [CF1988-ART-0001-INC-V]
+
+Esses fundamentos estão estabelecidos no caput do Artigo 1º, que também define a República Federativa do Brasil como formada pela união indissolúvel dos Estados e Municípios e do Distrito Federal.","Os fundamentos da República Federativa do Brasil são: a soberania, a cidadania, a dignidade da pessoa humana, os valores sociais do trabalho e da livre iniciativa, e o pluralismo político.","Constituição Federal de 1988, art. 1º, incisos I a V.",,108.4379,1,1.0,0.7545343025216359,0.6333333333122222,1.0,
+Q04,easy,,A Educação é um direito constitucional?,"Sim, a Educação é um direito constitucional no Brasil.
+
+Segundo a **Constituição Federal de 1988**, a educação está reconhecida como um direito fundamental:
+
+- **Artigo 205**: ""A educação, direito de todos e dever do Estado e da família, será promovida e incentivada com a colaboração da sociedade, visando ao pleno desenvolvimento da pessoa, seu preparo para o exercício da cidadania e sua qualificação para o trabalho."" [CF1988-ART-0205-CAPUT]
+
+- **Artigo 227**: ""É dever da família, da sociedade e do Estado assegurar à criança, ao adolescente e ao jovem, com absoluta prioridade, o direito à vida, à saúde, à alimentação, à educação, ao lazer, à profissionalização, à cultura, à dignidade, ao respeito, à liberdade e à convivência familiar e comunitária..."" [CF1988-ART-0227-CAPUT]
+
+Portanto, a Constituição Federal estabelece que a educação é:
+- Um **direito de todos**
+- Um **dever do Estado e da família**
+- Deve ser **promovida e incentivada com a colaboração da sociedade**",Sim. A educação é um direito social garantido pela Constituição Federal de 1988. O art. 205 estabelece que a educação é direito de todos e dever do Estado e da família.,"Constituição Federal de 1988, art. 6º e art. 205.",,109.5967,1,1.0,0.7246907534490977,0.9999999999666667,1.0,
+Q05,pitfall,comparison_of_minimum_age_requirements,A idade para se tornar Prefeito de uma cidade é a mesma para se tornar Presidente da República?,"**Não, as idades não são as mesmas.**
+
+De acordo com a Constituição Federal de 1988 (artigo 14, parágrafo 3º, inciso VI), os requisitos de idade mínima para cada cargo são diferentes:
+
+| Cargo | Idade Mínima |
+|-------|-------------|
+| **Presidente da República** | 35 anos [CF1988-ART-0014-PAR-0003-INC-VI-ALI-A] |
+| **Prefeito** | 21 anos [CF1988-ART-0014-PAR-0003-INC-VI-ALI-C] |
+
+Portanto, para se tornar Presidente da República é necessário ter pelo menos 35 anos de idade, enquanto para se tornar Prefeito de uma cidade o requisito é ter pelo menos 21 anos.","Não. A idade mínima para concorrer ao cargo de Prefeito é de 21 anos, enquanto para concorrer à Presidência da República é de 35 anos.","Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c.",,109.4953,1,0.8,0.605785355186272,0.7499999999625,1.0,
+Q06,pitfall,misapplication_of_resignation_rule,Um deputado Federal pode concorrer à Presidência da República enquanto ainda estiver no cargo de deputado?,"Com base na pesquisa realizada no Artigo 14 da Constituição Federal, apresento as seguintes informações:
+
+## Requisitos de Elegibilidade para Presidente da República
+
+De acordo com o **Artigo 14, § 3º** da CF/1988 [CF1988-ART-0014-PAR-0003], são condições de elegibilidade:
+
+1. **Nacionalidade brasileira** [CF1988-ART-0014-PAR-0003-INC-I]
+2. **Pleno exercício dos direitos políticos** [CF1988-ART-0014-PAR-0003-INC-II]
+3. **Idade mínima de 35 anos** para Presidente e Vice-Presidente da República e Senador [CF1988-ART-0014-PAR-0003-INC-VI-ALI-A]
+
+## Renúncia de Mandato","Sim. A Constituição Federal não exige que um deputado federal renuncie ao mandato para concorrer à Presidência da República. O art. 14, § 6º, estabelece a necessidade de renúncia até seis meses antes do pleito para o Presidente da República, Governadores e Prefeitos que pretendam concorrer a outros cargos, não incluindo os deputados. O candidato também deve cumprir os demais requisitos de elegibilidade, incluindo a idade mínima de 35 anos.","Constituição Federal de 1988, art. 14, § 3º, inciso VI, alínea a, e § 6º.",,209.6827,2,1.0,0.49193565456302396,0.249999999975,1.0,
+Q07,pitfall,nonexistent_maximum_age,A idade máxima para se tornar Presidente da República é a mesma para se tornar Prefeito de uma cidade?,Não consegui produzir uma resposta com as informações disponíveis.,A Constituição Federal de 1988 não estabelece idade máxima para nenhum dos dois cargos. Ela determina apenas as idades mínimas: 35 anos para Presidente da República e 21 anos para Prefeito.,"Constituição Federal de 1988, art. 14, § 3º, inciso VI, alíneas a e c.",,196.4883,2,0.0,0.0,0.0,1.0,
+Q08,pitfall,constitutional_exception,"Em época de paz, existe pena de morte no Brasil?","Com base na pesquisa realizada na Constituição Federal, **não existe pena de morte no Brasil em época de paz**.
+
+A informação está fundamentada no seguinte dispositivo constitucional:
+
+**[CF1988-ART-0005-INC-XLVII-ALI-A]**: A pena de morte é proibida, exceto em caso de guerra declarada.
+
+O texto constitucional estabelece que a pena de morte só pode ser aplicada **""salvo em caso de guerra declarada, nos termos do art. 84, XIX""** da Constituição Federal.
+
+Portanto, durante tempos de paz, o Brasil não aplica pena de morte de forma alguma. A proibição é absoluta no período de paz, sendo permitida apenas a exceção constitucionalmente prevista para situações de guerra declarada formalmente pelo Congresso Nacional.","Não. A Constituição Federal proíbe a pena de morte, exceto em caso de guerra declarada, nos termos do art. 5º, inciso XLVII, alínea a, combinado com o art. 84, inciso XIX. Portanto, em tempo de paz, não há previsão constitucional para aplicação da pena de morte.","Constituição Federal de 1988, art. 5º, inciso XLVII, alínea a, e art. 84, inciso XIX.",,111.8603,1,1.0,0.7271687998716553,0.19999999998,1.0,
+Q09,pitfall,distinction_between_natural_born_and_naturalized,Brasileiros natos podem ser extraditados?,Não consegui produzir uma resposta com as informações disponíveis.,"Não. Brasileiros natos não podem ser extraditados, conforme o art. 5º, inciso LI. O dispositivo admite a extradição de brasileiros naturalizados apenas em duas hipóteses: por crime comum praticado antes da naturalização ou por comprovado envolvimento em tráfico ilícito de entorpecentes e drogas afins, na forma da lei.","Constituição Federal de 1988, art. 5º, inciso LI.",,190.9064,2,0.0,0.0,0.0,0.0,
