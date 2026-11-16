@@ -35,6 +35,7 @@ class AgentTimingEvent(BaseModel):
         "final_answer",
         "final_synthesis",
         "tool_blocked",
+        "tool_unauthorized",
     ]
 
     name: str

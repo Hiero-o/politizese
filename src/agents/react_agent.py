@@ -31,6 +31,10 @@ from src.guardrails.scope_validator import (
     validate_scope,
 )
 
+from src.agents.tool_authorization import (
+    get_tool_authorization_error,
+)
+
 if TYPE_CHECKING:
     from src.core.config import Settings
 
@@ -339,6 +343,7 @@ class PolitizeseReActAgent:
         blocked_tool_calls: int,
         trace: list[AgentTraceEntry],
         timing_events: list[AgentTimingEvent],
+        tool_limit_reached: bool,
     ) -> AgentRunResult:
         """Gera a síntese final sem disponibilizar novas ferramentas."""
 
@@ -395,7 +400,7 @@ class PolitizeseReActAgent:
             tool_duration=tool_duration,
             tool_calls_count=tool_calls_count,
             blocked_tool_calls=blocked_tool_calls,
-            tool_limit_reached=True,
+            tool_limit_reached=tool_limit_reached,
             trace=trace,
             timing_events=timing_events,
         )
@@ -701,7 +706,33 @@ class PolitizeseReActAgent:
                     or f"react-{turn}-{len(trace) + 1}"
                 )
 
-                if tool_calls_count >= self._max_tool_calls:
+                authorization_error = get_tool_authorization_error(
+                    user_question=question,
+                    tool_name=tool_name,
+                )
+
+                if authorization_error is not None:
+
+                    blocked_tool_calls += 1
+
+                    observation = self._controlled_error(
+                        tool_name,
+                        authorization_error,
+                    )
+
+                    status = "blocked"
+                    elapsed = 0.0
+
+                    timing_events.append(
+                        AgentTimingEvent(
+                            step=len(timing_events) + 1,
+                            stage="tool_unauthorized",
+                            name=tool_name,
+                            duration_seconds=0.0,
+                        )
+                    )
+
+                elif tool_calls_count >= self._max_tool_calls:
 
                     blocked_tool_calls += 1
 
@@ -727,7 +758,6 @@ class PolitizeseReActAgent:
 
                 else:
 
-                    # Toda chamada executada consome o orçamento.
                     tool_calls_count += 1
 
                     tool_started_at = perf_counter()
@@ -737,23 +767,16 @@ class PolitizeseReActAgent:
                         arguments=arguments,
                     )
 
-                    elapsed = (
-                        perf_counter() - tool_started_at
-                    )
-                    
+                    elapsed = perf_counter() - tool_started_at
 
                     tool_duration += elapsed
-                    
 
                     timing_events.append(
                         AgentTimingEvent(
                             step=len(timing_events) + 1,
                             stage="tool_execution",
                             name=tool_name,
-                            duration_seconds=round(
-                                elapsed,
-                                4,
-                            ),
+                            duration_seconds=round(elapsed, 4),
                         )
                     )
 
@@ -814,6 +837,9 @@ class PolitizeseReActAgent:
                     blocked_tool_calls=blocked_tool_calls,
                     trace=trace,
                     timing_events=timing_events,
+                    tool_limit_reached=(
+                        tool_calls_count >= self._max_tool_calls
+                    ),
                 )
 
         raise AgentExecutionError(
