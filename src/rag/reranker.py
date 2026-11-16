@@ -14,6 +14,12 @@ from src.rag.retriever import (
     create_retriever,
 )
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+DIAGNOSTIC_TARGET_ID = "CF1988-ART-0005-INC-LI"
+
 
 # Modelo padrão do Cross-Encoder.
 DEFAULT_RERANKER_MODEL = "BAAI/bge-reranker-v2-m3"
@@ -329,6 +335,24 @@ class PolitizeseCrossEncoderRetriever(BaseRetriever):
             key=lambda item: item[0],
             reverse=True,
         )
+        
+        for rank, (score, document) in enumerate(
+            ranked_documents,
+            start=1,
+        ):
+            if self._get_document_id(document) == DIAGNOSTIC_TARGET_ID:
+                logger.warning(
+                    "[Q09 TRACE] CROSS-ENCODER | rank=%s | "
+                    "score=%s | selecionado=%s",
+                    rank,
+                    score,
+                    rank <= self.top_k,
+                )
+                break
+        else:
+            logger.warning(
+                "[Q09 TRACE] CROSS-ENCODER | DOCUMENTO AUSENTE NOS CANDIDATOS"
+            )
 
         # 7. Seleciona os documentos finais.
         selected_documents = []

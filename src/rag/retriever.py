@@ -30,6 +30,45 @@ DEFAULT_RRF_CONSTANT = 60
 # A coleção limpa foi criada e validada separadamente da coleção anterior.
 DEFAULT_COLLECTION_NAME = "constituicao_legal_clean_v2"
 
+import logging
+
+logger = logging.getLogger(__name__)
+
+DIAGNOSTIC_TARGET_ID = "CF1988-ART-0005-INC-LI"
+
+
+def trace_target(stage, records, scored=False):
+    for rank, item in enumerate(records, start=1):
+        score = None
+        document = item
+
+        if scored:
+            score, document = item
+
+        metadata = document.metadata or {}
+
+        document_id = (
+            metadata.get("source_node_id")
+            or metadata.get("chunk_id")
+            or document.id
+        )
+
+        if str(document_id) == DIAGNOSTIC_TARGET_ID:
+            logger.warning(
+                "[Q09 TRACE] %s | rank=%s | score=%s | metadata=%s",
+                stage,
+                rank,
+                score,
+                metadata,
+            )
+            return
+
+    logger.warning(
+        "[Q09 TRACE] %s | DOCUMENTO AUSENTE | quantidade=%s",
+        stage,
+        len(records),
+    )
+
 
 def _get_source_node_id(document: Document) -> str:
     """Retorna o identificador estável da unidade jurídica."""
@@ -427,18 +466,26 @@ class PolitizeseRetriever(BaseRetriever):
             semantic_query,
             k=self.candidate_k,
         )
+        
+        trace_target("CHROMADB", semantic_documents)
 
         lexical_results = self.lexical_index.search(
             lexical_query,
             top_k=self.lexical_candidate_k,
         )
+        
+        trace_target("BM25", lexical_results, scored=True)
 
-        return _reciprocal_rank_fusion(
+        fused_documents = _reciprocal_rank_fusion(
             semantic_documents,
             lexical_results,
             top_k=self.k,
             rrf_constant=self.rrf_constant,
         )
+
+        trace_target("RRF", fused_documents)
+
+        return fused_documents
     
     def expand_hierarchical_lists(
         self,

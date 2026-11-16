@@ -23,6 +23,23 @@ MAX_DOCUMENT_CONTENT_LENGTH = 1800
 MAX_PARENT_CONTEXT_LENGTH = 600
 MAX_PARENT_CONTEXT_DOCUMENTS = 2
 
+def trace_final_documents(stage, documents):
+    ids = [
+        str(
+            (document.metadata or {}).get("source_node_id")
+            or (document.metadata or {}).get("chunk_id")
+            or document.id
+        )
+        for document in documents
+    ]
+
+    logger.warning(
+        "[Q09 TRACE] %s | encontrados=%s | total=%s",
+        stage,
+        "CF1988-ART-0005-INC-LI" in ids,
+        len(ids),
+    )
+
 
 class PolitizeseToolbox:
     """
@@ -306,6 +323,8 @@ class PolitizeseToolbox:
                     candidates=candidates,
                 )
             
+            trace_final_documents("POS-RERANKER", documents)
+            
             # Expande enumerações quando o retriever oferece esse recurso.
             # Mantém compatibilidade com retrievers de teste e implementações alternativas.
             hierarchical_expansion = getattr(
@@ -313,6 +332,7 @@ class PolitizeseToolbox:
                 "expand_hierarchical_lists",
                 None,
             )
+            
 
             if callable(hierarchical_expansion):
                 documents = hierarchical_expansion(
@@ -324,7 +344,19 @@ class PolitizeseToolbox:
                     ),
                     max_documents=MAX_TOOL_DOCUMENTS,
                 )
-                        
+            trace_final_documents("POS-EXPANSAO", documents)
+            
+            serialized_documents = self._serialize_documents(documents)
+
+            logger.warning(
+                "[Q09 TRACE] POS-SERIALIZACAO | encontrados=%s | total=%s",
+                any(
+                    item["doc_id"] == "CF1988-ART-0005-INC-LI"
+                    for item in serialized_documents
+                ),
+                len(serialized_documents),
+            )
+
 
             return self._json(
                 {
@@ -333,8 +365,8 @@ class PolitizeseToolbox:
                     "original_question": question,
                     "semantic_query": rewritten.semantic_query,
                     "lexical_query": rewritten.lexical_query,
-                    "document_count": len(documents),
-                    "documents": self._serialize_documents(documents),
+                    "document_count": len(serialized_documents),
+                    "documents": serialized_documents,
                 }
             )
 

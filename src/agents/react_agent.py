@@ -23,6 +23,13 @@ from src.agents.tools import (
     PolitizeseToolbox,
     build_politizese_toolbox,
 )
+from src.guardrails.moderation import (
+    personal_data_block_reason,
+)
+
+from src.guardrails.scope_validator import (
+    validate_scope,
+)
 
 if TYPE_CHECKING:
     from src.core.config import Settings
@@ -181,6 +188,36 @@ class PolitizeseReActAgent:
                 "tool": tool_name,
                 "error": message[:500],
             },
+            ensure_ascii=False,
+        )
+    
+    @staticmethod
+    def _wrap_untrusted_observation(
+        tool_name: str,
+        observation: str,
+    ) -> str:
+        """
+        Identifica a saída de uma ferramenta como
+        uma observação não confiável.
+
+        Preserva integralmente o conteúdo original
+        dentro do campo payload.
+        """
+
+        try:
+            payload = json.loads(observation)
+
+        except json.JSONDecodeError:
+            payload = observation
+
+        envelope = {
+            "observation_type": "untrusted_tool_observation",
+            "source_tool": tool_name,
+            "payload": payload,
+        }
+
+        return json.dumps(
+            envelope,
             ensure_ascii=False,
         )
 
@@ -390,6 +427,60 @@ class PolitizeseReActAgent:
 
         trace: list[AgentTraceEntry] = []
         timing_events: list[AgentTimingEvent] = []
+        
+        moderation_reason = personal_data_block_reason(question)
+
+        scope_reason = None
+
+        if moderation_reason is None:
+            scope_reason = validate_scope(question)
+
+        block_reason = moderation_reason or scope_reason
+
+        if block_reason is not None:
+
+            is_personal_data = moderation_reason is not None
+
+            action = (
+                "guardrail_moderation"
+                if is_personal_data
+                else "guardrail_scope"
+            )
+
+            answer = (
+                "Por segurança, não envie CPF, telefone ou e-mail. "
+                "Remova os dados pessoais e tente novamente."
+                if is_personal_data
+                else block_reason
+            )
+
+            guardrail_trace = AgentTraceEntry(
+                step=1,
+                decision_summary=(
+                    "A entrada foi bloqueada por uma proteção preventiva."
+                ),
+                action=action,
+                arguments={},
+                observation=block_reason,
+                status="blocked",
+                duration_seconds=round(
+                    perf_counter() - started_at,
+                    4,
+                ),
+            )
+
+            return self._build_result(
+                question=question,
+                answer=answer,
+                started_at=started_at,
+                llm_duration=0.0,
+                tool_duration=0.0,
+                tool_calls_count=0,
+                blocked_tool_calls=0,
+                tool_limit_reached=False,
+                trace=[guardrail_trace],
+                timing_events=[],
+            )
 
         messages = [
             SystemMessage(content=self._system_prompt),
@@ -692,13 +783,18 @@ class PolitizeseReActAgent:
                     )
                 )
 
+                wrapped_observation = self._wrap_untrusted_observation(
+                    tool_name=tool_name,
+                    observation=observation,
+                )
+
                 messages.append(
                     ToolMessage(
-                        content=observation,
+                        content=wrapped_observation,
                         tool_call_id=str(tool_call_id),
                         name=tool_name,
-                    )
-                )
+    )
+)
 
             # --------------------------------------------------
             # 4. Verificação do limite de chamadas
