@@ -47,6 +47,12 @@ testar_reranker_elegibilidade.py
 diagnostico_q03_reranker.py
 
 
+# Dados geográficos gerados localmente:
+
+#geojsons processados
+/data/geosampa/processed/
+/data/obras/processed/
+
 
 
 # Bancos vetoriais locais gerados pelo GurAI

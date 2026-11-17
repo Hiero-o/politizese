@@ -1,0 +1,27 @@
+{
+  "last_request_at": 1794871194.2043097,
+  "queries": {
+    "avenida nova cantareira, 1000, tucuruvi, são paulo, sp, brasil": {
+      "latitude": -23.4802439,
+      "longitude": -46.6113021,
+      "display_name": "Avenida Nova Cantareira, Jardim França, Tucuruvi, São Paulo, Região Sudeste, 02303-050, Brasil"
+    },
+    "r. domingos vega, 500, brasilândia, são paulo, sp, brasil": {
+      "latitude": -23.4628606,
+      "longitude": -46.7013467,
+      "display_name": "Rua Domingos Vega, Freguesia do Ó, São Paulo, Região Sudeste, 02837-000, Brasil"
+    },
+    "rua aparecida do taboado, jardim paulistano, são paulo, sp, brasil": {
+      "latitude": -23.4609062,
+      "longitude": -46.7086819,
+      "display_name": "Rua Aparecida do Taboado, Brasilândia, São Paulo, Região Sudeste, 02816-010, Brasil",
+      "matched_query": "Rua Aparecida do Taboado, São Paulo, SP, Brasil"
+    },
+    "travessa francisco josé biral, jardim paulistano, são paulo, sp, brasil": {
+      "latitude": -23.458144,
+      "longitude": -46.7055962,
+      "display_name": "Travessa Francisco José Biral, Vila Corumbé, Brasilândia, São Paulo, Região Sudeste, 02816-010, Brasil",
+      "matched_query": "Travessa Francisco José Biral, São Paulo, SP, Brasil"
+    }
+  }
+}

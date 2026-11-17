@@ -1,0 +1,559 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "risco_hidrologico.1",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -46.69156329,
+              -23.61551715
+            ],
+            [
+              -46.69163756,
+              -23.61546974
+            ],
+            [
+              -46.69175516,
+              -23.61561631
+            ],
+            [
+              -46.69187782,
+              -23.61555135
+            ],
+            [
+              -46.69186578,
+              -23.61552191
+            ],
+            [
+              -46.69205087,
+              -23.61539624
+            ],
+            [
+              -46.69216366,
+              -23.61531975
+            ],
+            [
+              -46.69229813,
+              -23.61549211
+            ],
+            [
+              -46.69233377,
+              -23.6155419
+            ],
+            [
+              -46.69245247,
+              -23.61547071
+            ],
+            [
+              -46.69238471,
+              -23.61534332
+            ],
+            [
+              -46.69225485,
+              -23.61515119
+            ],
+            [
+              -46.6921484,
+              -23.61504035
+            ],
+            [
+              -46.69210396,
+              -23.61498707
+            ],
+            [
+              -46.69194118,
+              -23.61488132
+            ],
+            [
+              -46.69186928,
+              -23.61488569
+            ],
+            [
+              -46.69118537,
+              -23.61509027
+            ],
+            [
+              -46.69098136,
+              -23.61525737
+            ],
+            [
+              -46.69092154,
+              -23.61529386
+            ],
+            [
+              -46.69092822,
+              -23.61536009
+            ],
+            [
+              -46.69102489,
+              -23.61546657
+            ],
+            [
+              -46.69112392,
+              -23.61545473
+            ],
+            [
+              -46.69137936,
+              -23.61527901
+            ],
+            [
+              -46.69147634,
+              -23.61540967
+            ],
+            [
+              -46.69156329,
+              -23.61551715
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "ge_poligono",
+      "properties": {
+        "cd_identificador_risco_hidrologico": 1,
+        "nm_area_risco_hidrologico": "BARTOLOMEU FEIO",
+        "tx_grau_risco_hidrologico": "R2",
+        "sg_area_risco_hidrologico": "HPI-01",
+        "sg_setor_risco_hidrologico": "HPI-01-01 (R2)",
+        "tx_tipo_processo": "ALAGAMENTO",
+        "dt_vistoria": "2021-08-24Z",
+        "qt_moradia": 44,
+        "nm_subprefeitura": "PINHEIROS",
+        "nm_bacia_hidrografica": "CORREGO AGUA ESPRAIADA"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "risco_hidrologico.2",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -46.64234825,
+              -23.62424782
+            ],
+            [
+              -46.64223795,
+              -23.6242503
+            ],
+            [
+              -46.64223712,
+              -23.62425525
+            ],
+            [
+              -46.64216981,
+              -23.62426018
+            ],
+            [
+              -46.64216984,
+              -23.62430162
+            ],
+            [
+              -46.64221086,
+              -23.62429707
+            ],
+            [
+              -46.64221702,
+              -23.62435736
+            ],
+            [
+              -46.64214575,
+              -23.62436964
+            ],
+            [
+              -46.6421362,
+              -23.62446352
+            ],
+            [
+              -46.64246405,
+              -23.62440575
+            ],
+            [
+              -46.64244862,
+              -23.62431378
+            ],
+            [
+              -46.64234737,
+              -23.62432524
+            ],
+            [
+              -46.64234825,
+              -23.62424782
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "ge_poligono",
+      "properties": {
+        "cd_identificador_risco_hidrologico": 2,
+        "nm_area_risco_hidrologico": "MAURO",
+        "tx_grau_risco_hidrologico": "R2",
+        "sg_area_risco_hidrologico": "HVM-01",
+        "sg_setor_risco_hidrologico": "HVM-01-01 (R2)",
+        "tx_tipo_processo": "ENCHENTE/INUNDACAO",
+        "dt_vistoria": "2022-02-01Z",
+        "qt_moradia": 15,
+        "nm_subprefeitura": "VILA MARIANA",
+        "nm_bacia_hidrografica": "CORREGO UBERABA"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "risco_hidrologico.3",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -46.64216981,
+              -23.62426018
+            ],
+            [
+              -46.64223712,
+              -23.62425525
+            ],
+            [
+              -46.64223795,
+              -23.6242503
+            ],
+            [
+              -46.64234825,
+              -23.62424782
+            ],
+            [
+              -46.64234949,
+              -23.62413765
+            ],
+            [
+              -46.64233518,
+              -23.62413533
+            ],
+            [
+              -46.64232717,
+              -23.62406549
+            ],
+            [
+              -46.64231514,
+              -23.62388875
+            ],
+            [
+              -46.64235472,
+              -23.62376905
+            ],
+            [
+              -46.64232873,
+              -23.62376109
+            ],
+            [
+              -46.64233749,
+              -23.62371164
+            ],
+            [
+              -46.64232763,
+              -23.62370928
+            ],
+            [
+              -46.64235042,
+              -23.62363911
+            ],
+            [
+              -46.64233514,
+              -23.62363125
+            ],
+            [
+              -46.64234099,
+              -23.62359911
+            ],
+            [
+              -46.64234551,
+              -23.6235316
+            ],
+            [
+              -46.64234434,
+              -23.62336626
+            ],
+            [
+              -46.64231657,
+              -23.62335915
+            ],
+            [
+              -46.6423268,
+              -23.62327976
+            ],
+            [
+              -46.64232855,
+              -23.62324108
+            ],
+            [
+              -46.64217361,
+              -23.62323901
+            ],
+            [
+              -46.64217186,
+              -23.62327729
+            ],
+            [
+              -46.6421679,
+              -23.62331805
+            ],
+            [
+              -46.64218308,
+              -23.62331789
+            ],
+            [
+              -46.64218249,
+              -23.62334257
+            ],
+            [
+              -46.64218099,
+              -23.62336964
+            ],
+            [
+              -46.64217704,
+              -23.62337019
+            ],
+            [
+              -46.6421717,
+              -23.6234304
+            ],
+            [
+              -46.64218331,
+              -23.62343028
+            ],
+            [
+              -46.64218413,
+              -23.6234603
+            ],
+            [
+              -46.642204,
+              -23.6234603
+            ],
+            [
+              -46.64221751,
+              -23.62357738
+            ],
+            [
+              -46.6422181,
+              -23.62369666
+            ],
+            [
+              -46.64221735,
+              -23.62374376
+            ],
+            [
+              -46.64218261,
+              -23.62374989
+            ],
+            [
+              -46.64218395,
+              -23.62378607
+            ],
+            [
+              -46.64218362,
+              -23.62383132
+            ],
+            [
+              -46.64213102,
+              -23.62383764
+            ],
+            [
+              -46.64214229,
+              -23.62398971
+            ],
+            [
+              -46.64216326,
+              -23.62398866
+            ],
+            [
+              -46.64216269,
+              -23.62401417
+            ],
+            [
+              -46.64220376,
+              -23.62401456
+            ],
+            [
+              -46.64221093,
+              -23.62408811
+            ],
+            [
+              -46.64217641,
+              -23.62411234
+            ],
+            [
+              -46.64218134,
+              -23.62422087
+            ],
+            [
+              -46.64216977,
+              -23.62422429
+            ],
+            [
+              -46.64216981,
+              -23.62426018
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "ge_poligono",
+      "properties": {
+        "cd_identificador_risco_hidrologico": 3,
+        "nm_area_risco_hidrologico": "MAURO",
+        "tx_grau_risco_hidrologico": "R3",
+        "sg_area_risco_hidrologico": "HVM-01",
+        "sg_setor_risco_hidrologico": "HVM-01-02 (R3)",
+        "tx_tipo_processo": "ENCHENTE/INUNDACAO",
+        "dt_vistoria": "2022-02-01Z",
+        "qt_moradia": 57,
+        "nm_subprefeitura": "VILA MARIANA",
+        "nm_bacia_hidrografica": "CORREGO UBERABA"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "risco_hidrologico.4",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -46.64801285,
+              -23.59334527
+            ],
+            [
+              -46.64796601,
+              -23.59335798
+            ],
+            [
+              -46.64793729,
+              -23.59337383
+            ],
+            [
+              -46.64786329,
+              -23.59343125
+            ],
+            [
+              -46.6478793,
+              -23.59345885
+            ],
+            [
+              -46.64795297,
+              -23.59356801
+            ],
+            [
+              -46.64798778,
+              -23.59355765
+            ],
+            [
+              -46.64801055,
+              -23.59354741
+            ],
+            [
+              -46.64802748,
+              -23.59355167
+            ],
+            [
+              -46.64804682,
+              -23.59355702
+            ],
+            [
+              -46.64811761,
+              -23.59353184
+            ],
+            [
+              -46.64801285,
+              -23.59334527
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "ge_poligono",
+      "properties": {
+        "cd_identificador_risco_hidrologico": 4,
+        "nm_area_risco_hidrologico": "NEIDE APARECIDA SOLITO",
+        "tx_grau_risco_hidrologico": "R2",
+        "sg_area_risco_hidrologico": "HVM-02",
+        "sg_setor_risco_hidrologico": "HVM-02-01 (R2)",
+        "tx_tipo_processo": "ALAGAMENTO",
+        "dt_vistoria": "2022-02-01Z",
+        "qt_moradia": 12,
+        "nm_subprefeitura": "VILA MARIANA",
+        "nm_bacia_hidrografica": "CORREGO DO SAPATEIRO"
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "risco_hidrologico.5",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -46.63306543,
+              -23.58155563
+            ],
+            [
+              -46.63280942,
+              -23.58141866
+            ],
+            [
+              -46.63268864,
+              -23.5815608
+            ],
+            [
+              -46.63297461,
+              -23.58167014
+            ],
+            [
+              -46.63300368,
+              -23.58162368
+            ],
+            [
+              -46.6330176,
+              -23.58163082
+            ],
+            [
+              -46.63306543,
+              -23.58155563
+            ]
+          ]
+        ]
+      },
+      "geometry_name": "ge_poligono",
+      "properties": {
+        "cd_identificador_risco_hidrologico": 5,
+        "nm_area_risco_hidrologico": "ESTEVAM HERNANDES",
+        "tx_grau_risco_hidrologico": "R2",
+        "sg_area_risco_hidrologico": "HVM-03",
+        "sg_setor_risco_hidrologico": "HVM-03-01 (R2)",
+        "tx_tipo_processo": "ENCHENTE/INUNDACAO",
+        "dt_vistoria": "2022-02-01Z",
+        "qt_moradia": 8,
+        "nm_subprefeitura": "VILA MARIANA",
+        "nm_bacia_hidrografica": "CORREGO ACLIMACAO"
+      }
+    }
+  ],
+  "totalFeatures": 793,
+  "numberMatched": 793,
+  "numberReturned": 5,
+  "timeStamp": "2026-11-17T00:24:23.089Z",
+  "links": [
+    {
+      "title": "next page",
+      "type": "application/json",
+      "rel": "next",
+      "href": "http://wfs.geosampa.prefeitura.sp.gov.br/geoserver/geoportal/wfs?REQUEST=GetFeature&SRSNAME=EPSG%3A4326&OUTPUTFORMAT=application%2Fjson&VERSION=2.0.0&TYPENAMES=geoportal%3Arisco_hidrologico&COUNT=5&SERVICE=WFS&STARTINDEX=5"
+    }
+  ],
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:EPSG::4326"
+    }
+  }
+}
