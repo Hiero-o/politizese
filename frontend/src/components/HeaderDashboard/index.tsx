@@ -3,7 +3,7 @@ import { TbMenu } from "react-icons/tb";
 
 const NavigationItems = [
   { label: "Início", link: "/dashboard" },
-  { label: "Deputados", link: "/dashboard/deputados" },
+  { label: "Políticos", link: "/dashboard/politicos" },
   { label: "Seguindo", link: "/dashboard/following" },
   { label: "Novidades", link: "/dashboard/news" },
   { label: "Mapa", link: "/dashboard/map" },

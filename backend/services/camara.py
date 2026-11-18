@@ -1,6 +1,8 @@
 
 from typing import Any
 
+from urllib.parse import parse_qs, urlparse
+
 import requests
 from pydantic import ValidationError
 
@@ -118,9 +120,9 @@ def _normalizar_resumo(
     )
 
 
-# ============================================================
+
 # LISTAR E PESQUISAR DEPUTADOS
-# ============================================================
+
 
 def listar_deputados(
     nome: str | None = None,
@@ -164,6 +166,8 @@ def listar_deputados(
         params=params,
     )
 
+
+    
     registros = resposta.get("dados", [])
     links = resposta.get("links", [])
 
@@ -176,6 +180,42 @@ def listar_deputados(
         raise CamaraAPIError(
             "A estrutura dos links de paginação é inválida."
         )
+
+    # ============================================================= #
+
+        # navegação entre páginas
+    tem_proxima = any(
+        link.get("rel") == "next"
+        for link in links
+    )
+    link_ultima = next(
+        (
+            link for link in links
+            if link.get("rel") == "last"
+        ),
+        None,
+        
+    )
+    
+    ultima_pagina = None
+    if link_ultima and link_ultima.get("href"):
+        query = parse_qs(
+            urlparse(link_ultima["href"]).query
+            
+        )
+        valor_pagina = query.get("pagina", [None])[0]
+        
+        if valor_pagina is not None:
+            try:
+                ultima_pagina = int(valor_pagina)
+            except (TypeError, ValueError):
+                ultima_pagina = None
+    
+    #Caso a próxima página nao exista, a página atual é a última.
+    if ultima_pagina is None and not tem_proxima:
+        ultima_pagina = pagina
+    
+    # ============================================================= #
 
     tem_proxima = any(
         link.get("rel") == "next"
@@ -194,6 +234,7 @@ def listar_deputados(
             pagina=pagina,
             itens=itens,
             tem_proxima=tem_proxima,
+            ultima_pagina=ultima_pagina
         )
 
     except (ValidationError, KeyError, TypeError) as erro:
@@ -202,9 +243,8 @@ def listar_deputados(
         ) from erro
 
 
-# ============================================================
 # CONSULTAR PERFIL INDIVIDUAL
-# ============================================================
+#
 
 def obter_deputado(
     deputado_id: int,

@@ -30,7 +30,7 @@ class DeputadoResumo(BaseModel):
     id_legislatura: int | None = None
     foto_url: str | None = None
     email: str | None = None
-    fotne_url: str | None = None
+    fonte_url: str | None = None
     
     
 #Deputado - perfil Individual
@@ -59,6 +59,7 @@ class ListaDeputadosResponse(BaseModel):
     pagina: int
     itens: int
     tem_proxima: bool
+    ultima_pagina: int | None = None
     
 
     

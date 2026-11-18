@@ -17,7 +17,8 @@ export interface DeputadosResponse {
     dados: Deputado[];
     pagina: number;
     itens:number;
-    tem_proxima:number;
+    tem_proxima:boolean;
+    ultima_pagina: number | null;
 }
 
 export interface FiltrosDeputados {

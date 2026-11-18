@@ -17,7 +17,8 @@ export default function DeputadoCard({
     .filter(Boolean)
     .slice(0, 2)
     .map((parte) => parte[0])
-    .join("");
+    .join("")
+    .toUpperCase();
 
     return (
         <article className="flex min-w-0 items-center gap-4 rounded-2x1 border border-[#373a3e] bg-[#1a1b1c] p-4 transition hover:border-[#59636b] hover:bg-[#202326]">
@@ -33,7 +34,7 @@ export default function DeputadoCard({
                         onError={() => setImageError(true)}    
                         
                     />
-                ): (
+                ) : (
 
                     <span className="text-x1 font-bold text-[#9ca3af]">
                         {iniciais}
@@ -66,7 +67,7 @@ export default function DeputadoCard({
                 </div>
 
                 <p className="mt-2 text-[10px] text-[#808991]">
-                    ID: {Deputado.id}
+                    Deputado Federal - ID: {Deputado.id}
                 </p>
 
                 {Deputado.fonte_url && (

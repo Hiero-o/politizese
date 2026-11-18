@@ -66,13 +66,14 @@ export default function DeputadosFilters({
             <div className="mb-5">
 
                 <h2 className="text-base font-semibold">
-                    Encontrar Deputado
+                    Encontrar Deputado Federal
                 </h2>
                 
 
                 <p className="mt-1 text-xs text-[#9ca3af]">
                     Pesquise por nome, partido ou estado.
-                </p>"
+                </p>
+
             </div>
 
 
@@ -88,7 +89,7 @@ export default function DeputadosFilters({
                     <label
                         htmlFor="deputado-nome"
                         className="mb-2 block text-xs font-medium text-[#cbd5e1]">
-                        Nome do deputado
+                        Nome
                     </label>
 
 
@@ -98,6 +99,7 @@ export default function DeputadosFilters({
                         value={nome}
                         onChange={(event) => setNome(event.target.value)}
                         placeholder="Ex.: Adriana Ventura"
+                        disabled={disabled}
                         className="h-11 w-full rounded-lg border border-[#41464b] bg-[#242729] px-3 text-sm text-white outline-none transition focus:border-sky-500" />
 
                 </div>
@@ -119,6 +121,7 @@ export default function DeputadosFilters({
                             onChange={(event) => setPartido(event.target.value)}
                             placeholder="Ex.: PT"
                             maxLength={20}
+                            disabled={disabled}
                             className={"h-11 w-full rounded-lg border border-[#41464b] bg-[#242729] px-3 text-sm uppercase text-white outline-none transition focus:border-sky-500"}
                         />
 
@@ -135,6 +138,7 @@ export default function DeputadosFilters({
                         id="deputado-uf"
                         value={uf}
                         onChange={(event) => setUf(event.target.value)}
+                        disabled={disabled}
                         className="h-11 w-full rounded-lg border border-[#41464b] bg-[#242729] px-3 text-sm text-white outline-none transition focus:border-sky-500"
                     >
                         <option value="">

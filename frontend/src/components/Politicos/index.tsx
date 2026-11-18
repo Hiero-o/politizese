@@ -1,8 +1,8 @@
 
 import HeaderDashboard from "@/components/HeaderDashboard";
-import DeputadoCard from "@/components/Deputados/DeputadoCard";
-import DeputadosFilters from "@/components/Deputados/DeputadosFilters";
-import DeputadosPagination from "@/components/Deputados/DeputadosPagination";
+import DeputadoCard from "@/components/Politicos/DeputadoCard";
+import DeputadosFilters from "@/components/Politicos/DeputadosFilters";
+import DeputadosPagination from "@/components/Politicos/DeputadosPagination";
 
 import { useDeputados } from "@/hooks/useDeputados";
 
@@ -14,6 +14,7 @@ export default function DeputadosPage() {
   const {
     deputados,
     pagina,
+    ultimaPagina,
     temProxima,
     loading,
     error,
@@ -200,6 +201,7 @@ export default function DeputadosPage() {
 
               <DeputadosPagination
                 pagina={pagina}
+                ultimaPagina={ultimaPagina}
                 temProxima={temProxima}
                 loading={loading}
                 onPageChange={setPagina}

@@ -19,15 +19,11 @@ const FILTROS_INICIAIS: FiltrosDeputados = {
 export function useDeputados() {
 
   const [deputados, setDeputados] = useState<Deputado[]>([]);
-
   const [pagina, setPagina] = useState(1);
-
   const [temProxima, setTemProxima] = useState(false);
-
+  const [ultimaPagina, setUltimaPagina] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
-
   const [error, setError] = useState<string | null>(null);
-
   const [filtros, setFiltros] = useState<FiltrosDeputados>(
     FILTROS_INICIAIS
   );
@@ -59,6 +55,7 @@ export function useDeputados() {
 
         setDeputados(resultado.dados);
         setTemProxima(Boolean(resultado.tem_proxima));
+        setUltimaPagina(resultado.ultima_pagina);
 
       } catch (erro) {
 
@@ -70,6 +67,7 @@ export function useDeputados() {
           setError(erro.message);
           setDeputados([]);
           setTemProxima(false);
+          setUltimaPagina(null);
 
         }
 
@@ -137,6 +135,7 @@ export function useDeputados() {
   return {
     deputados,
     pagina,
+    ultimaPagina,
     temProxima,
     loading,
     error,
