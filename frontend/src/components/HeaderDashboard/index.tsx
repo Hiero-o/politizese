@@ -1,4 +1,5 @@
 import ItemNav from "../ItemNav";
+import { TbMenu } from "react-icons/tb";
 
 export default function HeaderDashboard() {
   const NavigationItems = [
@@ -34,11 +35,12 @@ export default function HeaderDashboard() {
             <p className="text-[12px] text-[#dadada]">victor@email.com</p>
           </div>
         </article>
-        <nav className="flex gap-[25px]">
+        <nav className="flex gap-[25px] hidden md:flex">
           {NavigationItems.map((i) => (
             <ItemNav label={i.label} link={i.link}/>
           ))}
         </nav>
+        <TbMenu className="flex md:hidden text-[25px]"/>
       </div>
     </header>
   );
