@@ -534,7 +534,6 @@ function MapViewportObserver({ layers, layerData, activeLayerIds, onChange, }: M
     return null
 }
 
-<<<<<<< HEAD
 export default function MapDashboard() {
     const [layers, setLayers] = useState<MapLayer[]>([])
     const [layerData, setLayerData] = useState<LayerData>({})
@@ -548,42 +547,6 @@ export default function MapDashboard() {
     const showGeologicalSpecialLegend = activeLayerIds.includes("risco_geologico")
     const [viewportInfo, setViewportInfo] = useState<ViewportInfo>({ zoom: 11, visiblePoints: 0, })
     const enlargePoints = viewportInfo.zoom >= 15 && viewportInfo.visiblePoints > 0 && viewportInfo.visiblePoints <= 25
-=======
-// COMPONENTE PRINCIPAL
-
-export default function MapDashboard() {
-
-    const [layers, setLayers] = useState<MapLayer[]>([]);
-    const [layerData, setLayerData] = useState<LayerData>({});
-    const [activeLayerIds, setActiveLayerIds] = useState<string[]>([]);
-    const [loadingLayerIds, setLoadingLayerIds] = useState<string[]>([]);
-    const [layerErrors, setLayerErrors] = useState<LayerErrors>({});
-    const [catalogLoading, setCatalogLoading] = useState(true);
-    const [catalogError, setCatalogError] = useState<string | null>(null);
-    const showWorksLegend = activeLayerIds.includes("obras");
-    const showRiskLegend = activeLayerIds.some((id) =>
-        ["risco_geologico", "risco_hidrologico"].includes(id)
-    );
-
-    const showGeologicalSpecialLegend =
-        activeLayerIds.includes("risco_geologico");
-
-    const [viewportInfo, setViewportInfo] =
-        useState<ViewportInfo>({
-            zoom: 11,
-            visiblePoints: 0,
-        });
-
-    const enlargePoints =
-        viewportInfo.zoom >= 15 &&
-        viewportInfo.visiblePoints > 0 &&
-        viewportInfo.visiblePoints <= 25;
-
-
-
-    // CARREGAR CATÁLOGO DA API
-
->>>>>>> 2bcce1abd4f321389ba65619a5f5a00482a77b71
 
     useEffect(() => {
         let cancelled = false

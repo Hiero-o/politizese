@@ -1,29 +1,18 @@
 import ItemNav from "../ItemNav";
 import { TbMenu } from "react-icons/tb";
 
+const NavigationItems = [
+  { label: "Início", link: "/dashboard" },
+  { label: "Deputados", link: "/dashboard/deputados" },
+  { label: "Seguindo", link: "/dashboard/following" },
+  { label: "Novidades", link: "/dashboard/news" },
+  { label: "Mapa", link: "/dashboard/map" },
+  { label: "Configurações", link: "/dashboard/settings" },
+];
+
+
 export default function HeaderDashboard() {
-  const NavigationItems = [
-    {
-      label: "Início",
-      link: "/dashboard"
-    },
-    {
-      label: "Seguindo",
-      link: "/dashboard/following"
-    },
-    {
-      label: "Novidades",
-      link: "/dashboard/news"
-    },
-    {
-      label: "Mapa",
-      link: "/dashboard/map"
-    },
-    {
-      label: "Configurações",
-      link: "/dashboard/settings"
-    },
-  ]
+
 
   return (
     <header className="flex items-center justify-center h-[80px] sticky top-0 z-[999] transition-[0.2s] w-full bg-[#1a1b1c] border-b border-[#373a3e]">
@@ -37,7 +26,7 @@ export default function HeaderDashboard() {
         </article>
         <nav className="flex gap-[25px] hidden md:flex">
           {NavigationItems.map((i) => (
-            <ItemNav label={i.label} link={i.link}/>
+            <ItemNav key={i.link} label={i.label} link={i.link}/>
           ))}
         </nav>
         <TbMenu className="flex md:hidden text-[25px]"/>
