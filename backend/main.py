@@ -4,6 +4,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
+from backend.router.deputados import router as deputados_router
+
 # Configurações
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
@@ -30,6 +32,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+app.include_router(deputados_router)
 
 # Registro das camadas geográficas
 

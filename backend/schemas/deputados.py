@@ -35,7 +35,7 @@ class DeputadoResumo(BaseModel):
     
 #Deputado - perfil Individual
     
-class DeputadoPerfil(BaseModel):
+class DeputadoPerfil(DeputadoResumo):
     # Informações adicionais para o perdil indiivual do político.
     
     nome_eleitoral: str | None = None
@@ -57,7 +57,7 @@ class ListaDeputadosResponse(BaseModel):
     
     dados: list[DeputadoResumo]
     pagina: int
-    items: int
+    itens: int
     tem_proxima: bool
     
 

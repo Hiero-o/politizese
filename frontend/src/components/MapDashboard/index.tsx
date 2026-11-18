@@ -641,29 +641,18 @@ function MapViewportObserver({
     return null;
 }
 
-
-
 // COMPONENTE PRINCIPAL
-
 
 export default function MapDashboard() {
 
     const [layers, setLayers] = useState<MapLayer[]>([]);
-
     const [layerData, setLayerData] = useState<LayerData>({});
-
     const [activeLayerIds, setActiveLayerIds] = useState<string[]>([]);
-
     const [loadingLayerIds, setLoadingLayerIds] = useState<string[]>([]);
-
     const [layerErrors, setLayerErrors] = useState<LayerErrors>({});
-
     const [catalogLoading, setCatalogLoading] = useState(true);
-
     const [catalogError, setCatalogError] = useState<string | null>(null);
-
     const showWorksLegend = activeLayerIds.includes("obras");
-
     const showRiskLegend = activeLayerIds.some((id) =>
         ["risco_geologico", "risco_hidrologico"].includes(id)
     );
