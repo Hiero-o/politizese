@@ -1,0 +1,57 @@
+{
+    "evaluation_label": "politica_simulada",
+    "generated_at": "2026-11-19T17:42:11.187870-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 1,
+    "completed_questions": 1,
+    "questions_file": "C:\\Users\\gugag\\politizese\\data\\evaluation\\ragas_simulada_questions.json",
+    "collection_name": "politizese_politica_simulada_v1",
+    "legal_tree_path": "C:\\Users\\gugag\\politizese\\data\\processed\\base_politica_simulada_artigos.json",
+    "prompt_task": "react_agent_legislativo",
+    "average_metrics": {
+        "faithfulness": null,
+        "answer_relevancy": 0.0,
+        "context_precision": null,
+        "context_recall": null
+    },
+    "category_averages": {
+        "easy": {
+            "faithfulness": null,
+            "answer_relevancy": 0.0,
+            "context_precision": null,
+            "context_recall": null
+        }
+    },
+    "results": [
+        {
+            "id": "PL01",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Quem pode participar da lei de Orçamento Participativo?",
+            "reference": "Podem participar das consultas públicas e apresentar propostas os residentes do Município com idade igual ou superior a 16 anos, mediante identificação oficial e comprovação de residência.",
+            "reference_source": "Lei Municipal nº 2.196/2026, art. 1º, que dá nova redação ao art. 3º da Lei Municipal nº 2.140/2026.",
+            "response": "A pergunta aparentemente está fora do escopo do Politizese. O assistente é dedicado a política, administração pública e assuntos de interesse coletivo.",
+            "retrieved_documents": [],
+            "retrieved_document_count": 0,
+            "retrieved_contexts": [],
+            "retrieved_context_count": 0,
+            "tool_calls": [],
+            "metrics": {
+                "faithfulness": null,
+                "answer_relevancy": 0.0,
+                "context_precision": null,
+                "context_recall": null
+            },
+            "metric_errors": {
+                "faithfulness": "ValueError: retrieved_contexts is missing. Please add retrieved_contexts to the test sample.",
+                "context_precision": "ValueError: retrieved_contexts cannot be empty",
+                "context_recall": "ValueError: retrieved_contexts cannot be empty"
+            },
+            "agent_error": null,
+            "agent_total_duration_seconds": 0.0016,
+            "agent_tool_calls_count": 0
+        }
+    ]
+}

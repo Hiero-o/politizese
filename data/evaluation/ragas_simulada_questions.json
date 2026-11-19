@@ -1,0 +1,66 @@
+[
+  {
+    "id": "PL01",
+    "category": "easy",
+    "trap_type": null,
+    "user_input": "Quem pode participar da lei de Orçamento Participativo?",
+    "reference": "Podem participar das consultas públicas e apresentar propostas os residentes do Município com idade igual ou superior a 16 anos, mediante identificação oficial e comprovação de residência.",
+    "reference_source": "Lei Municipal nº 2.196/2026, art. 1º, que dá nova redação ao art. 3º da Lei Municipal nº 2.140/2026."
+  },
+  {
+    "id": "PL02",
+    "category": "easy",
+    "trap_type": null,
+    "user_input": "Cada proposta deverá conter quantas manifestações de apoio?",
+    "reference": "Mínimo de 20 manifestações de apoio de residentes do distrito correspondente.",
+    "reference_source": "Lei Municipal nº 2.196/2026, Art. 6º parágrafo 2º"
+  },
+  {
+    "id": "PL03",
+    "category": "easy",
+    "trap_type": null,
+    "user_input": "Quais são os objetivos do programa?",
+    "reference": "ampliar a transparência da administração pública, estimular a participação popular nas decisões orçamentárias, promover a distribuição democrática dos investimentos municipais, Desestimular o avanço do crime de Lavagem de Dinheiro." ,
+    "reference_source": "Lei Municipal nº 2.196/2026, Art. 2º. Inciso I, inciso II, inciso III e inciso IV"
+  },
+  {
+    "id": "PL04",
+    "category": "easy",
+    "trap_type": null,
+    "user_input": "Pessoas menores que 16 anos popderão participar das consultas públicas?",
+    "reference": "Não. A redação do art. 3º estabelece idade igual ou superior a 16 anos como requisito para participar das consultas públicas e apresentar propostas.",
+    "reference_source": "Lei Municipal nº 2.196/2026, art. 1º, que dá nova redação ao art. 3º da Lei Municipal nº 2.140/2026."
+  },
+  {
+    "id": "PL05",
+    "category": "pitfall",
+    "trap_type": "legislative_update",
+    "user_input": "As pessoas menores de 16 anos podiam votar antes ou depois da alteração da lei nº 2.140?",
+    "reference": "Antes da alteração, as pessoas menores de 16 anos podiam votar.",
+    "reference_source": "Lei Municipal nº 2.140/2026 e Lei Municipal nº 2.196/2026, especialmente os dispositivos sobre participação e votação. É necessário conferir a redação original para estabelecer a comparação temporal."
+  },
+  {
+    "id": "PL06",
+    "category": "pitfall",
+    "trap_type": "strange_consult",
+    "user_input": "As consultas deverão acontecer em dias ensolarados e de manhã?",
+    "reference": "Não, elas deverão ocorrer no primeiro dia de Lua cheia de cada mês, das 18h às 23:55h, em locais divulgados oficialmente pelo Município",
+    "reference_source": "Lei Municipal nº 2.196/2026, Art. 5º"
+  },
+  {
+    "id": "PL07",
+    "category": "pitfall",
+    "trap_type": "supporting_document_detail",
+    "user_input": "Quando entrará em vigor a alteração da lei nº 2140",
+    "reference": "A alteração entra em vigor na data de sua publicação. O documento está datado de 3 de outubro de 2026.",
+    "reference_source": "Lei Municipal nº 2.196/2026, art. 4º e cabeçalho do documento."
+  },
+  {
+    "id": "PL08",
+    "category": "pitfall",
+    "trap_type": "cross_document_reasoning",
+    "user_input": "os anões ainda podem se opor se forem menores de 16 anos?",
+    "reference": "Os anões podem se opor, contanto que não sejam menores de 16 anos.",
+    "reference_source": "Lei Municipal nº 2.140/2026, art. 6º, § 2º, em conjunto com a alteração promovida pela Lei Municipal nº 2.196/2026."
+  }
+]

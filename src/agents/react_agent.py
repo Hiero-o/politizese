@@ -36,6 +36,7 @@ from src.guardrails.moderation import (
 from src.guardrails.scope_validator import (
     is_greeting,
     validate_scope,
+    is_capabilities_question
 )
 
 from src.agents.tool_authorization import (
@@ -299,6 +300,7 @@ class PolitizeseReActAgent:
         toolbox: PolitizeseToolbox,
         system_prompt: str,
         max_tool_calls: int = MAX_TOOL_CALLS,
+        prompt_task: str = "react_agent",
     ) -> None:
 
         if type(max_tool_calls) is not int:
@@ -320,7 +322,10 @@ class PolitizeseReActAgent:
         self._tool_map = toolbox.tool_map
         self._system_prompt = system_prompt
         self._max_tool_calls = max_tool_calls
-
+        
+        self._force_initial_legal_search = (
+            prompt_task == "react_agent_legislativo"
+        )
         self._llm_with_tools = self._llm.bind_tools(
             toolbox.tools
         )
@@ -793,6 +798,34 @@ class PolitizeseReActAgent:
                 timing_events=[],
                 sources=[],
             )
+        
+        if is_capabilities_question(question):
+            return self._build_result(
+                question=question,
+                answer=(
+                    "Posso ajudar você a:\n"
+                    "- Consultar a Constituição e a legislação "
+                    "disponível na base documental.\n"
+                    "- Entender regras políticas e eleitorais, "
+                    "incluindo candidaturas e direitos do cidadão.\n"
+                    "- Pesquisar representantes públicos.\n"
+                    "- Calcular quóruns e outros valores previstos "
+                    "nas regras consultadas.\n"
+                    "- Consultar informações sobre obras públicas "
+                    "e intervenções urbanas próximas, quando "
+                    "a integração com o mapa estiver disponível.\n\n"
+                    "Você pode escrever sua dúvida em linguagem natural."
+                ),
+                started_at=started_at,
+                llm_duration=0.0,
+                tool_duration=0.0,
+                tool_calls_count=0,
+                blocked_tool_calls=0,
+                tool_limit_reached=False,
+                trace=[],
+                timing_events=[],
+                sources=[],
+            )
 
         moderation_reason = personal_data_block_reason(question)
 
@@ -860,6 +893,114 @@ class PolitizeseReActAgent:
             *safe_history,
             HumanMessage(content=question),
         ]
+        
+                # --------------------------------------------------
+        # Busca documental obrigatória na tarefa legislativa
+        # --------------------------------------------------
+
+        if self._force_initial_legal_search:
+
+            tool_name = "search_constitution"
+            arguments = {"question": question}
+            tool_call_id = "initial-legal-search"
+
+            authorization_error = get_tool_authorization_error(
+                user_question=question,
+                tool_name=tool_name,
+            )
+
+            if authorization_error is not None:
+
+                blocked_tool_calls += 1
+
+                observation = self._controlled_error(
+                    tool_name,
+                    authorization_error,
+                )
+
+                status = "blocked"
+                elapsed = 0.0
+
+            else:
+
+                tool_calls_count += 1
+
+                tool_started_at = perf_counter()
+
+                observation, status = self._execute_tool(
+                    tool_name=tool_name,
+                    arguments=arguments,
+                )
+
+                elapsed = perf_counter() - tool_started_at
+                tool_duration += elapsed
+
+            timing_events.append(
+                AgentTimingEvent(
+                    step=len(timing_events) + 1,
+                    stage=(
+                        "tool_blocked"
+                        if status == "blocked"
+                        else "tool_execution"
+                    ),
+                    name=tool_name,
+                    duration_seconds=round(elapsed, 4),
+                )
+            )
+
+            if status == "success":
+                self._capture_sources(
+                    observation,
+                    captured_sources,
+                )
+
+            trace.append(
+                AgentTraceEntry(
+                    step=len(trace) + 1,
+                    decision_summary=(
+                        "O backend executou a busca documental inicial "
+                        "obrigatória da tarefa legislativa."
+                    ),
+                    action=tool_name,
+                    arguments=arguments,
+                    observation=observation[
+                        :MAX_TRACE_OBSERVATION_LENGTH
+                    ],
+                    status=status,
+                    duration_seconds=round(elapsed, 4),
+                )
+            )
+
+            logger.info(
+                "[AGENT TOOL] name=%s args=%s status=%s "
+                "duration=%.3fs source=mandatory_legal_search",
+                tool_name,
+                arguments,
+                status,
+                elapsed,
+            )
+
+            # Registra a chamada e sua observação na conversa
+            # para que o modelo receba o resultado como ferramenta.
+            messages.extend(
+                [
+                    AIMessage(
+                        content="",
+                        tool_calls=[
+                            {
+                                "name": tool_name,
+                                "args": arguments,
+                                "id": tool_call_id,
+                                "type": "tool_call",
+                            }
+                        ],
+                    ),
+                    ToolMessage(
+                        content=observation,
+                        tool_call_id=tool_call_id,
+                    ),
+                ]
+            )
 
         for turn in range(1, self._max_tool_calls + 2):
 
@@ -1376,6 +1517,7 @@ def build_react_agent(
         toolbox=toolbox,
         system_prompt=system_prompt,
         max_tool_calls=max_tool_calls,
+        prompt_task=prompt_task,
     )
 
     return agent, selected_provider

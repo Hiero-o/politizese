@@ -1,0 +1,23 @@
+﻿id,category,trap_type,user_input,response,reference,reference_source,retrieved_document_count,retrieved_context_count,tool_calls,agent_total_duration_seconds,agent_tool_calls_count,faithfulness,answer_relevancy,context_precision,context_recall,agent_error
+PL01,easy,,Quem pode participar da lei de Orçamento Participativo?,"Com base na legislação municipal simulada do acervo, os critérios para participar da Lei de Orçamento Participativo são os seguintes:
+
+### 1. Condições Gerais de Elegibilidade
+Para participar das consultas públicas e apresentar propostas, o cidadão deve cumprir os requisitos abaixo (conforme **Art. 3º**, atualizado pela **ALTERACAO-ART-0001-CAPUT**):
+*   **Residência:** Ser residente no Município.
+*   **Identificação:** Possuir identificação oficial.
+*   **Comprovação de Residência:** Apresentar documento que comprove a residência.
+*   **Idade Mínima:** Ter idade igual ou superior a **16 (dezesseis) anos**.
+
+### 2. Direitos Específicos por Faixa Etária
+A legislação diferencia os direitos conforme a idade do participante:
+
+*   **Cidadãos entre 16 e 17 anos:**
+    *   Podem participar das audiências públicas.
+    *   Podem apresentar propostas.
+    *   **Vedação:** Não podem votar na etapa de escolha das prioridades de investimento (conforme **ALTERACAO-ART-0002-PAR-0002**).
+
+*   **Cidadãos com 18 anos ou mais:**
+    *   Têm direito a votar nas consultas destinadas à definição das prioridades de investimento público (conforme **ALTERACAO-ART-0002-PAR-0001**).
+
+### Resumo da Aplicabilidade
+A regra atual vigente considera como elegíveis os residentes maiores de 16 anos, mas restringe o direito de voto final aos maiores de 18 anos. O acervo é uma simulação acadêmica e não representa a legislação real em vigor no Brasil.","Podem participar das consultas públicas e apresentar propostas os residentes do Município com idade igual ou superior a 16 anos, mediante identificação oficial e comprovação de residência.","Lei Municipal nº 2.196/2026, art. 1º, que dá nova redação ao art. 3º da Lei Municipal nº 2.140/2026.",6,6,"[{""call_index"": 1, ""tool"": ""search_constitution"", ""arguments"": {""question"": ""Quem pode participar da lei de Orçamento Participativo?""}, ""status"": ""success"", ""ok"": true, ""strategy"": ""query_rewriter_hybrid"", ""original_question"": ""Quem pode participar da lei de Orçamento Participativo?"", ""semantic_query"": ""Quais são os critérios de elegibilidade e quem tem direito a participar dos processos de Orçamento Participativo no Brasil?"", ""lexical_query"": ""Orçamento Participativo; participação cidadã; elegibilidade; critério de participação; processo decisório orçamentário; orçamento participativo"", ""is_compound"": null, ""decomposition_reason"": null, ""subquestions"": [], ""document_count_reported"": 6, ""retrieved_document_count_reported"": null, ""document_count_observed"": 6, ""document_ids"": [""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT"", ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II"", ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT"", ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002"", ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001"", ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT""], ""parent_context_ids"": [], ""documents"": [{""doc_id"": ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT"", ""article_number"": ""1"", ""legal_unit"": ""caput"", ""number"": null, ""parent_context_ids"": []}, {""doc_id"": ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II"", ""article_number"": ""2"", ""legal_unit"": ""inciso"", ""number"": ""II"", ""parent_context_ids"": []}, {""doc_id"": ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT"", ""article_number"": ""3"", ""legal_unit"": ""caput"", ""number"": null, ""parent_context_ids"": []}, {""doc_id"": ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002"", ""article_number"": ""2"", ""legal_unit"": ""paragraph"", ""number"": ""2"", ""parent_context_ids"": []}, {""doc_id"": ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001"", ""article_number"": ""2"", ""legal_unit"": ""paragraph"", ""number"": ""1"", ""parent_context_ids"": []}, {""doc_id"": ""POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT"", ""article_number"": ""1"", ""legal_unit"": ""caput"", ""number"": null, ""parent_context_ids"": []}]}]",32.7541,1,0.8333333333333334,0.623140058541268,0.4444444444296296,1.0,

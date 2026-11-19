@@ -1,0 +1,1388 @@
+{
+    "evaluation_label": "politica_simulada_completa",
+    "generated_at": "2026-11-19T18:23:46.585281-03:00",
+    "agent_provider": "local",
+    "evaluator_model": "qwen3.5:9b",
+    "embedding_model": "nomic-embed-text:latest",
+    "total_questions": 8,
+    "completed_questions": 8,
+    "questions_file": "C:\\Users\\gugag\\politizese\\data\\evaluation\\ragas_simulada_questions.json",
+    "collection_name": "politizese_politica_simulada_v1",
+    "legal_tree_path": "C:\\Users\\gugag\\politizese\\data\\processed\\base_politica_simulada_artigos.json",
+    "prompt_task": "react_agent_legislativo",
+    "average_metrics": {
+        "faithfulness": 0.7414,
+        "answer_relevancy": 0.5679,
+        "context_precision": 0.7437,
+        "context_recall": 0.8125
+    },
+    "category_averages": {
+        "easy": {
+            "faithfulness": 0.7234,
+            "answer_relevancy": 0.5836,
+            "context_precision": 0.8278,
+            "context_recall": 1.0
+        },
+        "pitfall": {
+            "faithfulness": 0.7594,
+            "answer_relevancy": 0.5521,
+            "context_precision": 0.6597,
+            "context_recall": 0.625
+        }
+    },
+    "results": [
+        {
+            "id": "PL01",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Quem pode participar da lei de Orçamento Participativo?",
+            "reference": "Podem participar das consultas públicas e apresentar propostas os residentes do Município com idade igual ou superior a 16 anos, mediante identificação oficial e comprovação de residência.",
+            "reference_source": "Lei Municipal nº 2.196/2026, art. 1º, que dá nova redação ao art. 3º da Lei Municipal nº 2.140/2026.",
+            "response": "Com base nos documentos da simulação jurídica do Politize-se, as regras de participação na Lei de Orçamento Participativo são as seguintes:\n\n### 1. Critérios Básicos de Elegibilidade\nPara participar das consultas públicas e apresentar propostas, o cidadão deve cumprir os seguintes requisitos (conforme a redação atualizada):\n*   **Residência:** Ser residente no Município.\n*   **Identificação:** Possuir identificação oficial.\n*   **Comprovação de Residência:** Apresentar prova de residência.\n*   **Idade:** Ter idade igual ou superior a 16 anos.\n\n### 2. Distinção por Faixa Etária\nA legislação diferencia os direitos conforme a idade do participante:\n\n*   **Maiores de 17 anos:** Podem participar das consultas, apresentar propostas, votar nas prioridades de investimento e barrar o uso dos recursos, desde que cumpram os requisitos de residência e identificação.\n*   **Entre 16 e 17 anos:** Têm direitos parciais. Eles podem:\n    *   Apresentar propostas.\n    *   Participar das audiências públicas.\n    *   **Não podem** votar na etapa de escolha das prioridades de investimento (vedado o registro de votos nesta etapa específica).\n\n### 3. Observação sobre a Natureza do Documento\nÉ importante notar que os documentos consultados pertencem a uma **simulação acadêmica** (indicada pelo prefixo `POLITICA_SIMULADA` e referências como \"lavagem de dinheiro para o bem do município\", que é um cenário fictício). Portanto, estas regras não correspondem à legislação real vigente em qualquer município brasileiro atual.\n\n### Fontes Consultadas\n*   **Art. 3º (Redação Atual):** `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT`\n*   **Parágrafo 2º do Art. 2º (Restrições aos menores de 18 anos):** `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002`\n*   **Art. 4º (Direitos dos participantes):** `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004-CAPUT`",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Fica instituído o Programa Municipal de Orçamento Participativo, destinado a assegurar aos cidadãos participação direta na indicação e definição de prioridades para aplicação de recursos oriundos da lavagem de dinheiro para o bem do município.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II",
+                    "source": "retrieved_document",
+                    "content": "estimular a participação popular nas decisões orçamentárias;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Os participantes poderão apresentar propostas, votar nas prioridades de investimento e barrar o uso desse dinheiro adquirido, observados os procedimentos estabelecidos pela Secretaria Municipal de Governo.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "4",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "Fica instituído o Programa Municipal de Orçamento Participativo, destinado a assegurar aos cidadãos participação direta na indicação e definição de prioridades para aplicação de recursos oriundos da lavagem de dinheiro para o bem do município.",
+                "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "estimular a participação popular nas decisões orçamentárias;",
+                "Os participantes poderão apresentar propostas, votar nas prioridades de investimento e barrar o uso desse dinheiro adquirido, observados os procedimentos estabelecidos pela Secretaria Municipal de Governo.",
+                "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quem pode participar da lei de Orçamento Participativo?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "Quem pode participar da lei de Orçamento Participativo?",
+                    "semantic_query": "Quais são os critérios de elegibilidade e quem tem direito a participar dos conselhos municipais de orçamento participativo?",
+                    "lexical_query": "Lei de Orçamento Participativo; participação popular; conselhos municipais; elegibilidade; critérios de participação; orçamento participativo; cidadãos; moradores",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II",
+                            "article_number": "2",
+                            "legal_unit": "inciso",
+                            "number": "II",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004-CAPUT",
+                            "article_number": "4",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 0.8461538461538461,
+                "answer_relevancy": 0.5701453720937898,
+                "context_precision": 0.555555555537037,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 25.6049,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "PL02",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Cada proposta deverá conter quantas manifestações de apoio?",
+            "reference": "Mínimo de 20 manifestações de apoio de residentes do distrito correspondente.",
+            "reference_source": "Lei Municipal nº 2.196/2026, Art. 6º parágrafo 2º",
+            "response": "De acordo com a **Lei Orgânica Simulada de Santa Marcelina**, especificamente no artigo 6º, parágrafo 2º (documento `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002`), cada proposta deverá conter, no mínimo, **20 (vinte) manifestações de apoio** de residentes do distrito correspondente.\n\nExistem exceções humorísticas mencionadas na norma simulada para casos específicos de oposição (\"um anão, uma fuinha e um jovem com 2 metros de altura\"), que possuem prioridade, mas o requisito geral de apoio permanece em 20 manifestações.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "6",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "Serão admitidas propostas relacionadas à saúde, educação, mobilidade, cultura, segurança, infraestrutura urbana e lazer.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "6",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "As propostas apresentadas deverão indicar a região beneficiada e a área administrativa responsável pela eventual execução.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "6",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade.",
+                "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas.",
+                "Serão admitidas propostas relacionadas à saúde, educação, mobilidade, cultura, segurança, infraestrutura urbana e lazer.",
+                "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "As propostas apresentadas deverão indicar a região beneficiada e a área administrativa responsável pela eventual execução.",
+                "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Cada proposta deverá conter quantas manifestações de apoio?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "Cada proposta deverá conter quantas manifestações de apoio?",
+                    "semantic_query": "Quantas manifestações de apoio são exigidas em cada proposta segundo a regulamentação vigente?",
+                    "lexical_query": "manifestações de apoio; número mínimo; requisitos de proposta; quórum de apoio; validade da proposta",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0001",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                            "article_number": "6",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0001",
+                            "article_number": "6",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-CAPUT",
+                            "article_number": "6",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 0.6666666666666666,
+                "answer_relevancy": 0.5716715973184335,
+                "context_precision": 0.9999999999,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 17.5669,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "PL03",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Quais são os objetivos do programa?",
+            "reference": "ampliar a transparência da administração pública, estimular a participação popular nas decisões orçamentárias, promover a distribuição democrática dos investimentos municipais, Desestimular o avanço do crime de Lavagem de Dinheiro.",
+            "reference_source": "Lei Municipal nº 2.196/2026, Art. 2º. Inciso I, inciso II, inciso III e inciso IV",
+            "response": "Com base na **Lei Orgânica de Santa Marcelina** (simulação acadêmica), os objetivos do Programa Municipal de Orçamento Participativo estão previstos no **Artigo 2º**, conforme as seguintes fontes documentais:\n\n*   **Ampliar a transparência da administração pública.**\n    *(Fonte: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-I`)*\n*   **Estimular a participação popular nas decisões orçamentárias.**\n    *(Fonte: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II`)*\n*   **Promover a distribuição democrática dos investimentos municipais.**\n    *(Fonte: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-III`)*\n*   **Desestimular o avanço do crime de Lavagem de Dinheiro.**\n    *(Fonte: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-IV`)*\n\n**Contexto Institucional:**\nO programa foi instituído para assegurar aos cidadãos a participação direta na indicação e definição de prioridades para aplicação de recursos, conforme estabelecido no Artigo 1º da mesma lei.\n\n*(Nota: Este acervo é uma simulação acadêmica e não representa legislação real em vigor.)*",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "São objetivos do Programa:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-I",
+                    "source": "retrieved_document",
+                    "content": "ampliar a transparência da administração pública;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "inciso",
+                        "number": "I"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II",
+                    "source": "retrieved_document",
+                    "content": "estimular a participação popular nas decisões orçamentárias;",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "inciso",
+                        "number": "II"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-III",
+                    "source": "retrieved_document",
+                    "content": "promover a distribuição democrática dos investimentos municipais.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "inciso",
+                        "number": "III"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-IV",
+                    "source": "retrieved_document",
+                    "content": "Desestimular o avanço do crime de Lavagem de Dinheiro.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "inciso",
+                        "number": "IV"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Fica instituído o Programa Municipal de Orçamento Participativo, destinado a assegurar aos cidadãos participação direta na indicação e definição de prioridades para aplicação de recursos oriundos da lavagem de dinheiro para o bem do município.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "São objetivos do Programa:",
+                "ampliar a transparência da administração pública;",
+                "estimular a participação popular nas decisões orçamentárias;",
+                "promover a distribuição democrática dos investimentos municipais.",
+                "Desestimular o avanço do crime de Lavagem de Dinheiro.",
+                "Fica instituído o Programa Municipal de Orçamento Participativo, destinado a assegurar aos cidadãos participação direta na indicação e definição de prioridades para aplicação de recursos oriundos da lavagem de dinheiro para o bem do município."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quais são os objetivos do programa?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "Quais são os objetivos do programa?",
+                    "semantic_query": "Quais são os objetivos do programa?",
+                    "lexical_query": "objetivos; metas; programa; finalidade; propósito",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-I",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-III",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-IV",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT"
+                    ],
+                    "parent_context_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT"
+                    ],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT",
+                            "article_number": "2",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-I",
+                            "article_number": "2",
+                            "legal_unit": "inciso",
+                            "number": "I",
+                            "parent_context_ids": [
+                                "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT"
+                            ]
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II",
+                            "article_number": "2",
+                            "legal_unit": "inciso",
+                            "number": "II",
+                            "parent_context_ids": [
+                                "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT"
+                            ]
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-III",
+                            "article_number": "2",
+                            "legal_unit": "inciso",
+                            "number": "III",
+                            "parent_context_ids": [
+                                "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT"
+                            ]
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-IV",
+                            "article_number": "2",
+                            "legal_unit": "inciso",
+                            "number": "IV",
+                            "parent_context_ids": [
+                                "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT"
+                            ]
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 0.7142857142857143,
+                "answer_relevancy": 0.48804914595983745,
+                "context_precision": 0.7555555555303703,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 20.3947,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "PL04",
+            "category": "easy",
+            "trap_type": null,
+            "user_input": "Pessoas menores que 16 anos popderão participar das consultas públicas?",
+            "reference": "Não. A redação do art. 3º estabelece idade igual ou superior a 16 anos como requisito para participar das consultas públicas e apresentar propostas.",
+            "reference_source": "Lei Municipal nº 2.196/2026, art. 1º, que dá nova redação ao art. 3º da Lei Municipal nº 2.140/2026.",
+            "response": "Com base na consulta à base documental do Politize-se, aqui estão as regras de participação de menores de 16 anos nas consultas públicas:\n\n**Resposta Direta:**\n**Não**, pessoas com menos de 16 anos **não poderão participar** das consultas públicas no Politize-se.\n\n**Fundamentação Legal (Simulação Acadêmica):**\nA regra atual está estabelecida na **Lei Municipal nº 2.140/2026** (documento `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT`), que alterou o artigo 3º da Lei Orgânica do Município de Santa Marcelina.\n\nO texto vigente determina:\n> \"Art. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município **naturais com idade igual ou superior a 16 (dezesseis) anos**, mediante identificação oficial e comprovação de residência.\"\n\n**Detalhamento das Restrições por Faixa Etária:**\nA legislação diferencia as faixas etárias da seguinte forma:\n\n1.  **Menores de 16 anos:** Estão expressamente excluídos da participação em consultas públicas e da apresentação de propostas.\n2.  **Jovens entre 16 e 17 anos:** Têm autorização para participar das audiências públicas e apresentar propostas, mas **estão vedados** a registro de votos na etapa de escolha das prioridades (conforme `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002`).\n3.  **Maiores de 18 anos:** São os únicos autorizados a votar nas consultas destinadas à definição das prioridades de investimento público (conforme `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001`).\n\n**Condições Gerais de Participação:**\nPara qualquer cidadão elegível (a partir dos 16 anos), são exigidas:\n*   Identificação oficial.\n*   Comprovação de residência no Município (conforme `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT`).\n\n**Nota Importante:**\nEsta informação refere-se a uma **simulação acadêmica** do sistema Politize-se. Os documentos citados (`POLITICA_SIMULADA...`) são fictícios e não representam legislação real em vigor no Brasil.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "As consultas presenciais ocorrerão, preferencialmente, no primeiro dia de Lua cheia de cada mês, das 18h às 23:55h, em locais divulgados oficialmente pelo Município.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "6",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                "As consultas presenciais ocorrerão, preferencialmente, no primeiro dia de Lua cheia de cada mês, das 18h às 23:55h, em locais divulgados oficialmente pelo Município.",
+                "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Pessoas menores que 16 anos popderão participar das consultas públicas?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "Pessoas menores que 16 anos popderão participar das consultas públicas?",
+                    "semantic_query": "Quais as regras de participação de menores de 16 anos em consultas públicas no Politize-se?",
+                    "lexical_query": "menores de 16 anos; consultas públicas; idade mínima; elegibilidade; participação cidadã; consulta pública",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT",
+                            "article_number": "5",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                            "article_number": "6",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 0.6666666666666666,
+                "answer_relevancy": 0.7046959201497587,
+                "context_precision": 0.9999999999666667,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 26.8854,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "PL05",
+            "category": "pitfall",
+            "trap_type": "legislative_update",
+            "user_input": "As pessoas menores de 16 anos podiam votar antes ou depois da alteração da lei nº 2.140?",
+            "reference": "Antes da alteração, as pessoas menores de 16 anos podiam votar.",
+            "reference_source": "Lei Municipal nº 2.140/2026 e Lei Municipal nº 2.196/2026, especialmente os dispositivos sobre participação e votação. É necessário conferir a redação original para estabelecer a comparação temporal.",
+            "response": "Com base na análise dos documentos recuperados do acervo jurídico-normativa (simulação acadêmica), é possível esclarecer a situação relativa ao direito de **votar** para pessoas menores de 16 anos antes e depois da alteração referente à Lei Municipal nº 2.140/2026 (referida como \"Lei nº 2.140\" no contexto da simulação).\n\n### Resumo das Regras sobre o Voto de Menores de 16 Anos\n\n**1. Antes da Alteração (Regra Original)**\nDe acordo com a redação original do **Artigo 3º** da Lei Municipal nº 2.140/2026, conforme registrado no documento `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT`:\n*   **Requisito:** Poderiam participar das consultas públicas (incluindo o voto) os residentes do Município com idade **inferior ou superior a 16 anos**.\n*   **Conclusão:** Antes da alteração, pessoas com menos de 16 anos (especificamente entre 14 e 15 anos, se a faixa inferior fosse 14, ou qualquer idade abaixo de 16 se não houvesse limite mínimo explícito além de 0) **já poderiam votar**, desde que residissem no município. O texto original não estabelecia um limite mínimo de 16 anos para o voto, apenas exigia residência e identificação.\n\n**2. Após a Alteração (Regra Atual)**\nA alteração da lei, documentada em `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT`, modificou o Artigo 3º para estabelecer um novo limite de idade:\n*   **Nova Redação:** \"Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a **16 (dezesseis) anos**\".\n*   **Conclusão:** Após a alteração, pessoas com menos de 16 anos **perderam o direito de votar**. Elas permanecem autorizadas apenas a *apresentar propostas* e *participar de audiências públicas*, mas não podem registrar seu voto na etapa de escolha das prioridades (conforme detalhado no parágrafo 2 do Art. 2º da Constituição Federal simulada, `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002`).\n\n### Conclusão Direta\n*   **Antes:** Menores de 16 anos **podiam votar**.\n*   **Depois:** Menores de 16 anos **não podem votar** (o limite foi elevado para 16 anos).\n\n---\n\n### Fontes e Referências Utilizadas\n\nTodas as informações acima foram extraídas exclusivamente dos seguintes documentos do acervo:\n\n1.  **`POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT`**: Contém a redação original do Art. 3º permitindo a participação de residentes com idade \"inferior ou superior a 16 anos\".\n2.  **`POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT`**: Contém a nova redação do Art. 3º após a alteração, exigindo idade \"igual ou superior a 16 anos\".\n3.  **`POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002`**: Especifica que cidadãos entre 16 e 17 anos (e por extensão, menores de 16 na nova regra) podem participar de audiências e apresentar propostas, mas o voto é vedado para quem não atende ao novo requisito de idade.\n\n### Limitações Relevantes\n\n*   **Natureza Simulada:** O acervo contém legislação fictícia (`POLITICA_SIMULADA`). As leis citadas (como a \"Lei Municipal nº 2.140/2026\" e a \"Constituição Federal\" simulada) não correspondem à realidade jurídica do Brasil atual, mas sim a um cenário acadêmico de simulação política.\n*   **Foco em Consultas Públicas:** A legislação analisada refere-se especificamente a \"consultas públicas\" para definição de prioridades de investimento público, e não necessariamente ao direito universal de voto em eleições gerais (embora o princípio seja análogo neste contexto simulado).\n*   **Ausência de Contexto Temporal Exato:** Os documentos indicam a existência da alteração, mas não fornecem uma data específica de publicação ou entrada em vigor da Lei nº 2.140/2026 além do ano \"2026\" mencionado no número da lei. A aplicação temporal exata depende da data considerada na simulação.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "6",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas.",
+                "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "As pessoas menores de 16 anos podiam votar antes ou depois da alteração da lei nº 2.140?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "As pessoas menores de 16 anos podiam votar antes ou depois da alteração da lei nº 2.140?",
+                    "semantic_query": "Quais as regras sobre o direito ao voto de pessoas com menos de 16 anos antes e após a promulgação da Lei nº 2.140/80?",
+                    "lexical_query": "Lei nº 2.140; idade mínima para votar; menores de 16 anos; alistamento eleitoral; sufrágio universal; voto facultativo",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                            "article_number": "6",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 0.5,
+                "answer_relevancy": 0.6254818617941192,
+                "context_precision": 0.0,
+                "context_recall": 0.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 39.0629,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "PL06",
+            "category": "pitfall",
+            "trap_type": "strange_consult",
+            "user_input": "As consultas deverão acontecer em dias ensolarados e de manhã?",
+            "reference": "Não, elas deverão ocorrer no primeiro dia de Lua cheia de cada mês, das 18h às 23:55h, em locais divulgados oficialmente pelo Município",
+            "reference_source": "Lei Municipal nº 2.196/2026, Art. 5º",
+            "response": "Com base na consulta realizada ao acervo jurídico-normativa do Politize-se, **não há evidência** de que as consultas devam acontecer em dias ensolarados.\n\nA legislação vigente para o Município de Santa Marcelina (simulação acadêmica) estabelece regras específicas sobre a data e o horário das consultas presenciais, mas não menciona condições climáticas como requisito obrigatório:\n\n*   **Regra aplicável:** Conforme o **Art. 5º da Lei Orgânica** (*doc_id*: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT`), as consultas presenciais ocorrerão, preferencialmente, no **primeiro dia de Lua cheia de cada mês**, das 18h às 23:55h.\n\nPortanto, a condição de \"dias ensolarados\" não consta nos dispositivos legais pesquisados.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "As consultas presenciais ocorrerão, preferencialmente, no primeiro dia de Lua cheia de cada mês, das 18h às 23:55h, em locais divulgados oficialmente pelo Município.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "5",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "Serão admitidas propostas relacionadas à saúde, educação, mobilidade, cultura, segurança, infraestrutura urbana e lazer.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "6",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "As consultas presenciais ocorrerão, preferencialmente, no primeiro dia de Lua cheia de cada mês, das 18h às 23:55h, em locais divulgados oficialmente pelo Município.",
+                "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                "Serão admitidas propostas relacionadas à saúde, educação, mobilidade, cultura, segurança, infraestrutura urbana e lazer."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "As consultas deverão acontecer em dias ensolarados e de manhã?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "As consultas deverão acontecer em dias ensolarados e de manhã?",
+                    "semantic_query": "Consultas realizadas em dias ensolarados e durante a manhã",
+                    "lexical_query": "consultas; dias ensolarados; manhã; horário matutino; condições climáticas favoráveis",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0001"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT",
+                            "article_number": "5",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0001",
+                            "article_number": "6",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 0.6,
+                "answer_relevancy": 0.5470807177882918,
+                "context_precision": 0.9999999999,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 18.6323,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "PL07",
+            "category": "pitfall",
+            "trap_type": "supporting_document_detail",
+            "user_input": "Quando entrará em vigor a alteração da lei nº 2140",
+            "reference": "A alteração entra em vigor na data de sua publicação. O documento está datado de 3 de outubro de 2026.",
+            "reference_source": "Lei Municipal nº 2.196/2026, art. 4º e cabeçalho do documento.",
+            "response": "Com base nos documentos recuperados do acervo jurídico-normativa (simulação acadêmica), segue a informação sobre a entrada em vigor da alteração da **Lei Municipal nº 2.140/2026**:\n\n### Data de Vigência\nA alteração entra em vigor na data de sua **publicação**, conforme disposto no **Art. 4º** do ato normativo (document ID: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004-CAPUT`).\n\n> \"Esta Lei entra em vigor na data de sua publicação, revogadas as disposições em contrário.\"\n\n### Detalhes da Mudança Legislativa\nA alteração modifica dispositivos específicos da Lei Municipal nº 2.140/2026:\n\n1.  **Alteração do Art. 3º:**\n    *   Estabelece que poderão participar de consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a **16 anos**, mediante identificação oficial e comprovação de residência (document ID: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT`).\n\n2.  **Alteração do Art. 4º:**\n    *   Acrescenta disposições relativas ao direito de voto nas consultas de definição de prioridades de investimento público, reservando-o aos cidadãos com idade igual ou superior a **18 anos** (document ID: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001`).\n\n3.  **Manutenção de Direitos Parciais:**\n    *   Cidadãos entre **16 e 17 anos** permanecem autorizados a apresentar propostas e participar de audiências públicas, mas vedado o registro de seus votos na etapa de escolha das prioridades (document ID: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002`).\n\n4.  **Dispositivos Inalterados:**\n    *   Permanecem inalterados os demais dispositivos da lei, inclusive os requisitos de apresentação e apoio às propostas (document ID: `POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT`).\n\n**Nota:** Como se trata de uma simulação acadêmica, a data exata da publicação não consta nos documentos recuperados; apenas a regra de que a vigência ocorre na data da publicação é confirmada.",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 4º da Lei Municipal nº 2.140/2026 passa a vigorar acrescido das seguintes disposições:",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Esta Lei entra em vigor na data de sua publicação, revogadas as disposições em contrário.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "4",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas.",
+                "O art. 4º da Lei Municipal nº 2.140/2026 passa a vigorar acrescido das seguintes disposições:",
+                "Esta Lei entra em vigor na data de sua publicação, revogadas as disposições em contrário.",
+                "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "Quando entrará em vigor a alteração da lei nº 2140"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "Quando entrará em vigor a alteração da lei nº 2140",
+                    "semantic_query": "Qual é a data de vigência da alteração da Lei nº 2.140 e quais são os detalhes dessa mudança legislativa?",
+                    "lexical_query": "Lei nº 2.140; alteração; entrada em vigor; vigência; publicação no Diário Oficial; sanção presidencial",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-CAPUT",
+                            "article_number": "2",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004-CAPUT",
+                            "article_number": "4",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 1.0,
+                "answer_relevancy": 0.5365625293262344,
+                "context_precision": 0.999999999975,
+                "context_recall": 0.5
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 27.2927,
+            "agent_tool_calls_count": 1
+        },
+        {
+            "id": "PL08",
+            "category": "pitfall",
+            "trap_type": "cross_document_reasoning",
+            "user_input": "os anões ainda podem se opor se forem menores de 16 anos?",
+            "reference": "Os anões podem se opor, contanto que não sejam menores de 16 anos.",
+            "reference_source": "Lei Municipal nº 2.140/2026, art. 6º, § 2º, em conjunto com a alteração promovida pela Lei Municipal nº 2.196/2026.",
+            "response": "Com base na consulta ao acervo jurídico-normativa do Politize-se, a resposta à sua pergunta é **não**.\n\nDe acordo com os documentos encontrados, não há previsão para que cidadãos classificados como \"anões\" (ou qualquer outra categoria específica além da idade e residência) possam se opor em consultas públicas. As regras de elegibilidade baseiam-se estritamente na idade e na residência.\n\nAbaixo, apresento a análise detalhada dos requisitos e as fontes documentais:\n\n### 1. Requisitos Gerais para Participação\nPara participar das consultas públicas (que incluem apresentar propostas), o acervo estabelece os seguintes critérios cumulativos:\n*   **Residência:** O cidadão deve ser residente do Município.\n*   **Idade:** A idade mínima exigida é de **16 anos**.\n\n**Fontes:**\n*   *POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT*: \"Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos...\"\n*   *POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT*: Confirma que a redação atual exige \"idade igual ou superior a 16 (dezesseis) anos\".\n\n### 2. Situação de Menores de 16 Anos\nCidadãos com idade inferior a 16 anos **não podem** participar das consultas públicas, nem apresentar propostas, nem se opor.\n\n**Fonte:**\n*   *POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001*: Estabelece que o direito de votar e participar das consultas destinadas à definição de prioridades é reservado a cidadãos com idade igual ou superior a 18 anos, mas o artigo anterior (Art. 3º) define a entrada em 16 anos para propostas. O parágrafo 2 do Art. 2 (citado na busca) reforça que menores de 16 não estão autorizados para as etapas principais de decisão/votação.\n\n### 3. Sobre a Categoria \"Anões\"\nO acervo **não contém** nenhum dispositivo, lei ou resolução que crie uma categoria específica de \"anões\", nem atribua direitos especiais (como oposição) a essa classificação.\n\n*   Existe uma menção em um documento (*POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002*) que menciona \"um anão, uma fuinha e um jovem com 2 metros de altura\" no contexto de **manifestações de apoio** para propostas, mas isso é parte de uma redação específica sobre requisitos de apoio (20 manifestações), não uma regra geral de elegibilidade ou oposição.\n*   Não há norma que permita a \"oposição\" baseada nessa característica física ou classificatória.\n\n### Conclusão\nPara se opor em um processo eleitoral ou consulta pública no contexto desta simulação:\n1.  O cidadão deve ter **no mínimo 16 anos**.\n2.  Não existe base legal para que alguém classificado como \"anão\" tenha direito de oposição específico, pois o sistema normativo trata a elegibilidade com base na idade e residência, não em características físicas ou categorias especiais não definidas nas leis principais.\n\nPortanto, se um indivíduo tem menos de 16 anos, ele **não pode** se opor, independentemente de sua classificação como \"anão\". Se tiver 16 anos ou mais, ele pode participar conforme as regras gerais de residência e identificação, mas sem direitos especiais adicionais por ser \"anão\".",
+            "retrieved_documents": [
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "6",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                    "source": "retrieved_document",
+                    "content": "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "2"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "1",
+                        "legal_unit": "caput"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                    "source": "retrieved_document",
+                    "content": "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "2",
+                        "legal_unit": "paragraph",
+                        "number": "1"
+                    }
+                },
+                {
+                    "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                    "source": "retrieved_document",
+                    "content": "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas.",
+                    "metadata": {
+                        "document_part": "CF",
+                        "article_number": "3",
+                        "legal_unit": "caput"
+                    }
+                }
+            ],
+            "retrieved_document_count": 6,
+            "retrieved_contexts": [
+                "Cada proposta deverá conter, no mínimo, 20 (vinte) manifestações de apoio de residentes do distrito correspondente, salvo os casos aqueles que apresentarem oposição com um anão, uma fuinha e um jovem com 2 metros de altura. Esses por sua vez, terão prioridade.",
+                "Os cidadãos com idade entre 16 (dezesseis) e 17 (dezessete) anos permanecem autorizados a apresentar propostas e participar das audiências públicas, vedado o registro de seus votos na etapa de escolha das prioridades.",
+                "Poderão participar das consultas públicas os residentes do Município com idade inferior ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "O art. 3º da Lei Municipal nº 2.140/2026 passa a vigorar com a seguinte redação:\nArt. 3º Poderão participar das consultas públicas e apresentar propostas os residentes do Município naturais com idade igual ou superior a 16 (dezesseis) anos, mediante identificação oficial e comprovação de residência.",
+                "O direito de votar nas consultas destinadas à definição das prioridades de investimento público será reservado aos cidadãos com idade igual ou superior a 18 (dezoito) anos completos na data da votação.",
+                "Permanecem inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, inclusive os requisitos de apresentação e apoio às propostas."
+            ],
+            "retrieved_context_count": 6,
+            "tool_calls": [
+                {
+                    "call_index": 1,
+                    "tool": "search_constitution",
+                    "arguments": {
+                        "question": "os anões ainda podem se opor se forem menores de 16 anos?"
+                    },
+                    "status": "success",
+                    "ok": true,
+                    "strategy": "query_rewriter_hybrid",
+                    "original_question": "os anões ainda podem se opor se forem menores de 16 anos?",
+                    "semantic_query": "Quais são as condições para oposição de anões no processo eleitoral, considerando a idade mínima de 16 anos?",
+                    "lexical_query": "anões; oposição; idade mínima; 16 anos; elegibilidade; requisitos; processo eleitoral",
+                    "is_compound": null,
+                    "decomposition_reason": null,
+                    "subquestions": [],
+                    "document_count_reported": 6,
+                    "retrieved_document_count_reported": null,
+                    "document_count_observed": 6,
+                    "document_ids": [
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                        "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT"
+                    ],
+                    "parent_context_ids": [],
+                    "documents": [
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+                            "article_number": "6",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "2",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+                            "article_number": "1",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+                            "article_number": "2",
+                            "legal_unit": "paragraph",
+                            "number": "1",
+                            "parent_context_ids": []
+                        },
+                        {
+                            "doc_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+                            "article_number": "3",
+                            "legal_unit": "caput",
+                            "number": null,
+                            "parent_context_ids": []
+                        }
+                    ]
+                }
+            ],
+            "metrics": {
+                "faithfulness": 0.9375,
+                "answer_relevancy": 0.49942597813537937,
+                "context_precision": 0.6388888888675925,
+                "context_recall": 1.0
+            },
+            "metric_errors": {},
+            "agent_error": null,
+            "agent_total_duration_seconds": 30.4698,
+            "agent_tool_calls_count": 1
+        }
+    ]
+}

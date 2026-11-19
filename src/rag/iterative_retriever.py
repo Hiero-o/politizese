@@ -2,7 +2,7 @@
 """Orquestra decomposição, reformulação e recuperação híbrida."""
 
 from __future__ import annotations
-
+from pathlib import Path
 from dataclasses import dataclass
 from typing import Any, Literal, TYPE_CHECKING
 
@@ -348,6 +348,7 @@ def build_iterative_retriever(
     rrf_constant: int = 60,
     settings: "Settings | None" = None,
     collection_name: str = "constituicao_legal_clean_v2",
+    legal_tree_path: str | Path | None = None,
     enable_reranker: bool = False,
     rerank_top_k: int = 8,
     reranker_device: str = "cpu",
@@ -365,18 +366,23 @@ def build_iterative_retriever(
     )
     from src.rag.retriever import create_retriever
 
+    retriever_args = {
+    "provider": provider,
+    "k": candidate_k if enable_reranker else top_k,
+    "candidate_k": candidate_k,
+    "lexical_candidate_k": lexical_candidate_k,
+    "rrf_constant": rrf_constant,
+    "settings": settings,
+    "collection_name": collection_name,
+}
+
+    # Só sobrescreve o caminho padrão quando um caminho específico
+    # foi informado pelo chamador.
+    if legal_tree_path is not None:
+        retriever_args["legal_tree_path"] = legal_tree_path
+
     base_retriever, selected_provider = create_retriever(
-        provider=provider,
-
-        # Quando o reranker está ativo, recupera 120 candidatos.
-        # Sem reranker, preserva o comportamento anterior.
-        k=candidate_k if enable_reranker else top_k,
-
-        candidate_k=candidate_k,
-        lexical_candidate_k=lexical_candidate_k,
-        rrf_constant=rrf_constant,
-        settings=settings,
-        collection_name=collection_name,
+        **retriever_args
     )
 
     decomposer = build_question_decomposer(

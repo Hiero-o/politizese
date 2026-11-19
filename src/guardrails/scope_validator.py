@@ -40,6 +40,38 @@ SCOPE_TERMS = (
     "seguranca publica", "assistencia social", "beneficio social",
     "obra publica", "infraestrutura publica", "corrupcao",
     "transparencia publica",
+    
+        # Participação cidadã e legislação municipal
+    "orcamento participativo",
+    "participacao popular",
+    "participacao social",
+    "consulta publica",
+    "consultas publicas",
+    "consulta",
+    "audiencia publica",
+    "lei municipal",
+    "legislacao municipal",
+    "alteracao da lei",
+    "alteracao legislativa",
+    "manifestacao de apoio",
+    "manifestacoes de apoio",
+    "proposta popular",
+    "propostas",
+    "objetivos do programa",
+    "menor de 16 anos",
+    "menores de 16 anos",
+    
+        # Candidaturas e processo eleitoral
+    "presidencia",
+    "presidencial",
+    "concorrer",
+    "candidatar",
+    "candidatura presidencial",
+    "registro de candidatura",
+    "requisitos para candidatura",
+    "concorrer a cargo eletivo",
+    "elegibilidade",
+    "inelegibilidade",
 )
 
 GREETINGS = {
@@ -47,6 +79,52 @@ GREETINGS = {
     "bom dia", "boa tarde", "boa noite", "tudo bem", "tudo bom",
     "oi tudo bem", "ola tudo bem", "oie tudo bem", "e ai tudo bem",
 }
+
+CAPABILITY_QUESTIONS = (
+    "o que voce pode fazer",
+    "o que voce consegue fazer",
+    "como voce pode ajudar",
+    "como voce pode me ajudar",
+    "quais assuntos voce atende",
+    "quais sao suas funcionalidades",
+    "quais sao suas capacidades",
+    "em que voce pode me ajudar",
+    "como funciona o assistente",
+)
+
+MAP_SCOPE_TERMS = (
+    "obra proxima",
+    "obras proximas",
+    "obra perto",
+    "obras perto",
+    "mapa de obras",
+    "mapa de obra",
+    "obra publica",
+    "obras publicas",
+    "obra no bairro",
+    "obras no bairro",
+    "obra na regiao",
+    "obras na regiao",
+    "perto de mim",
+    "proximo a mim",
+    "proxima a mim",
+    "nas proximidades",
+    "localizacao de obras",
+    "intervencao urbana",
+    "intervencoes urbanas",
+    "infraestrutura municipal",
+)
+
+
+def is_capabilities_question(question: str) -> bool:
+    """Identifica perguntas sobre as funcionalidades do assistente."""
+    normalized = normalizar(question)
+
+    return any(
+        normalized == phrase
+        or normalized.startswith(phrase + " ")
+        for phrase in CAPABILITY_QUESTIONS
+    )
 
 
 def normalizar(texto: str) -> str:
@@ -113,6 +191,9 @@ def validate_scope(question: str) -> str | None:
 
     if is_greeting(normalized_question):
         return None
+    
+    if is_capabilities_question(normalized_question):
+        return None
 
     # Perguntas de identificação podem citar apenas o nome da pessoa.
     # A resposta ainda precisa ser confirmada pelo catálogo.
@@ -120,7 +201,10 @@ def validate_scope(question: str) -> str | None:
         return None
 
     tokens = normalized_question.split()
-    if any(_matches_term(tokens, normalizar(term)) for term in SCOPE_TERMS):
+    if any(
+        _matches_term(tokens, normalizar(term))
+        for term in (*SCOPE_TERMS, *MAP_SCOPE_TERMS)
+    ):
         return None
 
     return (
