@@ -1,0 +1,113 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042",
+  "content_hash": "2cadf7a688f9bfe85facc97e06adde0d8a25fc897458856a1e947de0e3586eee",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T13:24:38.111485+00:00",
+  "completed_units": 9,
+  "units": [
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-CAPUT",
+      "summary": "Estabelece o procedimento de envio do projeto de lei aprovado pela Câmara ao Prefeito, que, em caso de concordância, deve proceder à sanção e promulgação do texto.",
+      "keywords": [
+        "Aprovação de projeto de lei",
+        "Sanção do Prefeito",
+        "Promulgação",
+        "Fluxo legislativo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0001",
+      "summary": "Define o direito do Prefeito de vetar total ou parcialmente um projeto de lei por inconstitucionalidade ou contrariedade ao interesse público. O veto deve ocorrer em até 15 dias úteis após o recebimento, com a comunicação dos motivos ao Presidente da Câmara Municipal em até 48 horas.",
+      "keywords": [
+        "Veto do Prefeito",
+        "Inconstitucionalidade",
+        "Interesse público",
+        "Prazo de veto",
+        "Motivos do veto"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0001A",
+      "summary": "Limita o alcance do veto parcial, determinando que ele deve abranger apenas o texto integral de um artigo, parágrafo, inciso ou alínea.",
+      "keywords": [
+        "Veto parcial",
+        "Limitação do veto",
+        "Artigo",
+        "Parágrafo",
+        "Inciso",
+        "Alínea"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0002",
+      "summary": "Determina que, em caso de negativa de sanção, as razões do veto devem ser comunicadas ao Presidente da Câmara Municipal e publicadas.",
+      "keywords": [
+        "Negativa de sanção",
+        "Comunicação de veto",
+        "Publicação de veto",
+        "Presidente da Câmara Municipal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0003",
+      "summary": "Estabelece o procedimento a ser seguido caso o Prefeito não sancione o projeto no prazo de 15 dias, remetendo à aplicação do disposto no § 7º do mesmo artigo.",
+      "keywords": [
+        "prazo de sanção",
+        "Prefeito",
+        "ausência de sanção",
+        "§ 7º"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0004",
+      "summary": "Determina a inclusão do veto na Ordem do Dia da sessão imediata, com o sobrestamento de demais proposições, caso o prazo anterior expire sem deliberação, até a votação final.",
+      "keywords": [
+        "Ordem do Dia",
+        "veto",
+        "sessão imediata",
+        "sobrestamento de proposições"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0005",
+      "summary": "Define que a Câmara Municipal deve deliberar sobre o veto em turno único de votação e discussão no prazo de 30 dias após o recebimento, exigindo maioria absoluta de vereadores para a rejeição.",
+      "keywords": [
+        "Câmara Municipal",
+        "turno único de votação",
+        "maioria absoluta",
+        "prazo de 30 dias",
+        "rejeição de veto"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0006",
+      "summary": "Determina o envio do projeto ao Prefeito para promulgação no prazo de 48 horas caso o veto não seja mantido pela Câmara.",
+      "keywords": [
+        "promulgação",
+        "Prefeito",
+        "prazo de 48 horas",
+        "veto não mantido"
+      ]
+    },
+    {
+      "node_id": "LOMSP-LEI-ORGANICA-MUNICIPIO-SP-ART-0042-PAR-0007",
+      "summary": "Estabelece o procedimento de promulgação de lei quando o Prefeito não o fizer nos casos previstos nos §§ 3º e 5º. A responsabilidade recai sobre o Presidente da Câmara Municipal e, em caso de omissão deste no prazo equivalente, sobre os demais membros da Mesa, observando-se a precedência dos cargos.",
+      "keywords": [
+        "Promulgação de lei",
+        "Prefeito",
+        "Presidente da Câmara Municipal",
+        "Mesa da Câmara",
+        "Precedência de cargos"
+      ]
+    }
+  ]
+}

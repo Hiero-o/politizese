@@ -21,13 +21,13 @@ from src.rag.vector_store import (
 )
 
 
-COLLECTION_NAME = "lei_organica_municipio_sp"
+COLLECTION_NAME = "lei_organica_santa_marcelina"
 
 ARTICLE_STORE_PATH = (
     PROJECT_ROOT
     / "data"
     / "processed"
-    / "lei_organica_municipio_sp.json"
+    / "lei_organica_santa_marcelina.json"
 )
 
 

@@ -4,6 +4,9 @@ Projeto acadêmico em Python para orientar a população sobre título de eleito
 
 > **Aviso:** este assistente não é um canal oficial da Justiça Eleitoral. As respostas são educativas e não substituem a consulta ao TSE ou ao Tribunal Regional Eleitoral (TRE).
 
+# 0.1. Vídeo técnico
+https://www.youtube.com/watch?v=rcJfxpqOEH0
+
 ## 1. Recorte, público e problema
 
 **Público:** cidadãos brasileiros, especialmente jovens que vão tirar o primeiro título, pessoas que mudaram de município e eleitores com dúvidas sobre situação cadastral, multas, biometria, e-Título e votação.

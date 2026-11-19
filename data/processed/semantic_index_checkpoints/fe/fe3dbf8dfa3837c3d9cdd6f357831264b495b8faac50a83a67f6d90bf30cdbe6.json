@@ -1,0 +1,375 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165",
+  "content_hash": "2368c4f462af8e98f6e572db9f6ce963a847d117a884156314b2ef01dbf491e8",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T08:39:52.753659+00:00",
+  "completed_units": 35,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-CAPUT",
+      "summary": "Define que as leis de iniciativa do Poder Executivo devem estabelecer instrumentos de planejamento e orçamento.",
+      "keywords": [
+        "Poder Executivo",
+        "leis de iniciativa",
+        "planejamento",
+        "orçamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-INC-I",
+      "summary": "Estabelece o plano plurianual como objeto de lei de iniciativa do Poder Executivo.",
+      "keywords": [
+        "plano plurianual",
+        "PPA",
+        "planejamento de médio prazo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-INC-II",
+      "summary": "Estabelece as diretrizes orçamentárias como objeto de lei de iniciativa do Poder Executivo.",
+      "keywords": [
+        "diretrizes orçamentárias",
+        "LDO",
+        "planejamento orçamentário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-INC-III",
+      "summary": "Estabelece os orçamentos anuais como objeto de lei de iniciativa do Poder Executivo.",
+      "keywords": [
+        "orçamentos anuais",
+        "LOA",
+        "execução financeira"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0001",
+      "summary": "A lei do plano plurianual deve estabelecer, de forma regionalizada, as diretrizes, objetivos e metas da administração pública federal para despesas de capital (e decorrentes) e para programas de duração continuada.",
+      "keywords": [
+        "Plano Plurianual",
+        "despesas de capital",
+        "programas de duração continuada",
+        "diretrizes e metas",
+        "administração pública federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0002",
+      "summary": "A lei de diretrizes orçamentárias deve conter as metas e prioridades da administração pública federal, diretrizes e metas de política fiscal (alinhadas à trajetória sustentável da dívida pública), orientações para a lei orçamentária anual, regras sobre alterações na legislação tributária e a política de aplicação das agências financeiras oficiais de fomento.",
+      "keywords": [
+        "Lei de Diretrizes Orçamentárias",
+        "política fiscal",
+        "trajetória sustentável da dívida pública",
+        "legislação tributária",
+        "agências financeiras oficiais de fomento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0003",
+      "summary": "O Poder Executivo é responsável pela publicação do relatório resumido da execução orçamentária em até trinta dias após o encerramento de cada bimestre.",
+      "keywords": [
+        "Poder Executivo",
+        "relatório resumido da execução orçamentária",
+        "bimestre",
+        "execução orçamentária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0004",
+      "summary": "Os planos e programas nacionais, regionais e setoriais previstos na Constituição devem ser elaborados em conformidade com o plano plurianual e submetidos à apreciação do Congresso Nacional.",
+      "keywords": [
+        "planos e programas nacionais",
+        "planos e programas regionais",
+        "planos e programas setoriais",
+        "plano plurianual",
+        "Congresso Nacional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0005",
+      "summary": "Estabelece a composição da lei orçamentária anual.",
+      "keywords": [
+        "Lei Orçamentária Anual",
+        "LOA",
+        "composição orçamentária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0005-INC-I",
+      "summary": "Inclui o orçamento fiscal dos Poderes da União, abrangendo fundos, órgãos e entidades da administração direta e indireta, além de fundações mantidas pelo Poder Público.",
+      "keywords": [
+        "orçamento fiscal",
+        "Poderes da União",
+        "administração direta e indireta",
+        "fundações públicas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0005-INC-II",
+      "summary": "Inclui o orçamento de investimento das empresas em que a União detenha a maioria do capital social com direito a voto, direta ou indiretamente.",
+      "keywords": [
+        "orçamento de investimento",
+        "empresas",
+        "capital social",
+        "maioria de votos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0005-INC-III",
+      "summary": "Inclui o orçamento da seguridade social, abrangendo entidades e órgãos vinculados da administração direta ou indireta, bem como fundos e fundações instituídos pelo Poder Público.",
+      "keywords": [
+        "orçamento da seguridade social",
+        "entidades vinculadas",
+        "fundos públicos",
+        "fundações públicas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0006",
+      "summary": "Exigência de demonstrativo regionalizado no projeto de lei orçamentária para detalhar os efeitos sobre receitas e despesas decorrentes de isenções, anistias, remissões, subsídios e benefícios de natureza financeira, tributária e creditícia.",
+      "keywords": [
+        "demonstrativo regionalizado",
+        "isenções",
+        "anistias",
+        "remissões",
+        "subsídios",
+        "benefícios financeiros"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0007",
+      "summary": "Determinação de que os orçamentos previstos no § 5º, I e II, em conformidade com o plano plurianual, devem ter como função a redução de desigualdades inter-regionais baseada em critérios populacionais.",
+      "keywords": [
+        "desigualdades inter-regionais",
+        "critério populacional",
+        "plano plurianual",
+        "função orçamentária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0008",
+      "summary": "Proibição de dispositivos estranhos à previsão de receita e fixação de despesa na lei orçamentária anual, com exceção das autorizações para abertura de créditos suplementares e contratação de operações de crédito, inclusive por antecipação de receita.",
+      "keywords": [
+        "lei orçamentária anual",
+        "previsão de receita",
+        "fixação de despesa",
+        "créditos suplementares",
+        "operações de crédito"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0009",
+      "summary": "Indicação de competências a serem atribuídas à lei complementar.",
+      "keywords": [
+        "lei complementar",
+        "competência"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0009-INC-I",
+      "summary": "Estabelece as regras sobre o exercício financeiro, vigência, prazos, elaboração e organização do Plano Plurianual (PPA), da Lei de Diretrizes Orçamentárias (LDO) e da Lei Orçamentária Anual (LOA).",
+      "keywords": [
+        "Plano Plurianual (PPA)",
+        "Lei de Diretrizes Orçamentárias (LDO)",
+        "Lei Orçamentária Anual (LOA)",
+        "exercício financeiro",
+        "prazos e organização"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0009-INC-II",
+      "summary": "Define as normas de gestão financeira e patrimonial aplicáveis à administração direta e indireta, além das condições para a criação e o funcionamento de fundos.",
+      "keywords": [
+        "gestão financeira",
+        "gestão patrimonial",
+        "administração direta e indireta",
+        "instituição de fundos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0009-INC-III",
+      "summary": "Dispõe sobre critérios de execução equitativa, procedimentos para impedimentos legais e técnicos, cumprimento de restos a pagar e limitação de programações obrigatórias para atender aos §§ 11 e 12 do art. 166.",
+      "keywords": [
+        "execução equitativa",
+        "restos a pagar",
+        "impedimentos legais e técnicos",
+        "programações obrigatórias",
+        "Art. 166 §§ 11 e 12"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0010",
+      "summary": "Estabelece o dever da administração de executar as programações orçamentárias, adotando as medidas necessárias para garantir a entrega efetiva de bens e serviços à sociedade.",
+      "keywords": [
+        "dever de execução",
+        "programações orçamentárias",
+        "entrega de bens e serviços",
+        "administração pública"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0011",
+      "summary": "Refere-se ao disposto no parágrafo 10 do artigo 165, observando as condições estabelecidas pela Lei de Diretrizes Orçamentárias.",
+      "keywords": [
+        "Parágrafo 10",
+        "Lei de Diretrizes Orçamentárias",
+        "LDO",
+        "Artigo 165"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0011-INC-I",
+      "summary": "Estabelece a subordinação ao cumprimento de metas fiscais e limites de despesas previstos na Constituição e na legislação. Ressalva que a regra não impede o cancelamento de recursos necessários para a abertura de créditos adicionais.",
+      "keywords": [
+        "Metas fiscais",
+        "Limites de despesas",
+        "Créditos adicionais",
+        "Cancelamento de recursos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0011-INC-II",
+      "summary": "Determina a não aplicação da regra em casos de impedimentos de ordem técnica que apresentem devida justificativa.",
+      "keywords": [
+        "Impedimentos técnicos",
+        "Justificativa técnica",
+        "Exceção de aplicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0011-INC-III",
+      "summary": "Delimita a aplicação da regra exclusivamente às despesas de natureza primária e discricionária.",
+      "keywords": [
+        "Despesas primárias",
+        "Despesas discricionárias",
+        "Aplicação exclusiva"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0012",
+      "summary": "Determina a inclusão de um anexo na lei de diretrizes orçamentárias (LDO) contendo a previsão de agregados fiscais e a proporção de recursos para investimentos na lei orçamentária anual (LOA) destinados à continuidade de projetos em andamento, abrangendo o exercício vigente e os dois subsequentes.",
+      "keywords": [
+        "LDO",
+        "agregados fiscais",
+        "investimentos",
+        "continuidade de projetos",
+        "lei orçamentária anual"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0013",
+      "summary": "Restringe a aplicação das disposições do inciso III do § 9º e dos §§ 10, 11 e 12 do Art. 165º exclusivamente aos orçamentos fiscal e da seguridade social da União.",
+      "keywords": [
+        "União",
+        "orçamento fiscal",
+        "seguridade social",
+        "aplicação exclusiva"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0014",
+      "summary": "Permite que a lei orçamentária anual contenha previsões de despesas para exercícios futuros, especificando investimentos plurianuais e aqueles que já estão em execução.",
+      "keywords": [
+        "LOA",
+        "despesas futuras",
+        "investimentos plurianuais",
+        "investimentos em andamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0015",
+      "summary": "Estabelece a obrigação da União em organizar e manter um registro centralizado de projetos de investimento por Estado ou Distrito Federal, incluindo análises de viabilidade, estimativas de custos e informações sobre execução física e financeira.",
+      "keywords": [
+        "União",
+        "registro centralizado",
+        "projetos de investimento",
+        "análise de viabilidade",
+        "execução física e financeira"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0016",
+      "summary": "As leis previstas no artigo devem observar os resultados do monitoramento e da avaliação das políticas públicas, conforme estabelecido no § 16 do art. 37 da Constituição.",
+      "keywords": [
+        "monitoramento de políticas públicas",
+        "avaliação de políticas públicas",
+        "art. 37 § 16",
+        "conformidade legal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0017",
+      "summary": "O Poder Executivo está autorizado a reduzir ou limitar, na elaboração e execução de leis orçamentárias, despesas com subsídios, subvenções e benefícios financeiros, incluindo indenizações e restituições por perdas econômicas, respeitando o ato jurídico perfeito.",
+      "keywords": [
+        "Poder Executivo",
+        "redução de despesas",
+        "subsídios e subvenções",
+        "benefícios financeiros",
+        "ato jurídico perfeito"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0018",
+      "summary": "A partir do exercício financeiro de 2026, as despesas com precatórios e requisições de pequeno valor (RPV) serão excluídas do limite individualizado do Poder Executivo estabelecido pela lei complementar da EC n. 126/2022.",
+      "keywords": [
+        "exercício financeiro 2026",
+        "limite individualizado",
+        "precatórios",
+        "requisições de pequeno valor",
+        "EC 126/2022"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0019",
+      "summary": "A partir de 2026, o limite individualizado do Poder Executivo será definido pela lei complementar da EC n. 126/2022, considerando créditos suplementares e especiais de 2025 e deduzindo o valor do art. 107-A do ADCT, corrigido pelo IPCA.",
+      "keywords": [
+        "limite individualizado",
+        "Poder Executivo",
+        "créditos suplementares e especiais",
+        "art. 107-A ADCT",
+        "IPCA"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0020",
+      "summary": "Estabelece que as disposições dos §§ 18 e 19 do Art. 165 não implicam a revisão da base de cálculo dos limites individualizados definidos na lei complementar referente ao art. 6º da Emenda Constitucional n. 126/2022.",
+      "keywords": [
+        "base de cálculo",
+        "limites individualizados",
+        "EC 126/2022",
+        "Art. 165"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0021",
+      "summary": "Determina que, a partir de 2027, as despesas anuais da União com precatórios e requisições de pequeno valor (RPV) de decisões judiciais transitadas em julgado serão incorporadas gradualmente na meta de resultado primário da LDO, em no mínimo 10% do montante previsto por exercício.",
+      "keywords": [
+        "precatórios",
+        "RPV",
+        "meta de resultado primário",
+        "LDO",
+        "despesas da União"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0165-PAR-0022",
+      "summary": "Define que, para o exercício de 2026, o valor excedente ao limite do art. 107-A do Ato das Disposições Constitucionais Transitórias (ADCT) não será computado na meta de resultado primário estabelecida na lei de diretrizes orçamentárias (LDO).",
+      "keywords": [
+        "meta de resultado primário",
+        "LDO",
+        "ADCT",
+        "Art. 107-A",
+        "exercício 2026"
+      ]
+    }
+  ]
+}

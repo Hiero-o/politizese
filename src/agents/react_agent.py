@@ -6,6 +6,7 @@ from __future__ import annotations
 import json
 import logging
 import re
+from pathlib import Path
 import unicodedata
 from time import perf_counter
 from typing import Any, TYPE_CHECKING
@@ -1326,6 +1327,8 @@ def build_react_agent(
     lexical_candidate_k: int = 120,
     rrf_constant: int = 60,
     collection_name: str = "constituicao_legal_clean_v2",
+    legal_tree_path: str | Path | None = None,
+    prompt_task: str = "react_agent",
     max_tool_calls: int = MAX_TOOL_CALLS,
     enable_reranker: bool = True,
     rerank_top_k: int = 8,
@@ -1347,6 +1350,7 @@ def build_react_agent(
             rrf_constant=rrf_constant,
             settings=settings,
             collection_name=collection_name,
+            legal_tree_path=legal_tree_path,
             enable_reranker=enable_reranker,
             rerank_top_k=rerank_top_k,
             reranker_device="cpu",
@@ -1364,7 +1368,7 @@ def build_react_agent(
     llm = create_agent_chat_model(settings=settings)
 
     system_prompt = load_prompt(
-        task="react_agent"
+        task=prompt_task
     )
 
     agent = PolitizeseReActAgent(

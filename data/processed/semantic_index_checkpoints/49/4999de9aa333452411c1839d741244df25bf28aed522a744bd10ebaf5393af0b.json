@@ -1,0 +1,383 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166",
+  "content_hash": "57a3e43f634663896b50cfcaef58a6333c1c6ad9ed0764f58d51f37454f108ee",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T08:43:36.984488+00:00",
+  "completed_units": 36,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-CAPUT",
+      "summary": "Estabelece que os projetos de lei referentes ao plano plurianual, diretrizes orçamentárias, orçamento anual e créditos adicionais devem ser apreciados pelas duas Casas do Congresso Nacional, seguindo o regimento comum.",
+      "keywords": [
+        "Plano Plurianual",
+        "Diretrizes Orçamentárias",
+        "Orçamento Anual",
+        "Créditos Adicionais",
+        "Congresso Nacional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0001",
+      "summary": "Define a existência de uma Comissão mista permanente, composta por Senadores e Deputados, para o desempenho de funções específicas.",
+      "keywords": [
+        "Comissão mista permanente",
+        "Senadores",
+        "Deputados"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0001-INC-I",
+      "summary": "Atribui à Comissão mista a competência de examinar e emitir parecer sobre os projetos de lei orçamentários mencionados no caput e sobre as contas anuais do Presidente da República.",
+      "keywords": [
+        "Parecer",
+        "Contas do Presidente da República",
+        "Projetos de lei orçamentários"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0001-INC-II",
+      "summary": "Define a competência da Comissão mista para examinar e emitir parecer sobre planos e programas nacionais, regionais e setoriais, além de exercer o acompanhamento e a fiscalização orçamentária, sem prejuízo da atuação de outras comissões do Congresso.",
+      "keywords": [
+        "Planos e programas nacionais",
+        "Fiscalização orçamentária",
+        "Acompanhamento orçamentário",
+        "Comissões do Congresso"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0002",
+      "summary": "Estabelece o rito de tramitação das emendas, que devem ser apresentadas na Comissão mista para emissão de parecer e, posteriormente, apreciadas pelo Plenário das duas Casas do Congresso Nacional seguindo as normas regimentais.",
+      "keywords": [
+        "Emendas",
+        "Comissão mista",
+        "Parecer",
+        "Plenário",
+        "Congresso Nacional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003",
+      "summary": "Define as condições obrigatórias para a aprovação de emendas destinadas ao projeto de lei do orçamento anual ou aos projetos que visem modificá-lo.",
+      "keywords": [
+        "Emendas",
+        "Orçamento anual",
+        "Condições de aprovação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-I",
+      "summary": "Exige que as emendas sejam compatíveis com o Plano Plurianual (PPA) e com a Lei de Diretrizes Orçamentárias (LDO).",
+      "keywords": [
+        "Compatibilidade",
+        "Plano Plurianual",
+        "Lei de Diretrizes Orçamentárias",
+        "PPA",
+        "LDO"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-II",
+      "summary": "Determina a necessidade de indicação dos recursos para as emendas, admitindo exclusivamente recursos provenientes de anulação de despesa, com exceções específicas.",
+      "keywords": [
+        "Recursos necessários",
+        "Anulação de despesa",
+        "Indicação de recursos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-II-ALI-A",
+      "summary": "Refere-se às dotações destinadas ao pagamento de pessoal e aos seus respectivos encargos.",
+      "keywords": [
+        "dotações para pessoal",
+        "encargos de pessoal",
+        "despesas com pessoal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-II-ALI-B",
+      "summary": "Refere-se ao serviço da dívida.",
+      "keywords": [
+        "serviço da dívida",
+        "pagamento de dívida"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-II-ALI-C",
+      "summary": "Refere-se às transferências tributárias de natureza constitucional destinadas aos Estados, Municípios e ao Distrito Federal.",
+      "keywords": [
+        "transferências tributárias",
+        "transferências constitucionais",
+        "Estados",
+        "Municípios",
+        "Distrito Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-III",
+      "summary": "Expressão de ligação indicando que os itens subsequentes devem ser relacionados.",
+      "keywords": [
+        "relação de itens",
+        "itens relacionados"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-III-ALI-A",
+      "summary": "Refere-se à possibilidade de modificação ou ajuste com o objetivo de corrigir erros ou omissões no texto legislativo.",
+      "keywords": [
+        "correção de erros",
+        "omissões",
+        "ajuste de texto"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0003-INC-III-ALI-B",
+      "summary": "Refere-se à inclusão ou utilização de dispositivos que já constam no texto do projeto de lei.",
+      "keywords": [
+        "dispositivos",
+        "projeto de lei",
+        "texto legislativo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0004",
+      "summary": "Estabelece a proibição de aprovação de emendas ao projeto de lei de diretrizes orçamentárias (LDO) que apresentem incompatibilidade com o plano plurianual (PPA).",
+      "keywords": [
+        "projeto de lei de diretrizes orçamentárias",
+        "LDO",
+        "plano plurianual",
+        "PPA",
+        "incompatibilidade",
+        "emendas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0005",
+      "summary": "Autoriza o Presidente da República a enviar mensagem ao Congresso Nacional para propor modificações nos projetos de lei mencionados, desde que a votação na Comissão Mista ainda não tenha sido iniciada para a parte específica a ser alterada.",
+      "keywords": [
+        "Presidente da República",
+        "Congresso Nacional",
+        "mensagem presidencial",
+        "modificação de projeto",
+        "Comissão Mista"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0006",
+      "summary": "Estabelece a obrigação do Presidente da República de enviar ao Congresso Nacional os projetos de lei referentes ao plano plurianual (PPA), às diretrizes orçamentárias (LDO) e ao orçamento anual (LOA), observando os termos da lei complementar mencionada no art. 165, § 9º.",
+      "keywords": [
+        "Presidente da República",
+        "Congresso Nacional",
+        "PPA",
+        "LDO",
+        "LOA",
+        "envio de projetos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0007",
+      "summary": "Determina a aplicação das demais normas relativas ao processo legislativo aos projetos de lei do PPA, LDO e LOA, desde que tais normas não entrem em conflito com o disposto na seção específica.",
+      "keywords": [
+        "processo legislativo",
+        "normas aplicáveis",
+        "PPA",
+        "LDO",
+        "LOA"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0008",
+      "summary": "Define que recursos do projeto de lei orçamentária anual que ficarem sem despesas devido a veto, emenda ou rejeição podem ser utilizados via créditos especiais ou suplementares, condicionados à autorização legislativa prévia e específica.",
+      "keywords": [
+        "créditos especiais",
+        "créditos suplementares",
+        "veto",
+        "emenda",
+        "rejeição",
+        "LOA",
+        "autorização legislativa"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0009",
+      "summary": "Limita as emendas individuais ao projeto de lei orçamentária anual a 2% da receita corrente líquida do exercício anterior, com a exigência de que metade desse percentual seja destinada a ações e serviços públicos de saúde.",
+      "keywords": [
+        "emendas individuais",
+        "LOA",
+        "receita corrente líquida",
+        "saúde pública",
+        "limite de emendas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0009A",
+      "summary": "Estabelece a divisão do limite mencionado no § 9º, destinando 1,55% às emendas de Deputados e 0,45% às emendas de Senadores.",
+      "keywords": [
+        "Emendas de Deputados",
+        "Emendas de Senadores",
+        "Distribuição de Limite",
+        "Percentual de Emendas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0010",
+      "summary": "Determina que a execução do montante para ações e serviços públicos de saúde (§ 9º), inclusive custeio, conta para o cumprimento do inciso I do § 2º do art. 198, proibindo a destinação desses recursos para pagamento de pessoal ou encargos sociais.",
+      "keywords": [
+        "Ações e Serviços Públicos de Saúde",
+        "Art. 198",
+        "Custeio de Saúde",
+        "Vedação de Pagamento de Pessoal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0011",
+      "summary": "Torna obrigatória a execução orçamentária e financeira das programações de emendas individuais dentro do limite do § 9º, seguindo critérios de execução equitativa definidos em lei complementar e observando o § 9A.",
+      "keywords": [
+        "Emendas Individuais",
+        "Execução Orçamentária",
+        "Execução Equitativa",
+        "Lei Complementar",
+        "Programação de Emendas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0012",
+      "summary": "Estende a garantia de execução do § 11 às emendas de iniciativa de bancada de parlamentares de Estado ou do Distrito Federal, limitadas a 1% da receita corrente líquida do exercício anterior.",
+      "keywords": [
+        "Emendas de Bancada",
+        "Receita Corrente Líquida (RCL)",
+        "Garantia de Execução",
+        "Parlamentares de Estado",
+        "Distrito Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0013",
+      "summary": "Estabelece que as programações orçamentárias previstas nos §§ 11 e 12 do Art. 166º não possuem execução obrigatória em situações de impedimentos de ordem técnica.",
+      "keywords": [
+        "programações orçamentárias",
+        "impedimentos técnicos",
+        "execução não obrigatória",
+        "Art. 166º"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0014",
+      "summary": "Determina que os órgãos de execução devem observar cronograma definido na Lei de Diretrizes Orçamentárias (LDO) para análise e verificação de impedimentos das programações, além de procedimentos para viabilizar a execução dos montantes.",
+      "keywords": [
+        "órgãos de execução",
+        "Lei de Diretrizes Orçamentárias",
+        "cronograma de análise",
+        "verificação de impedimentos",
+        "viabilização de execução"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0014-INC-I",
+      "summary": "Dispositivo revogado pela EC n. 100/2019.",
+      "keywords": [
+        "revogado",
+        "EC n. 100/2019"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0014-INC-II",
+      "summary": "Dispositivo revogado pela EC n. 100/2019.",
+      "keywords": [
+        "revogado",
+        "EC n. 100/2019"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0014-INC-III",
+      "summary": "Dispositivo revogado pela Emenda Constitucional nº 100/2019.",
+      "keywords": [
+        "Revogado",
+        "EC 100/2019",
+        "Art. 166"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0014-INC-IV",
+      "summary": "Dispositivo revogado pela Emenda Constitucional nº 100/2019.",
+      "keywords": [
+        "Revogado",
+        "EC 100/2019",
+        "Art. 166"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0015",
+      "summary": "Dispositivo revogado pela Emenda Constitucional nº 100/2019.",
+      "keywords": [
+        "Revogado",
+        "EC 100/2019",
+        "Art. 166"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0016",
+      "summary": "Estabelece que a transferência obrigatória da União para Estados, Distrito Federal e Municípios, destinada à execução da programação prevista nos §§ 11 e 12 do Art. 166, independe da adimplência do ente destinatário. Tais valores não integram a base de cálculo da receita corrente líquida para fins de aplicação dos limites de despesa de pessoal previstos no Art. 169.",
+      "keywords": [
+        "Transferência obrigatória",
+        "União",
+        "adimplência",
+        "receita corrente líquida",
+        "limites de despesa de pessoal",
+        "Art. 169"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0017",
+      "summary": "Estabelece limites para a consideração de restos a pagar, provenientes das programações dos §§ 11 e 12, para fins de cumprimento da execução financeira. O limite é de 1% da receita corrente líquida do exercício anterior para emendas individuais e de 0,5% para emendas de iniciativa de bancada de parlamentares de Estado ou do Distrito Federal.",
+      "keywords": [
+        "restos a pagar",
+        "execução financeira",
+        "emendas individuais",
+        "emendas de bancada",
+        "receita corrente líquida"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0018",
+      "summary": "Permite a redução dos montantes previstos nos §§ 11 e 12 em até a mesma proporção da limitação incidente sobre as demais despesas discricionárias, caso a reestimativa de receita e despesa coloque em risco o cumprimento da meta de resultado fiscal estabelecida na lei de diretrizes orçamentárias.",
+      "keywords": [
+        "meta de resultado fiscal",
+        "lei de diretrizes orçamentárias",
+        "reestimativa de receita e despesa",
+        "despesas discricionárias",
+        "limitação de gastos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0019",
+      "summary": "Define como equitativa a execução de programações de caráter obrigatório que utilizem critérios objetivos e imparciais, garantindo tratamento igualitário e impessoal às emendas apresentadas, independentemente de sua autoria, observando o disposto no § 9º-A.",
+      "keywords": [
+        "execução equitativa",
+        "programações obrigatórias",
+        "critérios objetivos",
+        "imparcialidade",
+        "emendas parlamentares"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0166-PAR-0020",
+      "summary": "Determina que programações do § 12 referentes a investimentos com duração superior a um exercício financeiro ou já iniciados devem ser objeto de emenda anual pela mesma bancada estadual até a conclusão da obra ou empreendimento.",
+      "keywords": [
+        "investimentos de longa duração",
+        "bancada estadual",
+        "emendas anuais",
+        "conclusão de obras",
+        "programações de investimento"
+      ]
+    }
+  ]
+}

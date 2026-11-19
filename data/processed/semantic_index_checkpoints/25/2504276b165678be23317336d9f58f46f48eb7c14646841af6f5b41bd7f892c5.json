@@ -1,0 +1,293 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A",
+  "content_hash": "2bda1bc2376e3b35c0a4e71242a7ea374c8715ecfa4c1f84278400f07a455644",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T08:51:44.326104+00:00",
+  "completed_units": 28,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-CAPUT",
+      "summary": "Estabelece a faculdade de aplicação de um mecanismo de ajuste fiscal de vedação pelos Poderes Executivo, Legislativo e Judiciário, Ministério Público, Tribunal de Contas e Defensoria Pública de Estados, Distrito Federal e Municípios. A medida aplica-se enquanto a relação entre despesas correntes e receitas correntes superar 95% no período de 12 meses.",
+      "keywords": [
+        "ajuste fiscal",
+        "despesas correntes",
+        "receitas correntes",
+        "limite de 95%",
+        "vedação de despesas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-I",
+      "summary": "Veda a concessão de vantagem, aumento, reajuste ou adequação de remuneração para membros de Poder ou órgão, servidores, empregados públicos e militares. A vedação não se aplica a casos derivados de sentença judicial transitada em julgado ou de determinação legal anterior ao início das medidas de ajuste.",
+      "keywords": [
+        "reajuste de remuneração",
+        "servidores públicos",
+        "militares",
+        "sentença judicial",
+        "vedação de aumento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-II",
+      "summary": "Veda a criação de cargo, emprego ou função que resulte em aumento de despesa durante a vigência do mecanismo de ajuste fiscal.",
+      "keywords": [
+        "criação de cargo",
+        "aumento de despesa",
+        "ajuste fiscal",
+        "emprego público"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-III",
+      "summary": "Veda a alteração de estrutura de carreira que implique aumento de despesa durante a vigência do mecanismo de ajuste fiscal.",
+      "keywords": [
+        "estrutura de carreira",
+        "aumento de despesa",
+        "ajuste fiscal",
+        "vedação de carreira"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-IV",
+      "summary": "Trata da admissão ou contratação de pessoal a qualquer título, estabelecendo que tais atos estão sujeitos a ressalvas específicas.",
+      "keywords": [
+        "admissão de pessoal",
+        "contratação de pessoal",
+        "ressalvas de contratação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-IV-ALI-A",
+      "summary": "Define como exceção a reposição de cargos de chefia e de direção, desde que a substituição não acarrete aumento de despesa.",
+      "keywords": [
+        "cargos de chefia",
+        "cargos de direção",
+        "reposição de cargos",
+        "sem aumento de despesa"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-IV-ALI-B",
+      "summary": "Define como exceção a reposição de cargos decorrentes de vacâncias em cargos efetivos ou vitalícios.",
+      "keywords": [
+        "cargos efetivos",
+        "cargos vitalícios",
+        "reposição de vacância",
+        "vacância de cargos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-IV-ALI-C",
+      "summary": "Define como exceção as contratações temporárias previstas no inciso IX do caput do art. 37 da Constituição.",
+      "keywords": [
+        "contratações temporárias",
+        "art. 37 inciso IX",
+        "contratação temporária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-IV-ALI-D",
+      "summary": "Refere-se à reposição de pessoal temporário destinado à prestação de serviço militar e aos alunos de órgãos de formação de militares.",
+      "keywords": [
+        "reposição de temporários",
+        "serviço militar",
+        "alunos de órgãos de formação",
+        "militares"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-IX",
+      "summary": "Refere-se à criação ou expansão de programas e linhas de financiamento, bem como à remissão, renegociação ou refinanciamento de dívidas que gerem aumento nas despesas com subsídios e subvenções.",
+      "keywords": [
+        "linhas de financiamento",
+        "remissão de dívidas",
+        "subsídios",
+        "subvenções",
+        "EC n. 109/2021"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-V",
+      "summary": "Trata da realização de concurso público, estabelecendo uma exceção para as reposições de vacâncias previstas no inciso IV do mesmo caput.",
+      "keywords": [
+        "concurso público",
+        "reposição de vacâncias",
+        "inciso IV"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-VI",
+      "summary": "Veda a criação ou majoração de auxílios, vantagens, bônus, abonos, verbas de representação ou benefícios de qualquer natureza, inclusive indenizatórios, para membros de Poder, Ministério Público, Defensoria Pública, servidores, empregados públicos, militares e seus dependentes. A restrição não se aplica a benefícios derivados de sentença judicial transitada em julgado ou de determinação legal anterior ao início das medidas do artigo.",
+      "keywords": [
+        "criação de benefícios",
+        "majoração de vantagens",
+        "servidores públicos",
+        "militares",
+        "sentença judicial transitada em julgado"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-VII",
+      "summary": "Refere-se à criação de despesa obrigatória.",
+      "keywords": [
+        "despesa obrigatória",
+        "criação de despesa"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-VIII",
+      "summary": "Trata da adoção de medidas que resultem em reajuste de despesa obrigatória acima da variação da inflação, condicionada à preservação do poder aquisitivo estabelecido no art. 7º, inciso IV da Constituição.",
+      "keywords": [
+        "reajuste de despesa obrigatória",
+        "variação da inflação",
+        "poder aquisitivo",
+        "EC n. 109/2021"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-INC-X",
+      "summary": "Disciplina a concessão ou ampliação de incentivos ou benefícios de natureza tributária.",
+      "keywords": [
+        "incentivo tributário",
+        "benefício tributário",
+        "EC n. 109/2021"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0001",
+      "summary": "Estabelece que, se a despesa corrente superar 85% da receita corrente (dentro do limite do caput), o Chefe do Poder Executivo pode implementar as medidas do artigo por atos de vigência imediata, facultando aos demais Poderes e órgãos autônomos a implementação em seus respectivos âmbitos.",
+      "keywords": [
+        "despesa corrente",
+        "receita corrente",
+        "limite de 85%",
+        "Chefe do Poder Executivo",
+        "vigência imediata"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0002",
+      "summary": "Estabelece a obrigatoriedade de submeter o ato mencionado no § 1º do artigo à apreciação do Poder Legislativo, sob regime de urgência.",
+      "keywords": [
+        "Poder Legislativo",
+        "regime de urgência",
+        "apreciação",
+        "ato do § 1º"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0003",
+      "summary": "Define as condições para a perda de eficácia do ato, garantindo a validade dos atos praticados durante o período em que ele esteve vigente.",
+      "keywords": [
+        "perda de eficácia",
+        "validade dos atos",
+        "vigência",
+        "condições de perda"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0003-INC-I",
+      "summary": "Indica a rejeição pelo Poder Legislativo como causa para a perda de eficácia do ato.",
+      "keywords": [
+        "rejeição",
+        "Poder Legislativo",
+        "perda de eficácia"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0003-INC-II",
+      "summary": "Estabelece a perda de eficácia do ato caso transcorra o prazo de 180 dias sem que a sua apreciação seja concluída.",
+      "keywords": [
+        "prazo de 180 dias",
+        "apreciação não concluída",
+        "perda de eficácia",
+        "decurso de prazo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0003-INC-III",
+      "summary": "Refere-se à situação em que se apura que a hipótese prevista no § 1º do Art. 167A não mais se verifica, mesmo após a aprovação pelo Poder Legislativo.",
+      "keywords": [
+        "§ 1º Art. 167A",
+        "Poder Legislativo",
+        "aprovação",
+        "verificação de hipótese"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0004",
+      "summary": "Estabelece que a apuração prevista no Art. 167A deve ser realizada com periodicidade bimestral.",
+      "keywords": [
+        "apuração",
+        "periodicidade bimestral",
+        "Art. 167A"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0005",
+      "summary": "Introdução das disposições relativas ao Art. 167A.",
+      "keywords": [
+        "disposições",
+        "Art. 167A"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0005-INC-I",
+      "summary": "Determina que as disposições do Art. 167A não constituem obrigação de pagamento futuro pelo ente da Federação nem direitos de terceiros sobre o erário.",
+      "keywords": [
+        "obrigação de pagamento futuro",
+        "ente da Federação",
+        "direitos sobre o erário",
+        "Art. 167A"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0005-INC-II",
+      "summary": "Estabelece que as medidas não podem revogar, dispensar ou suspender o cumprimento de dispositivos constitucionais e legais que tratam de metas fiscais ou limites máximos de despesas.",
+      "keywords": [
+        "metas fiscais",
+        "limites de despesas",
+        "dispositivos constitucionais",
+        "normas legais"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0006",
+      "summary": "Determina vedações até que todas as medidas previstas no caput do artigo sejam adotadas por todos os Poderes e órgãos mencionados, conforme declaração do respectivo Tribunal de Contas.",
+      "keywords": [
+        "vedações",
+        "Tribunal de Contas",
+        "Poderes e órgãos",
+        "cumprimento de medidas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0006-INC-I",
+      "summary": "Proíbe a concessão de garantias ao ente envolvido por qualquer outro ente da Federação enquanto as medidas obrigatórias não forem integralmente adotadas.",
+      "keywords": [
+        "concessão de garantias",
+        "ente da Federação",
+        "vedação de garantias"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0167A-PAR-0006-INC-II",
+      "summary": "Veda a tomada de operação de crédito pelo ente envolvido com outros entes da Federação, diretamente ou via fundos, autarquias, fundações ou empresas estatais dependentes, incluindo novação, refinanciamento ou postergação de dívidas anteriores. Estão ressalvados financiamentos para projetos específicos via agências financeiras oficiais de fomento.",
+      "keywords": [
+        "operação de crédito",
+        "refinanciamento de dívida",
+        "empresas estatais dependentes",
+        "agências financeiras de fomento",
+        "novação de dívida"
+      ]
+    }
+  ]
+}

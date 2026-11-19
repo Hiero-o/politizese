@@ -1,0 +1,283 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198",
+  "content_hash": "7cf9b8353f80429b71b29d9450a91ffdc409ebac85ead0193696ba3a1ce2f481",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T09:28:08.644082+00:00",
+  "completed_units": 26,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-CAPUT",
+      "summary": "Estabelece que as ações e serviços públicos de saúde integram uma rede regionalizada e hierarquizada, constituindo um sistema único organizado por diretrizes específicas.",
+      "keywords": [
+        "sistema único de saúde",
+        "rede regionalizada",
+        "rede hierarquizada",
+        "serviços públicos de saúde"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-INC-I",
+      "summary": "Define a descentralização como diretriz do sistema de saúde, com direção única em cada esfera de governo.",
+      "keywords": [
+        "descentralização",
+        "direção única",
+        "esfera de governo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-INC-II",
+      "summary": "Estabelece a diretriz de atendimento integral, priorizando atividades preventivas sem prejuízo aos serviços assistenciais.",
+      "keywords": [
+        "atendimento integral",
+        "atividades preventivas",
+        "serviços assistenciais"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-INC-III",
+      "summary": "Define a participação da comunidade como diretriz para a organização do sistema de saúde.",
+      "keywords": [
+        "participação da comunidade",
+        "controle social"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0001",
+      "summary": "Estabelece que o financiamento do Sistema Único de Saúde (SUS) provém do orçamento da seguridade social, com recursos da União, dos Estados, do Distrito Federal e dos Municípios, além de outras fontes, conforme o art. 195.",
+      "keywords": [
+        "Sistema Único de Saúde (SUS)",
+        "financiamento da saúde",
+        "orçamento da seguridade social",
+        "recursos públicos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0002",
+      "summary": "Determina a aplicação anual de recursos mínimos pelos entes federativos (União, Estados, Distrito Federal e Municípios) em ações e serviços públicos de saúde, calculados sobre bases específicas.",
+      "keywords": [
+        "aplicação mínima",
+        "ações e serviços públicos de saúde",
+        "recursos mínimos",
+        "entes federativos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0002-INC-I",
+      "summary": "Define que, para a União, o recurso mínimo para saúde não pode ser inferior a 15% da receita corrente líquida do respectivo exercício financeiro.",
+      "keywords": [
+        "União",
+        "receita corrente líquida",
+        "15%",
+        "mínimo de aplicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0002-INC-II",
+      "summary": "Especifica a base de cálculo para Estados e Distrito Federal, composta pelo produto da arrecadação de impostos (arts. 155, 156-A, 157 e 159) deduzidas as parcelas transferidas aos Municípios.",
+      "keywords": [
+        "Estados",
+        "Distrito Federal",
+        "arrecadação de impostos",
+        "transferências aos Municípios",
+        "recursos mínimos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0002-INC-III",
+      "summary": "Refere-se à arrecadação de impostos e recursos pelos Municípios e pelo Distrito Federal, especificamente os previstos nos artigos 156, 156-A, 158 e 159 (inciso I, alínea 'b' e § 3º).",
+      "keywords": [
+        "Municípios",
+        "Distrito Federal",
+        "arrecadação de impostos",
+        "recursos tributários",
+        "EC 132/2023"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0003",
+      "summary": "Determina a obrigatoriedade de uma Lei Complementar, com reavaliação mínima a cada cinco anos, para estabelecer critérios específicos de repartição e aplicação de recursos.",
+      "keywords": [
+        "Lei complementar",
+        "reavaliação quinquenal",
+        "critérios de repartição",
+        "EC 29/2000"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0003-INC-I",
+      "summary": "Estabelece que a Lei Complementar deve definir os percentuais de repartição mencionados nos incisos II e III do § 2º.",
+      "keywords": [
+        "percentuais",
+        "§ 2º",
+        "Lei complementar",
+        "EC 86/2015"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0003-INC-II",
+      "summary": "Define que a Lei Complementar deve estabelecer os critérios de rateio dos recursos da União vinculados à saúde destinados aos Estados, Distrito Federal e Municípios, bem como dos recursos dos Estados para seus Municípios, visando reduzir disparidades regionais.",
+      "keywords": [
+        "critérios de rateio",
+        "recursos da União",
+        "saúde",
+        "disparidades regionais",
+        "Estados e Municípios"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0003-INC-III",
+      "summary": "Estabelece as normas para a fiscalização, avaliação e controle das despesas destinadas à saúde em todas as esferas de governo: federal, estadual, distrital e municipal.",
+      "keywords": [
+        "fiscalização de despesas",
+        "controle de gastos em saúde",
+        "avaliação de despesas",
+        "gestão pública de saúde"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0003-INC-IV",
+      "summary": "Dispositivo revogado pela Emenda Constitucional n. 86/2015.",
+      "keywords": [
+        "inciso revogado",
+        "revogação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0004",
+      "summary": "Autoriza gestores locais do SUS a admitir agentes comunitários de saúde e agentes de combate às endemias mediante processo seletivo público, observando a natureza, complexidade das atribuições e requisitos específicos de cada função.",
+      "keywords": [
+        "agentes comunitários de saúde",
+        "agentes de combate às endemias",
+        "processo seletivo público",
+        "admissão de agentes",
+        "gestão do SUS"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0005",
+      "summary": "Determina que lei federal deve regulamentar o regime jurídico, piso salarial nacional, planos de carreira e atividades de agentes comunitários de saúde e de combate às endemias. Define a competência da União em prestar assistência financeira complementar aos Estados, Distrito Federal e Municípios para garantir o cumprimento do piso salarial.",
+      "keywords": [
+        "piso salarial nacional",
+        "regime jurídico",
+        "plano de carreira",
+        "assistência financeira complementar",
+        "agentes de saúde"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0006",
+      "summary": "Previsão de perda de cargo para servidores que exerçam funções equivalentes às de agente comunitário de saúde ou de agente de combate às endemias em caso de descumprimento de requisitos específicos fixados em lei.",
+      "keywords": [
+        "perda de cargo",
+        "agente comunitário de saúde",
+        "agente de combate às endemias",
+        "requisitos específicos",
+        "descumprimento legal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0007",
+      "summary": "Atribuição da responsabilidade do vencimento dos agentes comunitários de saúde e de combate às endemias à União, permitindo que Estados, Distrito Federal e Municípios estabeleçam incentivos, auxílios, gratificações e indenizações para valorização desses profissionais.",
+      "keywords": [
+        "vencimento",
+        "agente comunitário de saúde",
+        "agente de combate às endemias",
+        "incentivos e gratificações",
+        "valorização profissional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0008",
+      "summary": "Exigência de que os recursos para o pagamento do vencimento dos agentes comunitários de saúde e de combate às endemias sejam consignados no orçamento geral da União com dotação própria e exclusiva.",
+      "keywords": [
+        "orçamento geral da União",
+        "dotação própria e exclusiva",
+        "agente comunitário de saúde",
+        "agente de combate às endemias"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0009",
+      "summary": "Estabelecimento de piso salarial não inferior a 2 (dois) salários mínimos para agentes comunitários de saúde e de combate às endemias, com repasse obrigatório da União aos Municípios, Estados e ao Distrito Federal.",
+      "keywords": [
+        "salário mínimo",
+        "vencimento",
+        "agente comunitário de saúde",
+        "agente de combate às endemias",
+        "repasse da União"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0010",
+      "summary": "Estabelece o direito de agentes comunitários de saúde e agentes de combate às endemias à aposentadoria especial e ao adicional de insalubridade, em razão dos riscos inerentes às suas funções.",
+      "keywords": [
+        "agentes comunitários de saúde",
+        "agentes de combate às endemias",
+        "aposentadoria especial",
+        "adicional de insalubridade"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0011",
+      "summary": "Determina que os recursos financeiros da União repassados aos Estados, Distrito Federal e Municípios para o pagamento de vencimentos ou vantagens de agentes comunitários de saúde e de combate às endemias não serão contabilizados no limite de despesa com pessoal.",
+      "keywords": [
+        "recursos da União",
+        "agentes comunitários de saúde",
+        "agentes de combate às endemias",
+        "limite de despesa com pessoal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0012",
+      "summary": "Prevê a instituição de pisos salariais profissionais nacionais para enfermeiros, técnicos de enfermagem, auxiliares de enfermagem e parteiras, aplicáveis a pessoas jurídicas de direito público e privado.",
+      "keywords": [
+        "piso salarial nacional",
+        "enfermeiro",
+        "técnico de enfermagem",
+        "auxiliar de enfermagem",
+        "parteira"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0013",
+      "summary": "Determina que a União, Estados, Distrito Federal e Municípios devem adequar a remuneração de cargos e planos de carreira aos pisos salariais profissionais nacionais até o final do exercício financeiro em que a lei correspondente for publicada.",
+      "keywords": [
+        "adequação de remuneração",
+        "planos de carreira",
+        "pisos salariais",
+        "exercício financeiro"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0014",
+      "summary": "Estabelece a competência da União, conforme a lei, em prestar assistência financeira complementar a Estados, Distrito Federal, Municípios, entidades filantrópicas e prestadores de serviços contratualizados. Esta assistência é destinada ao cumprimento dos pisos salariais previstos no § 12 do Art. 198º, aplicando-se aos prestadores que atendam, no mínimo, 60% de seus pacientes pelo Sistema Único de Saúde (SUS).",
+      "keywords": [
+        "assistência financeira complementar",
+        "pisos salariais",
+        "prestadores de serviços contratualizados",
+        "entidades filantrópicas",
+        "Sistema Único de Saúde"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0198-PAR-0015",
+      "summary": "Determina que os recursos federais destinados ao pagamento da assistência financeira complementar (para Estados, Distrito Federal, Municípios, entidades filantrópicas e prestadores de serviços contratualizados com atendimento mínimo de 60% pelo SUS) para cumprimento de pisos salariais devem ser consignados no orçamento geral da União com dotação própria e exclusiva.",
+      "keywords": [
+        "orçamento geral da União",
+        "dotação própria e exclusiva",
+        "assistência financeira complementar",
+        "pisos salariais",
+        "recursos federais"
+      ]
+    }
+  ]
+}

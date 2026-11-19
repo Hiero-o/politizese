@@ -31,8 +31,12 @@ class Assistente:
 
     @staticmethod
     def contem_dado_pessoal(texto):
-        # Regra do enunciado PCP: 8 ou mais dígitos ou presença de @.
-        return "@" in texto or re.search(r"\d{8,}", texto) is not None
+        numeros = re.sub(r"\D", "", texto)
+
+        return (
+            "@" in texto
+            or len(numeros) >= 8
+        )
 
     def registrar(self, origem, pergunta, id_orientacao, encontrou,
                   ajudou, tentativas, tempo_segundos):

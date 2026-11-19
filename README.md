@@ -22,6 +22,7 @@ O Politize-se reúne, em um mesmo ambiente, um catálogo de representantes públ
 - [API](#api)
 - [Como funciona o assistente](#como-funciona-o-assistente)
 - [Indexação e atualização de dados](#indexação-e-atualização-de-dados)
+- [Base documental simulada e armadilhas](#base-documental-simulada-e-armadilhas)
 - [Testes](#testes)
 - [Limitações conhecidas](#limitações-conhecidas)
 - [Próximos passos](#próximos-passos)
@@ -180,10 +181,11 @@ politizese_ai/
 │   ├── cache/politicos/        # Snapshots JSON das fontes políticas
 │   ├── chroma_db/              # Persistência local do ChromaDB
 │   ├── evaluation/             # Perguntas e resultados RAGAS
+│   │   └── templates/          # Estruturas vazias para novos conjuntos de avaliação
 │   ├── geosampa/               # GeoJSONs e dados territoriais processados
 │   ├── obras/                  # Dados de obras públicas
 │   ├── metrics/                # Métricas e auditorias de indexação
-│   └── processed/              # Dados processados da Constituição e índices
+│   └── processed/              # Árvores jurídicas e índices processados
 ├── frontend/
 │   └── src/
 │       ├── components/         # Componentes de interface
@@ -192,8 +194,12 @@ politizese_ai/
 │       ├── services/           # Clientes HTTP
 │       └── types/              # Tipos TypeScript
 ├── knowledge/                  # Documentos usados como conhecimento
+│   └── base_simulada_politica/ # Leis e resolução fictícias em Markdown
 ├── prompts/                    # Prompts centrais, tarefas e estilos
+│   └── tasks/
+│       └── react_agent_legislativo.xml # Instruções para o acervo legislativo simulado
 ├── scripts/                    # Importação, inspeção e avaliação
+│   └── indexar_base_simulada.py # Indexação separada dos documentos Markdown
 ├── services/                   # Carregamento e processamento documental
 ├── src/
 │   ├── agents/                 # Agente ReAct, ferramentas e autorização
@@ -467,9 +473,90 @@ O script `indexar_base_clean_v2.py` executa uma reindexação limpa da Constitui
 python indexar_base_clean_v2.py
 ```
 
-**Atenção:** esse script não é um indexador genérico de qualquer PDF. Não basta copiar um documento de outro assunto para `knowledge/` e executar o comando. A inclusão de novas bases exige revisar o carregador/parser, metadados, estratégia de chunking e atualização dos índices vetorial e lexical utilizados pelo retriever.
+**Atenção:** esse script continua específico para a Constituição Federal e não é um indexador genérico. Não copie documentos de outro assunto para `knowledge/` esperando que sejam incorporados automaticamente. Para a base Markdown da atividade, utilize o fluxo separado descrito em [Base documental simulada e armadilhas](#base-documental-simulada-e-armadilhas). Outras bases exigem carregador, parser, metadados, estratégia de chunking e índices vetorial e lexical próprios.
 
 A nomeação da coleção vetorial considera o modelo/provedor de embeddings e o perfil de geração utilizado. Não misture vetores produzidos por configurações incompatíveis; mantenha os metadados de modelo e perfil consistentes.
+
+### Base documental simulada e armadilhas
+
+Para a avaliação acadêmica de recuperação documental, foi criada uma base legislativa inteiramente fictícia, separada dos documentos oficiais que alimentam o restante do projeto. Os nomes, órgãos, leis, datas e regras abaixo existem somente para testar o RAG; não representam legislação municipal real.
+
+Os três documentos Markdown ficam em `knowledge/base_simulada_politica/`. Cada corpo documental, sem contar o front matter de metadados, permanece entre 100 e 200 palavras. Todos incluem `titulo`, `data_publicacao` e `tema`:
+
+| Arquivo | Publicação | Função na base |
+|---|---:|---|
+| `doc_01_lei_orcamento_participativo.md` | 20/03/2026 | Lei original que institui o Programa Municipal de Participação Cidadã. |
+| `doc_02_lei_alteracao_participacao.md` | 03/10/2026 | Lei posterior que altera a elegibilidade para votação e o calendário das consultas. |
+| `doc_03_resolucao_apoio_propostas.md` | 15/10/2026 | Resolução complementar com requisitos operacionais para protocolar propostas. |
+
+#### Armadilha 1 — alteração legislativa e desatualização
+
+A Lei Municipal fictícia nº 2.140/2026, em seu art. 3º, permite que residentes a partir de 16 anos apresentem propostas e votem nas consultas. Seu art. 4º prevê consultas no primeiro sábado do mês, das 9h às 16h.
+
+A Lei Municipal fictícia nº 2.196/2026 altera expressamente esses dispositivos e entra em vigor em 1º de novembro de 2026. A partir dessa data, residentes de 16 e 17 anos podem apresentar propostas e participar das audiências, mas o voto nas consultas fica reservado a pessoas com 18 anos ou mais. O calendário também muda para o terceiro sábado do mês, das 9h às 13h.
+
+A recuperação correta exige identificar o dispositivo alterado e considerar a data de entrada em vigor. A norma anterior continua útil para compreender o histórico, mas sua redação original não deve ser apresentada como regra aplicável depois da vigência da alteração. A mudança não revoga automaticamente os artigos que não foram modificados.
+
+#### Armadilha 2 — condição específica e documentação de apoio
+
+A Resolução Administrativa fictícia nº 08/2026 complementa o procedimento de apresentação de propostas. Seu art. 3º exige pelo menos 25 manifestações válidas de apoio. O art. 4º acrescenta uma condição territorial para propostas de intervenção localizada: pelo menos 15 manifestações devem partir de residentes do distrito administrativo diretamente afetado. O § 2º do mesmo artigo excepciona propostas de alcance geral, que abranjam todo o Município.
+
+Esse requisito territorial está em um dispositivo interno da resolução, não no título nem no parágrafo introdutório. Por isso, uma resposta sobre a quantidade de apoios não pode se limitar à recuperação da lei principal ou ao início da resolução: deve localizar e combinar o artigo e o parágrafo pertinentes.
+
+#### O que a armadilha deve demonstrar
+
+A base foi estruturada para verificar se o assistente consegue:
+
+- distinguir a data de publicação da data de entrada em vigor;
+- reconhecer uma redação alterada sem descartar os dispositivos que permaneceram vigentes;
+- diferenciar o direito de apresentar propostas, participar de audiências e votar;
+- recuperar uma condição que aparece somente em documentação complementar;
+- fundamentar a resposta com o documento e o dispositivo normativo correspondente.
+
+O princípio esperado não é simplesmente escolher sempre o arquivo mais novo. O sistema precisa verificar se o ato posterior efetivamente alterou o dispositivo relevante, quando a alteração passou a produzir efeitos e quais partes da norma original foram preservadas.
+
+#### Validação e indexação da base Markdown
+
+O carregador histórico do projeto lê PDFs no diretório `knowledge/`, e `indexar_base_clean_v2.py` é específico para a Constituição Federal. Portanto, os arquivos Markdown simulados não entram automaticamente na coleção constitucional. Para manter os dois acervos independentes, foi adicionado o indexador `scripts/indexar_base_simulada.py`, que gera uma coleção ChromaDB própria e a árvore jurídica usada pelo BM25.
+
+Primeiro, valide os arquivos e a identificação dos dispositivos sem gerar embeddings:
+
+```bash
+python scripts/indexar_base_simulada.py --validate-only
+```
+
+Depois, com o ambiente e o Ollama configurados, gere a coleção e a árvore lexical:
+
+```bash
+python scripts/indexar_base_simulada.py
+```
+
+Saídas esperadas:
+
+- coleção-base ChromaDB: `politizese_politica_simulada_v1` (o nome físico recebe o sufixo do perfil de embeddings);
+- árvore jurídica BM25: `data/processed/base_politica_simulada_artigos.json`.
+
+A indexação não substitui nem sobrescreve a coleção da Constituição. O script interrompe a execução se a coleção simulada já contiver registros, para evitar sobrescrita acidental.
+
+#### Estrutura para avaliação RAGAS
+
+Foi criado `data/evaluation/templates/ragas_politica_questions.template.json` com oito registros vazios: quatro classificados como simples e quatro como armadilha. Os campos `user_input`, `reference` e `reference_source` estão intencionalmente em branco. **Este projeto não preenche as perguntas, o ground truth nem resultados de avaliação nesta etapa.** O arquivo é apenas uma estrutura para o grupo completar e revisar.
+
+O avaliador existente recebeu opções para selecionar o arquivo de perguntas, a coleção vetorial, a árvore BM25 e o prompt especializado, sem alterar o comportamento padrão da avaliação constitucional. Depois que o grupo preencher e validar o JSON, o comando para avaliar a base simulada será:
+
+```bash
+python scripts/evaluate_ragas.py \
+  --questions-file data/evaluation/templates/ragas_politica_questions.template.json \
+  --collection politizese_politica_simulada_v1 \
+  --legal-tree data/processed/base_politica_simulada_artigos.json \
+  --prompt-task react_agent_legislativo \
+  --label armadilhas_legislativas
+```
+
+O comando acima **não deve ser executado enquanto os campos de pergunta e referência estiverem vazios**. Para grupos em dupla ou trio, o briefing prevê oito perguntas (quatro simples e quatro que exigem as armadilhas); na modalidade individual, o briefing reduz o conjunto para seis (três simples e três armadilha). Ajuste a quantidade de registros do template à modalidade antes da avaliação.
+
+O prompt `prompts/tasks/react_agent_legislativo.xml` orienta o agente a tratar os documentos como acervo normativo selecionado para aquela execução, verificar vigência e alterações e citar os identificadores recuperados.
+
 
 ### Catálogo de políticos
 
@@ -477,7 +564,13 @@ Os snapshots são armazenados em `data/cache/politicos/`, separados por origem (
 
 ## Testes
 
-Com o ambiente virtual ativado, execute a suíte Python:
+Para validar especificamente os metadados, a contagem de palavras e a leitura jurídica da base simulada, execute:
+
+```bash
+python -m pytest tests/test_simulated_legal_base.py -q
+```
+
+Com o ambiente virtual ativado, execute a suíte Python completa:
 
 ```bash
 python -m pytest -q

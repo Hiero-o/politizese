@@ -1,0 +1,301 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195",
+  "content_hash": "7f49e83a6b317004465f13afdb8fa6cf9f58eafae49ea6d5a26b073676828df1",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T09:23:58.803840+00:00",
+  "completed_units": 28,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-CAPUT",
+      "summary": "Estabelece que o financiamento da seguridade social é de responsabilidade de toda a sociedade, ocorrendo de forma direta e indireta. Os recursos provêm dos orçamentos da União, dos Estados, do Distrito Federal e dos Municípios, além de contribuições sociais específicas previstas em lei.",
+      "keywords": [
+        "seguridade social",
+        "financiamento",
+        "orçamento público",
+        "contribuições sociais"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-I",
+      "summary": "Define a incidência de contribuições sociais sobre o empregador, a empresa e a entidade a ela equiparada, conforme definido em lei.",
+      "keywords": [
+        "empregador",
+        "empresa",
+        "entidade equiparada",
+        "contribuição social"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-I-ALI-A",
+      "summary": "Especifica que a contribuição social incide sobre a folha de salários e demais rendimentos do trabalho pagos ou creditados, a qualquer título, à pessoa física que presta serviço, independentemente da existência de vínculo empregatício.",
+      "keywords": [
+        "folha de salários",
+        "rendimentos do trabalho",
+        "pessoa física",
+        "vínculo empregatício"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-I-ALI-B",
+      "summary": "Determina a incidência de contribuição social sobre a receita ou o faturamento da entidade.",
+      "keywords": [
+        "receita",
+        "faturamento",
+        "contribuição social"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-I-ALI-C",
+      "summary": "Estabelece o lucro como base de incidência para fins de contribuição.",
+      "keywords": [
+        "lucro",
+        "base de cálculo",
+        "contribuição previdenciária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-II",
+      "summary": "Define a contribuição do trabalhador e dos demais segurados da previdência social, permitindo a adoção de alíquotas progressivas baseadas no salário de contribuição. Determina a não incidência de contribuição sobre aposentadorias e pensões concedidas pelo regime geral de previdência social.",
+      "keywords": [
+        "trabalhador",
+        "segurados",
+        "alíquotas progressivas",
+        "salário de contribuição",
+        "regime geral de previdência social"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-III",
+      "summary": "Estabelece a incidência de contribuição sobre a receita proveniente de concursos de prognósticos.",
+      "keywords": [
+        "concursos de prognósticos",
+        "receita",
+        "contribuição previdenciária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-IV",
+      "summary": "Determina a contribuição devida pelo importador de bens ou serviços do exterior, ou por pessoas legalmente equiparadas a eles.",
+      "keywords": [
+        "importador",
+        "bens e serviços do exterior",
+        "contribuição previdenciária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-INC-V",
+      "summary": "Estabelece a incidência de contribuição sobre bens e serviços, condicionada à regulamentação por lei complementar.",
+      "keywords": [
+        "bens e serviços",
+        "lei complementar",
+        "contribuição",
+        "EC 132/2023"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0001",
+      "summary": "Determina que as receitas destinadas à seguridade social provenientes de Estados, Distrito Federal e Municípios devem constar nos respectivos orçamentos locais, não integrando o orçamento da União.",
+      "keywords": [
+        "receitas seguridade social",
+        "Estados",
+        "Distrito Federal",
+        "Municípios",
+        "orçamento da União"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0002",
+      "summary": "Define que a proposta de orçamento da seguridade social deve ser elaborada de forma integrada pelos órgãos de saúde, previdência e assistência social, seguindo as metas da lei de diretrizes orçamentárias, garantindo a gestão de recursos por cada área.",
+      "keywords": [
+        "orçamento seguridade social",
+        "saúde",
+        "previdência social",
+        "assistência social",
+        "lei de diretrizes orçamentárias"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0003",
+      "summary": "Impõe restrições a pessoas jurídicas em débito com o sistema de seguridade social, proibindo-as de contratar com o Poder Público ou de receberem benefícios, incentivos fiscais ou creditícios.",
+      "keywords": [
+        "débito seguridade social",
+        "pessoa jurídica",
+        "contratação Poder Público",
+        "incentivos fiscais",
+        "benefícios creditícios"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0004",
+      "summary": "Autorização para que a lei institua fontes adicionais para a manutenção ou expansão da seguridade social, condicionada ao cumprimento do disposto no art. 154, I.",
+      "keywords": [
+        "fontes de seguridade social",
+        "manutenção da seguridade",
+        "expansão da seguridade",
+        "instituição por lei"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0005",
+      "summary": "Proibição de criação, majoração ou extensão de benefícios ou serviços da seguridade social sem a respectiva fonte de custeio total.",
+      "keywords": [
+        "custeio da seguridade social",
+        "fonte de custeio total",
+        "criação de benefícios",
+        "majoração de serviços"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0006",
+      "summary": "Estabelecimento de prazo de noventa dias após a publicação da lei para a exigibilidade de contribuições sociais, com exceção do disposto no art. 150, III, b.",
+      "keywords": [
+        "exigibilidade de contribuições",
+        "prazo de noventa dias",
+        "contribuições sociais",
+        "publicação da lei"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0007",
+      "summary": "Isenção de contribuição para a seguridade social destinada a entidades beneficentes de assistência social que cumpram as exigências legais.",
+      "keywords": [
+        "isenção de contribuição",
+        "entidades beneficentes",
+        "assistência social",
+        "requisitos legais"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0008",
+      "summary": "Estabelece a contribuição para a seguridade social de produtores, parceiros, meeiros, arrendatários rurais e pescadores artesanais, incluindo seus cônjuges, quando exercem atividades em regime de economia familiar sem empregados permanentes. A contribuição é calculada sobre o resultado da comercialização da produção, garantindo aos contribuintes o direito a benefícios previstos em lei.",
+      "keywords": [
+        "produtor rural",
+        "pescador artesanal",
+        "economia familiar",
+        "seguridade social",
+        "comercialização da produção"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0009",
+      "summary": "Autoriza a aplicação de alíquotas diferenciadas para as contribuições sociais do inciso I do caput, baseadas na atividade econômica, uso intensivo de mão de obra, porte da empresa ou condição estrutural do mercado de trabalho. Permite, adicionalmente, a adoção de bases de cálculo diferenciadas especificamente para as alíneas b e c do referido inciso.",
+      "keywords": [
+        "alíquotas diferenciadas",
+        "contribuições sociais",
+        "porte da empresa",
+        "base de cálculo",
+        "mercado de trabalho"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0010",
+      "summary": "Determina que a lei deve definir os critérios para a transferência de recursos destinados ao Sistema Único de Saúde (SUS) e a ações de assistência social entre a União, Estados, Distrito Federal e Municípios, observando a respectiva contrapartida de recursos em cada ente federativo.",
+      "keywords": [
+        "transferência de recursos",
+        "SUS",
+        "assistência social",
+        "contrapartida",
+        "entes federativos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0011",
+      "summary": "Proíbe expressamente a concessão de moratória, o parcelamento em prazo superior a sessenta meses, a remissão e a anistia para as contribuições sociais previstas na alínea a do inciso I e no inciso II do caput do artigo.",
+      "keywords": [
+        "vedação de moratória",
+        "parcelamento",
+        "remissão",
+        "anistia",
+        "contribuições sociais"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0012",
+      "summary": "Estabelece que a lei deve definir os setores de atividade econômica nos quais as contribuições previstas nos incisos I, b, e IV do caput do Art. 195 possuem caráter não cumulativo.",
+      "keywords": [
+        "não cumulatividade",
+        "setores de atividade econômica",
+        "contribuições previdenciárias"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0013",
+      "summary": "Dispositivo revogado pela Emenda Constitucional n. 103/2019.",
+      "keywords": [
+        "revogado",
+        "EC 103/2019"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0014",
+      "summary": "Define que o reconhecimento de tempo de contribuição no Regime Geral de Previdência Social (RGPS) está condicionado ao pagamento de contribuição igual ou superior ao mínimo mensal exigido para a categoria do segurado, garantindo-se o direito ao agrupamento de contribuições.",
+      "keywords": [
+        "tempo de contribuição",
+        "RGPS",
+        "contribuição mínima mensal",
+        "agrupamento de contribuições"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0015",
+      "summary": "Autoriza que a alíquota da contribuição prevista no inciso V do caput seja fixada por meio de lei ordinária.",
+      "keywords": [
+        "alíquota",
+        "lei ordinária",
+        "contribuição inciso V"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0016",
+      "summary": "Estabelece a aplicação das disposições do art. 156-A (especificamente os incisos e parágrafos citados) à contribuição prevista no inciso V do caput do art. 195.",
+      "keywords": [
+        "Contribuição inciso V",
+        "Art. 156-A",
+        "Aplicação de normas",
+        "EC 132/2023"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0017",
+      "summary": "Determina que a contribuição do inciso V do caput não integra sua própria base de cálculo, nem a base de cálculo dos tributos dos arts. 153, VIII, 156-A, 195, I, b, e IV, nem da contribuição para o Programa de Integração Social (art. 239).",
+      "keywords": [
+        "Base de cálculo",
+        "Exclusão de tributos",
+        "Inciso V",
+        "Programa de Integração Social",
+        "EC 132/2023"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0018",
+      "summary": "Determina que lei estabelecerá as hipóteses, limites e beneficiários para a devolução da contribuição do inciso V do caput a pessoas físicas, com o objetivo de reduzir desigualdades de renda.",
+      "keywords": [
+        "Devolução de contribuição",
+        "Pessoas físicas",
+        "Desigualdade de renda",
+        "Limites e beneficiários",
+        "EC 132/2023"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0195-PAR-0019",
+      "summary": "Define que a devolução da contribuição prevista no § 18 não será computada na receita corrente líquida da União para os fins dos arts. 100, § 15, 166, §§ 9º, 12 e 17, e 198, § 2º.",
+      "keywords": [
+        "Receita corrente líquida",
+        "União",
+        "Exclusão de contagem",
+        "Devolução de contribuição",
+        "EC 132/2023"
+      ]
+    }
+  ]
+}

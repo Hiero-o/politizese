@@ -1,0 +1,264 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131",
+  "content_hash": "fc3c087afa1ba65cf92ff9322b28f16faf0ca45371c4bdff52de3b11f9cf7266",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T12:37:51.184582+00:00",
+  "completed_units": 25,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-CAPUT",
+      "summary": "Estabelece que, no período de 2029 a 2077, a arrecadação do imposto previsto no art. 156-A da Constituição Federal pelos Estados, Distrito Federal e Municípios será distribuída conforme as regras deste dispositivo.",
+      "keywords": [
+        "Arrecadação",
+        "Imposto Art. 156-A",
+        "Distribuição",
+        "Entes Federativos",
+        "Período 2029-2077"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0001",
+      "summary": "Determina a retenção do produto da arrecadação do imposto de cada Estado, Distrito Federal e Município, calculada sobre as alíquotas de referência do art. 130 do ADCT e dispositivos dos arts. 149-C e 156-A, antes da aplicação do disposto no art. 158, IV, b da Constituição Federal.",
+      "keywords": [
+        "Retenção",
+        "Alíquotas de referência",
+        "Art. 130 ADCT",
+        "Art. 149-C",
+        "Art. 156-A",
+        "Art. 158 IV b"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0001-INC-I",
+      "summary": "Define a retenção de 80% do produto da arrecadação do imposto para o período de 2029 a 2032.",
+      "keywords": [
+        "Retenção 80%",
+        "Período 2029-2032",
+        "Arrecadação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0001-INC-II",
+      "summary": "Define a retenção de 90% do produto da arrecadação do imposto para o ano de 2033.",
+      "keywords": [
+        "Retenção 90%",
+        "Ano 2033",
+        "Arrecadação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0001-INC-III",
+      "summary": "Estabelece um cronograma de redução gradual do percentual aplicado entre os anos de 2034 e 2077, utilizando como base o percentual de 2033 e aplicando uma redução anual na razão de 1/45.",
+      "keywords": [
+        "redução gradual",
+        "percentual 2033",
+        "cronograma 2034-2077",
+        "razão 1/45"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002",
+      "summary": "Determina que o montante retido nos termos do § 1º deve ser distribuído entre Estados, Distrito Federal e Municípios de forma proporcional à receita média de cada ente federativo, mediante regulamentação por lei complementar.",
+      "keywords": [
+        "distribuição de montante",
+        "receita média",
+        "entes federativos",
+        "lei complementar"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-I",
+      "summary": "Identifica as condições específicas aplicáveis ao caso dos Estados para a distribuição do montante retido.",
+      "keywords": [
+        "Estados",
+        "critérios de distribuição",
+        "montante retido"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-I-ALI-A",
+      "summary": "Define como critério para os Estados a arrecadação do imposto previsto no art. 155, II, após a aplicação da dedução constante no art. 158, IV, a, da Constituição Federal.",
+      "keywords": [
+        "arrecadação imposto",
+        "art. 155 II",
+        "art. 158 IV a",
+        "critério Estados"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-I-ALI-B",
+      "summary": "Receitas destinadas aos fundos estaduais mencionados no art. 130, II, b, do Ato das Disposições Constitucionais Transitórias.",
+      "keywords": [
+        "receitas",
+        "fundos estaduais",
+        "Ato das Disposições Constitucionais Transitórias",
+        "art. 130"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-II",
+      "summary": "Disposições aplicáveis especificamente ao Distrito Federal.",
+      "keywords": [
+        "Distrito Federal",
+        "DF"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-II-ALI-A",
+      "summary": "Arrecadação do imposto previsto no art. 155, II, da Constituição Federal, no contexto do Distrito Federal.",
+      "keywords": [
+        "arrecadação",
+        "imposto",
+        "art. 155",
+        "Constituição Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-II-ALI-B",
+      "summary": "Arrecadação do imposto previsto no art. 156, III, da Constituição Federal, no contexto do Distrito Federal.",
+      "keywords": [
+        "arrecadação",
+        "imposto",
+        "art. 156",
+        "Constituição Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-III",
+      "summary": "Especifica a aplicação do dispositivo para o caso dos Municípios.",
+      "keywords": [
+        "Municípios",
+        "aplicação",
+        "EC 132/2023"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-III-ALI-A",
+      "summary": "Refere-se à arrecadação do imposto previsto no art. 156, III, da Constituição Federal.",
+      "keywords": [
+        "arrecadação",
+        "imposto",
+        "art. 156, III",
+        "Constituição Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0002-INC-III-ALI-B",
+      "summary": "Trata da parcela creditada na forma do art. 158, IV, a, da Constituição Federal.",
+      "keywords": [
+        "parcela creditada",
+        "art. 158, IV, a",
+        "Constituição Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0003",
+      "summary": "Estabelece que não se aplica o disposto no art. 158, IV, b, da Constituição Federal aos recursos distribuídos na forma do § 2º, I, do referido artigo.",
+      "keywords": [
+        "exceção",
+        "art. 158, IV, b",
+        "recursos distribuídos",
+        "§ 2º, I"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0004",
+      "summary": "Estabelece a distribuição da parcela do produto da arrecadação do imposto não retida nos termos do § 1º, após a retenção prevista no art. 132. A distribuição ocorre para Estados, Distrito Federal e Municípios, seguindo os critérios da lei complementar (art. 156-A, § 5º, I, da CF), considerando a variação da alíquota fixada pelo ente em relação à alíquota de referência.",
+      "keywords": [
+        "distribuição de arrecadação",
+        "Estados",
+        "Distrito Federal",
+        "Municípios",
+        "variação de alíquota"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0005",
+      "summary": "Determina que os recursos mencionados no artigo serão distribuídos conforme os termos estabelecidos em lei complementar.",
+      "keywords": [
+        "distribuição de recursos",
+        "lei complementar"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0005-INC-I",
+      "summary": "Define que os recursos do dispositivo anterior constituirão a base de cálculo dos fundos referidos no art. 212-A, II, da Constituição Federal.",
+      "keywords": [
+        "base de cálculo",
+        "fundos constitucionais",
+        "art. 212-A"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0005-INC-I-ALI-A",
+      "summary": "Regra para Estados sobre a aplicação proporcional do percentual do art. 212-A, II. O cálculo baseia-se na razão entre a soma dos valores distribuídos a cada ente nos termos do § 2º, I, a, e do § 4º, e a soma dos valores distribuídos nos termos do § 2º, I, e do § 4º.",
+      "keywords": [
+        "proporcionalidade",
+        "Estados",
+        "razão de distribuição",
+        "base de cálculo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0005-INC-I-ALI-B",
+      "summary": "Define a metodologia de cálculo proporcional do percentual do art. 212-A, II, para o Distrito Federal. O cálculo baseia-se na razão entre a soma dos valores do § 2º, II, a e do § 4º (considerando apenas a parcela estadual do § 4º) e a soma dos valores do § 2º, II, e e do § 4º.",
+      "keywords": [
+        "Distrito Federal",
+        "art. 212-A",
+        "cálculo proporcional",
+        "parcela estadual"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0005-INC-I-ALI-C",
+      "summary": "Estabelece a aplicação proporcional do percentual do art. 212-A, II, para os Municípios. O cálculo é determinado pela razão entre a soma dos valores distribuídos nos termos do § 2º, III, b e a soma dos valores distribuídos nos termos do § 2º, III.",
+      "keywords": [
+        "Municípios",
+        "art. 212-A",
+        "cálculo proporcional",
+        "razão de valores"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0005-INC-II",
+      "summary": "Identifica as bases de cálculo para os artigos 29-A, 198, § 2º, 204, parágrafo único, 212 e 216, § 6º da Constituição Federal, com a ressalva de exclusão dos valores distribuídos nos termos do § 2º, I, b.",
+      "keywords": [
+        "bases de cálculo",
+        "Constituição Federal",
+        "exclusão de valores",
+        "arts. 29-A, 198, 204, 212, 216"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0005-INC-III",
+      "summary": "Autoriza a vinculação de valores para prestação de garantias em operações de crédito por antecipação de receita (art. 165, § 8º) destinadas ao pagamento de débitos com a União, bem como para prestação de garantia ou contragarantia nos termos do art. 167, § 4º.",
+      "keywords": [
+        "prestação de garantias",
+        "antecipação de receita",
+        "débitos com a União",
+        "operações de crédito"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ADC-ART-0131-PAR-0006",
+      "summary": "Vedação aos Estados, ao Distrito Federal e aos Municípios de fixarem alíquotas próprias para o imposto previsto no art. 156-A da Constituição Federal que sejam inferiores às necessárias para garantir as retenções estabelecidas no § 1º do art. 131 e no art. 132 do ADC, durante o período definido no caput do art. 131.",
+      "keywords": [
+        "Alíquotas mínimas",
+        "Imposto art. 156-A",
+        "Retenções tributárias",
+        "Estados",
+        "Municípios",
+        "Distrito Federal"
+      ]
+    }
+  ]
+}

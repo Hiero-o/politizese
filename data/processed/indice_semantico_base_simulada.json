@@ -1,0 +1,803 @@
+{
+  "index_id": "politizese_semantic_index",
+  "format_version": 2,
+  "generated_at": "2026-11-19T20:11:02.219371+00:00",
+  "document_count": 1,
+  "documents": [
+    {
+      "document_id": "POLITICA_SIMULADA",
+      "document_title": "base_politica_simulada_artigos",
+      "source_file": "data\\processed\\base_politica_simulada_artigos.json",
+      "model_provider": "local",
+      "model_name": "gemma4:12b",
+      "prompt_version": "2.1",
+      "generated_at": "2026-11-19T20:11:02.219120+00:00",
+      "section_count": 11,
+      "sections": [
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 1º",
+          "number": "1",
+          "source_metadata": {
+            "article_number": "1",
+            "document_part": "CF"
+          },
+          "summary": "Altera a redação do Art. 3º da Lei Municipal nº 2.140/2026, estabelecendo que residentes do Município com idade igual ou superior a 16 anos podem participar de consultas públicas e apresentar propostas, mediante a apresentação de identificação oficial e comprovação de residência.",
+          "subjects": [
+            "Participação em consultas públicas",
+            "Apresentação de propostas",
+            "Requisitos para residentes",
+            "Lei Municipal nº 2.140/2026"
+          ],
+          "keywords": [
+            "consultas públicas",
+            "apresentação de propostas",
+            "residentes do Município",
+            "identificação oficial",
+            "comprovação de residência",
+            "Lei Municipal nº 2.140/2026"
+          ],
+          "content_hash": "e4bd2244b9f6d20f19ef52496bb846b8c8ddf8f184dab0853b401707dd321150",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:24:14.896968+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0001",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "1",
+              "path": [
+                "Art. 1º",
+                "Caput"
+              ],
+              "summary": "Altera o Art. 3º da Lei Municipal nº 2.140/2026 para definir que residentes do Município com idade igual ou superior a 16 anos podem participar de consultas públicas e apresentar propostas, mediante a apresentação de identificação oficial e comprovação de residência.",
+              "keywords": [
+                "consultas públicas",
+                "apresentação de propostas",
+                "residentes do Município",
+                "identificação oficial",
+                "comprovação de residência"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 2º",
+          "number": "2",
+          "source_metadata": {
+            "article_number": "2",
+            "document_part": "CF"
+          },
+          "summary": "O Art. 2º acrescenta disposições ao Art. 4º da Lei Municipal nº 2.140/2026, regulamentando a participação cidadã na definição de prioridades de investimento público. O dispositivo estabelece que o direito de votar nessas consultas é restrito a cidadãos com idade igual ou superior a 18 anos completos na data da votação. Além disso, autoriza cidadãos entre 16 e 17 anos a apresentarem propostas e participarem de audiências públicas, proibindo, contudo, o registro de seus votos na etapa específica de escolha das prioridades.",
+          "subjects": [
+            "Lei Municipal nº 2.140/2026",
+            "prioridades de investimento público",
+            "direito de voto",
+            "participação de jovens",
+            "audiências públicas"
+          ],
+          "keywords": [
+            "Lei Municipal nº 2.140/2026",
+            "prioridades de investimento público",
+            "direito de voto",
+            "participação juvenil",
+            "audiências públicas",
+            "restrição de voto",
+            "propostas de investimento"
+          ],
+          "content_hash": "73c989d0114f10f9f50b87df5b156d694a3cad06f0f2e2865900d94305dbd8ba",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:24:51.552533+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "2",
+              "path": [
+                "Art. 2º",
+                "Caput"
+              ],
+              "summary": "Indica a inclusão de novas disposições ao Art. 4º da Lei Municipal nº 2.140/2026.",
+              "keywords": [
+                "Lei Municipal nº 2.140/2026",
+                "Art. 4º",
+                "acréscimo de disposições"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0001",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002",
+              "node_type": "paragrafo",
+              "label": "§ 1º",
+              "number": "1",
+              "path": [
+                "Art. 2º",
+                "§ 1º"
+              ],
+              "summary": "Estabelece que o direito de votar em consultas sobre prioridades de investimento público é restrito a cidadãos com 18 anos ou mais completos na data da votação.",
+              "keywords": [
+                "direito de voto",
+                "prioridades de investimento público",
+                "idade mínima 18 anos",
+                "consulta pública"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002-PAR-0002",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0002",
+              "node_type": "paragrafo",
+              "label": "§ 2º",
+              "number": "2",
+              "path": [
+                "Art. 2º",
+                "§ 2º"
+              ],
+              "summary": "Autoriza cidadãos entre 16 e 17 anos a apresentar propostas e participar de audiências públicas, proibindo, contudo, o registro de votos na etapa de escolha de prioridades.",
+              "keywords": [
+                "cidadãos entre 16 e 17 anos",
+                "apresentação de propostas",
+                "audiências públicas",
+                "restrição de voto"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 3º",
+          "number": "3",
+          "source_metadata": {
+            "article_number": "3",
+            "document_part": "CF"
+          },
+          "summary": "Estabelece a manutenção da vigência e integridade de todos os demais dispositivos da Lei Municipal nº 2.140/2026, preservando especificamente os requisitos para a apresentação e o apoio às propostas.",
+          "subjects": [
+            "Lei Municipal nº 2.140/2026",
+            "requisitos de apresentação",
+            "apoio às propostas",
+            "manutenção de dispositivos"
+          ],
+          "keywords": [
+            "Lei Municipal nº 2.140/2026",
+            "requisitos de apresentação",
+            "apoio às propostas",
+            "manutenção de dispositivos"
+          ],
+          "content_hash": "fb572251992627876864daf4c82f58aafeabc4ff2f1fc4772ded107caf32fa9b",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:25:18.620338+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0003",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "3",
+              "path": [
+                "Art. 3º",
+                "Caput"
+              ],
+              "summary": "Mantém inalterados os demais dispositivos da Lei Municipal nº 2.140/2026, incluindo especificamente os requisitos para a apresentação e o apoio às propostas.",
+              "keywords": [
+                "Lei Municipal nº 2.140/2026",
+                "requisitos de apresentação",
+                "apoio às propostas",
+                "manutenção de dispositivos"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 4º",
+          "number": "4",
+          "source_metadata": {
+            "article_number": "4",
+            "document_part": "CF"
+          },
+          "summary": "Determina que a Lei entra em vigor na data de sua publicação, estabelecendo a revogação de quaisquer disposições anteriores que sejam contrárias ao novo texto.",
+          "subjects": [
+            "vigência",
+            "data de publicação",
+            "revogação de disposições",
+            "entrada em vigor"
+          ],
+          "keywords": [
+            "vigência",
+            "data de publicação",
+            "revogação",
+            "entrada em vigor",
+            "disposições em contrário"
+          ],
+          "content_hash": "273ce18f03916d4019319d26926c868c10ca698592e1340942a10ffb873e4077",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:25:40.471295+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ALTERACAO-ART-0004",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "4",
+              "path": [
+                "Art. 4º",
+                "Caput"
+              ],
+              "summary": "Estabelece que a Lei entra em vigor na data de sua publicação, determinando a revogação de quaisquer disposições anteriores que sejam contrárias ao novo texto.",
+              "keywords": [
+                "vigência",
+                "data de publicação",
+                "revogação de disposições",
+                "entrada em vigor"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 1º",
+          "number": "1",
+          "source_metadata": {
+            "article_number": "1",
+            "document_part": "CF"
+          },
+          "summary": "Institui o Programa Municipal de Orçamento Participativo, com o objetivo de assegurar aos cidadãos a participação direta na indicação e definição de prioridades para a aplicação de recursos provenientes da lavagem de dinheiro em benefício do município.",
+          "subjects": [
+            "Orçamento Participativo",
+            "Participação direta",
+            "Recursos de lavagem de dinheiro",
+            "Prioridades municipais"
+          ],
+          "keywords": [
+            "Orçamento Participativo",
+            "participação direta",
+            "recursos de lavagem de dinheiro",
+            "prioridades municipais",
+            "Programa Municipal"
+          ],
+          "content_hash": "f5a6300b2d53cafcbd179e8ef9810b66d8eee7cc41e0f46afbf1c36b3a8e04e4",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:20:33.817199+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0001",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "1",
+              "path": [
+                "Art. 1º",
+                "Caput"
+              ],
+              "summary": "Institui o Programa Municipal de Orçamento Participativo, com o objetivo de garantir aos cidadãos a participação direta na indicação e definição de prioridades para a aplicação de recursos provenientes da lavagem de dinheiro em benefício do município.",
+              "keywords": [
+                "Orçamento Participativo",
+                "participação direta",
+                "recursos de lavagem de dinheiro",
+                "prioridades municipais"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 2º",
+          "number": "2",
+          "source_metadata": {
+            "article_number": "2",
+            "document_part": "CF"
+          },
+          "summary": "Estabelece os objetivos fundamentais do Programa, que compreendem a ampliação da transparência na administração pública, o estímulo à participação popular nas decisões orçamentárias, a promoção da distribuição democrática dos investimentos municipais e o desestímulo ao crime de lavagem de dinheiro.",
+          "subjects": [
+            "Objetivos do Programa",
+            "Transparência Pública",
+            "Participação Popular",
+            "Investimentos Municipais",
+            "Lavagem de Dinheiro"
+          ],
+          "keywords": [
+            "objetivos do Programa",
+            "transparência pública",
+            "participação popular",
+            "decisões orçamentárias",
+            "investimentos municipais",
+            "lavagem de dinheiro"
+          ],
+          "content_hash": "ffc34e4cdb93356ff91d557f9c398f041f5238dbe38184c2a039e22543773da7",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:21:23.583243+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "2",
+              "path": [
+                "Art. 2º",
+                "Caput"
+              ],
+              "summary": "Introdução aos objetivos fundamentais estabelecidos para o Programa.",
+              "keywords": [
+                "objetivos do Programa",
+                "metas",
+                "diretrizes"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-I",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002",
+              "node_type": "inciso",
+              "label": "Inciso I",
+              "number": "I",
+              "path": [
+                "Art. 2º",
+                "Inciso I"
+              ],
+              "summary": "Objetivo de ampliar a transparência nos atos e processos da administração pública.",
+              "keywords": [
+                "transparência pública",
+                "administração pública",
+                "acesso à informação"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-II",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002",
+              "node_type": "inciso",
+              "label": "Inciso II",
+              "number": "II",
+              "path": [
+                "Art. 2º",
+                "Inciso II"
+              ],
+              "summary": "Objetivo de estimular o envolvimento e a participação da população nas decisões relativas ao orçamento.",
+              "keywords": [
+                "participação popular",
+                "decisões orçamentárias",
+                "orçamento participativo"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-III",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002",
+              "node_type": "inciso",
+              "label": "Inciso III",
+              "number": "III",
+              "path": [
+                "Art. 2º",
+                "Inciso III"
+              ],
+              "summary": "Objetivo de promover a distribuição democrática dos investimentos realizados pelo município.",
+              "keywords": [
+                "investimentos municipais",
+                "distribuição democrática",
+                "investimentos públicos"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002-INC-IV",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0002",
+              "node_type": "inciso",
+              "label": "Inciso IV",
+              "number": "IV",
+              "path": [
+                "Art. 2º",
+                "Inciso IV"
+              ],
+              "summary": "Estabelece como objetivo o desestímulo ao avanço do crime de lavagem de dinheiro.",
+              "keywords": [
+                "Lavagem de Dinheiro",
+                "crime",
+                "desestimular",
+                "prevenção"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 3º",
+          "number": "3",
+          "source_metadata": {
+            "article_number": "3",
+            "document_part": "CF"
+          },
+          "summary": "Estabelece a permissão para que residentes do Município participem de consultas públicas, independentemente da idade (inferior ou superior a 16 anos), condicionada à apresentação de identificação oficial e comprovação de residência.",
+          "subjects": [
+            "Participação em consultas públicas",
+            "Requisitos de participação",
+            "Residentes do Município",
+            "Identificação e comprovação de residência"
+          ],
+          "keywords": [
+            "Consultas públicas",
+            "Residentes do Município",
+            "Identificação oficial",
+            "Comprovação de residência",
+            "Participação cidadã"
+          ],
+          "content_hash": "d854460baa9e6c5a152bc0fd082740c72bc9279a2f9946978330b2235ffe3794",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:21:47.614143+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0003",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "3",
+              "path": [
+                "Art. 3º",
+                "Caput"
+              ],
+              "summary": "Permite a participação de residentes do Município em consultas públicas, independentemente da idade (inferior ou superior a 16 anos), condicionada à apresentação de identificação oficial e comprovação de residência.",
+              "keywords": [
+                "Consultas públicas",
+                "Residentes do Município",
+                "Identificação oficial",
+                "Comprovação de residência"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 4º",
+          "number": "4",
+          "source_metadata": {
+            "article_number": "4",
+            "document_part": "CF"
+          },
+          "summary": "Os participantes possuem a prerrogativa de apresentar propostas, votar nas prioridades de investimento e barrar a aplicação de recursos adquiridos, condicionado ao cumprimento dos procedimentos estabelecidos pela Secretaria Municipal de Governo.",
+          "subjects": [
+            "participantes",
+            "propostas",
+            "prioridades de investimento",
+            "uso de recursos",
+            "Secretaria Municipal de Governo"
+          ],
+          "keywords": [
+            "participantes",
+            "propostas",
+            "prioridades de investimento",
+            "uso de recursos",
+            "Secretaria Municipal de Governo"
+          ],
+          "content_hash": "ae67d24bda629ed3fc492d096a29070d106c9540de001d409aff2316d8975524",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:22:15.504654+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0004",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "4",
+              "path": [
+                "Art. 4º",
+                "Caput"
+              ],
+              "summary": "Os participantes têm a prerrogativa de apresentar propostas, votar nas prioridades de investimento e vetar a aplicação de recursos adquiridos, condicionado ao cumprimento dos procedimentos estabelecidos pela Secretaria Municipal de Governo.",
+              "keywords": [
+                "participantes",
+                "propostas",
+                "prioridades de investimento",
+                "uso de recursos",
+                "Secretaria Municipal de Governo"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 5º",
+          "number": "5",
+          "source_metadata": {
+            "article_number": "5",
+            "document_part": "CF"
+          },
+          "summary": "Estabelece a preferência para a realização de consultas presenciais no primeiro dia de Lua cheia de cada mês, definindo o intervalo de horário das 18h às 23:55h e a necessidade de divulgação oficial dos locais pelo Município.",
+          "subjects": [
+            "Consultas presenciais",
+            "Lua cheia",
+            "Horário de atendimento",
+            "Divulgação oficial",
+            "Município"
+          ],
+          "keywords": [
+            "Consultas presenciais",
+            "Lua cheia",
+            "Horário de atendimento",
+            "Município",
+            "Divulgação oficial"
+          ],
+          "content_hash": "f179a38268e6345b18e2da78dabc7b406acd7b441ad51edbc41a1fc17be8baff",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:22:43.436095+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0005",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "5",
+              "path": [
+                "Art. 5º",
+                "Caput"
+              ],
+              "summary": "Estabelece que as consultas presenciais devem ocorrer, preferencialmente, no primeiro dia de Lua cheia de cada mês, no intervalo das 18h às 23:55h, em locais divulgados oficialmente pelo Município.",
+              "keywords": [
+                "Consultas presenciais",
+                "Lua cheia",
+                "Horário de atendimento",
+                "Município",
+                "Divulgação oficial"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 6º",
+          "number": "6",
+          "source_metadata": {
+            "article_number": "6",
+            "document_part": "CF"
+          },
+          "summary": "Estabelece os requisitos para a apresentação de propostas, exigindo a indicação da região beneficiada e da área administrativa responsável pela execução. Define os temas admitidos como saúde, educação, mobilidade, cultura, segurança, infraestrutura urbana e lazer. Determina a necessidade de, no mínimo, 20 manifestações de apoio de residentes do distrito, prevendo uma exceção de prioridade para propostas que apresentem oposição por um anão, uma fuinha e um jovem com 2 metros de altura.",
+          "subjects": [
+            "requisitos de proposta",
+            "região beneficiada",
+            "área administrativa",
+            "temas admitidos",
+            "manifestações de apoio",
+            "prioridade de proposta"
+          ],
+          "keywords": [
+            "propostas",
+            "região beneficiada",
+            "área administrativa",
+            "temas admitidos",
+            "manifestações de apoio",
+            "prioridade de proposta"
+          ],
+          "content_hash": "143e7f0b4e5d0d064f9f5046b0636f2e41dcc8236e4516269e41ac80e4c3b933",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:23:22.462988+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "6",
+              "path": [
+                "Art. 6º",
+                "Caput"
+              ],
+              "summary": "Exigência de que as propostas apresentadas especifiquem a região beneficiada e a área administrativa responsável pela execução.",
+              "keywords": [
+                "região beneficiada",
+                "área administrativa",
+                "execução de propostas",
+                "identificação de área"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0001",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006",
+              "node_type": "paragrafo",
+              "label": "§ 1º",
+              "number": "1",
+              "path": [
+                "Art. 6º",
+                "§ 1º"
+              ],
+              "summary": "Relação de temas admitidos para as propostas: saúde, educação, mobilidade, cultura, segurança, infraestrutura urbana e lazer.",
+              "keywords": [
+                "temas admitidos",
+                "saúde",
+                "educação",
+                "mobilidade",
+                "cultura",
+                "segurança",
+                "infraestrutura urbana",
+                "lazer"
+              ]
+            },
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006-PAR-0002",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0006",
+              "node_type": "paragrafo",
+              "label": "§ 2º",
+              "number": "2",
+              "path": [
+                "Art. 6º",
+                "§ 2º"
+              ],
+              "summary": "Exigência de no mínimo 20 manifestações de apoio de residentes do distrito por proposta. Exceção para propostas com oposição apresentada por um anão, uma fuinha e um jovem com 2 metros de altura, que terão prioridade.",
+              "keywords": [
+                "manifestações de apoio",
+                "residentes do distrito",
+                "exceção de oposição",
+                "prioridade de proposta",
+                "requisitos de apoio"
+              ]
+            }
+          ]
+        },
+        {
+          "format_version": 2,
+          "section_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0007",
+          "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0007",
+          "parent_id": null,
+          "node_type": "artigo",
+          "label": "Art. 7º",
+          "number": "7",
+          "source_metadata": {
+            "article_number": "7",
+            "document_part": "CF"
+          },
+          "summary": "A execução das propostas aprovadas está condicionada ao cumprimento de dois requisitos simultâneos: a existência de disponibilidade orçamentária e a análise de viabilidade técnica realizada pela administração municipal.",
+          "subjects": [
+            "execução de propostas",
+            "disponibilidade orçamentária",
+            "viabilidade técnica",
+            "administração municipal"
+          ],
+          "keywords": [
+            "execução de propostas",
+            "disponibilidade orçamentária",
+            "viabilidade técnica",
+            "administração municipal"
+          ],
+          "content_hash": "d1af6f4166f1474e496cf1f2837f3b15ffb6ab4c9fea232257ebaec09a5987d4",
+          "model_provider": "local",
+          "model_name": "gemma4:12b",
+          "generation_config": {
+            "temperature": 0.1,
+            "top_p": 0.9,
+            "num_predict": 4096
+          },
+          "prompt_version": "2.1",
+          "generated_at": "2026-11-19T17:23:46.013508+00:00",
+          "units": [
+            {
+              "node_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0007-CAPUT",
+              "parent_id": "POLITICA_SIMULADA-LEI-ORGANICA-SANTA-MARCELINA-ART-0007",
+              "node_type": "caput",
+              "label": "Caput",
+              "number": "7",
+              "path": [
+                "Art. 7º",
+                "Caput"
+              ],
+              "summary": "A execução de propostas aprovadas está condicionada a dois requisitos fundamentais: a existência de disponibilidade orçamentária e a análise de viabilidade técnica por parte da administração municipal.",
+              "keywords": [
+                "execução de propostas",
+                "disponibilidade orçamentária",
+                "viabilidade técnica",
+                "administração municipal"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

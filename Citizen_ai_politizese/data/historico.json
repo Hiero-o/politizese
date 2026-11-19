@@ -69,5 +69,38 @@
         "tentativas": 1,
         "tempo_segundos": 0.0,
         "facilidade": 5
+    },
+    {
+        "data": "2026-11-19T15:48:17",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 3
+    },
+    {
+        "data": "2026-11-19T16:07:24",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 1
+    },
+    {
+        "data": "2026-11-19T16:12:20",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 3
     }
 ]

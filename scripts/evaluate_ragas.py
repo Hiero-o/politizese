@@ -39,6 +39,13 @@ QUESTIONS_FILE = (
     / "evaluation"
     / "ragas_questions.json"
 )
+DEFAULT_LEGAL_TREE = (
+    PROJECT_ROOT
+    / "data"
+    / "processed"
+    / "constituicao_artigos.json"
+)
+DEFAULT_COLLECTION_NAME = "constituicao_legal_clean_v2"
 
 RESULTS_DIR = (
     PROJECT_ROOT
@@ -64,15 +71,15 @@ METRIC_NAMES = (
 # CARREGAMENTO E VALIDAÇÃO DAS PERGUNTAS
 # ============================================================
 
-def load_questions() -> list[dict[str, Any]]:
-    """Carrega e valida o conjunto de avaliação."""
+def load_questions(questions_file: Path = QUESTIONS_FILE) -> list[dict[str, Any]]:
+    """Carrega e valida o conjunto de avaliação indicado na linha de comando."""
 
-    if not QUESTIONS_FILE.exists():
+    if not questions_file.exists():
         raise FileNotFoundError(
-            f"Arquivo de perguntas não encontrado: {QUESTIONS_FILE}"
+            f"Arquivo de perguntas não encontrado: {questions_file}"
         )
 
-    with QUESTIONS_FILE.open(
+    with questions_file.open(
         "r",
         encoding="utf-8",
     ) as file:
@@ -695,6 +702,10 @@ def save_results(
     provider: str,
     label: str,
     total_questions: int,
+    questions_file: Path = QUESTIONS_FILE,
+    collection_name: str = DEFAULT_COLLECTION_NAME,
+    legal_tree_path: Path = DEFAULT_LEGAL_TREE,
+    prompt_task: str = "react_agent",
 ) -> None:
     """Salva resultados completos e uma planilha CSV."""
 
@@ -706,6 +717,10 @@ def save_results(
         "embedding_model": EMBEDDING_MODEL,
         "total_questions": total_questions,
         "completed_questions": len(results),
+        "questions_file": str(questions_file),
+        "collection_name": collection_name,
+        "legal_tree_path": str(legal_tree_path),
+        "prompt_task": prompt_task,
         "average_metrics": calculate_averages(results),
         "category_averages": calculate_category_averages(results),
         "results": results,
@@ -794,6 +809,27 @@ async def main():
         help="Identificador da avaliação. Padrão: baseline.",
     )
 
+    parser.add_argument(
+        "--questions-file",
+        default=str(QUESTIONS_FILE),
+        help="JSON com perguntas e referências preenchidas. Caminhos relativos usam a raiz do projeto.",
+    )
+    parser.add_argument(
+        "--collection",
+        default=DEFAULT_COLLECTION_NAME,
+        help="Nome-base da coleção ChromaDB que contém a base a avaliar.",
+    )
+    parser.add_argument(
+        "--legal-tree",
+        default=str(DEFAULT_LEGAL_TREE),
+        help="JSON da árvore jurídica usada pelo índice lexical BM25.",
+    )
+    parser.add_argument(
+        "--prompt-task",
+        default="react_agent",
+        help="Task XML do agente. Use react_agent_legislativo na base simulada.",
+    )
+
     args = parser.parse_args()
 
     if args.limit is not None and args.limit < 1:
@@ -805,7 +841,15 @@ async def main():
         args.label,
     )
 
-    questions = load_questions()
+    questions_path = Path(args.questions_file).expanduser()
+    if not questions_path.is_absolute():
+        questions_path = (PROJECT_ROOT / questions_path).resolve()
+
+    legal_tree_path = Path(args.legal_tree).expanduser()
+    if not legal_tree_path.is_absolute():
+        legal_tree_path = (PROJECT_ROOT / legal_tree_path).resolve()
+
+    questions = load_questions(questions_path)
 
     if args.ids:
         available_ids = {
@@ -861,6 +905,10 @@ async def main():
     print(f"Modelo avaliador: {EVALUATOR_MODEL}")
     print(f"Embeddings: {EMBEDDING_MODEL}")
     print(f"Identificação: {label}")
+    print(f"Arquivo de perguntas: {questions_path}")
+    print(f"Coleção: {args.collection}")
+    print(f"Árvore BM25: {legal_tree_path}")
+    print(f"Prompt task: {args.prompt_task}")
 
     print("\nInicializando avaliador...")
 
@@ -871,6 +919,9 @@ async def main():
 
         agent, selected_provider = build_react_agent(
             provider="local",
+            collection_name=args.collection,
+            legal_tree_path=legal_tree_path,
+            prompt_task=args.prompt_task,
         )
 
         print(f"Provider: {selected_provider}")
@@ -1035,6 +1086,10 @@ async def main():
                 provider=selected_provider,
                 label=label,
                 total_questions=len(questions),
+                questions_file=questions_path,
+                collection_name=args.collection,
+                legal_tree_path=legal_tree_path,
+                prompt_task=args.prompt_task,
             )
 
             print(

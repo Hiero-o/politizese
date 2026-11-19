@@ -794,6 +794,8 @@ def _parse_single_document(
     )
     
     index_started = False
+    
+    amended_article_number: str | None = None
 
     for page in ordered_pages:
         text = page.get("texto", "")
@@ -877,6 +879,28 @@ def _parse_single_document(
             article_match = ARTICLE_PATTERN.match(line)
 
             if article_match:
+                candidate_number = article_match.group("number")
+                candidate_suffix = article_match.group("suffix")
+
+                if candidate_suffix:
+                    candidate_number += candidate_suffix.upper()
+
+                # Verifica se o artigo encontrado é a redação
+                # reproduzida de um artigo que está sendo alterado.
+                if amended_article_number is not None:
+                    if (
+                        current_article is not None
+                        and candidate_number == amended_article_number
+                    ):
+                        current_article.body_lines.append(
+                            (line, page_number)
+                        )
+
+                        amended_article_number = None
+                        continue
+
+                    amended_article_number = None
+
                 finalize_article()
 
                 number = article_match.group("number")
@@ -911,8 +935,27 @@ def _parse_single_document(
                     source=source,
                     document_name=document_name,
                 )
+                """print("\n[ARTIGO IDENTIFICADO]")
+                print("DOCUMENTO:", document_name)
+                print("DOCUMENT_ID RECEBIDO:", document_id)
+                print("SOURCE:", source)
+                print("ARTIGO:", number)"""
 
                 initial_body = article_match.group("body").strip()
+                
+                amendment_match = re.search(
+                    r"\bart\.?\s*(?P<number>\d+)\s*(?:[º°])?"
+                    r"(?:-(?P<suffix>[A-Za-z]))?.*?"
+                    r"\bpassa\s+a\s+vigorar\s+com\s+a\s+seguinte\s+reda[cç][aã]o\s*:\s*$",
+                    initial_body,
+                    re.IGNORECASE,
+                )
+
+                if amendment_match:
+                    amended_article_number = amendment_match.group("number")
+
+                    if amendment_match.group("suffix"):
+                        amended_article_number += amendment_match.group("suffix").upper()
 
                 if initial_body:
                     current_article.body_lines.append(
@@ -970,6 +1013,16 @@ def parse_constitution_pages(
         
         grouped_pages[source].append(page)
     
+    print("\n=== AGRUPAMENTO DO PARSER ===")
+
+    for source, source_pages in grouped_pages.items():
+        print("SOURCE:", source)
+        print("PÁGINAS:", len(source_pages))
+        print("DOCUMENT_ID:", document_id)
+
+    print("TOTAL DE DOCUMENTOS:", len(grouped_pages))
+    print("============================\n")
+    
     articles: list[LegalNode] = []
     
     for index, (source, source_pages) in enumerate(sorted(grouped_pages.items()), start=1):
@@ -983,6 +1036,12 @@ def parse_constitution_pages(
             
             current_document_id = (f"{document_id}-{safe_name or index}")
             
+            print("\n[ID DO DOCUMENTO]")
+            print("SOURCE:", source)
+            print("FILENAME:", filename)
+            print("SAFE NAME:", safe_name)
+            print("DOCUMENT ID FINAL:", current_document_id)
+                        
         articles.extend(
             _parse_single_document(
                 source_pages,

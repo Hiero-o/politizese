@@ -61,8 +61,10 @@ class PolitizeseToolbox:
                 func=self.search_constitution,
                 name="search_constitution",
                 description=(
-                    "Pesquisa informações na Constituição Federal usando "
-                    "Query Rewriter, ChromaDB, BM25 e RRF. Utilize para "
+                    "Pesquisa na base documental jurídico-normativa ativa do "
+                    "Politize-se usando Query Rewriter, ChromaDB, BM25 e RRF. "
+                    "A coleção pode conter Constituição, leis ou atos simulados. "
+                    "Utilize para "
                     "perguntas simples ou com uma necessidade principal "
                     "de informação. Retorna documentos com doc_id, conteúdo "
                     "e metadados para fundamentar a resposta."
@@ -74,7 +76,8 @@ class PolitizeseToolbox:
                 name="search_constitution_decomposed",
                 description=(
                     "Pesquisa perguntas que envolvem várias necessidades "
-                    "informacionais independentes. Utiliza Question "
+                    "documentais independentes na base jurídico-normativa ativa. "
+                    "Utiliza Question "
                     "Decomposer, Query Rewriter, ChromaDB, BM25 e RRF "
                     "iterativo. Retorna subperguntas, consultas e documentos "
                     "com doc_id e rastreabilidade. Prefira esta ferramenta "
@@ -313,7 +316,7 @@ class PolitizeseToolbox:
 
     def search_constitution(self, question: str) -> str:
         """
-        Pesquisa uma pergunta constitucional usando consultas reformuladas.
+        Pesquisa a base jurídico-normativa ativa usando consultas reformuladas.
 
         Executa o Query Rewriter e utiliza consultas independentes
         para a recuperação semântica e lexical.

@@ -1,42 +1,151 @@
 [
     {
-        "id": 1,
-        "categoria": "Primeiro título e cadastro",
-        "titulo": "Primeiro título: quem pode solicitar",
+        "id": 8,
+        "categoria": "Serviços e votação",
+        "titulo": "Como acessar o e-Título",
         "palavras_chave": [
-            "primeiro título",
-            "tirar título",
-            "alistamento",
-            "15 anos",
-            "16 anos"
+            "e título",
+            "aplicativo",
+            "título digital",
+            "baixar aplicativo"
         ],
-        "resposta": "Alistamento eleitoral é o primeiro registro na Justiça Eleitoral. É possível solicitar a partir dos 15 anos, mas o voto somente poderá ser exercido se a pessoa tiver 16 anos na data da eleição. O voto é obrigatório para brasileiros alfabetizados entre 18 e 70 anos; é facultativo para 16 e 17 anos, maiores de 70 e pessoas analfabetas.",
+        "resposta": "O e-Título é o aplicativo oficial da Justiça Eleitoral. Ele permite acessar a via digital do título e utilizar serviços eleitorais disponíveis no aplicativo. Baixe-o somente pelas lojas oficiais e confira se o desenvolvedor é a Justiça Eleitoral.",
         "documentos": [
-            "idade mínima de 15 anos",
-            "documento oficial de identificação",
-            "comprovante de vínculo/endereço quando solicitado"
+            "celular compatível",
+            "dados de identificação solicitados diretamente pelo aplicativo oficial"
         ],
-        "onde": "Autoatendimento Eleitoral – Título Net ou unidade da Justiça Eleitoral; confira a orientação e eventual agendamento no TRE do seu estado.",
-        "fonte": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/titulo-eleitoral-faq",
+        "onde": "Aplicativo e-Título, disponível nas lojas oficiais; informações no portal do TSE.",
+        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/e-titulo",
         "verificado_em": "2026-11-19"
     },
     {
-        "id": 2,
-        "categoria": "Primeiro título e cadastro",
-        "titulo": "Documentos para tirar o primeiro título",
+        "id": 14,
+        "categoria": "Serviços e votação",
+        "titulo": "Como alterar endereço ou local de votação",
         "palavras_chave": [
-            "documentos primeiro título",
-            "identidade",
-            "comprovante residência",
-            "serviço militar"
+            "alterar endereço",
+            "mudar local votação",
+            "atualizar endereço",
+            "local de votação"
         ],
-        "resposta": "A Justiça Eleitoral solicita documento oficial de identificação. Conforme o caso, podem ser necessários comprovante de residência e comprovante de quitação do serviço militar para homens que completam 19 anos no ano do alistamento. A lista exata deve ser conferida no TSE/TRE antes do pedido.",
+        "resposta": "A atualização de endereço e a solicitação de mudança do local de votação podem ser feitas pelo Autoatendimento Eleitoral, quando o serviço estiver disponível, ou presencialmente. Prazos de ano eleitoral podem limitar alterações que impactem o exercício do voto.",
         "documentos": [
-            "documento oficial de identificação (consulte os aceitos pelo TSE)",
-            "comprovante de residência, quando exigido",
-            "comprovante de quitação militar, quando aplicável"
+            "documento oficial de identificação",
+            "comprovante de endereço ou vínculo, conforme solicitado"
         ],
-        "onde": "Autoatendimento Eleitoral – Título Net ou cartório eleitoral; consulte o TRE local para exigências e agendamento.",
+        "onde": "Autoatendimento Eleitoral – Título Net ou unidade da Justiça Eleitoral.",
+        "fonte": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral",
+        "verificado_em": "2026-11-19"
+    },
+    {
+        "id": 5,
+        "categoria": "Regularização e situação eleitoral",
+        "titulo": "Como consultar a situação do título",
+        "palavras_chave": [
+            "situação título",
+            "título regular",
+            "consultar título",
+            "pendência eleitoral"
+        ],
+        "resposta": "A situação da inscrição eleitoral pode ser consultada no Autoatendimento Eleitoral, na opção de consulta da situação do título. A situação regular permite votar, mas não significa necessariamente que não existam débitos eleitorais; situação da inscrição e quitação eleitoral são conceitos diferentes.",
+        "documentos": [
+            "não é necessário enviar CPF ou número do título ao assistente; faça a consulta diretamente no portal oficial"
+        ],
+        "onde": "Autoatendimento Eleitoral – Título Net, menu Consultas > Situação do título.",
+        "fonte": "https://www.tse.jus.br/institucional/corregedoria-geral-eleitoral/sistemas-e-servicos-1/consulta-situacao-eleitoral",
+        "verificado_em": "2026-11-19"
+    },
+    {
+        "id": 9,
+        "categoria": "Serviços e votação",
+        "titulo": "Como descobrir o local de votação",
+        "palavras_chave": [
+            "local de votação",
+            "onde voto",
+            "zona eleitoral",
+            "seção eleitoral"
+        ],
+        "resposta": "O local de votação pode ser consultado pelo Autoatendimento Eleitoral – Título Net ou pelo aplicativo e-Título. Consulte diretamente o canal oficial para obter endereço, zona e seção atualizados.",
+        "documentos": [
+            "não é necessário fornecer endereço ou dados pessoais ao assistente"
+        ],
+        "onde": "Autoatendimento Eleitoral – Título Net ou aplicativo e-Título.",
+        "fonte": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral",
+        "verificado_em": "2026-11-19"
+    },
+    {
+        "id": 13,
+        "categoria": "Primeiro título e cadastro",
+        "titulo": "Como funciona a biometria eleitoral",
+        "palavras_chave": [
+            "biometria",
+            "digital",
+            "coleta biométrica",
+            "cadastrar biometria"
+        ],
+        "resposta": "A coleta biométrica é realizada presencialmente pela Justiça Eleitoral quando necessária. A necessidade de comparecimento e o agendamento dependem da situação cadastral e das orientações do TRE. Consulte o atendimento oficial antes de se deslocar.",
+        "documentos": [
+            "documento oficial de identificação",
+            "eventuais documentos indicados pelo TRE"
+        ],
+        "onde": "Cartório, central ou posto de atendimento da Justiça Eleitoral, conforme agendamento e orientação do TRE.",
+        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
+        "verificado_em": "2026-11-19"
+    },
+    {
+        "id": 12,
+        "categoria": "Regularização e situação eleitoral",
+        "titulo": "Como justificar ausência à votação",
+        "palavras_chave": [
+            "justificar voto",
+            "justificativa eleitoral",
+            "não votei",
+            "ausência eleição"
+        ],
+        "resposta": "A justificativa de ausência pode ser apresentada pelos canais oficiais da Justiça Eleitoral, inclusive pelo aplicativo e-Título ou pelo Autoatendimento, observados o prazo e os procedimentos definidos para cada turno. Se não justificar no prazo, consulte as opções para quitar eventual débito.",
+        "documentos": [
+            "documento comprobatório, quando solicitado pelo serviço",
+            "não envie comprovantes ao assistente"
+        ],
+        "onde": "Aplicativo e-Título, Autoatendimento Eleitoral ou unidade da Justiça Eleitoral.",
+        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
+        "verificado_em": "2026-11-19"
+    },
+    {
+        "id": 7,
+        "categoria": "Regularização e situação eleitoral",
+        "titulo": "Como pagar multa eleitoral",
+        "palavras_chave": [
+            "multa eleitoral",
+            "pagar multa",
+            "débitos",
+            "ausência às urnas"
+        ],
+        "resposta": "Débitos decorrentes de ausência às urnas ou aos trabalhos eleitorais podem ser consultados e pagos pelos canais oficiais, com opções como Guia de Recolhimento da União, Pix ou cartão, conforme disponibilidade do serviço. Verifique o débito diretamente no portal da Justiça Eleitoral.",
+        "documentos": [
+            "não informe dados bancários ou pessoais ao assistente; consulte o débito no canal oficial"
+        ],
+        "onde": "Autoatendimento Eleitoral/TSE, serviço de consulta de débitos, ou unidade de atendimento eleitoral.",
+        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
+        "verificado_em": "2026-11-19"
+    },
+    {
+        "id": 6,
+        "categoria": "Regularização e situação eleitoral",
+        "titulo": "Como regularizar título cancelado",
+        "palavras_chave": [
+            "título cancelado",
+            "regularizar título",
+            "regularização",
+            "cancelamento"
+        ],
+        "resposta": "A regularização de inscrição cancelada é feita por revisão/regularização cadastral junto à Justiça Eleitoral. Consulte a situação e siga as instruções do Autoatendimento Eleitoral. A possibilidade e os documentos dependem do motivo do cancelamento e do calendário eleitoral.",
+        "documentos": [
+            "documento oficial de identificação",
+            "documentos adicionais indicados pelo TSE/TRE conforme o caso",
+            "quitação de débitos, quando exigida"
+        ],
+        "onde": "Autoatendimento Eleitoral – Título Net ou cartório eleitoral; confirme o procedimento no TRE.",
         "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
         "verificado_em": "2026-11-19"
     },
@@ -80,96 +189,23 @@
         "verificado_em": "2026-11-19"
     },
     {
-        "id": 5,
-        "categoria": "Regularização e situação eleitoral",
-        "titulo": "Como consultar a situação do título",
+        "id": 2,
+        "categoria": "Primeiro título e cadastro",
+        "titulo": "Documentos para tirar o primeiro título",
         "palavras_chave": [
-            "situação título",
-            "título regular",
-            "consultar título",
-            "pendência eleitoral"
+            "documentos primeiro título",
+            "identidade",
+            "comprovante residência",
+            "serviço militar"
         ],
-        "resposta": "A situação da inscrição eleitoral pode ser consultada no Autoatendimento Eleitoral, na opção de consulta da situação do título. A situação regular permite votar, mas não significa necessariamente que não existam débitos eleitorais; situação da inscrição e quitação eleitoral são conceitos diferentes.",
+        "resposta": "A Justiça Eleitoral solicita documento oficial de identificação. Conforme o caso, podem ser necessários comprovante de residência e comprovante de quitação do serviço militar para homens que completam 19 anos no ano do alistamento. A lista exata deve ser conferida no TSE/TRE antes do pedido.",
         "documentos": [
-            "não é necessário enviar CPF ou número do título ao assistente; faça a consulta diretamente no portal oficial"
+            "documento oficial de identificação (consulte os aceitos pelo TSE)",
+            "comprovante de residência, quando exigido",
+            "comprovante de quitação militar, quando aplicável"
         ],
-        "onde": "Autoatendimento Eleitoral – Título Net, menu Consultas > Situação do título.",
-        "fonte": "https://www.tse.jus.br/institucional/corregedoria-geral-eleitoral/sistemas-e-servicos-1/consulta-situacao-eleitoral",
-        "verificado_em": "2026-11-19"
-    },
-    {
-        "id": 6,
-        "categoria": "Regularização e situação eleitoral",
-        "titulo": "Como regularizar título cancelado",
-        "palavras_chave": [
-            "título cancelado",
-            "regularizar título",
-            "regularização",
-            "cancelamento"
-        ],
-        "resposta": "A regularização de inscrição cancelada é feita por revisão/regularização cadastral junto à Justiça Eleitoral. Consulte a situação e siga as instruções do Autoatendimento Eleitoral. A possibilidade e os documentos dependem do motivo do cancelamento e do calendário eleitoral.",
-        "documentos": [
-            "documento oficial de identificação",
-            "documentos adicionais indicados pelo TSE/TRE conforme o caso",
-            "quitação de débitos, quando exigida"
-        ],
-        "onde": "Autoatendimento Eleitoral – Título Net ou cartório eleitoral; confirme o procedimento no TRE.",
+        "onde": "Autoatendimento Eleitoral – Título Net ou cartório eleitoral; consulte o TRE local para exigências e agendamento.",
         "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
-        "verificado_em": "2026-11-19"
-    },
-    {
-        "id": 7,
-        "categoria": "Regularização e situação eleitoral",
-        "titulo": "Como pagar multa eleitoral",
-        "palavras_chave": [
-            "multa eleitoral",
-            "pagar multa",
-            "débitos",
-            "ausência às urnas"
-        ],
-        "resposta": "Débitos decorrentes de ausência às urnas ou aos trabalhos eleitorais podem ser consultados e pagos pelos canais oficiais, com opções como Guia de Recolhimento da União, Pix ou cartão, conforme disponibilidade do serviço. Verifique o débito diretamente no portal da Justiça Eleitoral.",
-        "documentos": [
-            "não informe dados bancários ou pessoais ao assistente; consulte o débito no canal oficial"
-        ],
-        "onde": "Autoatendimento Eleitoral/TSE, serviço de consulta de débitos, ou unidade de atendimento eleitoral.",
-        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
-        "verificado_em": "2026-11-19"
-    },
-    {
-        "id": 8,
-        "categoria": "Serviços e votação",
-        "titulo": "Como acessar o e-Título",
-        "palavras_chave": [
-            "e título",
-            "aplicativo",
-            "título digital",
-            "baixar aplicativo"
-        ],
-        "resposta": "O e-Título é o aplicativo oficial da Justiça Eleitoral. Ele permite acessar a via digital do título e utilizar serviços eleitorais disponíveis no aplicativo. Baixe-o somente pelas lojas oficiais e confira se o desenvolvedor é a Justiça Eleitoral.",
-        "documentos": [
-            "celular compatível",
-            "dados de identificação solicitados diretamente pelo aplicativo oficial"
-        ],
-        "onde": "Aplicativo e-Título, disponível nas lojas oficiais; informações no portal do TSE.",
-        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/e-titulo",
-        "verificado_em": "2026-11-19"
-    },
-    {
-        "id": 9,
-        "categoria": "Serviços e votação",
-        "titulo": "Como descobrir o local de votação",
-        "palavras_chave": [
-            "local de votação",
-            "onde voto",
-            "zona eleitoral",
-            "seção eleitoral"
-        ],
-        "resposta": "O local de votação pode ser consultado pelo Autoatendimento Eleitoral – Título Net ou pelo aplicativo e-Título. Consulte diretamente o canal oficial para obter endereço, zona e seção atualizados.",
-        "documentos": [
-            "não é necessário fornecer endereço ou dados pessoais ao assistente"
-        ],
-        "onde": "Autoatendimento Eleitoral – Título Net ou aplicativo e-Título.",
-        "fonte": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral",
         "verificado_em": "2026-11-19"
     },
     {
@@ -209,60 +245,41 @@
         "verificado_em": "2026-11-19"
     },
     {
-        "id": 12,
-        "categoria": "Regularização e situação eleitoral",
-        "titulo": "Como justificar ausência à votação",
-        "palavras_chave": [
-            "justificar voto",
-            "justificativa eleitoral",
-            "não votei",
-            "ausência eleição"
-        ],
-        "resposta": "A justificativa de ausência pode ser apresentada pelos canais oficiais da Justiça Eleitoral, inclusive pelo aplicativo e-Título ou pelo Autoatendimento, observados o prazo e os procedimentos definidos para cada turno. Se não justificar no prazo, consulte as opções para quitar eventual débito.",
-        "documentos": [
-            "documento comprobatório, quando solicitado pelo serviço",
-            "não envie comprovantes ao assistente"
-        ],
-        "onde": "Aplicativo e-Título, Autoatendimento Eleitoral ou unidade da Justiça Eleitoral.",
-        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
-        "verificado_em": "2026-11-19"
-    },
-    {
-        "id": 13,
+        "id": 1,
         "categoria": "Primeiro título e cadastro",
-        "titulo": "Como funciona a biometria eleitoral",
+        "titulo": "Primeiro título: quem pode solicitar",
         "palavras_chave": [
-            "biometria",
-            "digital",
-            "coleta biométrica",
-            "cadastrar biometria"
+            "primeiro título",
+            "tirar título",
+            "alistamento",
+            "15 anos",
+            "16 anos"
         ],
-        "resposta": "A coleta biométrica é realizada presencialmente pela Justiça Eleitoral quando necessária. A necessidade de comparecimento e o agendamento dependem da situação cadastral e das orientações do TRE. Consulte o atendimento oficial antes de se deslocar.",
+        "resposta": "Alistamento eleitoral é o primeiro registro na Justiça Eleitoral. É possível solicitar a partir dos 15 anos, mas o voto somente poderá ser exercido se a pessoa tiver 16 anos na data da eleição. O voto é obrigatório para brasileiros alfabetizados entre 18 e 70 anos; é facultativo para 16 e 17 anos, maiores de 70 e pessoas analfabetas.",
         "documentos": [
+            "idade mínima de 15 anos",
             "documento oficial de identificação",
-            "eventuais documentos indicados pelo TRE"
+            "comprovante de vínculo/endereço quando solicitado"
         ],
-        "onde": "Cartório, central ou posto de atendimento da Justiça Eleitoral, conforme agendamento e orientação do TRE.",
-        "fonte": "https://www.tse.jus.br/servicos-eleitorais/servicos/carta-de-servicos-ao-eleitor",
+        "onde": "Autoatendimento Eleitoral – Título Net ou unidade da Justiça Eleitoral; confira a orientação e eventual agendamento no TRE do seu estado.",
+        "fonte": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/titulo-eleitoral-faq",
         "verificado_em": "2026-11-19"
     },
     {
-        "id": 14,
-        "categoria": "Serviços e votação",
-        "titulo": "Como alterar endereço ou local de votação",
+        "id": 35,
+        "categoria": "votar",
+        "titulo": "Como votar",
         "palavras_chave": [
-            "alterar endereço",
-            "mudar local votação",
-            "atualizar endereço",
-            "local de votação"
+            "votacao",
+            "votar",
+            "voto"
         ],
-        "resposta": "A atualização de endereço e a solicitação de mudança do local de votação podem ser feitas pelo Autoatendimento Eleitoral, quando o serviço estiver disponível, ou presencialmente. Prazos de ano eleitoral podem limitar alterações que impactem o exercício do voto.",
+        "resposta": "Vá até seu local de votacao estabelecido durante o seu cadastro na sua zona eleitoral",
         "documentos": [
-            "documento oficial de identificação",
-            "comprovante de endereço ou vínculo, conforme solicitado"
+            "Leve rg, cpf ou outros documentos"
         ],
-        "onde": "Autoatendimento Eleitoral – Título Net ou unidade da Justiça Eleitoral.",
-        "fonte": "https://www.tse.jus.br/servicos-eleitorais/titulo-eleitoral/autoatendimento-eleitoral",
-        "verificado_em": "2026-11-19"
+        "onde": "Zona eleitoral",
+        "fonte": "https://tribunalsuperioreleitoral.com.br",
+        "verificado_em": "19"
     }
 ]
