@@ -53,7 +53,8 @@ diagnostico_q03_reranker.py
 /data/geosampa/processed/
 /data/obras/processed/
 
-
+# Cache local das integrações políticas
+/data/cache/politicos/
 
 # Bancos vetoriais locais gerados pelo GurAI
 /data/chroma_db/

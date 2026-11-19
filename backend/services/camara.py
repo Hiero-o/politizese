@@ -92,7 +92,7 @@ def _request(
 
     except requests.RequestException as erro:
         raise CamaraAPIError(
-            "Não foi possível consultar a API da Câmara."
+            f"Não foi possível consultar a API da Câmara: {erro}"
         ) from erro
 
 
@@ -185,7 +185,7 @@ def listar_deputados(
 
         # navegação entre páginas
     tem_proxima = any(
-        link.get("rel") == "next"
+        isinstance(link, dict) and link.get("rel") == "next"
         for link in links
     )
     link_ultima = next(
@@ -216,12 +216,6 @@ def listar_deputados(
         ultima_pagina = pagina
     
     # ============================================================= #
-
-    tem_proxima = any(
-        link.get("rel") == "next"
-        for link in links
-        if isinstance(link, dict)
-    )
 
     try:
         deputados = [
@@ -277,9 +271,9 @@ def obter_deputado(
             "Os dados do último status do deputado são inválidos."
         )
 
-    # --------------------------------------------------------
+    
     # GABINETE
-    # --------------------------------------------------------
+    
 
     gabinete_original = ultimo_status.get("gabinete")
 
@@ -296,9 +290,9 @@ def obter_deputado(
                 "Os dados do gabinete possuem formato inválido."
             ) from erro
 
-    # --------------------------------------------------------
+    
     # REDES SOCIAIS
-    # --------------------------------------------------------
+    
 
     redes_sociais = dados.get("redeSocial") or []
 
@@ -311,9 +305,9 @@ def obter_deputado(
         if isinstance(link, str) and link.strip()
     ]
 
-    # --------------------------------------------------------
+    
     # NORMALIZAÇÃO DO PERFIL
-    # --------------------------------------------------------
+    
 
     dados_normalizados = {
         "id": dados.get("id") or ultimo_status.get("id"),
@@ -345,9 +339,9 @@ def obter_deputado(
         "website": dados.get("urlWebsite"),
     }
 
-    # --------------------------------------------------------
+    
     # VALIDAÇÃO FINAL COM PYDANTIC
-    # --------------------------------------------------------
+    
 
     try:
         return DeputadoPerfil.model_validate(

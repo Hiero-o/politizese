@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
 from backend.router.deputados import router as deputados_router
+from backend.router.politicos import router as politicos_router
 
 # Configurações
 
@@ -33,6 +34,7 @@ app.add_middleware(
 )
 
 app.include_router(deputados_router)
+app.include_router(politicos_router)
 
 # Registro das camadas geográficas
 
