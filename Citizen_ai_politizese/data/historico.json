@@ -1,0 +1,73 @@
+[
+    {
+        "data": "2026-11-19T04:58:58",
+        "origem": "pergunta",
+        "pergunta": "Como faço meu titulo de eleitor?",
+        "id_orientacao": null,
+        "encontrou": false,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 9.8
+    },
+    {
+        "data": "2026-11-19T04:59:17",
+        "origem": "pergunta",
+        "pergunta": "titulo de eleitor",
+        "id_orientacao": null,
+        "encontrou": false,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 3.1
+    },
+    {
+        "data": "2026-11-19T04:59:58",
+        "origem": "pergunta",
+        "pergunta": "Primeiro título",
+        "id_orientacao": 1,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 17.8
+    },
+    {
+        "data": "2026-11-19T05:00:30",
+        "origem": "categoria",
+        "pergunta": "Perdi meu título: como obter a segunda via",
+        "id_orientacao": 10,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 5.9
+    },
+    {
+        "data": "2026-11-19T05:00:43",
+        "origem": "categoria",
+        "pergunta": "Como alterar endereço ou local de votação",
+        "id_orientacao": 14,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 6.4
+    },
+    {
+        "data": "2026-11-19T05:00:58",
+        "origem": "categoria",
+        "pergunta": "Como solicitar o primeiro título pela internet",
+        "id_orientacao": 3,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 2.3
+    },
+    {
+        "data": "2026-11-19T05:07:45",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 5
+    }
+]

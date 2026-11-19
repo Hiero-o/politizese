@@ -1,0 +1,8 @@
+﻿data,origem,pergunta,id_orientacao,encontrou,ajudou,tentativas,tempo_segundos,facilidade
+2026-11-19T04:58:58,pergunta,Como faço meu titulo de eleitor?,,False,False,1,9.8,
+2026-11-19T04:59:17,pergunta,titulo de eleitor,,False,False,1,3.1,
+2026-11-19T04:59:58,pergunta,Primeiro título,1,True,True,1,17.8,
+2026-11-19T05:00:30,categoria,Perdi meu título: como obter a segunda via,10,True,True,1,5.9,
+2026-11-19T05:00:43,categoria,Como alterar endereço ou local de votação,14,True,True,1,6.4,
+2026-11-19T05:00:58,categoria,Como solicitar o primeiro título pela internet,3,True,True,1,2.3,
+2026-11-19T05:07:45,avaliacao,facilidade de uso,,True,False,1,0.0,5
