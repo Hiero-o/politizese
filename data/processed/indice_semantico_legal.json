@@ -1,0 +1,19 @@
+{
+  "index_id": "politizese_semantic_index",
+  "format_version": 2,
+  "generated_at": "2026-11-19T04:01:00.330273+00:00",
+  "document_count": 1,
+  "documents": [
+    {
+      "document_id": "LOMSP",
+      "document_title": "lei_organica_municipio_sp",
+      "source_file": "data\\processed\\lei_organica_municipio_sp.json",
+      "model_provider": "local",
+      "model_name": "qwen3.5:9b",
+      "prompt_version": "2.1",
+      "generated_at": "2026-11-19T04:01:00.329982+00:00",
+      "section_count": 0,
+      "sections": []
+    }
+  ]
+}

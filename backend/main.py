@@ -6,6 +6,7 @@ from fastapi.responses import FileResponse
 
 from backend.router.deputados import router as deputados_router
 from backend.router.politicos import router as politicos_router
+from backend.router.assistente import router as assistente_router
 
 # Configurações
 
@@ -29,12 +30,13 @@ app.add_middleware(
         "http://127.0.0.1:3000",
     ],
     allow_credentials=False,
-    allow_methods=["GET"],
+    allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["*"],
 )
 
 app.include_router(deputados_router)
 app.include_router(politicos_router)
+app.include_router(assistente_router)
 
 # Registro das camadas geográficas
 

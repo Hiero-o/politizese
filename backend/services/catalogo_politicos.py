@@ -503,6 +503,54 @@ def obter_catalogo(
     return politicos
 
 
+def obter_politico_por_id(
+    politico_id: str,
+) -> PoliticoResumo | None:
+    """Retorna um político pelo ID, consultando primeiro seu snapshot.
+
+    O perfil é aberto a partir de um card que já veio do catálogo, então
+    normalmente o snapshot da origem já existe. Consultá-lo diretamente
+    evita reconstruir todo o catálogo (e chamar APIs externas) a cada clique.
+    """
+
+    if not politico_id or not politico_id.strip():
+        return None
+
+    # A Presidência ainda é um cadastro local, sem snapshot próprio.
+    if politico_id.startswith("planalto-"):
+        return next(
+            (
+                politico
+                for politico in listar_autoridades_presidenciais()
+                if politico.id == politico_id
+            ),
+            None,
+        )
+
+    origens_por_prefixo = (
+        ("camara-", "camara"),
+        ("senado-", "senado"),
+        ("tse-2026-", "tse"),
+        ("tse-2024-", "tse_municipal"),
+    )
+
+    for prefixo, fonte in origens_por_prefixo:
+        if not politico_id.startswith(prefixo):
+            continue
+
+        snapshot = _ler_snapshot(fonte)
+        if snapshot is None:
+            return None
+
+        dados, _ = snapshot
+        return next(
+            (politico for politico in dados if politico.id == politico_id),
+            None,
+        )
+
+    return None
+
+
 
 # FILTROS E PAGINAÇÃO
 

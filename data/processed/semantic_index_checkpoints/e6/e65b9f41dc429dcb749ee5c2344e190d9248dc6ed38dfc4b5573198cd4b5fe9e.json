@@ -1,0 +1,145 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060",
+  "content_hash": "5dad5182b763ca401fd72e717436ad1a43757c2f2df944b4207ebace1370c32b",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T05:52:18.173346+00:00",
+  "completed_units": 13,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-CAPUT",
+      "summary": "Estabelece que a Constituição pode ser emendada por meio de propostas específicas.",
+      "keywords": [
+        "Emenda à Constituição",
+        "proposta de emenda"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-INC-I",
+      "summary": "Proposta de emenda constitucional originada por, no mínimo, um terço dos membros da Câmara dos Deputados ou do Senado Federal.",
+      "keywords": [
+        "Câmara dos Deputados",
+        "Senado Federal",
+        "um terço dos membros",
+        "proposta de emenda"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-INC-II",
+      "summary": "Proposta de emenda constitucional originada pelo Presidente da República.",
+      "keywords": [
+        "Presidente da República",
+        "proposta de emenda"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-INC-III",
+      "summary": "Proposta de emenda constitucional originada por mais da metade das Assembleias Legislativas das unidades da Federação, com manifestação por maioria relativa de seus membros em cada uma delas.",
+      "keywords": [
+        "Assembleias Legislativas",
+        "unidades da Federação",
+        "maioria relativa",
+        "proposta de emenda"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0001",
+      "summary": "Proibição de alteração da Constituição por meio de emendas durante períodos de intervenção federal, estado de defesa ou estado de sítio.",
+      "keywords": [
+        "Emenda à Constituição",
+        "intervenção federal",
+        "estado de defesa",
+        "estado de sítio",
+        "vedação constitucional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0002",
+      "summary": "Regras para discussão e votação de proposta de emenda: deve ocorrer em dois turnos em cada Casa do Congresso Nacional, exigindo aprovação por três quintos dos votos dos membros em ambos os turnos.",
+      "keywords": [
+        "votação de emenda",
+        "Congresso Nacional",
+        "dois turnos",
+        "três quintos",
+        "quórum de aprovação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0003",
+      "summary": "A promulgação de emenda à Constituição é de responsabilidade das Mesas da Câmara dos Deputados e do Senado Federal, com a atribuição do respectivo número de ordem.",
+      "keywords": [
+        "promulgação de emenda",
+        "Mesas da Câmara dos Deputados",
+        "Senado Federal",
+        "número de ordem"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0004",
+      "summary": "Estabelece a impossibilidade de deliberação sobre propostas de emenda que visem abolir determinados pontos (cláusulas de salvaguarda).",
+      "keywords": [
+        "vedação de deliberação",
+        "proposta de emenda",
+        "abolição"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0004-INC-I",
+      "summary": "Refere-se à manutenção da forma federativa de Estado.",
+      "keywords": [
+        "forma federativa de Estado",
+        "federação",
+        "organização do Estado"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0004-INC-II",
+      "summary": "Estabelece as características do voto como direto, secreto, universal e periódico.",
+      "keywords": [
+        "voto direto",
+        "voto secreto",
+        "voto universal",
+        "voto periódico",
+        "sufrágio"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0004-INC-III",
+      "summary": "Define a separação dos Poderes como um princípio fundamental.",
+      "keywords": [
+        "separação dos Poderes",
+        "Poder Executivo",
+        "Poder Legislativo",
+        "Poder Judiciário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0004-INC-IV",
+      "summary": "Trata da proteção e garantia dos direitos e garantias individuais.",
+      "keywords": [
+        "direitos individuais",
+        "garantias individuais",
+        "direitos fundamentais"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0060-PAR-0005",
+      "summary": "Proibição de reapresentação de proposta de emenda rejeitada ou considerada prejudicada durante a mesma sessão legislativa.",
+      "keywords": [
+        "proposta de emenda",
+        "rejeitada",
+        "prejudicada",
+        "sessão legislativa",
+        "reapresentação"
+      ]
+    }
+  ]
+}

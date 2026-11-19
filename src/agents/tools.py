@@ -11,6 +11,7 @@ from langchain_core.tools import StructuredTool
 
 from src.agents.tool_schemas import (
     ConstitutionSearchInput,
+    PoliticoSearchInput,
     VotingThresholdInput,
 )
 
@@ -81,6 +82,20 @@ class PolitizeseToolbox:
                     "condições ou dispositivos."
                 ),
                 args_schema=ConstitutionSearchInput,
+            ),
+            StructuredTool.from_function(
+                func=self.search_politicos,
+                name="search_politicos",
+                description=(
+                    "Pesquisa o catálogo público de representantes do Politize-se. "
+                    "Use para identificar políticos por nome, cargo, partido, UF "
+                    "ou município. Exemplos: buscar um senador, listar senadores "
+                    "de SP, localizar um prefeito por município. Informe filtros "
+                    "suficientes e limite a resposta a no máximo 8 registros. "
+                    "Não confunda eleitos para o próximo mandato com pessoas já "
+                    "em exercício; explique a fase do mandato retornada."
+                ),
+                args_schema=PoliticoSearchInput,
             ),
             StructuredTool.from_function(
                 func=self.calculate_voting_threshold,
@@ -439,6 +454,122 @@ class PolitizeseToolbox:
                 "search_constitution_decomposed",
                 error,
             )
+
+    def search_politicos(
+        self,
+        nome: str | None = None,
+        cargo: str | None = None,
+        uf: str | None = None,
+        municipio: str | None = None,
+        partido: str | None = None,
+        fase_mandato: str | None = None,
+        limite: int = 5,
+    ) -> str:
+        """Pesquisa representantes no catálogo integrado do Politize-se.
+
+        A busca utiliza os snapshots com cache das fontes oficiais.
+        Retorna somente os campos necessários para identificar o registro,
+        incluindo a fase do mandato e o estado de atualização das fontes.
+        """
+
+        try:
+            parameters = PoliticoSearchInput.model_validate(
+                {
+                    "nome": nome,
+                    "cargo": cargo,
+                    "uf": uf,
+                    "municipio": municipio,
+                    "partido": partido,
+                    "fase_mandato": fase_mandato,
+                    "limite": limite,
+                }
+            )
+
+            # Importação local para evitar acoplamento circular durante
+            # a inicialização dos módulos de backend e agente.
+            from backend.services.catalogo_politicos import listar_politicos
+
+            resultado = listar_politicos(
+                nome=parameters.nome,
+                cargo=parameters.cargo,
+                uf=parameters.uf,
+                municipio=parameters.municipio,
+                partido=parameters.partido,
+                fase_mandato=parameters.fase_mandato,
+                pagina=1,
+                itens=parameters.limite,
+            )
+
+            politicos = []
+            for politico in resultado.dados:
+                politicos.append(
+                    {
+                        "id": politico.id,
+                        "nome": politico.nome,
+                        "cargo": politico.cargo,
+                        "cargo_slug": politico.cargo_slug,
+                        "partido": politico.partido,
+                        "uf": politico.uf,
+                        "municipio": politico.municipio,
+                        "fase_mandato": politico.fase_mandato,
+                        "titularidade": politico.titularidade,
+                        "mandato": politico.mandato,
+                        "situacao": politico.situacao,
+                        "ano_eleicao": politico.ano_eleicao,
+                        "situacao_eleitoral": politico.situacao_eleitoral,
+                        "fonte": politico.fonte,
+                    }
+                )
+
+            fontes = [
+                {
+                    "fonte": fonte.fonte,
+                    "status": fonte.status,
+                    "atualizado_em": (
+                        fonte.atualizado_em.isoformat()
+                        if fonte.atualizado_em else None
+                    ),
+                    "mensagem": fonte.mensagem,
+                }
+                for fonte in resultado.fontes
+            ]
+
+            logger.info(
+                "[TOOL search_politicos] filtros=%s | total=%s | retornados=%s | ids=%s",
+                {
+                    "nome": parameters.nome,
+                    "cargo": parameters.cargo,
+                    "uf": parameters.uf,
+                    "municipio": parameters.municipio,
+                    "partido": parameters.partido,
+                    "fase_mandato": parameters.fase_mandato,
+                },
+                resultado.total,
+                len(politicos),
+                [item["id"] for item in politicos],
+            )
+
+            return self._json(
+                {
+                    "ok": True,
+                    "tool": "search_politicos",
+                    "filters": {
+                        "nome": parameters.nome,
+                        "cargo": parameters.cargo,
+                        "uf": parameters.uf,
+                        "municipio": parameters.municipio,
+                        "partido": parameters.partido,
+                        "fase_mandato": parameters.fase_mandato,
+                    },
+                    "total_matches": resultado.total,
+                    "returned": len(politicos),
+                    "politicos": politicos,
+                    "fontes": fontes,
+                }
+            )
+
+        except Exception as error:
+            return self._error("search_politicos", error)
 
     def calculate_voting_threshold(
         self,

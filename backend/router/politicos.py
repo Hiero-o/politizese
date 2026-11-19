@@ -3,11 +3,15 @@ from typing import Literal
 
 from fastapi import APIRouter, HTTPException, Query
 
-from backend.schemas.politicos import ListaPoliticosResponse
+from backend.schemas.politicos import (
+    ListaPoliticosResponse,
+    PoliticoResumo,
+)
 
 from backend.services.catalogo_politicos import (
     CatalogoPoliticosError,
     listar_politicos as service_listar_politicos,
+    obter_politico_por_id as service_obter_politico_por_id,
 )
 
 from backend.services.senado import (
@@ -163,3 +167,28 @@ def listar_senadores(
         tem_proxima=pagina < ultima_pagina,
         ultima_pagina=ultima_pagina,
     )
+
+# PERFIL INDIVIDUAL DO POLÍTICO
+
+@router.get(
+    "/{politico_id}",
+    response_model=PoliticoResumo,
+    summary="Consultar perfil de um político",
+)
+def obter_perfil_politico(politico_id: str):
+    try:
+        politico = service_obter_politico_por_id(politico_id)
+
+    except CatalogoPoliticosError as erro:
+        raise HTTPException(
+            status_code=502,
+            detail=str(erro),
+        ) from erro
+
+    if politico is None:
+        raise HTTPException(
+            status_code=404,
+            detail="Político não encontrado no catálogo.",
+        )
+
+    return politico

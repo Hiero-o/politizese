@@ -1,0 +1,524 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100",
+  "content_hash": "3252b9d6c021a4415f86626df6f1c4d077fb6aa129a61930ea9fbb5630a0b129",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T06:45:19.722925+00:00",
+  "completed_units": 48,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-CAPUT",
+      "summary": "Estabelece que os pagamentos devidos pelas Fazendas Públicas (Federal, Estaduais, Distrital e Municipais) decorrentes de sentença judicial devem ser realizados exclusivamente na ordem cronológica de apresentação dos precatórios. Proíbe a designação de casos ou pessoas específicas nas dotações orçamentárias e nos créditos adicionais destinados a esse fim.",
+      "keywords": [
+        "Precatórios",
+        "Ordem cronológica",
+        "Fazendas Públicas",
+        "Sentença judicial",
+        "Dotações orçamentárias"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0001",
+      "summary": "Define débitos de natureza alimentícia como aqueles oriundos de relação laboral ou previdenciária, independentemente da natureza tributária, incluindo repetição de indébito sobre remuneração/proventos e indenizações por morte ou invalidez por responsabilidade civil (sentença transitada em julgado). Estes débitos possuem preferência de pagamento sobre os demais, exceto sobre os previstos no § 2º.",
+      "keywords": [
+        "Débitos alimentícios",
+        "Relação laboral",
+        "Previdência",
+        "Preferência de pagamento",
+        "Repetição de indébito"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0002",
+      "summary": "Determina preferência de pagamento para débitos alimentícios de titulares (ou sucessores) com 60 anos ou mais, portadores de doença grave ou pessoas com deficiência. A preferência limita-se ao valor equivalente ao triplo fixado em lei para os fins do § 3º, sendo admitido o fracionamento; o saldo remanescente segue a ordem cronológica de apresentação do precatório.",
+      "keywords": [
+        "Prioridade de pagamento",
+        "Idoso",
+        "Doença grave",
+        "Pessoa com deficiência",
+        "Fracionamento de precatório"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0003",
+      "summary": "Exclui do regime de expedição de precatórios os pagamentos de obrigações definidas em leis como de pequeno valor, devidos pelas Fazendas em virtude de sentença judicial transitada em julgado.",
+      "keywords": [
+        "Pequeno valor",
+        "Exceção de precatório",
+        "Sentença judicial transitada em julgado",
+        "Obrigações de pequeno valor"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0004",
+      "summary": "Permite a fixação, por leis próprias, de valores distintos para entidades de direito público com base em suas respectivas capacidades econômicas, estabelecendo como patamar mínimo o valor do maior benefício do regime geral de previdência social.",
+      "keywords": [
+        "Entidades de direito público",
+        "Capacidade econômica",
+        "Regime geral de previdência social",
+        "Valores mínimos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0005",
+      "summary": "Estabelece a obrigatoriedade de inclusão no orçamento de entidades de direito público de verbas para pagamento de débitos de precatórios judiciários (sentenças transitadas em julgado) apresentados até 1º de fevereiro, com prazo de pagamento até o final do exercício seguinte e atualização monetária.",
+      "keywords": [
+        "Orçamento público",
+        "Precatórios judiciários",
+        "Sentenças transitadas em julgado",
+        "Atualização monetária",
+        "Prazo de pagamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0006",
+      "summary": "Determina que dotações e créditos sejam consignados diretamente ao Poder Judiciário. O Presidente do Tribunal da decisão exequenda deve determinar o pagamento integral e, a requerimento do credor, autorizar o sequestro de quantia em casos de preterimento de precedência ou insuficiência de alocação orçamentária.",
+      "keywords": [
+        "Poder Judiciário",
+        "Sequestro de valores",
+        "Precedência de pagamento",
+        "Dotações orçamentárias",
+        "Presidente do Tribunal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0007",
+      "summary": "Define que o Presidente do Tribunal que retardar ou tentar frustrar a liquidação regular de precatórios incorrerá em crime de responsabilidade e responderá perante o Conselho Nacional de Justiça (CNJ).",
+      "keywords": [
+        "Crime de responsabilidade",
+        "Conselho Nacional de Justiça (CNJ)",
+        "Liquidação de precatórios",
+        "Presidente do Tribunal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0008",
+      "summary": "Vedação à expedição de precatórios complementares ou suplementares de valores já pagos. Proíbe o fracionamento, repartição ou quebra do valor da execução com o objetivo de enquadrar parcelas do total nos limites estabelecidos no § 3º do artigo.",
+      "keywords": [
+        "precatórios complementares",
+        "precatórios suplementares",
+        "fracionamento de execução",
+        "vedação de repartição"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0009",
+      "summary": "Estabelece que débitos inscritos em dívida ativa contra o credor do requisitório ou seus substituídos devem ser depositados na conta do juízo responsável, sem interromper o pagamento do precatório. A Fazenda Pública deve comunicar o Tribunal, e o juízo decidirá o destino definitivo dos valores.",
+      "keywords": [
+        "dívida ativa",
+        "depósito em conta do juízo",
+        "credor do requisitório",
+        "Fazenda Pública",
+        "interrupção de pagamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0010",
+      "summary": "O Tribunal deve solicitar à Fazenda Pública devedora, em até 30 dias, informações sobre débitos que permitam o abatimento previsto no § 9º antes da expedição dos precatórios. O descumprimento do prazo implica na perda do direito de abatimento.",
+      "keywords": [
+        "prazo de 30 dias",
+        "Fazenda Pública devedora",
+        "abatimento de débitos",
+        "expedição de precatórios",
+        "perda do direito de abatimento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0011",
+      "summary": "Faculta ao credor a oferta de créditos líquidos e certos, sejam próprios ou adquiridos de terceiros, desde que reconhecidos pelo ente federativo ou por decisão judicial transitada em julgado, conforme a legislação do ente devedor (com autoaplicabilidade para a União).",
+      "keywords": [
+        "oferta de créditos",
+        "créditos líquidos e certos",
+        "credor",
+        "ente federativo devedor",
+        "reconhecimento judicial"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0011-INC-I",
+      "summary": "Refere-se à quitação de débitos parcelados ou inscritos em dívida ativa do ente federativo devedor, abrangendo transações resolutivas de litígio. Inclui, subsidiariamente, débitos com a administração autárquica e fundacional do mesmo ente.",
+      "keywords": [
+        "quitação de débitos",
+        "dívida ativa",
+        "transação resolutiva de litígio",
+        "administração autárquica",
+        "administração fundacional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0011-INC-II",
+      "summary": "Trata da compra de imóveis públicos de propriedade do próprio ente federativo, desde que estes estejam disponibilizados para venda.",
+      "keywords": [
+        "compra de imóveis públicos",
+        "imóveis de propriedade do ente",
+        "venda de imóveis"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0011-INC-III",
+      "summary": "Dispõe sobre o pagamento de outorga de delegações de serviços públicos e outras modalidades de concessão negocial promovidas pelo próprio ente federativo.",
+      "keywords": [
+        "outorga de delegações",
+        "serviços públicos",
+        "concessão negocial",
+        "pagamento de outorga"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0011-INC-IV",
+      "summary": "Refere-se à aquisição de participação societária do respectivo ente federativo, inclusive em caráter minoritário, quando disponibilizada para venda.",
+      "keywords": [
+        "participação societária",
+        "aquisição minoritária",
+        "venda de participação societária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0011-INC-V",
+      "summary": "Trata da compra de direitos disponibilizados para cessão pelo respectivo ente federativo. No caso específico da União, abrange a antecipação de valores a serem recebidos como excedente em contratos de partilha de petróleo.",
+      "keywords": [
+        "compra de direitos",
+        "cessão de direitos",
+        "União",
+        "partilha de petróleo",
+        "antecipação de valores"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0012",
+      "summary": "Estabelece que a atualização de valores de requisitórios (precatórios), após a expedição e até o pagamento, independe da sua natureza e deve seguir o índice oficial de remuneração básica da caderneta de poupança. Para compensação da mora, incidem juros simples no mesmo percentual da caderneta de poupança, excluindo-se juros compensatórios.",
+      "keywords": [
+        "atualização de precatórios",
+        "caderneta de poupança",
+        "juros simples",
+        "compensação da mora",
+        "juros compensatórios"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0013",
+      "summary": "Permite ao credor ceder, total ou parcialmente, seus créditos em precatórios a terceiros sem a necessidade de concordância do devedor. Ressalva que as disposições dos §§ 2º e 3º não se aplicam ao cessionário.",
+      "keywords": [
+        "cessão de precatórios",
+        "crédito",
+        "terceiros",
+        "concordância do devedor",
+        "cessionário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0014",
+      "summary": "Determina que a cessão de precatórios, observando o disposto no § 9º, só produz efeitos após a comunicação formal, mediante petição protocolizada, ao Tribunal de origem e ao ente federativo devedor.",
+      "keywords": [
+        "cessão de precatórios",
+        "petição protocolizada",
+        "Tribunal de origem",
+        "ente federativo devedor",
+        "eficácia da cessão"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0015",
+      "summary": "Previsão de que lei complementar poderá estabelecer regime especial para o pagamento de precatórios de Estados, Distrito Federal e Municípios, definindo vinculações à receita corrente líquida, além da forma e do prazo de liquidação.",
+      "keywords": [
+        "regime especial",
+        "precatórios",
+        "lei complementar",
+        "receita corrente líquida",
+        "prazo de liquidação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0016",
+      "summary": "Faculdade da União, a seu critério exclusivo e mediante lei, de assumir e refinanciar diretamente débitos oriundos de precatórios de Estados, Distrito Federal e Municípios.",
+      "keywords": [
+        "União",
+        "refinanciamento de precatórios",
+        "critério exclusivo",
+        "assunção de débitos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0017",
+      "summary": "Obrigatoriedade de aferição mensal, com base anual, do comprometimento da receita corrente líquida da União, Estados, Distrito Federal e Municípios com o pagamento de precatórios e obrigações de pequeno valor.",
+      "keywords": [
+        "aferição mensal",
+        "receita corrente líquida",
+        "precatórios",
+        "obrigações de pequeno valor",
+        "comprometimento de receita"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0018",
+      "summary": "Definição de receita corrente líquida para fins de aferição de precatórios, compreendendo o somatório de receitas tributárias, patrimoniais, industriais, agropecuárias, de contribuições, de serviços, transferências correntes e outras receitas correntes, verificadas em período de 12 meses e deduzidas duplicidades e itens específicos.",
+      "keywords": [
+        "receita corrente líquida",
+        "somatório de receitas",
+        "receitas tributárias",
+        "transferências correntes",
+        "período de referência"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0018-INC-I",
+      "summary": "Refere-se às parcelas entregues pela União aos Estados, ao Distrito Federal e aos Municípios em cumprimento a determinações constitucionais.",
+      "keywords": [
+        "União",
+        "Estados",
+        "Distrito Federal",
+        "Municípios",
+        "determinação constitucional",
+        "parcelas entregues"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0018-INC-II",
+      "summary": "Refere-se às parcelas entregues pelos Estados aos Municípios por determinação constitucional.",
+      "keywords": [
+        "Estados",
+        "Municípios",
+        "determinação constitucional",
+        "parcelas entregues"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0018-INC-III",
+      "summary": "Abrange a contribuição dos servidores para o custeio do sistema de previdência e assistência social na União, Estados, Distrito Federal e Municípios, além das receitas de compensação financeira previstas no § 9º do art. 201 da Constituição Federal.",
+      "keywords": [
+        "contribuição de servidores",
+        "previdência social",
+        "assistência social",
+        "compensação financeira",
+        "Art. 201 § 9º",
+        "União",
+        "Estados",
+        "Distrito Federal",
+        "Municípios"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0019",
+      "summary": "Estabelece que débitos de condenações judiciais (precatórios e obrigações de pequeno valor) que excedam a média do comprometimento da receita corrente líquida dos últimos 5 anos podem ser financiados. Esse financiamento é excluído dos limites de endividamento do art. 52, VI e VII da Constituição Federal e de outros limites previstos, não se aplicando a vedação de vinculação de receita do art. 167, IV.",
+      "keywords": [
+        "precatórios",
+        "obrigações de pequeno valor",
+        "financiamento de débitos judiciais",
+        "receita corrente líquida",
+        "limites de endividamento",
+        "vinculação de receita",
+        "Art. 52",
+        "Art. 167"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0019A",
+      "summary": "Autorização para a União instituir linha de crédito especial, por meio de instituições financeiras estatais federais, destinada exclusivamente ao pagamento de precatórios referidos no § 19, mediante regulamentação por lei complementar.",
+      "keywords": [
+        "União",
+        "linha de crédito especial",
+        "precatórios",
+        "instituições financeiras estatais",
+        "lei complementar"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0020",
+      "summary": "Regras para precatórios superiores a 15% do montante do § 5º: pagamento de 15% até o fim do exercício seguinte e o restante em 5 parcelas iguais com juros e correção, ou celebração de acordo direto com redução máxima de 40% do crédito atualizado, desde que sem recurso/defesa judicial e conforme regulamentação do ente federado.",
+      "keywords": [
+        "precatórios",
+        "parcelamento",
+        "acordo direto",
+        "redução de 40%",
+        "Juízos Auxiliares de Conciliação de Precatórios"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0021",
+      "summary": "Autorização para a União e demais entes federativos utilizarem valores de sentenças transitadas em julgado devidos a pessoas jurídicas de direito público para amortizar dívidas vencidas ou vincendas, desde que haja aceitação por ambas as partes.",
+      "keywords": [
+        "União",
+        "entes federativos",
+        "sentenças transitadas em julgado",
+        "amortização de dívidas",
+        "pessoa jurídica de direito público"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0021-INC-I",
+      "summary": "Especificação da amortização de dívidas para contratos de refinanciamento cujos créditos sejam detidos pelo ente federativo que figure como devedor na sentença.",
+      "keywords": [
+        "contratos de refinanciamento",
+        "amortização de dívidas",
+        "ente federativo devedor",
+        "créditos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0021-INC-II",
+      "summary": "Refere-se a contratos que envolveram a prestação de garantia a outro ente federativo.",
+      "keywords": [
+        "contratos",
+        "prestação de garantia",
+        "ente federativo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0021-INC-III",
+      "summary": "Refere-se aos parcelamentos de tributos ou de contribuições sociais.",
+      "keywords": [
+        "parcelamento de tributos",
+        "contribuições sociais"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0021-INC-IV",
+      "summary": "Refere-se às obrigações decorrentes do descumprimento de prestação de contas ou do desvio de recursos.",
+      "keywords": [
+        "prestação de contas",
+        "desvio de recursos",
+        "obrigações decorrentes"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0022",
+      "summary": "Estabelece a base para a amortização mencionada no § 21 do mesmo artigo.",
+      "keywords": [
+        "amortização",
+        "§ 21"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0022-INC-I",
+      "summary": "Estabelece que, no caso de obrigações vencidas, a imputação deve ocorrer prioritariamente nas parcelas mais antigas.",
+      "keywords": [
+        "obrigações vencidas",
+        "parcelas mais antigas",
+        "ordem de imputação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0022-INC-II",
+      "summary": "Determina que, para obrigações vincendas, deve haver uma redução uniforme do valor de cada parcela devida, mantendo-se o prazo original do contrato ou do parcelamento.",
+      "keywords": [
+        "obrigações vincendas",
+        "redução uniforme",
+        "duração original",
+        "parcelamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023",
+      "summary": "Define que os pagamentos de precatórios por Estados, Distrito Federal e Municípios (administrações diretas e indiretas) estão limitados conforme os parâmetros estabelecidos nos §§ 24, 25, 26 e 28 do mesmo artigo.",
+      "keywords": [
+        "precatórios",
+        "Estados",
+        "Distrito Federal",
+        "Municípios",
+        "limites de pagamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-I",
+      "summary": "Fixa o limite de 1% da receita corrente líquida do exercício anterior para pagamento de precatórios em dois cenários: entes federativos sem estoque ou entes cujo estoque de precatórios em mora (atualizado e com juros em 1º de janeiro) não ultrapasse 15% desse valor.",
+      "keywords": [
+        "1% receita corrente líquida",
+        "estoque de precatórios",
+        "entes federativos",
+        "limite de pagamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-II",
+      "summary": "Estabelece o percentual de 1,5% da receita corrente líquida do exercício financeiro anterior quando o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, for superior a 15% e inferior ou igual a 25% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "estoque de precatórios",
+        "percentual 1,5%"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-III",
+      "summary": "Define o percentual de 2% da receita corrente líquida do exercício financeiro anterior para situações em que o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, for superior a 25% e inferior ou igual a 35% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "estoque de precatórios",
+        "percentual 2%"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-IV",
+      "summary": "Determina o percentual de 2,5% da receita corrente líquida do exercício financeiro anterior quando o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, for superior a 35% e inferior ou igual a 45% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "estoque de precatórios",
+        "percentual 2,5%"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-IX",
+      "summary": "Fixa o percentual de 5% da receita corrente líquida do exercício anterior caso o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, seja superior a 85% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "5%",
+        "estoque de precatórios",
+        "limite superior 85%"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-V",
+      "summary": "Fixa o percentual de 3% da receita corrente líquida do exercício financeiro anterior para casos em que o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, for superior a 45% e inferior ou igual a 55% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "estoque de precatórios",
+        "percentual 3%"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-VI",
+      "summary": "Estabelece o percentual de 3,5% da receita corrente líquida do exercício anterior quando o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, for superior a 55% e inferior ou igual a 65% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "3,5%",
+        "estoque de precatórios",
+        "limite 55% a 65%"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-VII",
+      "summary": "Define o percentual de 4% da receita corrente líquida do exercício anterior para situações em que o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, for superior a 65% e inferior ou igual a 75% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "4%",
+        "estoque de precatórios",
+        "limite 65% a 75%"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0100-PAR-0023-INC-VIII",
+      "summary": "Determina o percentual de 4,5% da receita corrente líquida do exercício anterior quando o estoque de precatórios em mora, atualizados monetariamente e acrescidos de juros moratórios em 1º de janeiro, for superior a 75% e inferior ou igual a 85% desse valor.",
+      "keywords": [
+        "precatórios em mora",
+        "receita corrente líquida",
+        "4,5%",
+        "estoque de precatórios",
+        "limite 75% a 85%"
+      ]
+    }
+  ]
+}

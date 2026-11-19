@@ -1,0 +1,335 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105",
+  "content_hash": "a7d3300af389ccee3a90edc23bc63d5dfb3c46bba4909fa6254b550b6705320b",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T07:00:42.323079+00:00",
+  "completed_units": 31,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-CAPUT",
+      "summary": "Estabelece a competência do Superior Tribunal de Justiça (STJ).",
+      "keywords": [
+        "Superior Tribunal de Justiça",
+        "competência",
+        "STJ"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I",
+      "summary": "Define a competência originária do Superior Tribunal de Justiça para processar e julgar casos específicos.",
+      "keywords": [
+        "competência originária",
+        "processar e julgar",
+        "STJ"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-A",
+      "summary": "Define a competência do STJ para julgar crimes comuns de Governadores de Estados e do Distrito Federal, e crimes de responsabilidade de desembargadores dos Tribunais de Justiça, membros dos Tribunais de Contas estaduais e do DF, membros dos Tribunais Regionais Federais, Eleitorais e do Trabalho, membros dos Conselhos ou Tribunais de Contas dos Municípios e membros do Ministério Público da União que oficiem perante tribunais.",
+      "keywords": [
+        "crimes comuns",
+        "crimes de responsabilidade",
+        "Governadores",
+        "desembargadores",
+        "Tribunais de Contas",
+        "Tribunais Regionais",
+        "Ministério Público da União"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-B",
+      "summary": "Define a competência do STJ para julgar mandados de segurança e habeas data contra atos de Ministros de Estado, Comandantes da Marinha, do Exército e da Aeronáutica, ou do próprio Tribunal.",
+      "keywords": [
+        "mandado de segurança",
+        "habeas data",
+        "Ministro de Estado",
+        "Comandantes das Forças Armadas",
+        "STJ"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-C",
+      "summary": "Define a competência para julgar habeas corpus quando o coator ou paciente for pessoa mencionada na alínea a, ou quando o coator for tribunal sob sua jurisdição, Ministro de Estado ou Comandante da Marinha, do Exército ou da Aeronáutica, ressalvada a competência da Justiça Eleitoral.",
+      "keywords": [
+        "Habeas corpus",
+        "Ministro de Estado",
+        "Comandante das Forças Armadas",
+        "competência jurisdicional",
+        "Justiça Eleitoral"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-D",
+      "summary": "Estabelece a competência para julgar conflitos de competência entre quaisquer tribunais, entre tribunal e juízes a ele não vinculados, e entre juízes vinculados a tribunais diversos, exceto o disposto no art. 102, I, o.",
+      "keywords": [
+        "Conflito de competência",
+        "tribunais",
+        "juízes vinculados",
+        "jurisdição",
+        "competência judicial"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-E",
+      "summary": "Define a competência para julgar revisões criminais e as ações rescisórias de seus julgados.",
+      "keywords": [
+        "Revisão criminal",
+        "ação rescisória",
+        "julgados",
+        "competência"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-F",
+      "summary": "Define a competência para julgar a reclamação destinada à preservação de sua competência e à garantia da autoridade de suas decisões.",
+      "keywords": [
+        "Reclamação",
+        "preservação de competência",
+        "autoridade de decisões",
+        "jurisdição"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-G",
+      "summary": "Trata dos conflitos de atribuições entre autoridades administrativas e judiciárias da União, bem como entre autoridades judiciárias de um Estado e administrativas de outro Estado ou do Distrito Federal, ou entre estas e da União.",
+      "keywords": [
+        "conflitos de atribuições",
+        "autoridades administrativas",
+        "autoridades judiciárias",
+        "União",
+        "Estados",
+        "Distrito Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-H",
+      "summary": "Refere-se ao mandado de injunção quando a elaboração da norma regulamentadora for atribuição de órgão, entidade ou autoridade federal (administração direta ou indireta), com exceção das competências do Supremo Tribunal Federal e dos órgãos da Justiça Militar, Eleitoral, do Trabalho e Federal.",
+      "keywords": [
+        "mandado de injunção",
+        "norma regulamentadora",
+        "administração federal",
+        "exceções de competência",
+        "STF"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-I",
+      "summary": "Aborda a homologação de sentenças estrangeiras e a concessão de exequatur às cartas rogatórias.",
+      "keywords": [
+        "sentenças estrangeiras",
+        "homologação",
+        "cartas rogatórias",
+        "exequatur"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-I-ALI-J",
+      "summary": "Trata dos conflitos entre entes federativos ou entre estes e o Comitê Gestor do Imposto sobre Bens e Serviços (IBS), especificamente relacionados aos tributos previstos nos artigos 156-A e 195, V.",
+      "keywords": [
+        "conflitos federativos",
+        "Comitê Gestor do IBS",
+        "Imposto sobre Bens e Serviços",
+        "tributos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-II",
+      "summary": "Estabelece a competência para o julgamento por meio de recurso ordinário.",
+      "keywords": [
+        "recurso ordinário",
+        "competência",
+        "julgamento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-II-ALI-A",
+      "summary": "Julgamento em recurso ordinário de habeas corpus denegados em única ou última instância pelos Tribunais Regionais Federais ou pelos tribunais dos Estados, do Distrito Federal e Territórios.",
+      "keywords": [
+        "habeas corpus",
+        "decisão denegatória",
+        "Tribunais Regionais Federais",
+        "tribunais estaduais",
+        "recurso ordinário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-II-ALI-B",
+      "summary": "Julgamento em recurso ordinário de mandados de segurança denegados em única instância pelos Tribunais Regionais Federais ou pelos tribunais dos Estados, do Distrito Federal e Territórios.",
+      "keywords": [
+        "mandado de segurança",
+        "decisão denegatória",
+        "Tribunais Regionais Federais",
+        "tribunais estaduais",
+        "recurso ordinário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-II-ALI-C",
+      "summary": "Julgamento em recurso ordinário de causas envolvendo Estado estrangeiro ou organismo internacional de um lado, e Município ou pessoa residente ou domiciliada no País do outro.",
+      "keywords": [
+        "Estado estrangeiro",
+        "organismo internacional",
+        "Município",
+        "pessoa residente no País",
+        "recurso ordinário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-III",
+      "summary": "Estabelece a competência para julgar recurso especial em causas decididas, em única ou última instância, pelos Tribunais Regionais Federais ou pelos tribunais dos Estados, do Distrito Federal e Territórios, quando preenchidos requisitos específicos.",
+      "keywords": [
+        "Recurso especial",
+        "Tribunais Regionais Federais",
+        "Tribunais estaduais",
+        "Última instância"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-III-ALI-A",
+      "summary": "Hipótese de cabimento de recurso especial quando a decisão recorrida contrariar tratado ou lei federal, ou negar-lhes vigência.",
+      "keywords": [
+        "Tratado federal",
+        "Lei federal",
+        "Negar vigência",
+        "Recurso especial"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-III-ALI-B",
+      "summary": "Hipótese de cabimento de recurso especial quando a decisão julgar válido ato de governo local contestado em face de lei federal.",
+      "keywords": [
+        "Ato de governo local",
+        "Lei federal",
+        "Validade de ato",
+        "Recurso especial"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-INC-III-ALI-C",
+      "summary": "Hipótese de cabimento de recurso especial quando a decisão der à lei federal interpretação divergente da que lhe haja atribuído outro tribunal.",
+      "keywords": [
+        "Interpretação divergente",
+        "Lei federal",
+        "Tribunal",
+        "Recurso especial"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0001",
+      "summary": "Estabelece a existência de órgãos que funcionarão junto ao Superior Tribunal de Justiça.",
+      "keywords": [
+        "Superior Tribunal de Justiça",
+        "órgãos adjacentes",
+        "STJ"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0001-INC-I",
+      "summary": "Institui a Escola Nacional de Formação e Aperfeiçoamento de Magistrados junto ao STJ, com a atribuição de regulamentar os cursos oficiais para ingresso e promoção na carreira da magistratura.",
+      "keywords": [
+        "Escola Nacional de Formação e Aperfeiçoamento de Magistrados",
+        "formação de magistrados",
+        "regulamentação de cursos",
+        "promoção na carreira"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0001-INC-II",
+      "summary": "Institui o Conselho da Justiça Federal junto ao STJ como órgão central do sistema, com competência para supervisão administrativa e orçamentária da Justiça Federal de primeiro e segundo graus, possuindo poderes correicionais com decisões de caráter vinculante.",
+      "keywords": [
+        "Conselho da Justiça Federal",
+        "supervisão administrativa",
+        "supervisão orçamentária",
+        "poderes correicionais",
+        "Justiça Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0002",
+      "summary": "Determina que, no recurso especial, o recorrente deve demonstrar a relevância das questões de direito federal infraconstitucional. O Tribunal só poderá não conhecer do recurso por esse motivo mediante manifestação de 2/3 dos membros do órgão competente.",
+      "keywords": [
+        "recurso especial",
+        "relevância das questões de direito federal",
+        "infraconstitucional",
+        "admissibilidade de recurso",
+        "quórum de 2/3"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0003",
+      "summary": "Estabelece as hipóteses específicas em que se aplica a relevância mencionada no § 2º do Art. 105.",
+      "keywords": [
+        "relevância",
+        "Art. 105",
+        "§ 2º",
+        "casos de aplicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0003-INC-I",
+      "summary": "Identifica as ações penais como um dos casos em que ocorre a relevância prevista no dispositivo anterior.",
+      "keywords": [
+        "ações penais",
+        "relevância",
+        "processo penal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0003-INC-II",
+      "summary": "Identifica as ações de improbidade administrativa como um dos casos em que ocorre a relevância prevista no dispositivo anterior.",
+      "keywords": [
+        "improbidade administrativa",
+        "ações de improbidade",
+        "relevância"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0003-INC-III",
+      "summary": "Identifica as ações cujo valor da causa ultrapasse 500 salários mínimos como um dos casos em que ocorre a relevância prevista no dispositivo anterior.",
+      "keywords": [
+        "valor da causa",
+        "500 salários mínimos",
+        "ações de alto valor",
+        "relevância"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0003-INC-IV",
+      "summary": "Refere-se a ações que possuem o potencial de gerar inelegibilidade.",
+      "keywords": [
+        "inelegibilidade",
+        "ações de inelegibilidade",
+        "EC 125/2022"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0003-INC-V",
+      "summary": "Hipóteses em que o acórdão recorrido apresenta contrariedade à jurisprudência dominante do Superior Tribunal de Justiça.",
+      "keywords": [
+        "acórdão recorrido",
+        "jurisprudência dominante",
+        "Superior Tribunal de Justiça",
+        "STJ",
+        "EC 125/2022"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0105-PAR-0003-INC-VI",
+      "summary": "Demais hipóteses que estejam expressamente previstas em lei.",
+      "keywords": [
+        "hipóteses legais",
+        "previsão em lei",
+        "EC 125/2022"
+      ]
+    }
+  ]
+}

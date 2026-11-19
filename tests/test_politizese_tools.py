@@ -99,7 +99,7 @@ def create_toolbox(documents=None, error=None):
     return PolitizeseToolbox(pipeline), pipeline
 
 
-def test_toolbox_exposes_three_tools():
+def test_toolbox_exposes_four_tools():
     toolbox, _ = create_toolbox()
 
     names = {
@@ -110,6 +110,7 @@ def test_toolbox_exposes_three_tools():
     assert names == {
         "search_constitution",
         "search_constitution_decomposed",
+        "search_politicos",
         "calculate_voting_threshold",
     }
 

@@ -1,0 +1,384 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007",
+  "content_hash": "e256548cde124a3c64f08c1d30c7362eedc5324a947e6acb6f7a2bba83fb4cbd",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T04:21:01.108885+00:00",
+  "completed_units": 38,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-CAPUT",
+      "summary": "Estabelece os direitos dos trabalhadores urbanos e rurais, abrangendo também direitos voltados à melhoria de sua condição social.",
+      "keywords": [
+        "trabalhadores urbanos",
+        "trabalhadores rurais",
+        "condição social",
+        "direitos trabalhistas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-I",
+      "summary": "Proteção da relação de emprego contra despedida arbitrária ou sem justa causa, a ser regulamentada por lei complementar que preveja indenização compensatória.",
+      "keywords": [
+        "relação de emprego",
+        "despedida arbitrária",
+        "despedida sem justa causa",
+        "indenização compensatória",
+        "lei complementar"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-II",
+      "summary": "Direito ao seguro-desemprego em situações de desemprego involuntário.",
+      "keywords": [
+        "seguro-desemprego",
+        "desemprego involuntário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-III",
+      "summary": "Direito ao fundo de garantia do tempo de serviço.",
+      "keywords": [
+        "fundo de garantia do tempo de serviço",
+        "FGTS"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-IV",
+      "summary": "Estabelece o salário mínimo como valor fixado em lei e nacionalmente unificado, destinado a suprir necessidades vitais básicas (moradia, alimentação, educação, saúde, lazer, vestuário, higiene, transporte e previdência social). Determina a necessidade de reajustes periódicos para preservação do poder aquisitivo e veda a vinculação do salário mínimo para qualquer fim.",
+      "keywords": [
+        "salário mínimo",
+        "poder aquisitivo",
+        "necessidades básicas",
+        "reajuste periódico",
+        "unificação nacional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-IX",
+      "summary": "Garantia de que a remuneração pelo trabalho realizado no período noturno deve ser superior à remuneração do trabalho diurno.",
+      "keywords": [
+        "trabalho noturno",
+        "remuneração superior",
+        "trabalho diurno"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-V",
+      "summary": "Define a existência de um piso salarial que deve ser proporcional à extensão e à complexidade do trabalho realizado.",
+      "keywords": [
+        "piso salarial",
+        "complexidade do trabalho",
+        "extensão do trabalho"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-VI",
+      "summary": "Estabelece o princípio da irredutibilidade do salário, permitindo exceções apenas nos casos previstos em convenção ou acordo coletivo.",
+      "keywords": [
+        "irredutibilidade salarial",
+        "convenção coletiva",
+        "acordo coletivo"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-VII",
+      "summary": "Garante que trabalhadores que recebem remuneração variável tenham assegurado um salário nunca inferior ao mínimo.",
+      "keywords": [
+        "remuneração variável",
+        "salário mínimo",
+        "garantia salarial"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-VIII",
+      "summary": "Direito ao recebimento do décimo terceiro salário, calculado com base na remuneração integral ou no valor da aposentadoria.",
+      "keywords": [
+        "décimo terceiro salário",
+        "remuneração integral",
+        "valor da aposentadoria"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-X",
+      "summary": "Estabelece a proteção do salário nos termos da lei e define como crime a retenção dolosa do pagamento salarial.",
+      "keywords": [
+        "proteção do salário",
+        "retenção dolosa",
+        "crime de retenção"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XI",
+      "summary": "Direito à participação nos lucros ou resultados, de forma desvinculada da remuneração, e a possibilidade excepcional de participação na gestão da empresa, conforme definido em lei.",
+      "keywords": [
+        "participação nos lucros",
+        "participação nos resultados",
+        "gestão da empresa",
+        "desvinculada da remuneração"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XII",
+      "summary": "Pagamento de salário-família ao trabalhador de baixa renda em razão de seus dependentes, conforme estabelecido em lei.",
+      "keywords": [
+        "salário-família",
+        "trabalhador de baixa renda",
+        "dependente",
+        "benefício previdenciário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XIII",
+      "summary": "Limite da duração do trabalho normal em oito horas diárias e quarenta e quatro semanais, permitindo a compensação de horários e a redução da jornada mediante acordo ou convenção coletiva de trabalho.",
+      "keywords": [
+        "jornada de trabalho",
+        "limite de horas",
+        "compensação de horários",
+        "redução de jornada",
+        "convenção coletiva"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XIV",
+      "summary": "Estabelecimento de jornada de seis horas para trabalho em turnos ininterruptos de revezamento, exceto em casos de negociação coletiva.",
+      "keywords": [
+        "turno ininterrupto de revezamento",
+        "jornada de seis horas",
+        "negociação coletiva"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XIX",
+      "summary": "Estabelece o direito à licença-paternidade, cujos termos e condições são fixados em lei.",
+      "keywords": [
+        "licença-paternidade",
+        "termos legais",
+        "licença do pai"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XV",
+      "summary": "Direito ao repouso semanal remunerado, com preferência para o dia domingo.",
+      "keywords": [
+        "repouso semanal remunerado",
+        "descanso semanal",
+        "preferência aos domingos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XVI",
+      "summary": "Estabelece que a remuneração do serviço extraordinário deve ser superior, no mínimo, em cinquenta por cento em relação à remuneração do trabalho normal.",
+      "keywords": [
+        "serviço extraordinário",
+        "remuneração",
+        "adicional de 50%",
+        "hora extra"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XVII",
+      "summary": "Garante o direito ao gozo de férias anuais remuneradas com um acréscimo de, pelo menos, um terço sobre o valor do salário normal.",
+      "keywords": [
+        "férias anuais",
+        "remuneração de férias",
+        "adicional de um terço",
+        "salário normal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XVIII",
+      "summary": "Prevê licença à gestante com duração de cento e vinte dias, assegurando a manutenção do emprego e do salário durante o período.",
+      "keywords": [
+        "licença à gestante",
+        "licença maternidade",
+        "120 dias",
+        "manutenção de emprego e salário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XX",
+      "summary": "Estabelece a proteção do mercado de trabalho da mulher por meio de incentivos específicos previstos em lei.",
+      "keywords": [
+        "mercado de trabalho feminino",
+        "proteção à mulher",
+        "incentivos específicos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXI",
+      "summary": "Garante o direito ao aviso prévio proporcional ao tempo de serviço, com duração mínima de trinta dias, conforme a legislação.",
+      "keywords": [
+        "aviso prévio",
+        "tempo de serviço",
+        "mínimo de trinta dias"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXII",
+      "summary": "Determina a redução dos riscos inerentes ao trabalho através da implementação de normas de saúde, higiene e segurança.",
+      "keywords": [
+        "riscos do trabalho",
+        "saúde e higiene",
+        "segurança do trabalho"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXIII",
+      "summary": "Prevê o pagamento de adicional de remuneração para trabalhadores em atividades penosas, insalubres ou perigosas, nos termos da lei.",
+      "keywords": [
+        "adicional de remuneração",
+        "atividades penosas",
+        "insalubridade",
+        "periculosidade"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXIV",
+      "summary": "Direito à aposentadoria.",
+      "keywords": [
+        "aposentadoria",
+        "previdência",
+        "direito trabalhista"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXIX",
+      "summary": "Define o prazo prescricional de cinco anos para ações sobre créditos de relações de trabalho para trabalhadores urbanos e rurais, com limite de dois anos após a extinção do contrato de trabalho.",
+      "keywords": [
+        "prazo prescricional",
+        "créditos de relações de trabalho",
+        "trabalhadores urbanos e rurais",
+        "extinção do contrato de trabalho"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXIX-ALI-A",
+      "summary": "Dispositivo revogado pela EC n. 28/2000.",
+      "keywords": [
+        "dispositivo revogado",
+        "EC n. 28/2000"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXIX-ALI-B",
+      "summary": "Dispositivo revogado pela EC n. 28/2000.",
+      "keywords": [
+        "dispositivo revogado",
+        "EC n. 28/2000"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXV",
+      "summary": "Assistência gratuita em creches e pré-escolas para filhos e dependentes de trabalhadores, desde o nascimento até os 5 anos de idade.",
+      "keywords": [
+        "assistência gratuita",
+        "creches",
+        "pré-escolas",
+        "filhos e dependentes",
+        "educação infantil"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXVI",
+      "summary": "Reconhecimento jurídico das convenções e acordos coletivos de trabalho.",
+      "keywords": [
+        "convenções coletivas",
+        "acordos coletivos",
+        "reconhecimento de acordos",
+        "relações de trabalho"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXVII",
+      "summary": "Proteção do trabalhador em face da automação, conforme estabelecido em lei.",
+      "keywords": [
+        "proteção contra automação",
+        "automação do trabalho",
+        "segurança no emprego",
+        "legislação trabalhista"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXVIII",
+      "summary": "Estabelece a obrigatoriedade do seguro contra acidentes de trabalho a cargo do empregador, ressalvando o direito do trabalhador à indenização em casos de dolo ou culpa do empregador.",
+      "keywords": [
+        "seguro contra acidentes de trabalho",
+        "responsabilidade do empregador",
+        "indenização por dolo ou culpa"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXX",
+      "summary": "Proibição de discriminação em relação a salários, exercício de funções e critérios de admissão baseados em sexo, idade, cor ou estado civil.",
+      "keywords": [
+        "igualdade salarial",
+        "critérios de admissão",
+        "não discriminação",
+        "sexo",
+        "idade",
+        "cor",
+        "estado civil"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXXI",
+      "summary": "Proibição de qualquer forma de discriminação salarial ou de critérios de admissão para trabalhadores portadores de deficiência.",
+      "keywords": [
+        "trabalhador com deficiência",
+        "igualdade salarial",
+        "critérios de admissão",
+        "não discriminação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXXII",
+      "summary": "Proibição de distinção entre trabalhos manuais, técnicos e intelectuais, bem como entre os profissionais que os exercem.",
+      "keywords": [
+        "trabalho manual",
+        "trabalho técnico",
+        "trabalho intelectual",
+        "igualdade profissional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXXIII",
+      "summary": "Proibição de trabalho noturno, perigoso ou insalubre para menores de 18 anos e de qualquer trabalho para menores de 16 anos, com exceção da condição de aprendiz a partir dos 14 anos.",
+      "keywords": [
+        "trabalho de menores",
+        "aprendizagem",
+        "trabalho noturno",
+        "trabalho perigoso",
+        "trabalho insalubre",
+        "idade mínima"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-INC-XXXIV",
+      "summary": "Estabelece a igualdade de direitos entre o trabalhador que possui vínculo empregatício permanente e o trabalhador avulso.",
+      "keywords": [
+        "trabalhador avulso",
+        "vínculo empregatício permanente",
+        "igualdade de direitos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0007-PAR-UNICO",
+      "summary": "Assegura aos trabalhadores domésticos direitos específicos previstos em diversos incisos do Art. 7º, incluindo a integração à previdência social. A aplicação de determinados direitos está condicionada ao cumprimento de requisitos legais e à simplificação das obrigações tributárias (principais e acessórias) derivadas da relação de trabalho e suas peculiaridades.",
+      "keywords": [
+        "trabalhadores domésticos",
+        "previdência social",
+        "obrigações tributárias",
+        "direitos trabalhistas"
+      ]
+    }
+  ]
+}

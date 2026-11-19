@@ -48,6 +48,19 @@ class AgentTimingEvent(BaseModel):
     )
 
 
+class AgentSource(BaseModel):
+    """Referência que pode ser exibida ao cidadão na interface."""
+
+    model_config = ConfigDict(extra="forbid")
+
+    kind: Literal["document", "politico"]
+    id: str
+    title: str
+    detail: str | None = None
+    excerpt: str | None = None
+    href: str | None = None
+
+
 class AgentRunResult(BaseModel):
     """Resultado completo de uma execução do agente."""
 
@@ -68,6 +81,8 @@ class AgentRunResult(BaseModel):
     tool_duration_seconds: float = Field(ge=0)
 
     trace: list[AgentTraceEntry] = Field(default_factory=list)
+
+    sources: list[AgentSource] = Field(default_factory=list)
 
     timing_events: list[AgentTimingEvent] = Field(
         default_factory=list

@@ -2,6 +2,8 @@
 import json
 from pathlib import Path
 
+from collections import defaultdict
+
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 
@@ -19,13 +21,13 @@ from src.rag.vector_store import (
 )
 
 
-COLLECTION_NAME = "constituicao_legal"
+COLLECTION_NAME = "lei_organica_municipio_sp"
 
 ARTICLE_STORE_PATH = (
     PROJECT_ROOT
     / "data"
     / "processed"
-    / "constituicao_artigos.json"
+    / "lei_organica_municipio_sp.json"
 )
 
 
@@ -119,7 +121,7 @@ def save_article_store(articles) -> None:
     """Persiste a árvore jurídica completa em JSON."""
 
     payload = {
-        "document_id": "CF1988",
+        "document_id": "LOMSP",
         "article_count": len(articles),
         "articles": [
             serialize_legal_node(article)
@@ -169,7 +171,7 @@ def main() -> None:
 
     articles = parse_constitution_pages(
         pages,
-        document_id="CF1988",
+        document_id="LOMSP",
     )
 
     if not articles:
@@ -200,11 +202,30 @@ def main() -> None:
             "Nenhuma unidade jurídica foi encontrada para indexação."
         )
 
-    all_ids = [node.node_id for node in nodes]
+    nodes_by_id = defaultdict(list)
 
-    if len(all_ids) != len(set(all_ids)):
+    for node in nodes:
+        nodes_by_id[node.node_id].append(node)
+
+    duplicates = {
+        node_id: duplicated_nodes
+        for node_id, duplicated_nodes in nodes_by_id.items()
+        if len(duplicated_nodes) > 1
+    }
+
+    if duplicates:
+        print("\n[ERRO] Identificadores duplicados encontrados:")
+
+        for node_id, duplicated_nodes in list(duplicates.items())[:30]:
+            print(f"\nID: {node_id}")
+
+            for node in duplicated_nodes:
+                print(f"  Unidade: {node.legal_unit}")
+                print(f"  Artigo: {node.article_number}")
+                print(f"  Texto: {node.text[:200]}")
+
         raise ValueError(
-            "O parser produziu identificadores duplicados."
+            f"O parser produziu {len(duplicates)} IDs duplicados."
         )
 
     print(f"Artigos completos: {len(article_nodes)}")

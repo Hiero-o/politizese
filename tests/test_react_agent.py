@@ -164,7 +164,7 @@ def test_agent_executes_calculator_and_returns_observation():
     assert trace.status == "success"
     assert "308" in trace.observation
 
-    assert len(llm.bound_tools) == 3
+    assert len(llm.bound_tools) == 4
     
         # Métricas de execução.
     assert result.total_duration_seconds >= 0
@@ -516,3 +516,147 @@ def test_agent_block_calculator_requested_after_malicious_observation():
 
     # A última ferramenta foi bloqueada.
     assert result.trace[-1].status == "blocked"
+
+def test_agent_answers_greeting_without_calling_llm():
+    agent, llm = create_agent([])
+
+    result = agent.invoke("oiee")
+
+    assert "Oiee" in result.answer
+    assert result.tool_calls_count == 0
+    assert result.trace == []
+    assert llm.received_messages == []
+
+
+def test_agent_returns_politicians_from_tool_without_llm_rewriting():
+    payload = json.dumps(
+        {
+            "ok": True,
+            "tool": "search_politicos",
+            "filters": {
+                "cargo": "senador", "uf": "SP",
+                "fase_mandato": "em_exercicio",
+            },
+            "total_matches": 3,
+            "returned": 3,
+            "politicos": [
+                {
+                    "id": "senado-6009",
+                    "nome": "ASTRONAUTA MARCOS PONTES",
+                    "cargo": "Senador", "partido": "PL", "uf": "SP",
+                    "fase_mandato": "em_exercicio", "situacao": "Em exercício",
+                    "titularidade": "Titular", "mandato": "2023 / 2031",
+                },
+                {
+                    "id": "senado-6008",
+                    "nome": "GIORDANO",
+                    "cargo": "Senador", "partido": "PODE", "uf": "SP",
+                    "fase_mandato": "em_exercicio", "situacao": "Em exercício",
+                    "titularidade": "1º Suplente", "mandato": "2019 / 2027",
+                },
+                {
+                    "id": "senado-5376",
+                    "nome": "MARA GABRILLI",
+                    "cargo": "Senador", "partido": "PSD", "uf": "SP",
+                    "fase_mandato": "em_exercicio", "situacao": "Em exercício",
+                    "titularidade": "Titular", "mandato": "2019 / 2027",
+                },
+            ],
+            "fontes": [{"fonte": "senado", "status": "cache_valido"}],
+        },
+        ensure_ascii=False,
+    )
+
+    class FixedTool:
+        def __init__(self):
+            self.calls = []
+
+        def invoke(self, arguments):
+            self.calls.append(arguments)
+            return payload
+
+    tool_response = AIMessage(
+        content="",
+        tool_calls=[
+            {
+                "name": "search_politicos",
+                "args": {
+                    "cargo": "senadores",
+                    "uf": "São Paulo",
+                    "fase_mandato": "em exercício",
+                    "limite": 8,
+                },
+                "id": "politicos-1",
+            }
+        ],
+    )
+
+    agent, llm = create_agent(
+        [tool_response, AIMessage(content="Marco Fujimoto e Roberto Costa.")]
+    )
+    fixed_tool = FixedTool()
+    agent._tool_map["search_politicos"] = fixed_tool
+
+    result = agent.invoke(
+        "Quais são os senadores em exercício pelo estado de São Paulo?"
+    )
+
+    assert len(fixed_tool.calls) == 1
+    assert result.tool_calls_count == 1
+    assert "ASTRONAUTA MARCOS PONTES" in result.answer
+    assert "GIORDANO" in result.answer
+    assert "MARA GABRILLI" in result.answer
+    assert "Marco Fujimoto" not in result.answer
+    assert "Roberto Costa" not in result.answer
+    assert "Titularidade: 1º Suplente" in result.answer
+    assert "Perfil disponível nas referências abaixo" in result.answer
+    assert len(llm.received_messages) == 1
+    assert len(result.sources) == 3
+    assert any(
+        source.href == "/dashboard/politicos/senado-6009"
+        for source in result.sources
+    )
+
+
+def test_agent_forces_catalog_lookup_when_model_skips_politicos_tool():
+    payload = json.dumps(
+        {
+            "ok": True, "tool": "search_politicos",
+            "filters": {"cargo": "senador", "uf": "SP", "fase_mandato": "em_exercicio"},
+            "total_matches": 1, "returned": 1,
+            "politicos": [{
+                "id": "senado-6009", "nome": "ASTRONAUTA MARCOS PONTES",
+                "cargo": "Senador", "partido": "PL", "uf": "SP",
+                "fase_mandato": "em_exercicio", "mandato": "2023 / 2031",
+            }],
+            "fontes": [{"fonte": "senado", "status": "cache_valido"}],
+        },
+        ensure_ascii=False,
+    )
+
+    class FixedTool:
+        def __init__(self):
+            self.calls = []
+        def invoke(self, arguments):
+            self.calls.append(arguments)
+            return payload
+
+    # O LLM tenta responder sem chamar a ferramenta. O backend deve
+    # detectar a intenção factual e consultar o catálogo mesmo assim.
+    agent, llm = create_agent([AIMessage(content="Há dois senadores.")])
+    fixed_tool = FixedTool()
+    agent._tool_map["search_politicos"] = fixed_tool
+
+    result = agent.invoke(
+        "Quais são os senadores em exercício pelo estado de São Paulo?"
+    )
+
+    assert fixed_tool.calls == [{
+        "cargo": "senador", "limite": 8,
+        "uf": "SP", "fase_mandato": "em_exercicio",
+    }]
+    assert "ASTRONAUTA MARCOS PONTES" in result.answer
+    assert "Há dois senadores" not in result.answer
+    assert result.trace[0].action == "search_politicos"
+    assert result.trace[0].status == "success"
+    assert len(llm.received_messages) == 1

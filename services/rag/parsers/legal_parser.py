@@ -18,8 +18,8 @@ ARTICLE_PATTERN = re.compile(
     r"^\s*Art\.\s*"
     r"(?P<number>\d+)"
     r"\s*(?:[º°])?"
-    r"(?:\s*-\s*(?P<suffix>[A-Za-z]))?"
-    r"(?:\s*[\.:]\s*|\s+|$)"
+    r"(?:-(?P<suffix>[A-Za-z]))?"
+    r"(?:\s*[.:]\s*|\s+-\s+|\s+|$)"
     r"(?P<body>.*)$"
 )
 
@@ -30,8 +30,8 @@ PARAGRAPH_PATTERN = re.compile(
     r"^\s*§\s*"
     r"(?P<number>\d+)"
     r"\s*(?:[º°])?"
-    r"\s*(?:-\s*(?P<suffix>[A-Za-z]))?"
-    r"\s*(?:[.:]\s*)?"
+    r"(?:-(?P<suffix>[A-Za-z]))?"
+    r"(?:\s*-\s*|\s*[.:]\s*|\s+|$)"
     r"(?P<body>.*)$",
     re.IGNORECASE,
 )
@@ -71,7 +71,7 @@ ARTICLE_HEADER_UNIT_PATTERN = (
 )
 
 ARTICLE_HEADER_PATTERN = re.compile(
-    r"^\s*Art\.\s*\d+\s*[º°]?\s*,\s*"
+    r"^\s*Art\.\s*\d+(?:-[A-Za-z])?\s*[º°]?\s*,\s*"
     + ARTICLE_HEADER_UNIT_PATTERN
     + r"(?:\s*,\s*"
     + ARTICLE_HEADER_UNIT_PATTERN
@@ -189,6 +189,37 @@ def _clean_line(text:str) -> str:
     return text.strip()
 
 
+def _iter_page_lines(text: str):
+    """
+    Une referências de artigos cujo sufixo foi separado
+    em duas linhas durante a extração do PDF.
+    """
+
+    raw_lines = text.splitlines()
+    index = 0
+
+    while index < len(raw_lines):
+        line = _clean_line(raw_lines[index])
+
+        if (
+            re.fullmatch(
+                r"Art\.\s*\d+\s*-",
+                line,
+                re.IGNORECASE,
+            )
+            and index + 1 < len(raw_lines)
+        ):
+            next_line = _clean_line(raw_lines[index + 1])
+            combined = line + next_line
+
+            if ARTICLE_HEADER_PATTERN.match(combined):
+                yield combined
+                index += 2
+                continue
+
+        yield line
+        index += 1
+
 def _join_soft_hyphenated_line_breaks(text: str) -> str:
     """
     Une palavras separadas por um hífen condicional
@@ -225,6 +256,16 @@ def _is_noise_line(text: str) -> bool:
     
     return False
 
+
+def _is_index_start(text: str) -> bool:
+    """Identifica o início do índice remissivo."""
+
+    normalized = _normalize_heading(text)
+
+    return normalized in {
+        "indice tematico e remissivo",
+        "indice remissivo",
+    }
 
 def _is_adct_heading(text: str) -> bool:
     """Identifica o titulo do ato das disposicoes constitucionais transitorias."""
@@ -339,15 +380,28 @@ def _create_unit(
     legal_unit: str,
     number: str,
     page_number: int,
-)-> LegalNode:
-    """Cria uma unidade juridica e a conecta ao seu pai."""
-    
-    node_id = _create_unit_id(
+) -> LegalNode:
+    """Cria uma unidade jurídica com identificador único."""
+
+    base_node_id = _create_unit_id(
         parent.node_id,
         legal_unit,
         number,
     )
-    
+
+    # Preserva unidades repetidas na fonte original, sem gerar IDs duplicados.
+    same_id_count = sum(
+        child.node_id == base_node_id
+        or child.node_id.startswith(f"{base_node_id}-OCC-")
+        for child in parent.children
+    )
+
+    node_id = (
+        base_node_id
+        if same_id_count == 0
+        else f"{base_node_id}-OCC-{same_id_count + 1:03d}"
+    )
+
     node = LegalNode(
         node_id=node_id,
         parent_id=parent.node_id,
@@ -738,6 +792,8 @@ def _parse_single_document(
         pages,
         key=lambda item: int(item.get("pagina", 0)),
     )
+    
+    index_started = False
 
     for page in ordered_pages:
         text = page.get("texto", "")
@@ -761,11 +817,16 @@ def _parse_single_document(
         
         text = _join_soft_hyphenated_line_breaks(text)
 
-        for raw_line in text.splitlines():
+        for raw_line in _iter_page_lines(text):
             line = _clean_line(raw_line)
 
             if not line:
                 continue
+            # Não interpretar referências do índice como artigos.
+            if _is_index_start(line):
+                finalize_article()
+                index_started = True
+                break
 
             # Identifica o encerramento do texto normativo
             # e finaliza o artigo antes das assinaturas.
@@ -867,6 +928,8 @@ def _parse_single_document(
             current_article.body_lines.append(
                 (line, page_number)
             ) 
+        if index_started:
+            break
 
     finalize_article()
 

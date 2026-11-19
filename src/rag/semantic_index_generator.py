@@ -34,7 +34,7 @@ DEFAULT_INPUT_PATH = (
     PROJECT_ROOT
     / "data"
     / "processed"
-    / "constituicao_artigos.json"
+    / "lei_organica_municipio_sp.json"
 )
 
 DEFAULT_OUTPUT_PATH = (

@@ -35,3 +35,6 @@ fastapi==0.163.1
 uvicorn[standard]==0.54.0
 
 requests>=2.31,<3
+gradio>=5,<7
+openai>=1,<3
+

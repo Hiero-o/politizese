@@ -1,0 +1,443 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155",
+  "content_hash": "e4b3ae363904fa2a8a6fe1b7ca6d0bfa90daad530cc89a4a37cb579c8b5ed9a2",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T08:09:05.481423+00:00",
+  "completed_units": 44,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-CAPUT",
+      "summary": "Define a competência tributária dos Estados e do Distrito Federal para a instituição de impostos específicos.",
+      "keywords": [
+        "Estados",
+        "Distrito Federal",
+        "competência tributária",
+        "instituir impostos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-INC-I",
+      "summary": "Estabelece a incidência de imposto sobre a transmissão de bens ou direitos por morte (causa mortis) e por doação.",
+      "keywords": [
+        "transmissão causa mortis",
+        "doação",
+        "bens",
+        "direitos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-INC-II",
+      "summary": "Define a incidência de imposto sobre a circulação de mercadorias e sobre serviços de transporte interestadual, intermunicipal e de comunicação, abrangendo operações iniciadas no exterior.",
+      "keywords": [
+        "circulação de mercadorias",
+        "transporte interestadual",
+        "transporte intermunicipal",
+        "serviços de comunicação",
+        "operações no exterior"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-INC-III",
+      "summary": "Estabelece a incidência de imposto sobre a propriedade de veículos automotores.",
+      "keywords": [
+        "propriedade de veículos automotores",
+        "veículos automotores"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001",
+      "summary": "Introdução ao imposto previsto no inciso I, com redação alterada pela Emenda Constitucional n. 3/1993.",
+      "keywords": [
+        "Imposto",
+        "Inciso I",
+        "EC n. 3/1993"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-I",
+      "summary": "Define a competência tributária sobre bens imóveis e seus respectivos direitos como pertencente ao Estado onde o bem está situado ou ao Distrito Federal.",
+      "keywords": [
+        "Bens imóveis",
+        "Competência tributária",
+        "Estado da situação",
+        "Distrito Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-II",
+      "summary": "Estabelece a competência tributária sobre bens móveis, títulos e créditos para o Estado onde era domiciliado o falecido (de cujus), o domicílio do doador, ou para o Distrito Federal. Redação atualizada pela EC n. 132/2023.",
+      "keywords": [
+        "Bens móveis",
+        "Títulos e créditos",
+        "Domicílio do de cujus",
+        "Domicílio do doador",
+        "EC n. 132/2023"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-III",
+      "summary": "Determina que a competência para a instituição do imposto deve ser regulada por lei complementar.",
+      "keywords": [
+        "Instituição do imposto",
+        "Lei complementar",
+        "Competência"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-III-ALI-A",
+      "summary": "Condição referente ao doador possuir domicílio ou residência em território estrangeiro.",
+      "keywords": [
+        "doador",
+        "domicílio no exterior",
+        "residência no exterior"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-III-ALI-B",
+      "summary": "Condição referente ao falecido (de cujus) possuir bens, residir, domiciliar-se ou ter o seu inventário processado no exterior.",
+      "keywords": [
+        "de cujus",
+        "bens no exterior",
+        "residência no exterior",
+        "inventário no exterior"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-IV",
+      "summary": "Atribuição ao Senado Federal para a fixação das alíquotas máximas.",
+      "keywords": [
+        "Senado Federal",
+        "alíquotas máximas",
+        "fixação de alíquotas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-V",
+      "summary": "Não incidência de tributo sobre doações destinadas, no âmbito do Poder Executivo da União, a projetos socioambientais, ações de mitigação de mudanças climáticas ou a instituições federais de ensino.",
+      "keywords": [
+        "não incidência",
+        "doações",
+        "projetos socioambientais",
+        "mudanças climáticas",
+        "instituições federais de ensino"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-VI",
+      "summary": "Estabelece a progressividade do imposto com base no valor do quinhão, do legado ou da doação.",
+      "keywords": [
+        "progressividade",
+        "quinhão",
+        "legado",
+        "doação",
+        "valor"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0001-INC-VII",
+      "summary": "Determina a não incidência de imposto sobre transmissões e doações para instituições sem fins lucrativos de relevância pública e social, incluindo organizações assistenciais e beneficentes de entidades religiosas e institutos científicos e tecnológicos, desde que realizadas para fins sociais e sob condições de lei complementar.",
+      "keywords": [
+        "imunidade",
+        "instituições sem fins lucrativos",
+        "relevância pública e social",
+        "entidades religiosas",
+        "institutos científicos e tecnológicos"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002",
+      "summary": "Indica que o imposto previsto no inciso II deve observar as regras e condições estabelecidas nos dispositivos subsequentes.",
+      "keywords": [
+        "imposto inciso II",
+        "regras de aplicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-I",
+      "summary": "Define a não cumulatividade do imposto, permitindo a compensação do valor devido em cada operação de circulação de mercadorias ou prestação de serviços com o montante cobrado em operações anteriores por qualquer Estado ou pelo Distrito Federal.",
+      "keywords": [
+        "não cumulatividade",
+        "compensação",
+        "circulação de mercadorias",
+        "prestação de serviços",
+        "Estados e Distrito Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-II",
+      "summary": "Trata da isenção ou não incidência tributária, ressalvando que tais condições podem ser alteradas por determinação específica da legislação.",
+      "keywords": [
+        "isenção",
+        "não incidência",
+        "determinação legal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-II-ALI-A",
+      "summary": "Estabelece que a isenção ou não incidência não gera direito a crédito para compensação com valores devidos em operações ou prestações futuras.",
+      "keywords": [
+        "crédito tributário",
+        "compensação",
+        "operações seguintes",
+        "isenção"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-II-ALI-B",
+      "summary": "Determina que a isenção ou não incidência acarreta a anulação de créditos relativos a operações realizadas anteriormente.",
+      "keywords": [
+        "anulação de crédito",
+        "operações anteriores",
+        "isenção",
+        "não incidência"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-III",
+      "summary": "Define que a tributação pode ser seletiva, fundamentada no critério de essencialidade das mercadorias e dos serviços.",
+      "keywords": [
+        "seletividade",
+        "essencialidade",
+        "mercadorias",
+        "serviços"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-IV",
+      "summary": "Estabelece que as alíquotas aplicáveis às operações e prestações interestaduais e de exportação são fixadas por resolução do Senado Federal. A iniciativa da resolução pode partir do Presidente da República ou de um terço dos Senadores, exigindo aprovação por maioria absoluta dos membros.",
+      "keywords": [
+        "Alíquotas interestaduais",
+        "Alíquotas de exportação",
+        "Resolução do Senado",
+        "Iniciativa presidencial",
+        "Maioria absoluta"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-IX",
+      "summary": "Expressão introdutória que indica a existência de incidência adicional de imposto.",
+      "keywords": [
+        "Incidência tributária",
+        "Adicional de imposto"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-IX-ALI-A",
+      "summary": "Estabelece a incidência de imposto sobre a entrada de bens ou mercadorias importados do exterior por pessoas físicas ou jurídicas, independentemente da condição de contribuinte habitual ou da finalidade da importação. A incidência estende-se a serviços prestados no exterior, competindo o imposto ao Estado onde estiver situado o domicílio ou o estabelecimento do destinatário.",
+      "keywords": [
+        "importação de mercadorias",
+        "serviços no exterior",
+        "não contribuinte habitual",
+        "domicílio do destinatário",
+        "entrada de bens"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-IX-ALI-B",
+      "summary": "Define a incidência do imposto sobre o valor total da operação em situações onde mercadorias são fornecidas acompanhadas de serviços que não estão sob a competência tributária dos Municípios.",
+      "keywords": [
+        "valor total da operação",
+        "fornecimento de mercadorias",
+        "serviços não municipais",
+        "competência tributária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-V",
+      "summary": "Indica a faculdade do Senado Federal em exercer competências específicas relacionadas ao estabelecimento de alíquotas.",
+      "keywords": [
+        "Faculdade do Senado",
+        "Competência do Senado"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-V-ALI-A",
+      "summary": "Autoriza o Senado Federal a estabelecer alíquotas mínimas em operações internas por meio de resolução de iniciativa de um terço dos Senadores, com aprovação por maioria absoluta de seus membros.",
+      "keywords": [
+        "Alíquotas mínimas",
+        "Operações internas",
+        "Resolução do Senado",
+        "Iniciativa de um terço"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-V-ALI-B",
+      "summary": "Permite ao Senado Federal fixar alíquotas máximas em operações internas para resolução de conflitos específicos envolvendo interesses de Estados. A resolução deve ter iniciativa da maioria absoluta e aprovação por dois terços dos membros.",
+      "keywords": [
+        "Alíquotas máximas",
+        "Conflito de interesse de Estados",
+        "Operações internas",
+        "Resolução do Senado",
+        "Aprovação por dois terços"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-VI",
+      "summary": "Estabelece que as alíquotas internas para circulação de mercadorias e prestações de serviços não podem ser inferiores às alíquotas interestaduais, salvo se houver deliberação em contrário pelos Estados e pelo Distrito Federal, nos termos do inciso XII, g.",
+      "keywords": [
+        "Alíquotas internas",
+        "Alíquotas interestaduais",
+        "Circulação de mercadorias",
+        "Prestações de serviços",
+        "Estados e Distrito Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-VII",
+      "summary": "Determina a aplicação da alíquota interestadual em operações e prestações destinadas a consumidor final localizado em outro Estado. O Estado de localização do destinatário tem direito ao imposto correspondente à diferença entre a alíquota interna do Estado destinatário e a alíquota interestadual.",
+      "keywords": [
+        "Consumidor final",
+        "Alíquota interestadual",
+        "Estado destinatário",
+        "Diferença de alíquota",
+        "Operações e prestações"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-VII-ALI-A",
+      "summary": "Dispositivo revogado pela Emenda Constitucional n. 87/2015.",
+      "keywords": [
+        "Revogado",
+        "EC n. 87/2015"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-VII-ALI-B",
+      "summary": "Dispositivo revogado pela Emenda Constitucional n. 87/2015.",
+      "keywords": [
+        "Revogado",
+        "EC n. 87/2015"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-VIII",
+      "summary": "Estabelece a atribuição da responsabilidade pelo recolhimento do imposto referente à diferença entre a alíquota interna e a alíquota interestadual mencionada no inciso VII.",
+      "keywords": [
+        "Diferença de alíquota",
+        "Recolhimento de imposto",
+        "Alíquota interna",
+        "Alíquota interestadual"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-VIII-ALI-A",
+      "summary": "Define que a responsabilidade pelo recolhimento do imposto é do destinatário, desde que este possua a condição de contribuinte do imposto.",
+      "keywords": [
+        "Destinatário",
+        "Contribuinte do imposto",
+        "Responsabilidade tributária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-VIII-ALI-B",
+      "summary": "Define que a responsabilidade pelo recolhimento do imposto é do remetente, nos casos em que o destinatário não for contribuinte do imposto.",
+      "keywords": [
+        "Remetente",
+        "Não contribuinte",
+        "Responsabilidade tributária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-X",
+      "summary": "Introduz o rol de hipóteses em que não haverá incidência do imposto.",
+      "keywords": [
+        "não incidência",
+        "exclusão tributária"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-X-ALI-A",
+      "summary": "Determina a não incidência do imposto sobre operações destinadas ao exterior e sobre serviços prestados a destinatários no exterior. Assegura a manutenção e o aproveitamento do montante do imposto cobrado em operações e prestações anteriores.",
+      "keywords": [
+        "exportação de mercadorias",
+        "serviços ao exterior",
+        "não incidência",
+        "manutenção de montante tributário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-X-ALI-B",
+      "summary": "Operações destinadas a outros Estados envolvendo petróleo, lubrificantes, combustíveis líquidos e gasosos derivados de petróleo e energia elétrica.",
+      "keywords": [
+        "petróleo",
+        "lubrificantes",
+        "combustíveis",
+        "energia elétrica",
+        "outros Estados"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-X-ALI-C",
+      "summary": "Operações sobre o ouro, observadas as hipóteses definidas no art. 153, § 5º.",
+      "keywords": [
+        "ouro",
+        "art. 153 § 5º",
+        "operações de ouro"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-X-ALI-D",
+      "summary": "Prestações de serviço de comunicação nas modalidades de radiodifusão sonora e de sons e imagens de recepção livre e gratuita.",
+      "keywords": [
+        "radiodifusão sonora",
+        "recepção livre e gratuita",
+        "serviços de comunicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-XI",
+      "summary": "Exclusão do montante do imposto sobre produtos industrializados da base de cálculo em operações entre contribuintes de produtos destinados à industrialização ou comercialização que configurem fato gerador de ambos os impostos.",
+      "keywords": [
+        "base de cálculo",
+        "imposto sobre produtos industrializados",
+        "industrialização",
+        "comercialização",
+        "fato gerador"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-XII",
+      "summary": "Estabelece a competência da lei complementar para as atribuições descritas nos itens subsequentes.",
+      "keywords": [
+        "lei complementar",
+        "competência legislativa"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-XII-ALI-A",
+      "summary": "Atribuição à lei complementar de definir quem são os contribuintes do imposto.",
+      "keywords": [
+        "contribuintes",
+        "definição de contribuintes",
+        "lei complementar"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-XII-ALI-B",
+      "summary": "Atribuição à lei complementar de dispor sobre o regime de substituição tributária.",
+      "keywords": [
+        "substituição tributária",
+        "regime tributário",
+        "lei complementar"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0155-PAR-0002-INC-XII-ALI-C",
+      "summary": "Atribuição à lei complementar de disciplinar o regime de compensação do imposto.",
+      "keywords": [
+        "regime de compensação",
+        "compensação de imposto",
+        "lei complementar"
+      ]
+    }
+  ]
+}

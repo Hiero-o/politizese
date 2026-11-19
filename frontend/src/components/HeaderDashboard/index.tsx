@@ -4,6 +4,7 @@ import { TbMenu } from "react-icons/tb";
 const NavigationItems = [
   { label: "Início", link: "/dashboard" },
   { label: "Políticos", link: "/dashboard/politicos" },
+  { label: "Assistente", link: "/dashboard/assistente" },
   { label: "Seguindo", link: "/dashboard/following" },
   { label: "Novidades", link: "/dashboard/news" },
   { label: "Mapa", link: "/dashboard/map" },

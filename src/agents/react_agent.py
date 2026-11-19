@@ -5,10 +5,14 @@ from __future__ import annotations
 
 import json
 import logging
+import re
+import unicodedata
 from time import perf_counter
 from typing import Any, TYPE_CHECKING
 
 from langchain_core.messages import (
+    AIMessage,
+    BaseMessage,
     HumanMessage,
     SystemMessage,
     ToolMessage,
@@ -16,6 +20,7 @@ from langchain_core.messages import (
 
 from src.agents.agent_schemas import (
     AgentRunResult,
+    AgentSource,
     AgentTimingEvent,
     AgentTraceEntry,
 )
@@ -28,6 +33,7 @@ from src.guardrails.moderation import (
 )
 
 from src.guardrails.scope_validator import (
+    is_greeting,
     validate_scope,
 )
 
@@ -53,6 +59,9 @@ AGENT_DECISIONS = {
     "search_constitution_decomposed": (
         "O modelo selecionou uma pesquisa com decomposição."
     ),
+    "search_politicos": (
+        "O modelo consultou o catálogo público de representantes."
+    ),
     "calculate_voting_threshold": (
         "O modelo selecionou um cálculo matemático determinístico."
     ),
@@ -66,6 +75,214 @@ FINAL_SYNTHESIS_INSTRUCTION = (
     "Cite os doc_id disponíveis. Se as evidências forem insuficientes, "
     "informe claramente essa limitação."
 )
+
+
+_STATE_CODES = {
+    "acre": "AC", "alagoas": "AL", "amapa": "AP",
+    "amazonas": "AM", "bahia": "BA", "ceara": "CE",
+    "distrito federal": "DF", "espirito santo": "ES",
+    "goias": "GO", "maranhao": "MA", "mato grosso": "MT",
+    "mato grosso do sul": "MS", "minas gerais": "MG",
+    "para": "PA", "paraiba": "PB", "parana": "PR",
+    "pernambuco": "PE", "piaui": "PI",
+    "rio de janeiro": "RJ", "rio grande do norte": "RN",
+    "rio grande do sul": "RS", "rondonia": "RO", "roraima": "RR",
+    "santa catarina": "SC", "sao paulo": "SP", "sergipe": "SE",
+    "tocantins": "TO",
+}
+
+_ROLE_PATTERNS = (
+    ("deputado_distrital", r"\bdeputados? distritais?\b"),
+    ("deputado_federal", r"\bdeputados? federais?\b"),
+    ("deputado_estadual", r"\bdeputados? estaduais?\b"),
+    ("vice_presidente", r"\bvice presidentes?\b"),
+    ("senador", r"\bsenadores?\b"),
+    ("governador", r"\bgovernadores?\b"),
+    ("prefeito", r"\bprefeitos?\b"),
+    ("vereador", r"\bvereadores?\b"),
+    ("presidente", r"\bpresidentes?\b"),
+)
+
+
+def _normalize_lookup_text(value: str) -> str:
+    value = unicodedata.normalize("NFKD", value.casefold())
+    value = "".join(
+        char for char in value
+        if not unicodedata.combining(char)
+    )
+    value = re.sub(r"[^a-z0-9]+", " ", value)
+    return " ".join(value.split())
+
+
+def _extract_politico_lookup_filters(question: str) -> dict[str, Any] | None:
+    """Extrai filtros simples para consulta factual de representantes.
+
+    É usado apenas como fallback quando o LLM tenta responder sem chamar
+    a ferramenta obrigatória de catálogo. Não roteia perguntas conceituais,
+    como requisitos, competências ou atribuições dos cargos.
+    """
+    normalized = _normalize_lookup_text(question)
+    if not normalized:
+        return None
+
+    conceptual_terms = (
+        "requisito", "idade", "atribuicao", "competencia", "funcao",
+        "dever", "poderes", "como funciona", "o que faz", "diferenca",
+        "conceito", "definicao", "duracao do mandato",
+    )
+    if any(term in normalized for term in conceptual_terms):
+        return None
+
+    cargo = None
+    for slug, pattern in _ROLE_PATTERNS:
+        if re.search(pattern, normalized):
+            cargo = slug
+            break
+    if cargo is None:
+        return None
+
+    lookup_intent = (
+        r"\bquem e\b", r"\bquem sao\b", r"\bquais\b",
+        r"\bliste\b", r"\blistar\b", r"\blista\b",
+        r"\batual(?:mente)?\b", r"\bem exercicio\b",
+        r"\bquem ocupa\b", r"\bocupantes?\b",
+        r"\brepresentantes?\b", r"\bno catalogo\b",
+    )
+    if not any(re.search(pattern, normalized) for pattern in lookup_intent):
+        # A menção explícita ao cargo com um estado também caracteriza busca.
+        if not any(
+            re.search(rf"\b{re.escape(state)}\b", normalized)
+            for state in _STATE_CODES
+        ) and not re.search(r"\b(?:sp|rj|mg|es|pr|sc|rs|ba|go|mt|ms|df|ac|al|ap|am|ce|ma|pa|pb|pe|pi|rn|ro|rr|se|to)\b", normalized):
+            return None
+
+    filters: dict[str, Any] = {"cargo": cargo, "limite": 8}
+
+    for state_name, state_code in sorted(
+        _STATE_CODES.items(), key=lambda item: len(item[0]), reverse=True
+    ):
+        if re.search(rf"\b{re.escape(state_name)}\b", normalized):
+            filters["uf"] = state_code
+            break
+
+    if "uf" not in filters:
+        state_codes = (
+            "AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO"
+        ).split()
+        for code in state_codes:
+            if re.search(rf"\b{code.casefold()}\b", normalized):
+                filters["uf"] = code
+                break
+
+    current_terms = (
+        "atual", "atualmente", "atuais", "em exercicio", "hoje",
+    )
+    if any(term in normalized for term in current_terms):
+        filters["fase_mandato"] = "em_exercicio"
+
+    return filters
+
+
+def _format_politicos_answer(payload: dict[str, Any]) -> str:
+    """Monta a resposta exclusivamente com campos devolvidos pelo catálogo."""
+    politicos = payload.get("politicos") or []
+    total = payload.get("total_matches", len(politicos))
+    filters = payload.get("filters") or {}
+
+    if not politicos:
+        criterios = []
+        for key, label in (("cargo", "cargo"), ("uf", "UF"),
+                           ("municipio", "município"), ("partido", "partido"),
+                           ("fase_mandato", "fase do mandato")):
+            if filters.get(key):
+                criterios.append(f"{label}: {filters[key]}")
+        suffix = f" (" + "; ".join(criterios) + ")" if criterios else ""
+        return (
+            "Não encontrei registros no catálogo do Politize-se para os filtros "
+            f"informados{suffix}. Não vou preencher a lista com informações não confirmadas."
+        )
+
+    lines = [
+        f"Encontrei **{total} registro(s)** no catálogo do Politize-se. "
+        "Abaixo estão os dados retornados pela consulta:"
+    ]
+
+    phase_labels = {
+        "em_exercicio": "Em exercício",
+        "eleito_futuro": "Eleito para o próximo mandato",
+        "mandato_em_andamento": "Mandato em andamento; exercício atual não verificado",
+    }
+
+    for item in politicos:
+        if not isinstance(item, dict):
+            continue
+        politician_id = str(item.get("id") or "").strip()
+        name = str(item.get("nome") or "Nome não informado").strip()
+        details = [
+            str(item.get("cargo") or "Cargo não informado"),
+            f"Partido: {item.get('partido') or 'não informado'}",
+        ]
+        if item.get("uf"):
+            details.append(f"UF: {item['uf']}")
+        if item.get("municipio"):
+            details.append(f"Município: {item['municipio']}")
+        if item.get("situacao"):
+            details.append(f"Situação: {item['situacao']}")
+        if item.get("titularidade"):
+            details.append(f"Titularidade: {item['titularidade']}")
+        phase = item.get("fase_mandato")
+        if phase:
+            details.append(phase_labels.get(str(phase), str(phase)))
+        if item.get("mandato"):
+            details.append(f"Mandato: {item['mandato']}")
+
+        profile = (
+            " · Perfil disponível nas referências abaixo"
+            if politician_id else ""
+        )
+        lines.append(f"- **{name}** — " + " · ".join(details) + profile)
+
+    used_source_names = {
+        str(item.get("fonte"))
+        for item in politicos
+        if isinstance(item, dict) and item.get("fonte")
+    }
+    source_titles = {
+        "senado": "Senado Federal",
+        "camara": "Câmara dos Deputados",
+        "tse": "TSE — eleições gerais",
+        "tse_municipal": "TSE — eleições municipais",
+        "planalto": "Presidência da República",
+    }
+    status_labels = {
+        "atualizada": "fonte atualizada",
+        "cache_valido": "snapshot local válido",
+        "cache_desatualizado": "snapshot local desatualizado",
+        "indisponivel": "fonte indisponível",
+        "cadastro_local": "cadastro local",
+    }
+    for source in payload.get("fontes", []):
+        if not isinstance(source, dict) or source.get("fonte") not in used_source_names:
+            continue
+        source_name = source_titles.get(
+            str(source.get("fonte")), str(source.get("fonte"))
+        )
+        source_status = status_labels.get(
+            str(source.get("status")), str(source.get("status"))
+        )
+        lines.append(f"\n**Situação da fonte ({source_name}):** {source_status}.")
+
+    lines.append(
+        "\nOs nomes, partidos, mandatos e identificadores acima foram "
+        "preservados do resultado estruturado da ferramenta. Não foram "
+        "completados por conhecimento do modelo."
+    )
+    if any(
+        isinstance(item, dict) and item.get("id")
+        for item in politicos
+    ):
+        lines.append("\nUse os cartões de referência exibidos abaixo para abrir cada perfil no Politize-se.")
+    return "\n".join(lines)
 
 
 class AgentExecutionError(RuntimeError):
@@ -303,6 +520,7 @@ class PolitizeseReActAgent:
         tool_limit_reached: bool,
         trace: list[AgentTraceEntry],
         timing_events: list[AgentTimingEvent],
+        sources: list[AgentSource],
     ) -> AgentRunResult:
         """Consolida resultado, trace e tempos da execução."""
 
@@ -328,6 +546,7 @@ class PolitizeseReActAgent:
                 4,
             ),
             trace=trace,
+            sources=sources,
             timing_events=timing_events,
         )
 
@@ -343,6 +562,7 @@ class PolitizeseReActAgent:
         blocked_tool_calls: int,
         trace: list[AgentTraceEntry],
         timing_events: list[AgentTimingEvent],
+        sources: list[AgentSource],
         tool_limit_reached: bool,
     ) -> AgentRunResult:
         """Gera a síntese final sem disponibilizar novas ferramentas."""
@@ -402,10 +622,127 @@ class PolitizeseReActAgent:
             blocked_tool_calls=blocked_tool_calls,
             tool_limit_reached=tool_limit_reached,
             trace=trace,
+            sources=sources,
             timing_events=timing_events,
         )
 
-    def invoke(self, question: str) -> AgentRunResult:
+    @staticmethod
+    def _capture_sources(
+        observation: str,
+        sources: dict[str, AgentSource],
+    ) -> None:
+        """Extrai referências documentais e de políticos da saída das tools."""
+
+        try:
+            payload = json.loads(observation)
+        except (json.JSONDecodeError, TypeError):
+            return
+
+        if not isinstance(payload, dict) or payload.get("ok") is not True:
+            return
+
+        for document in payload.get("documents", []):
+            if not isinstance(document, dict):
+                continue
+            metadata = document.get("metadata") or {}
+            if not isinstance(metadata, dict):
+                metadata = {}
+            doc_id = document.get("doc_id")
+            if not isinstance(doc_id, str) or not doc_id.strip():
+                continue
+
+            article = metadata.get("article_number")
+            part = metadata.get("document_part")
+            legal_unit = metadata.get("legal_unit")
+            title = "Constituição Federal"
+            if article:
+                title += f" — Art. {article}"
+            if part and str(part).casefold() not in {"cf", "constituicao federal"}:
+                title += f" ({part})"
+            details = []
+            if legal_unit:
+                details.append(str(legal_unit).replace("_", " ").title())
+            if metadata.get("number"):
+                details.append(str(metadata["number"]))
+
+            sources.setdefault(
+                doc_id,
+                AgentSource(
+                    kind="document",
+                    id=doc_id,
+                    title=title,
+                    detail=" · ".join(details) or None,
+                    excerpt=str(document.get("content") or "")[:420] or None,
+                ),
+            )
+
+            parent_context = metadata.get("parent_context") or []
+            if isinstance(parent_context, dict):
+                parent_context = [parent_context]
+            if isinstance(parent_context, list):
+                for parent in parent_context:
+                    if not isinstance(parent, dict):
+                        continue
+                    parent_id = parent.get("doc_id")
+                    if not isinstance(parent_id, str) or not parent_id.strip():
+                        continue
+                    parent_meta = parent.get("metadata") or {}
+                    if not isinstance(parent_meta, dict):
+                        parent_meta = {}
+                    parent_article = parent_meta.get("article_number")
+                    parent_title = "Constituição Federal"
+                    if parent_article:
+                        parent_title += f" — Art. {parent_article}"
+                    sources.setdefault(
+                        parent_id,
+                        AgentSource(
+                            kind="document",
+                            id=parent_id,
+                            title=parent_title,
+                            detail="Contexto complementar",
+                            excerpt=str(parent.get("content") or "")[:420] or None,
+                        ),
+                    )
+
+        for politico in payload.get("politicos", []):
+            if not isinstance(politico, dict):
+                continue
+            politician_id = politico.get("id")
+            name = politico.get("nome")
+            if not isinstance(politician_id, str) or not isinstance(name, str):
+                continue
+            details = [
+                value for value in (
+                    politico.get("cargo"),
+                    politico.get("partido"),
+                    politico.get("uf"),
+                    politico.get("municipio"),
+                    politico.get("situacao"),
+                    politico.get("titularidade"),
+                    politico.get("mandato"),
+                ) if value
+            ]
+            phase = politico.get("fase_mandato")
+            if phase == "eleito_futuro":
+                details.append("Eleito para próximo mandato")
+            elif phase == "mandato_em_andamento":
+                details.append("Exercício atual não verificado")
+            sources.setdefault(
+                politician_id,
+                AgentSource(
+                    kind="politico",
+                    id=politician_id,
+                    title=name,
+                    detail=" · ".join(details) or None,
+                    href=f"/dashboard/politicos/{politician_id}",
+                ),
+            )
+
+    def invoke(
+        self,
+        question: str,
+        history: list[BaseMessage] | None = None,
+    ) -> AgentRunResult:
         """Executa o agente e mede o tempo de cada etapa."""
 
         if not isinstance(question, str):
@@ -432,7 +769,30 @@ class PolitizeseReActAgent:
 
         trace: list[AgentTraceEntry] = []
         timing_events: list[AgentTimingEvent] = []
-        
+        captured_sources: dict[str, AgentSource] = {}
+        successful_politico_payload: dict[str, Any] | None = None
+
+        # Saudações isoladas são tratadas sem chamar o LLM nem o RAG.
+        # Elas não são perguntas fora do escopo e não precisam de busca.
+        if is_greeting(question):
+            return self._build_result(
+                question=question,
+                answer=(
+                    "Oiee! 😊 Posso ajudar com a Constituição, regras "
+                    "políticas e eleitorais, representantes públicos e "
+                    "cálculos de quórum. O que você quer descobrir?"
+                ),
+                started_at=started_at,
+                llm_duration=0.0,
+                tool_duration=0.0,
+                tool_calls_count=0,
+                blocked_tool_calls=0,
+                tool_limit_reached=False,
+                trace=[],
+                timing_events=[],
+                sources=[],
+            )
+
         moderation_reason = personal_data_block_reason(question)
 
         scope_reason = None
@@ -485,10 +845,18 @@ class PolitizeseReActAgent:
                 tool_limit_reached=False,
                 trace=[guardrail_trace],
                 timing_events=[],
+                sources=[],
             )
+
+        safe_history = [
+            message
+            for message in (history or [])[-12:]
+            if isinstance(message, (HumanMessage, AIMessage))
+        ]
 
         messages = [
             SystemMessage(content=self._system_prompt),
+            *safe_history,
             HumanMessage(content=question),
         ]
 
@@ -558,6 +926,67 @@ class PolitizeseReActAgent:
             # --------------------------------------------------
 
             if not requested_calls:
+                # O modelo não pode substituir uma consulta factual ao catálogo
+                # por uma resposta de memória. Se ele omitir a ferramenta em uma
+                # pergunta clara de identificação de representantes, o backend
+                # executa a mesma ferramenta como fallback determinístico.
+                lookup_filters = _extract_politico_lookup_filters(question)
+                if lookup_filters is not None:
+                    tool_started_at = perf_counter()
+                    observation, status = self._execute_tool(
+                        tool_name="search_politicos",
+                        arguments=lookup_filters,
+                    )
+                    elapsed = perf_counter() - tool_started_at
+                    tool_duration += elapsed
+                    tool_calls_count += 1
+                    timing_events.append(
+                        AgentTimingEvent(
+                            step=len(timing_events) + 1,
+                            stage="tool_execution",
+                            name="search_politicos (fallback de integridade)",
+                            duration_seconds=round(elapsed, 4),
+                        )
+                    )
+                    trace.append(
+                        AgentTraceEntry(
+                            step=len(trace) + 1,
+                            decision_summary=(
+                                "O backend garantiu a consulta ao catálogo porque "
+                                "o modelo tentou responder sem recuperar os registros."
+                            ),
+                            action="search_politicos",
+                            arguments=lookup_filters,
+                            observation=observation[:MAX_TRACE_OBSERVATION_LENGTH],
+                            status=status,
+                            duration_seconds=round(elapsed, 4),
+                        )
+                    )
+                    logger.info(
+                        "[AGENT TOOL] name=search_politicos args=%s status=%s duration=%.3fs source=fallback",
+                        lookup_filters, status, elapsed,
+                    )
+                    if status == "success":
+                        try:
+                            successful_politico_payload = json.loads(observation)
+                        except json.JSONDecodeError:
+                            successful_politico_payload = None
+                        self._capture_sources(observation, captured_sources)
+                    if successful_politico_payload is not None:
+                        return self._build_result(
+                            question=question,
+                            answer=_format_politicos_answer(successful_politico_payload),
+                            started_at=started_at,
+                            llm_duration=llm_duration,
+                            tool_duration=tool_duration,
+                            tool_calls_count=tool_calls_count,
+                            blocked_tool_calls=blocked_tool_calls,
+                            tool_limit_reached=False,
+                            trace=trace,
+                            timing_events=timing_events,
+                            sources=list(captured_sources.values()),
+                        )
+
                 answer = self._content_to_text(
                     response.content
                 )
@@ -687,6 +1116,7 @@ class PolitizeseReActAgent:
                     tool_limit_reached=False,
                     trace=trace,
                     timing_events=timing_events,
+                    sources=list(captured_sources.values()),
                 )
 
             # --------------------------------------------------
@@ -780,6 +1210,27 @@ class PolitizeseReActAgent:
                         )
                     )
 
+                if status == "success":
+                    self._capture_sources(
+                        observation,
+                        captured_sources,
+                    )
+                    if tool_name == "search_politicos":
+                        try:
+                            parsed_observation = json.loads(observation)
+                            if (
+                                isinstance(parsed_observation, dict)
+                                and parsed_observation.get("ok") is True
+                            ):
+                                successful_politico_payload = parsed_observation
+                        except json.JSONDecodeError:
+                            successful_politico_payload = None
+
+                logger.info(
+                    "[AGENT TOOL] name=%s args=%s status=%s duration=%.3fs",
+                    tool_name, arguments, status, elapsed,
+                )
+
                 decision_summary = AGENT_DECISIONS.get(
                     tool_name,
                     "O modelo solicitou uma ferramenta não reconhecida.",
@@ -816,8 +1267,25 @@ class PolitizeseReActAgent:
                         content=wrapped_observation,
                         tool_call_id=str(tool_call_id),
                         name=tool_name,
-    )
-)
+                    )
+                )
+
+            # Dados de representantes são apresentados a partir do JSON da
+            # ferramenta, sem uma segunda geração livre que possa inventar nomes.
+            if successful_politico_payload is not None:
+                return self._build_result(
+                    question=question,
+                    answer=_format_politicos_answer(successful_politico_payload),
+                    started_at=started_at,
+                    llm_duration=llm_duration,
+                    tool_duration=tool_duration,
+                    tool_calls_count=tool_calls_count,
+                    blocked_tool_calls=blocked_tool_calls,
+                    tool_limit_reached=False,
+                    trace=trace,
+                    timing_events=timing_events,
+                    sources=list(captured_sources.values()),
+                )
 
             # --------------------------------------------------
             # 4. Verificação do limite de chamadas
@@ -837,6 +1305,7 @@ class PolitizeseReActAgent:
                     blocked_tool_calls=blocked_tool_calls,
                     trace=trace,
                     timing_events=timing_events,
+                    sources=list(captured_sources.values()),
                     tool_limit_reached=(
                         tool_calls_count >= self._max_tool_calls
                     ),
@@ -863,7 +1332,7 @@ def build_react_agent(
 ) -> tuple[PolitizeseReActAgent, str]:
     """Inicializa retriever, ferramentas e modelo do agente."""
 
-    from src.ai.llm_factory import create_chat_model
+    from src.ai.llm_factory import create_agent_chat_model
     from src.ai.prompt_loader import load_prompt
     from src.rag.iterative_retriever import (
         build_iterative_retriever,
@@ -889,17 +1358,10 @@ def build_react_agent(
         iterative_retriever
     )
 
-    llm = create_chat_model(
-        settings=settings
-    )
-
-    llm = llm.model_copy(
-        update={
-            "reasoning": False,
-            "num_ctx": 8192,
-            "num_predict": 2048,
-        }
-    )
+    # ChatOpenAI conversa com o endpoint compatível local do Ollama (/v1).
+    # A troca é importante para que as definições das ferramentas cheguem
+    # corretamente ao Qwen 3.5 e ao restante do agente ReAct.
+    llm = create_agent_chat_model(settings=settings)
 
     system_prompt = load_prompt(
         task="react_agent"

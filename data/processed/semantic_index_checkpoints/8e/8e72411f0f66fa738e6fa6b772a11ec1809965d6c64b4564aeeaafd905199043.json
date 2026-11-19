@@ -1,0 +1,329 @@
+{
+  "format_version": 2,
+  "document_id": "LOMSP",
+  "section_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B",
+  "content_hash": "8d425301d3ddc335578cefa4da4c3da37f4f50a292d53a2cce6e3172eb749696",
+  "model_provider": "local",
+  "model_name": "gemma4:12b",
+  "prompt_version": "2.1",
+  "generation_config": {
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "num_predict": 4096
+  },
+  "updated_at": "2026-11-19T06:56:08.197057+00:00",
+  "completed_units": 31,
+  "units": [
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-CAPUT",
+      "summary": "Estabelece a composição do Conselho Nacional de Justiça (CNJ) por 15 membros, com mandato de 2 anos e permissão para uma recondução.",
+      "keywords": [
+        "Conselho Nacional de Justiça",
+        "CNJ",
+        "composição",
+        "mandato",
+        "recondução"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-I",
+      "summary": "Define a presença do Presidente do Supremo Tribunal Federal (STF) como membro integrante do Conselho Nacional de Justiça.",
+      "keywords": [
+        "Presidente do Supremo Tribunal Federal",
+        "STF",
+        "composição CNJ"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-II",
+      "summary": "Determina a inclusão de um Ministro do Superior Tribunal de Justiça (STJ) na composição do CNJ, mediante indicação pelo respectivo tribunal.",
+      "keywords": [
+        "Ministro do Superior Tribunal de Justiça",
+        "STJ",
+        "indicação",
+        "composição CNJ"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-III",
+      "summary": "Determina a inclusão de um Ministro do Tribunal Superior do Trabalho (TST) na composição do CNJ, mediante indicação pelo respectivo tribunal.",
+      "keywords": [
+        "Ministro do Tribunal Superior do Trabalho",
+        "TST",
+        "indicação",
+        "composição CNJ"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-IV",
+      "summary": "Indicação de um desembargador de Tribunal de Justiça pelo Supremo Tribunal Federal.",
+      "keywords": [
+        "desembargador",
+        "Tribunal de Justiça",
+        "Supremo Tribunal Federal",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-IX",
+      "summary": "Juiz do trabalho indicado pelo Tribunal Superior do Trabalho.",
+      "keywords": [
+        "Juiz do trabalho",
+        "Tribunal Superior do Trabalho",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-V",
+      "summary": "Indicação de um juiz estadual pelo Supremo Tribunal Federal.",
+      "keywords": [
+        "juiz estadual",
+        "Supremo Tribunal Federal",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-VI",
+      "summary": "Indicação de um juiz de Tribunal Regional Federal pelo Superior Tribunal de Justiça.",
+      "keywords": [
+        "juiz de Tribunal Regional Federal",
+        "Superior Tribunal de Justiça",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-VII",
+      "summary": "Indicação de um juiz federal pelo Superior Tribunal de Justiça.",
+      "keywords": [
+        "juiz federal",
+        "Superior Tribunal de Justiça",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-VIII",
+      "summary": "Juiz de Tribunal Regional do Trabalho indicado pelo Tribunal Superior do Trabalho.",
+      "keywords": [
+        "Juiz de Tribunal Regional do Trabalho",
+        "Tribunal Superior do Trabalho",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-X",
+      "summary": "Membro do Ministério Público da União indicado pelo Procurador-Geral da República.",
+      "keywords": [
+        "Ministério Público da União",
+        "Procurador-Geral da República",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-XI",
+      "summary": "Membro do Ministério Público estadual escolhido pelo Procurador-Geral da República entre nomes indicados pelo órgão competente de cada instituição estadual.",
+      "keywords": [
+        "Ministério Público estadual",
+        "Procurador-Geral da República",
+        "órgão competente",
+        "indicação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-XII",
+      "summary": "Indicação de dois advogados para compor o Conselho, designados pelo Conselho Federal da Ordem dos Advogados do Brasil.",
+      "keywords": [
+        "advogados",
+        "Conselho Federal da OAB",
+        "indicação",
+        "composição do Conselho"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-INC-XIII",
+      "summary": "Indicação de dois cidadãos com notável saber jurídico e reputação ilibada, sendo um indicado pela Câmara dos Deputados e outro pelo Senado Federal.",
+      "keywords": [
+        "cidadãos",
+        "saber jurídico",
+        "reputação ilibada",
+        "Câmara dos Deputados",
+        "Senado Federal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0001",
+      "summary": "Definição da presidência do Conselho, exercida pelo Presidente do Supremo Tribunal Federal, com substituição pelo Vice-Presidente do Supremo Tribunal Federal em casos de ausência ou impedimento.",
+      "keywords": [
+        "Presidência do Conselho",
+        "Presidente do STF",
+        "Vice-Presidente do STF",
+        "ausência",
+        "impedimento"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0002",
+      "summary": "Procedimento de nomeação dos demais membros do Conselho pelo Presidente da República, condicionado à aprovação prévia por maioria absoluta do Senado Federal.",
+      "keywords": [
+        "nomeação de membros",
+        "Presidente da República",
+        "maioria absoluta",
+        "Senado Federal",
+        "aprovação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0003",
+      "summary": "Estabelece que, na ausência de indicações realizadas dentro do prazo legal previsto no artigo, a escolha passará a ser de responsabilidade do Supremo Tribunal Federal.",
+      "keywords": [
+        "Supremo Tribunal Federal",
+        "escolha",
+        "indicações",
+        "prazo legal"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004",
+      "summary": "Define a competência do Conselho para o controle da gestão administrativa e financeira do Poder Judiciário, bem como a fiscalização do cumprimento dos deveres funcionais dos juízes, além das atribuições previstas no Estatuto da Magistratura.",
+      "keywords": [
+        "Conselho",
+        "controle administrativo",
+        "controle financeiro",
+        "Poder Judiciário",
+        "deveres funcionais",
+        "Estatuto da Magistratura"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004-INC-I",
+      "summary": "Atribui ao Conselho o dever de zelar pela autonomia do Poder Judiciário e pelo cumprimento do Estatuto da Magistratura, conferindo-lhe poder para expedir atos regulamentares em sua competência ou recomendar providências.",
+      "keywords": [
+        "autonomia do Poder Judiciário",
+        "Estatuto da Magistratura",
+        "atos regulamentares",
+        "recomendação de providências"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004-INC-II",
+      "summary": "Estabelece a responsabilidade do Conselho em zelar pela observância do art. 37 e apreciar a legalidade de atos administrativos de membros ou órgãos do Judiciário (de ofício ou por provocação). O Conselho pode desconstituir, rever ou fixar prazos para adequação legal, sem prejuízo da competência do Tribunal de Contas da União.",
+      "keywords": [
+        "Artigo 37",
+        "legalidade de atos administrativos",
+        "Poder Judiciário",
+        "desconstituição de atos",
+        "Tribunal de Contas da União"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004-INC-III",
+      "summary": "Competência para receber e conhecer reclamações contra membros ou órgãos do Poder Judiciário, incluindo serviços auxiliares, serventias e órgãos prestadores de serviços notariais e de registro (por delegação ou oficializados). O poder inclui avocar processos disciplinares em curso, determinar remoção ou disponibilidade e aplicar sanções administrativas, garantindo ampla defesa, sem prejuízo da competência disciplinar e correicional dos tribunais.",
+      "keywords": [
+        "Reclamações Judiciário",
+        "Serviços Notariais e de Registro",
+        "Processos Disciplinares",
+        "Sanções Administrativas",
+        "Ampla Defesa"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004-INC-IV",
+      "summary": "Atribuição para representar ao Ministério Público em situações de crime contra a administração pública ou de abuso de autoridade.",
+      "keywords": [
+        "Ministério Público",
+        "Crime contra a Administração Pública",
+        "Abuso de Autoridade",
+        "Representação"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004-INC-V",
+      "summary": "Poder de rever, de ofício ou mediante provocação, processos disciplinares de juízes e membros de tribunais que tenham sido julgados há menos de um ano.",
+      "keywords": [
+        "Revisão de Processos Disciplinares",
+        "Juízes",
+        "Membros de Tribunais",
+        "Revisão de Ofício"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004-INC-VI",
+      "summary": "Dever de elaborar relatório estatístico semestral sobre processos e sentenças prolatadas, organizado por unidade da Federação e pelos diferentes órgãos do Poder Judiciário.",
+      "keywords": [
+        "Relatório Estatístico",
+        "Processos e Sentenças",
+        "Unidade da Federação",
+        "Poder Judiciário"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0004-INC-VII",
+      "summary": "Obrigatoriedade de elaboração de relatório anual sobre a situação do Poder Judiciário e as atividades do Conselho, contendo propostas de providências. O documento deve integrar a mensagem do Presidente do Supremo Tribunal Federal destinada ao Congresso Nacional na abertura da sessão legislativa.",
+      "keywords": [
+        "Relatório anual",
+        "Poder Judiciário",
+        "Conselho",
+        "Supremo Tribunal Federal",
+        "Congresso Nacional"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0005",
+      "summary": "Designação do Ministro do Superior Tribunal de Justiça para a função de Ministro-Corregedor, com a consequente exclusão da distribuição de processos no Tribunal e a manutenção das atribuições do Estatuto da Magistratura.",
+      "keywords": [
+        "Ministro-Corregedor",
+        "Superior Tribunal de Justiça",
+        "Distribuição de processos",
+        "Estatuto da Magistratura"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0005-INC-I",
+      "summary": "Competência do Ministro-Corregedor para receber reclamações e denúncias de qualquer interessado relativas a magistrados e aos serviços judiciários.",
+      "keywords": [
+        "Reclamações",
+        "Denúncias",
+        "Magistrados",
+        "Serviços judiciários"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0005-INC-II",
+      "summary": "Atribuição do Ministro-Corregedor em exercer funções executivas do Conselho, bem como funções de inspeção e de correição geral.",
+      "keywords": [
+        "Funções executivas",
+        "Conselho",
+        "Inspeção",
+        "Correição geral"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0005-INC-III",
+      "summary": "Competência para requisitar e designar magistrados, com delegação de atribuições, e requisitar servidores de juízos ou tribunais, abrangendo Estados, Distrito Federal e Territórios.",
+      "keywords": [
+        "requisitar magistrados",
+        "designação de magistrados",
+        "servidores de juízos",
+        "atribuições delegadas"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0006",
+      "summary": "Obrigatoriedade de o Procurador-Geral da República e o Presidente do Conselho Federal da Ordem dos Advogados do Brasil oficiarem o Conselho.",
+      "keywords": [
+        "Procurador-Geral da República",
+        "Presidente do Conselho Federal da OAB",
+        "oficiar o Conselho"
+      ]
+    },
+    {
+      "node_id": "LOMSP-CONSTITUICAO-BRASIL-EC139-2026-ART-0103B-PAR-0007",
+      "summary": "Dever da União em criar ouvidorias de justiça no Distrito Federal e Territórios para receber reclamações e denúncias contra membros, órgãos do Poder Judiciário ou serviços auxiliares, com representação direta ao Conselho Nacional de Justiça.",
+      "keywords": [
+        "ouvidorias de justiça",
+        "reclamações e denúncias",
+        "Poder Judiciário",
+        "Conselho Nacional de Justiça"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import type {
   FiltrosPoliticos,
+  Politico,
   PoliticosResponse,
 } from "@/types/politicos";
 
@@ -65,4 +66,25 @@ export async function listarPoliticos({
   }
 
   return response.json() as Promise<PoliticosResponse>;
+}
+
+export async function obterPoliticoPorId(
+  id: string,
+  signal?: AbortSignal,
+): Promise<Politico> {
+  const response = await fetch(
+    `${API_BASE_URL}/api/politicos/${encodeURIComponent(id)}`,
+    { signal },
+  );
+
+  if (!response.ok) {
+    const body = await response.json().catch(() => null);
+
+    throw new Error(
+      body?.detail ??
+      `Erro ao consultar perfil do político: HTTP ${response.status}`,
+    );
+  }
+
+  return response.json() as Promise<Politico>;
 }
