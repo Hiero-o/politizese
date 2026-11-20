@@ -102,5 +102,180 @@
         "tentativas": 1,
         "tempo_segundos": 0.0,
         "facilidade": 3
+    },
+    {
+        "data": "2026-11-19T22:00:59",
+        "origem": "pergunta",
+        "pergunta": "votar",
+        "id_orientacao": 35,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 23.7
+    },
+    {
+        "data": "2026-11-19T22:01:14",
+        "origem": "pergunta",
+        "pergunta": "meu título sumiu",
+        "id_orientacao": null,
+        "encontrou": false,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 12.3
+    },
+    {
+        "data": "2026-11-19T22:02:02",
+        "origem": "categoria",
+        "pergunta": "Como regularizar título cancelado",
+        "id_orientacao": 6,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 11.4
+    },
+    {
+        "data": "2026-11-19T22:02:42",
+        "origem": "categoria",
+        "pergunta": "Preciso do título impresso para votar?",
+        "id_orientacao": 11,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 10.7
+    },
+    {
+        "data": "2026-11-19T22:02:57",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 5
+    },
+    {
+        "data": "2026-11-19T22:03:22",
+        "origem": "categoria",
+        "pergunta": "Como justificar ausência à votação",
+        "id_orientacao": 12,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 4.3
+    },
+    {
+        "data": "2026-11-19T22:03:55",
+        "origem": "categoria",
+        "pergunta": "Como consultar a situação do título",
+        "id_orientacao": 5,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 28.4
+    },
+    {
+        "data": "2026-11-19T22:04:31",
+        "origem": "categoria",
+        "pergunta": "Perdi meu título: como obter a segunda via",
+        "id_orientacao": 10,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 19.8
+    },
+    {
+        "data": "2026-11-19T22:04:59",
+        "origem": "categoria",
+        "pergunta": "Como votar",
+        "id_orientacao": 35,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 17.1
+    },
+    {
+        "data": "2026-11-19T22:05:27",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 5
+    },
+    {
+        "data": "2026-11-19T22:07:44",
+        "origem": "pergunta",
+        "pergunta": "título",
+        "id_orientacao": null,
+        "encontrou": false,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 4.3
+    },
+    {
+        "data": "2026-11-19T22:08:16",
+        "origem": "categoria",
+        "pergunta": "Como regularizar título cancelado",
+        "id_orientacao": 6,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 7.3
+    },
+    {
+        "data": "2026-11-19T22:08:36",
+        "origem": "categoria",
+        "pergunta": "Como votar",
+        "id_orientacao": 35,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 4.6
+    },
+    {
+        "data": "2026-11-19T22:08:44",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 3
+    },
+    {
+        "data": "2026-11-19T22:09:44",
+        "origem": "categoria",
+        "pergunta": "Como funciona a biometria eleitoral",
+        "id_orientacao": 13,
+        "encontrou": true,
+        "ajudou": true,
+        "tentativas": 1,
+        "tempo_segundos": 11.2
+    },
+    {
+        "data": "2026-11-19T22:09:55",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 4
+    },
+    {
+        "data": "2026-11-19T22:10:10",
+        "origem": "avaliacao",
+        "pergunta": "facilidade de uso",
+        "id_orientacao": null,
+        "encontrou": true,
+        "ajudou": false,
+        "tentativas": 1,
+        "tempo_segundos": 0.0,
+        "facilidade": 1
     }
 ]
