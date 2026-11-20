@@ -1,8 +1,14 @@
-# Politize-se
+# Politizese
 
 Plataforma web de informação política e interesse público, criada para facilitar o acesso, a compreensão e o acompanhamento de dados sobre representantes, instituições e assuntos que afetam a vida dos cidadãos.
 
 O Politize-se reúne, em um mesmo ambiente, um catálogo de representantes públicos, perfis individuais, um mapa territorial com dados públicos e um assistente virtual baseado em modelos locais. A proposta é apresentar informações de forma acessível, mantendo a origem dos dados visível e permitindo que cada pessoa forme suas próprias conclusões.
+
+# integrantes
+
+570021 - VICTOR HENRIQUE NOGUEIRA BEZERRA 
+573334 -CARLOS HENRIQUE SANTOS DIAS 
+574156 - GUSTAVO ARAUJO RAMOS DA SILVA
 
 > **Princípio do projeto:** a plataforma informa, organiza e contextualiza. Não tem como objetivo direcionar o posicionamento político do usuário.
 
